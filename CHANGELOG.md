@@ -1,5 +1,157 @@
 # Changelog
 
+## [v2.52.3](https://github.com/PathOfBuildingCommunity/PathOfBuilding/tree/v2.52.3) (2025/02/20)
+
+[Full Changelog](https://github.com/PathOfBuildingCommunity/PathOfBuilding/compare/v2.52.2...v2.52.3)
+
+## What's Changed
+### New to Path of Building
+- Add new Harbinger skills [\#8519](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8519) ([Wires77](https://github.com/Wires77))
+### Fixed Bugs
+- Fix error when crafting a fishing rod enchant [\#8518](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8518) ([Wires77](https://github.com/Wires77))
+
+
+## [v2.52.2](https://github.com/PathOfBuildingCommunity/PathOfBuilding/tree/v2.52.2) (2025/02/20)
+
+[Full Changelog](https://github.com/PathOfBuildingCommunity/PathOfBuilding/compare/v2.52.1...v2.52.2)
+
+## What's Changed
+### Fixed Crashes
+- Fix Tawhoa's Chosen crash when no active skill is enabled [\#8507](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8507) ([Paliak](https://github.com/Paliak))
+### User Interface
+- Dynamically expand some dropdowns that were too narrow to read [\#8506](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8506) ([Wires77](https://github.com/Wires77))
+### Fixed Behaviours
+- Fix Forbidden jewels not finding the right ascendancy nodes [\#8508](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8508) ([Wires77](https://github.com/Wires77))
+- Update tree data with missing cluster jewel nodes [\#8505](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8505) ([Wires77](https://github.com/Wires77))
+
+
+
+## [v2.52.1](https://github.com/PathOfBuildingCommunity/PathOfBuilding/tree/v2.52.1) (2025/02/20)
+
+[Full Changelog](https://github.com/PathOfBuildingCommunity/PathOfBuilding/compare/v2.50.1...v2.52.1)
+
+## What's Changed
+### Fixed Bugs
+Fixed update error by ([Wires77](https://github.com/Wires77))
+
+
+## [v2.52.0](https://github.com/PathOfBuildingCommunity/PathOfBuilding/tree/v2.52.0) (2025/02/20)
+
+[Full Changelog](https://github.com/PathOfBuildingCommunity/PathOfBuilding/compare/v2.50.1...v2.52.0)
+
+## What's Changed
+
+### New to Path of Building
+
+- Add tree for Legacy of Phrecia [\#8494
+](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8494
+) ([Wires77](https://github.com/Wires77))
+- Add checkbox for Sacrificial Zeal [\#8481
+](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8481
+) ([Paliak](https://github.com/Paliak))
+- Add black background to detail text in character dropdown [\#8487
+](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8487
+) ([Paliak](https://github.com/Paliak))
+- Add Molten Strike (+Zenith) ball average overlap calculations [\#8427
+](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8427
+) ([andyli00](https://github.com/andyli00))
+### Fixed Behaviours
+
+- Fix Firestorm of Pelting skill effect duration [\#8493
+](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8493
+) ([Peechey](https://github.com/Peechey))
+### Accuracy Improvements
+
+- Fix Eyes of the Greatwolf DoT Multi wording [\#8483
+](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8483
+) ([henbe](https://github.com/henbe))
+- Fix influences not importing correctly [\#8500
+](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8500
+) ([Wires77](https://github.com/Wires77))
+### Fixed Calculations
+
+- Fix several bugs with infinite EHP and wrong phys max hit [\#8495
+](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8495
+) ([Edvinas-Smita](https://github.com/Edvinas-Smita))
+
+
+
+## [v2.51.0](https://github.com/PathOfBuildingCommunity/PathOfBuilding/tree/v2.51.0) (2025/02/14)
+
+[Full Changelog](https://github.com/PathOfBuildingCommunity/PathOfBuilding/compare/v2.50.0...v2.51.0)
+
+## What's Changed
+
+### New to Path of Building
+
+- Add Wildspeaker, Blind Prophet, Aristocrat and Puppeteer ascendancy jewels [\#8471
+](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8471
+) ([LocalIdentity](https://github.com/LocalIdentity))
+- Add Ancestral Commander, Behemoth, Bog Shaman, and Scavenger ascendancy jewels [\#8476
+](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8476
+) ([Peechey](https://github.com/Peechey))
+### Fixed Calculations
+
+- Fix maximum virulence parsing for multi-digit increases [\#8463
+](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8463
+) ([deathbeam](https://github.com/deathbeam))
+- Fix "Full Poison DPS" value capping to one stack [\#8460
+](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8460
+) ([Wires77](https://github.com/Wires77))
+- Fix ES bypass regression [\#8459
+](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8459
+) ([Edvinas-Smita](https://github.com/Edvinas-Smita))
+### Accuracy Improvements
+
+- Fix various issues with Legacy of Phrecia ascendancies [\#8465
+](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8465
+) ([Wires77](https://github.com/Wires77))
+
+
+
+
+
+## [v2.50.1](https://github.com/PathOfBuildingCommunity/PathOfBuilding/tree/v2.50.1) (2025/02/12)
+
+[Full Changelog](https://github.com/PathOfBuildingCommunity/PathOfBuilding/compare/v2.50.0...v2.50.1)
+
+## What's Changed
+### Fixed Calculations
+- Fix "Full Poison DPS" value capping to one stack [\#8460](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8460) ([Wires77](https://github.com/Wires77))
+
+
+
+## [v2.50.0](https://github.com/PathOfBuildingCommunity/PathOfBuilding/tree/v2.50.0) (2025/02/12)
+
+[Full Changelog](https://github.com/PathOfBuildingCommunity/PathOfBuilding/compare/v2.49.3...v2.50.0)
+
+<!-- Release notes generated using configuration in .github/release.yml at dev -->
+
+## What's Changed
+### New to Path of Building
+- Add support for Legacy Of Phrecia Ascendancies [\#8449](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8449), [\#8456](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8456) ([LocalIdentity](https://github.com/LocalIdentity))
+  - Add unique jewel for each Ascendancy to make it easier to test
+- Add Support for Shrine buffs from The Gull and staff Rune craft [\#8457](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8457) ([LocalIdentity](https://github.com/LocalIdentity))
+- Add poedb.tw to import website list [\#8401](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8401) ([Chuanhsing](https://github.com/Chuanhsing))
+- Basic Unicode support [\#8412](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8412) ([zao](https://github.com/zao))
+- Implement ability to delete folders with contents [\#8416](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8416) ([Paliak](https://github.com/Paliak))
+### Fixed Crashes
+- Fix crash related to trigger calculations [\#8392](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8392) ([Paliak](https://github.com/Paliak))
+### Fixed Calculations
+- Fix Viper Strike of Mamba poison [\#8253](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8253) ([Regisle](https://github.com/Regisle))
+- Improve EHP accuracy [\#8430](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8430) ([Edvinas-Smita](https://github.com/Edvinas-Smita))
+- Fixed Non-Damaging Ailment issue with Critical Mastery in Calc Screen [\#8393](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8393) ([Jonathan-Dang](https://github.com/Jonathan-Dang))
+### Fixed Behaviours
+- Fixed interaction between block replacement effect from Determined Survivor and Necromantic Aegis [\#8417](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8417) ([Jonathan-Dang](https://github.com/Jonathan-Dang))
+- Disable "gain when hit" for builds which cannot survive unlucky hits [\#8342](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8342) ([Regisle](https://github.com/Regisle))
+### User Interface
+- Show Poison DPS in sidebar as the DPS for a single poison [\#8254](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8254) ([Regisle](https://github.com/Regisle))
+### Fixed Bugs
+- Fixes Cinderswallow Urn missing the damage taken mod [\#8419](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8419) ([n1tr0xs](https://github.com/n1tr0xs))
+- Update Breathstealer's unique mods [\#8390](https://github.com/PathOfBuildingCommunity/PathOfBuilding/pull/8390) ([n1tr0xs](https://github.com/n1tr0xs))
+
+
+
 ## [v2.49.3](https://github.com/PathOfBuildingCommunity/PathOfBuilding/tree/v2.49.3) (2024/11/24)
 
 [Full Changelog](https://github.com/PathOfBuildingCommunity/PathOfBuilding/compare/v2.49.2...v2.49.3)

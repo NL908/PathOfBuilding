@@ -197,6 +197,8 @@ data.misc = { -- magic numbers
 	ehpCalcMaxDamage = 100000000,
 	-- max iterations can be increased for more accuracy this should be perfectly accurate unless it runs out of iterations and so high eHP values will be underestimated.
 	ehpCalcMaxIterationsToCalc = 50,
+	-- more iterations would reduce the cases where max hit would result in overkill damage or leave some life.
+	maxHitSmoothingPasses = 8,
 	-- maximum increase for stat weights, only used in trader for now.
 	maxStatIncrease = 2, -- 100% increased
 	-- PvP scaling used for hogm
@@ -298,6 +300,7 @@ data.keystones = {
 	"Perfect Agony",
 	"Phase Acrobatics",
 	"Point Blank",
+	"Power of Purpose",
 	"Precise Technique",
 	"Resolute Technique",
 	"Runebinder",
@@ -630,6 +633,8 @@ data.itemTagSpecialExclusionPattern = {
 			"Life as Physical Damage",
 			"Life as Extra Maximum Energy Shield",
 			"maximum Life as Fire Damage",
+			"while on Full Life", -- foxshade
+			"while you are on Full Life", -- foxshade
 			"when on Full Life",
 			"when on Low Life",
 			"Gain Maximum Life instead of Maximum Energy Shield",

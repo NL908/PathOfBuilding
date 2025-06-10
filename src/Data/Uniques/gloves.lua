@@ -3,6 +3,15 @@
 return {
 -- Gloves: Armour
 [[
+Admiral's Arrogance
+Antique Gauntlets
+League: Settlers of Kalguur
+Requires Level 39, 58 Str
+(6-12)% increased Attack Speed
+(100-140)% increased Armour
+(10-20)% chance that if you would gain Rage on Hit, you instead gain up to your maximum Rage
++(1-3) to Level of all Melee Skill Gems
+]],[[
 Atziri's Acuity
 Vaal Gauntlets
 Source: Drops from unique{Atziri, Queen of the Vaal} in normal{The Alluring Abyss}
@@ -482,7 +491,7 @@ Source: Drops in Blighted Maps
 +(30-50) to maximum Mana
 +(10-16)% to all Elemental Resistances
 (5-10)% increased Attack and Cast Speed
-Create a Blighted Spore when you Kill a Rare Monster
+Create a Blighted Spore when your Skills or Minions Kill a Rare Monster
 This item can be anointed by Cassia
 ]],[[
 Farrul's Pounce
@@ -991,8 +1000,8 @@ Murder Mitts
 Requires Level 67, 51 Dex, 51 Int
 (80-100)% increased Evasion and Energy Shield
 +(60-80) to maximum Life
-Gain (15-25) Life per Enemy Killed
-Gain (15-25) Energy Shield per Enemy Killed
+Gain (15-25) Life per Enemy Hit with Attacks
+Gain (15-25) Energy Shield per Enemy Hit with Attacks
 Grants Malachai's Endurance, Frenzy and Power for 6 seconds each, in sequence
 ]],[[
 Shadows and Dust

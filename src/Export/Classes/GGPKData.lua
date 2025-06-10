@@ -31,14 +31,14 @@ end
 
 -- Path can be in any format recognized by the extractor at oozPath, ie,
 -- a .ggpk file or a Steam Path of Exile directory
-local GGPKClass = newClass("GGPKData", function(self, path, datPath)
+local GGPKClass = newClass("GGPKData", function(self, path, datPath, reExport)
 	if datPath then
 		self.oozPath = datPath:match("\\$") and datPath or (datPath .. "\\")
 	else
 		self.path = path
 		self.oozPath = io.popen("cd"):read('*l'):gsub('\r?', '') .. "\\ggpk\\"
-		self:CleanDir()
-		self:ExtractFiles()
+		self:CleanDir(reExport)
+		self:ExtractFiles(reExport)
 	end
 
 	self.dat = { }
@@ -51,10 +51,12 @@ local GGPKClass = newClass("GGPKData", function(self, path, datPath)
 	end
 end)
 
-function GGPKClass:CleanDir()
-	local cmd = 'del ' .. self.oozPath .. 'Data ' .. self.oozPath .. 'Metadata /Q /S'
-	ConPrintf(cmd)
-	os.execute(cmd)
+function GGPKClass:CleanDir(reExport)
+	if reExport then
+		local cmd = 'del ' .. self.oozPath .. 'Data ' .. self.oozPath .. 'Metadata /Q /S'
+		ConPrintf(cmd)
+		os.execute(cmd)
+	end
 end
 
 function GGPKClass:ExtractFilesWithBun(fileListStr)
@@ -63,43 +65,45 @@ function GGPKClass:ExtractFilesWithBun(fileListStr)
 	os.execute(cmd)
 end
 
-function GGPKClass:ExtractFiles()
-	local datList, txtList, itList = self:GetNeededFiles()
-	local sweetSpotCharacter = 6000
-	local fileList = ''
-	for _, fname in ipairs(datList) do
-		if USE_DAT64 then
-			fileList = fileList .. '"' .. fname .. '64" '
-		else
+function GGPKClass:ExtractFiles(reExport)
+	if reExport then
+		local datList, txtList, itList = self:GetNeededFiles()
+		local sweetSpotCharacter = 6000
+		local fileList = ''
+		for _, fname in ipairs(datList) do
+			if USE_DAT64 then
+				fileList = fileList .. '"' .. fname .. 'c64" '
+			else
+				fileList = fileList .. '"' .. fname .. '" '
+			end
+
+			if fileList:len() > sweetSpotCharacter then
+				self:ExtractFilesWithBun(fileList)
+				fileList = ''
+			end
+		end
+
+		for _, fname in ipairs(txtList) do
 			fileList = fileList .. '"' .. fname .. '" '
+
+			if fileList:len() > sweetSpotCharacter then
+				self:ExtractFilesWithBun(fileList)
+				fileList = ''
+			end
 		end
 
-		if fileList:len() > sweetSpotCharacter then
+		for _, fname in ipairs(itList) do
+			fileList = fileList .. '"' .. fname .. '" '
+
+			if fileList:len() > sweetSpotCharacter then
+				self:ExtractFilesWithBun(fileList)
+				fileList = ''
+			end
+		end
+
+		if (fileList:len() > 0) then
 			self:ExtractFilesWithBun(fileList)
-			fileList = ''
 		end
-	end
-
-	for _, fname in ipairs(txtList) do
-		fileList = fileList .. '"' .. fname .. '" '
-
-		if fileList:len() > sweetSpotCharacter then
-			self:ExtractFilesWithBun(fileList)
-			fileList = ''
-		end
-	end
-
-	for _, fname in ipairs(itList) do
-		fileList = fileList .. '"' .. fname .. '" '
-
-		if fileList:len() > sweetSpotCharacter then
-			self:ExtractFilesWithBun(fileList)
-			fileList = ''
-		end
-	end
-
-	if (fileList:len() > 0) then
-		self:ExtractFilesWithBun(fileList)
 	end
 
 	-- Overwrite Enums
@@ -123,7 +127,7 @@ function GGPKClass:AddDatFiles()
 end
 
 function GGPKClass:AddDat64Files()
-	local datFiles = scanDir(self.oozPath .. "Data\\", '%w+%.dat64$')
+	local datFiles = scanDir(self.oozPath .. "Data\\", '%w+%.datc64$')
 	for _, f in ipairs(datFiles) do
 		local record = { }
 		record.name = f
@@ -229,31 +233,31 @@ function GGPKClass:GetNeededFiles()
 		"Data/UniqueStashLayout.dat",
 		"Data/UniqueStashTypes.dat",
 		"Data/Shrines.dat",
-		"Data/passiveoverridelimits.dat",
-		"Data/passiveskilloverrides.dat",
-		"Data/passiveskilloverridetypes.dat",
-		"Data/passiveskilltattoos.dat",
-		"Data/passiveskilltattootargetsets.dat",
-		"Data/displayminionmonstertype.dat",
+		"Data/PassiveOverrideLimits.dat",
+		"Data/PassiveSkillOverrides.dat",
+		"Data/PassiveSkillOverrideTypes.dat",
+		"Data/PassiveSkillTattoos.dat",
+		"Data/PassiveSkillTattooTargetSets.dat",
+		"Data/DisplayMinionMonsterType.dat",
 		"Data/tinctures.dat",
-		"Data/gemeffects.dat",
-		"Data/actiontypes.dat",
-		"Data/azmerilifescalingperlevel.dat",
-		"Data/azmerifeaturerooms.dat",
-		"Data/corpsetypetags.dat",
-		"Data/itemisedcorpse.dat",
-		"Data/indexableskillgems.dat",
-		"Data/indexablesupportgems.dat",
-		"Data/itemclasscategories.dat",
-		"Data/miniontype.dat",
-		"Data/summonedspecificmonsters.dat",
-		"Data/gameconstants.dat",
-		"Data/alternatequalitytypes.dat",
-		"Data/weaponclasses.dat",
-		"Data/monsterconditions.dat",
-		"Data/rarity.dat",
-		"Data/trademarketcategory.dat",
-		"Data/trademarketcategorygroups.dat",
+		"Data/GemEffects.dat",
+		"Data/ActionTypes.dat",
+		"Data/AzmeriLifeScalingPerLevel.dat",
+		"Data/AzmeriFeatureRooms.dat",
+		"Data/CorpseTypeTags.dat",
+		"Data/ItemisedCorpse.dat",
+		"Data/IndexableSkillGems.dat",
+		"Data/IndexableSupportGems.dat",
+		"Data/ItemClassCategories.dat",
+		"Data/MinionType.dat",
+		"Data/SummonedSpecificMonsters.dat",
+		"Data/GameConstants.dat",
+		"Data/AlternateQualityTypes.dat",
+		"Data/WeaponClasses.dat",
+		"Data/MonsterConditions.dat",
+		"Data/Rarity.dat",
+		"Data/TradeMarketCategory.dat",
+		"Data/TradeMarketCategoryGroups.dat",
 		"Data/PlayerTradeWhisperFormats.dat",
 		"Data/TradeMarketCategoryListAllClass.dat",
 		"Data/TradeMarketIndexItemAs.dat",
@@ -261,7 +265,7 @@ function GGPKClass:GetNeededFiles()
 		"Data/Commands.dat",
 		"Data/ModEquivalencies.dat",
 		"Data/InfluenceTags.dat",
-		"Data/leaguenames.dat"
+		"Data/LeagueNames.dat"
 	}
 	local txtFiles = {
 		"Metadata/StatDescriptions/passive_skill_aura_stat_descriptions.txt",

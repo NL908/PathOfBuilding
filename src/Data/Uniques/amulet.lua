@@ -503,7 +503,7 @@ Implicits: 32
 {variant:30}100% of Lightning Damage from Hits taken as Fire Damage
 {variant:31}Gain (12-24)% of Physical Damage as Extra Damage of a random Element
 {variant:32}Projectiles Pierce (4-6) additional Targets
-{variant:33}(24-36)% Damage over Time Multiplier
+{variant:33}+(24-36)% to Damage over Time Multiplier
 Implicit Modifier magnitudes are doubled
 ]],[[
 The Felbog Fang
@@ -1084,7 +1084,7 @@ Requires Level 54
 Implicits: 1
 {tags:life}Regenerate (2-4) Life per second
 {tags:jewellery_attribute}+(30-40) to Intelligence
-{tags:jewellery_resistance}Minions have (-17-17)% to Chaos Resistance
+{tags:jewellery_resistance}Minions have +(-17-17)% to Chaos Resistance
 Summon Raging Spirit has (20-30)% increased Duration
 {variant:1}Summoned Raging Spirits deal (60-80)% increased Damage
 {variant:2}Summoned Raging Spirits deal (25-40)% increased Damage

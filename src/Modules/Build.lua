@@ -559,25 +559,7 @@ function buildMode:Init(dbFileName, buildName, buildXML, convertBuild, importLin
 	
 	--special rebuild to properly initialise boss placeholders
 	self.configTab:BuildModList()
-
-	-- Initialise class dropdown
-	for classId, class in pairs(self.latestTree.classes) do
-		local ascendancies = {}
-		-- Initialise ascendancy dropdown
-		for i = 0, #class.classes do
-			local ascendClass = class.classes[i]
-			t_insert(ascendancies, {
-				label = ascendClass.name,
-				ascendClassId = i,
-			})
-		end
-		t_insert(self.controls.classDrop.list, {
-			label = class.name,
-			classId = classId,
-			ascendancies = ascendancies,
-		})
-	end
-	table.sort(self.controls.classDrop.list, function(a, b) return a.label < b.label end)
+	self:UpdateClassDropdowns()
 
 	-- Load legacy bandit and pantheon choices from build section
 	for _, control in ipairs({ "bandit", "pantheonMajorGod", "pantheonMinorGod" }) do
@@ -1084,6 +1066,7 @@ function buildMode:OnFrame(inputEvents)
 	self.controls.classDrop:SelByValue(self.spec.curClassId, "classId")
 	self.controls.ascendDrop.list = self.controls.classDrop:GetSelValueByKey("ascendancies")
 	self.controls.ascendDrop:SelByValue(self.spec.curAscendClassId, "ascendClassId")
+	self.controls.ascendDrop:CheckDroppedWidth(true)
 	-- // secondaryAscend dropdown hidden away until we learn more
 	--self.controls.secondaryAscendDrop.list = {{label = "None", ascendClassId = 0}, {label = "Warden", ascendClassId = 1}, {label = "Warlock", ascendClassId = 2}, {label = "Primalist", ascendClassId = 3}}
 	--self.controls.secondaryAscendDrop:SelByValue(self.spec.curSecondaryAscendClassId, "ascendClassId")
@@ -1303,6 +1286,29 @@ function buildMode:OpenSpectreLibrary()
 	controls.noteLine2 = new("LabelControl", {"TOPLEFT",controls.list,"BOTTOMLEFT"}, {20, 18, 0, 16}, "Raise Spectre gem for their buffs and curses to activate")
 	local spectrePopup = main:OpenPopup(410, 360, "Spectre Library", controls)
 	spectrePopup:SelectControl(spectrePopup.controls.source.controls.searchText)
+end
+
+function buildMode:UpdateClassDropdowns(treeVersion)
+	local classes = main.tree[treeVersion or latestTreeVersion].classes
+	wipeTable(self.controls.classDrop.list)
+	-- Initialise class dropdown
+	for classId, class in pairs(classes) do
+		local ascendancies = {}
+		-- Initialise ascendancy dropdown
+		for i = 0, #class.classes do
+			local ascendClass = class.classes[i]
+			t_insert(ascendancies, {
+				label = ascendClass.name,
+				ascendClassId = i,
+			})
+		end
+		t_insert(self.controls.classDrop.list, {
+			label = class.name,
+			classId = classId,
+			ascendancies = ascendancies,
+		})
+	end
+	table.sort(self.controls.classDrop.list, function(a, b) return a.label < b.label end)
 end
 
 function buildMode:OpenSimilarPopup()
@@ -1571,6 +1577,17 @@ function buildMode:AddDisplayStatList(statList, actor)
 	end
 	if actor.output.VixenModeNoVixenGlovesWarn then
 		InsertIfNew(self.controls.warnings.lines, "Vixen's calculation mode for Doom Blast is selected but you do not have Vixen's Entrapment Embroidered Gloves equipped")
+	end
+
+	do
+		local aspectCount = 0
+		aspectCount = aspectCount + (actor.output.CrabBarriersMax > 0 and actor.output.CrabBarriers > 0 and 1 or 0)
+		aspectCount = aspectCount + (aspectCount < 2 and actor.modDB:Flag(nil, "Condition:AspectOfTheSpiderActive") and 1 or 0)
+		aspectCount = aspectCount + (aspectCount < 2 and (actor.modDB:Flag(nil, "Condition:CatsAgilityActive") or actor.modDB:Flag(nil, "Condition:CatsStealthActive")) and 1 or 0)
+		aspectCount = aspectCount + (aspectCount < 2 and (actor.modDB:Flag(nil, "Condition:AviansFlightActive") or actor.modDB:Flag(nil, "Condition:AviansMightActive")) and 1 or 0)
+		if aspectCount > 1 then
+			InsertIfNew(self.controls.warnings.lines, "You have more than one Aspect skill active")
+		end
 	end
 end
 

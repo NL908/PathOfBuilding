@@ -920,24 +920,10 @@ local skills, mod, flag, skill = ...
 #mods
 
 #skill DivineIreAltY
-#flags spell area
+#flags spell area channelRelease
 	preDamageFunc = function(activeSkill, output)
-		if activeSkill.skillPart == 2 then
-			activeSkill.skillData.hitTimeMultiplier = activeSkill.skillModList:Sum("BASE", activeSkill.skillCfg, "Multiplier:DivineIreofDisintegrationStage")
-		end
+		activeSkill.skillData.hitTimeMultiplier = activeSkill.skillModList:Sum("BASE", activeSkill.skillCfg, "Multiplier:DivineIreofDisintegrationStage")
 	end,
-	parts = {
-		{
-			name = "Channelling",
-			area = false,
-		},
-		{
-			name = "Release",
-			area = true,
-			stages = true,
-			channelRelease = true,
-		},
-	},
 	statMap = {
 		["divine_tempest_hit_damage_+%_final_per_stage"] = {
 			mod("Damage", "MORE", nil, ModFlag.Hit, 0, { type = "Multiplier", var = "DivineIreofDisintegrationStageAfterFirst" }),
@@ -946,7 +932,7 @@ local skills, mod, flag, skill = ...
 			mod("Damage", "MORE", nil, 0, KeywordFlag.Ailment, { type = "Multiplier", var = "DivineIreofDisintegrationStageAfterFirst" }),
 		},
 	},
-#baseMod mod("Multiplier:DivineIreofDisintegrationMaxStages", "BASE", 10, 0, 0, { type = "SkillPart", skillPart = 2 })
+#baseMod mod("Multiplier:DivineIreofDisintegrationMaxStages", "BASE", 10, 0, 0)
 #mods
 
 #skill DivineRetribution
@@ -1137,11 +1123,11 @@ local skills, mod, flag, skill = ...
 #mods
 
 #skill FirestormAltX
-#flags spell area duration
+#flags spell area
 #mods
 
 #skill FirestormAltY
-#flags spell area
+#flags spell area duration
 #baseMod skill("radiusSecondary", 22)
 #baseMod skill("radiusLabel", "Fire projectile:")
 #baseMod skill("radiusSecondaryLabel", "Target area:")
@@ -1767,18 +1753,32 @@ local skills, mod, flag, skill = ...
 #skill Hydrosphere
 #flags spell duration area
 	parts = {
-		{
-			name = "Frozen",
-		},
-		{
-			name = "Shocked",
-		},
-		{
-			name = "Frozen & Shocked",
-		}
+			{
+				name = "Autopulse (Frozen)",
+			},
+			{
+				name = "Autopulse (Shocked)",
+			},
+			{
+				name = "Autopulse (Frozen & Shocked)",
+			},
+			{
+				name = "Cast (No Ailment)",
+			},
+			{
+				name = "Cast (Frozen)",
+			},
+			{
+				name = "Cast (Shocked)",
+			},
+			{
+				name = "Cast (Frozen & Shocked)",
+			}
 	},
 	preDamageFunc = function(activeSkill, output)
-		activeSkill.skillData.hitTimeOverride = activeSkill.skillData.repeatFrequency / (1 + activeSkill.skillModList:Sum("INC", activeSkill.skillCfg, "HydroSphereFrequency") / 100)
+		if activeSkill.skillPart == 1 or activeSkill.skillPart == 2 or activeSkill.skillPart == 3 then
+			activeSkill.skillData.hitTimeOverride = activeSkill.skillData.repeatFrequency / (1 + activeSkill.skillModList:Sum("INC", activeSkill.skillCfg, "HydroSphereFrequency") / 100)
+		end
 	end,
 	statMap = {
 		["skill_physical_damage_%_to_convert_to_cold"] = {
@@ -1786,6 +1786,11 @@ local skills, mod, flag, skill = ...
 			mod("SkillPhysicalDamageConvertToLightning", "BASE", nil, 0, 0, { type = "SkillPart", skillPart = 2 }),
 			mod("SkillPhysicalDamageConvertToCold", "BASE", nil, 0, 0, { type = "SkillPart", skillPart = 3 }),
 			mod("SkillPhysicalDamageConvertToLightning", "BASE", nil, 0, 0, { type = "SkillPart", skillPart = 3 }),
+			mod("SkillPhysicalDamageConvertToCold", "BASE", nil, 0, 0, { type = "SkillPart", skillPart = 4 }),
+			mod("SkillPhysicalDamageConvertToCold", "BASE", nil, 0, 0, { type = "SkillPart", skillPart = 5 }),
+			mod("SkillPhysicalDamageConvertToLightning", "BASE", nil, 0, 0, { type = "SkillPart", skillPart = 6 }),
+			mod("SkillPhysicalDamageConvertToCold", "BASE", nil, 0, 0, { type = "SkillPart", skillPart = 7 }),
+			mod("SkillPhysicalDamageConvertToLightning", "BASE", nil, 0, 0, { type = "SkillPart", skillPart = 7 }),
 		},
 		["water_sphere_cold_lightning_exposure_%"] = {
 			mod("ColdExposure", "BASE", nil, 0, 0, { type = "GlobalEffect", effectType = "Debuff" } ),

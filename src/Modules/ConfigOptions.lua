@@ -268,6 +268,9 @@ return {
 	{ label = "Aspect of the Spider:", ifSkill = "Aspect of the Spider" },
 	{ var = "aspectOfTheSpiderWebStacks", type = "count", label = "# of Spider's Web Stacks:", ifSkill = "Aspect of the Spider", apply = function(val, modList, enemyModList)
 		modList:NewMod("ExtraSkillMod", "LIST", { mod = modLib.createMod("Multiplier:SpiderWebApplyStack", "BASE", val) }, "Config", { type = "SkillName", skillName = "Aspect of the Spider" })
+		if val > 0 then
+			modList:NewMod("Condition:AspectOfTheSpiderActive", "FLAG", true, "Config")
+		end
 	end },
 	{ label = "Banner Skills:", ifSkill = { "Dread Banner", "War Banner", "Defiance Banner" } },
 	{ var = "bannerPlanted", type = "check", label = "Is Banner Planted?", ifSkill = { "Dread Banner", "War Banner", "Defiance Banner" }, apply = function(val, modList, enemyModList)
@@ -659,6 +662,9 @@ return {
 	{ var = "absolutionSkillDamageCountedOnce", type = "check", label = "Absolution: Count skill damage once", ifSkill = "Absolution", includeTransfigured = true, tooltip = "Your Absolution Skill Damage will not be scaled with Count setting.\nBy default it multiplies both minion count and skill hit count which leads to incorrect\nTotal DPS calculation since Absolution cannot inherently shotgun.\nDo not enable if you use Spell Totem support, Spell Cascade support or similar supports", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:AbsolutionSkillDamageCountedOnce", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 	end },
+	{ var = "dominatingBlowSkillDamageCountedOnce", type = "check", label = "Dom. Blow: Count skill damage once", ifSkill = "Dominating Blow", tooltip = "Your Dominating Blow Skill Damage will not be scaled with Count setting.\nBy default it multiplies both minion count and skill hit count which leads to incorrect\nTotal DPS calculation since Dominating Blow cannot inherently shotgun.\nDo not enable if you use Spell Totem support, Spell Cascade support or similar supports", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:DominatingBlowSkillDamageCountedOnce", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
 	{ label = "Molten Shell:", ifSkill = "Molten Shell" },
 	{ var = "MoltenShellDamageMitigated", type = "count", label = "Damage mitigated:", tooltip = "Molten Shell reflects damage to the enemy,\nbased on the amount of damage it has mitigated.", ifSkill = "Molten Shell", apply = function(val, modList, enemyModList)
 		modList:NewMod("SkillData", "LIST", { key = "MoltenShellDamageMitigated", value = val }, "Config", { type = "SkillName", skillName = "Molten Shell" })
@@ -667,8 +673,8 @@ return {
 	{ var = "VaalMoltenShellDamageMitigated", type = "count", label = "Damage mitigated:", tooltip = "Vaal Molten Shell reflects damage to the enemy,\nbased on the amount of damage it has mitigated in the last second.", ifSkill = "Vaal Molten Shell", apply = function(val, modList, enemyModList)
 		modList:NewMod("SkillData", "LIST", { key = "VaalMoltenShellDamageMitigated", value = val }, "Config", { type = "SkillName", skillName = "Molten Shell" })
 	end },
-	{ label = "Multi-part area skills:", ifSkill = { "Seismic Trap", "Lightning Spire Trap", "Explosive Trap" }, includeTransfigured = true },
-	{ var = "enemySizePreset", type = "list", label = "Enemy size preset:", ifSkill = { "Seismic Trap", "Lightning Spire Trap", "Explosive Trap" }, includeTransfigured = true, defaultIndex = 2, tooltip = [[
+	{ label = "Multi-part area skills:", ifSkill = { "Seismic Trap", "Lightning Spire Trap", "Explosive Trap", "Molten Strike" }, includeTransfigured = true },
+	{ var = "enemySizePreset", type = "list", label = "Enemy size preset:", ifSkill = { "Seismic Trap", "Lightning Spire Trap", "Explosive Trap", "Molten Strike" }, includeTransfigured = true, defaultIndex = 2, tooltip = [[
 Configure the radius of an enemy hitbox which is used in calculating some area multi-hitting (shotgunning) effects.
 
 Small sets the radius to 2.
@@ -693,7 +699,7 @@ Huge sets the radius to 11.
 			modList:NewMod("EnemyRadius", "BASE", 11, "Config")
 		end
 	end },
-	{ var = "enemyRadius", type = "integer", label = "Enemy radius:", ifSkill = { "Seismic Trap", "Lightning Spire Trap", "Explosive Trap" }, includeTransfigured = true, tooltip = "Configure the radius of an enemy hitbox to calculate some area overlapping (shotgunning) effects.", apply = function(val, modList, enemyModList)
+	{ var = "enemyRadius", type = "integer", label = "Enemy radius:", ifSkill = { "Seismic Trap", "Lightning Spire Trap", "Explosive Trap", "Molten Strike" }, includeTransfigured = true, tooltip = "Configure the radius of an enemy hitbox to calculate some area overlapping (shotgunning) effects.", apply = function(val, modList, enemyModList)
 		modList:NewMod("EnemyRadius", "OVERRIDE", m_max(val, 1), "Config")
 	end },
 	{ var = "TotalSpectreLife", type = "integer", label = "Total Spectre Life:", ifMod = "takenFromSpectresBeforeYou", ifSkill = "Raise Spectre", includeTransfigured = true, tooltip = "The total life of your Spectres that can be taken before yours (used by jinxed juju)", apply = function(val, modList, enemyModList)
@@ -836,7 +842,7 @@ Huge sets the radius to 11.
 		end
 	end },
 	{ var = "ruthlessSupportMode", type = "list", label = "Ruthless Support Mode:", ifSkill = "Ruthless", tooltip = "Controls how the hit/ailment effect of Ruthless Support is calculated:\n\tAverage: damage is based on the average application\n\tMax Effect: damage is based on maximum effect", list = {{val="AVERAGE",label="Average"},{val="MAX",label="Max Effect"}} },
-	{ var = "ChanceToIgnoreEnemyPhysicalDamageReductionMode", type = "list", label = "Chance To Ignore PDR Mode:", ifMod = "ChanceToIgnoreEnemyPhysicalDamageReduction", tooltip = "Controls how the chance on hit to ignore enemy physical damage reduction is calculated:\n\tMinimum: never ignores unless chance is atleast 100%\n\tAverage: damage is based on the average application\n\tMax Effect: always ignores if you have any chance", list = {{val="MIN",label="Minimum"},{val="AVERAGE",label="Average"},{val="MAX",label="Max Effect"}}, defaultIndex = 2 },
+	{ var = "ChanceToIgnoreEnemyPhysicalDamageReductionMode", type = "list", label = "Chance To Ignore PDR Mode:", ifMod = "ChanceToIgnoreEnemyPhysicalDamageReduction", tooltip = "Controls how the chance on hit to ignore enemy physical damage reduction is calculated:\n\tMinimum: never ignores unless chance is at least 100%\n\tAverage: damage is based on the average application\n\tMax Effect: always ignores if you have any chance", list = {{val="MIN",label="Minimum"},{val="AVERAGE",label="Average"},{val="MAX",label="Max Effect"}}, defaultIndex = 2 },
 	{ var = "overrideBloodCharges", type = "countAllowZero", label = "# of Blood Charges (if not maximum):", ifMult = "BloodCharge", apply = function(val, modList, enemyModList)
 		modList:NewMod("BloodCharges", "OVERRIDE", val, "Config", { type = "Condition", var = "Combat" })
 	end },
@@ -893,6 +899,9 @@ Huge sets the radius to 11.
 	end },
 	{ var = "buffChaoticMight", type = "check", label = "Do you have Chaotic Might?", tooltip = "This will enable the Chaotic Might buff.\n(Grants 30% of Physical Damage as Extra ^xD02090Chaos ^7Damage)", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:ChaoticMight", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "buffSacrificialZeal", type = "check", label = "Do you have Sacrificial Zeal?", ifFlag = "SacrificialZeal", tooltip = "This will enable the Sacrificial Zeal buff.\n(Grants 25% of the skill's mana cost as Physical Damage and causes you to take physical damage over time equal to a percentage of the skill's mana cost.)", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:SacrificialZeal", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 	end },
 	{ var = "minionbuffChaoticMight", type = "check", label = "Do your minions have Chaotic Might?", ifFlag = "haveMinion", tooltip = "This will enable the Chaotic Might buff on your minions.\n(Grants 30% of Physical Damage as Extra ^xD02090Chaos ^7Damage)", apply = function(val, modList, enemyModList)
 		modList:NewMod("MinionModifier", "LIST", { mod = modLib.createMod("Condition:ChaoticMight", "FLAG", true, "Config", { type = "Condition", var = "Combat" }) })
@@ -1375,6 +1384,9 @@ Huge sets the radius to 11.
 		modList:NewMod("Condition:UsedVaalSkillRecently", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 		modList:NewMod("Condition:UsedSkillRecently", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 	end },
+	{ var = "multiplierUsedVaalSkillInPast8Seconds", type = "count", label = "# of Vaal Skills used in the past 8 Seconds:", ifMult = "VaalSkillsUsedInPast8Seconds", apply = function(val, modList, enemyModList)
+		modList:NewMod("Multiplier:VaalSkillsUsedInPast8Seconds", "BASE", val, "Config", { type = "Condition", var = "Combat" })
+	end },
 	{ var = "conditionSoulGainPrevention", type = "check", label = "Do you have Soul Gain Prevention?", ifCond = "SoulGainPrevention", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:SoulGainPrevention", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 	end },
@@ -1509,6 +1521,57 @@ Huge sets the radius to 11.
 	{ var = "multiplierPvpDamage", type = "count", label = "Custom PvP Damage multiplier percent:", ifFlag = "isPvP", tooltip = "This multiplies the damage of a given skill in pvp, for instance any with damage multiplier specific to pvp (from skill or support or item like sire of shards)", apply = function(val, modList, enemyModList)
 		modList:NewMod("PvpDamageMultiplier", "MORE", val - 100, "Config")
 	end },
+	{ var = "buffAccelerationShrine", type = "check", label = "Have Acceleration Shrine?", ifFlag = "Condition:CanHaveRegularShrines", tooltip = "This will enable the Acceleration Shrine buff.\n\t15% increased Action Speed\n\t80% increased Projectile Speed", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:AccelerationShrine", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "buffBrutalShrine", type = "check", label = "Have Brutal Shrine?", ifFlag = "Condition:CanHaveRegularShrines", tooltip = "This will enable the Brutal Shrine buff.\n\t50% increased Damage\n\tKnocks Enemies Back on Hit\n\t30% increased Stun Duration on Enemies", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:BrutalShrine", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "buffDiamondShrine", type = "check", label = "Have Diamond Shrine?", ifFlag = "Condition:CanHaveRegularShrines", tooltip = "This will enable the Diamond Shrine buff.\n\tAll hits are Critical Strikes", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:DiamondShrine", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "buffDivineShrine", type = "check", label = "Have Divine Shrine?", ifFlag = "Condition:CanHaveRegularShrines", tooltip = "This will enable the Divine Shrine buff.\n\tCannot be Damaged", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:DivineShrine", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "buffEchoingShrine", type = "check", label = "Have Echoing Shrine?", ifFlag = "Condition:CanHaveRegularShrines", tooltip = "This will enable the Echoing Shrine buff.\n\t100% more Attack Speed\n\t100% more Cast Speed\n\tSkills Repeat an additional Time", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:EchoingShrine", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "buffGloomShrine", type = "check", label = "Have Gloom Shrine?", ifFlag = "Condition:CanHaveRegularShrines", tooltip = "This will enable the Gloom Shrine buff.\n\tGain 10% of Non-^xD02090Chaos ^7Damage as extra ^xD02090Chaos ^7Damage\n\tEnemies you Kill have a 40% chance to Explode, dealing a quarter of their maximum ^xE05030Life ^7as ^xD02090Chaos ^7Damage", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:GloomShrine", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "buffImpenetrableShrine", type = "check", label = "Have Impenetrable Shrine?", ifFlag = "Condition:CanHaveRegularShrines", tooltip = "This will enable the Impenetrable Shrine buff.\n\t100% increased Armour\n\t100% increased ^x33FF77Evasion Rating^7\n\t100% increased maximum ^x88FFFFEnergy Shield", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:ImpenetrableShrine", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "buffMassiveShrine", type = "check", label = "Have Massive Shrine?", ifFlag = "Condition:CanHaveRegularShrines", tooltip = "This will enable the Massive Shrine buff.\n\t30% increased Character Size\n\t40% increased Area of Effect\n\t40% increased maximum ^xE05030Life", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:MassiveShrine", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "buffReplenishingShrine", type = "check", label = "Have Replenishing Shrine?", ifFlag = "Condition:CanHaveRegularShrines", tooltip = "This will enable the Replenishing Shrine buff.\n\t10% of ^x7070FFMana ^7Regenerated per second\n\t6.7% of ^xE05030Life ^7Regenerated per second", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:ReplenishingShrine", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "buffResistanceShrine", type = "check", label = "Have Resistance Shrine?", ifFlag = "Condition:CanHaveRegularShrines", tooltip = "This will enable the Resistance Shrine buff.\n\t+50% to all Elemental Resistances\n\t+10% to all maximum Resistances", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:ResistanceShrine", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "buffResonatingShrine", type = "check", label = "Have Resonating Shrine?", ifFlag = "Condition:CanHaveRegularShrines", tooltip = "This will enable the Resonating Shrine buff.\n\t20% chance to gain a Power, Frenzy or Endurance Charge on Hit\n\t60% chance to gain a Power, Frenzy or Endurance Charge on Kill\n\t50% increased Critical Strike Chance per Power Charge\n\t4% increased Attack Speed per Frenzy Charge\n\t4% increased Cast Speed per Frenzy Charge\n\t4% more Damage per Frenzy Charge\n\t4% additional Physical Damage Reduction per Endurance Charge\n\t4% additional Elemental Damage Reduction per Endurance Charge\n\t5% increased Damage per Frenzy, Power or Endurance Charge", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:ResonatingShrine", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "buffLesserAccelerationShrine", type = "check", label = "Have Lesser Acceleration Shrine?", ifFlag = "Condition:CanHaveLesserShrines", tooltip = "This will enable the Lesser Acceleration Shrine buff.\n\t10% increased Action Speed\n\t30% increased Projectile Speed", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:LesserAccelerationShrine", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "buffLesserBrutalShrine", type = "check", label = "Have Lesser Brutal Shrine?", ifFlag = "Condition:CanHaveLesserShrines", tooltip = "This will enable the Lesser Brutal Shrine buff.\n\t20% increased Damage\n\tKnocks Enemies Back on Hit\n\t20% increased Stun Duration on Enemies", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:LesserBrutalShrine", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "buffLesserImpenetrableShrine", type = "check", label = "Have Lesser Impenetrable Shrine?", ifFlag = "Condition:CanHaveLesserShrines", tooltip = "This will enable the Lesser Impenetrable Shrine buff.\n\t50% increased Armour\n\t50% increased ^x33FF77Evasion Rating^7\n\t50% increased maximum ^x88FFFFEnergy Shield", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:LesserImpenetrableShrine", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "buffLesserMassiveShrine", type = "check", label = "Have Lesser Massive Shrine?", ifFlag = "Condition:CanHaveLesserShrines", tooltip = "This will enable the Lesser Massive Shrine buff.\n\t10% increased Character Size\n\t20% increased Area of Effect\n\t20% increased maximum ^xE05030Life", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:LesserMassiveShrine", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "buffLesserReplenishingShrine", type = "check", label = "Have Lesser Replenishing Shrine?", ifFlag = "Condition:CanHaveLesserShrines", tooltip = "This will enable the Lesser Replenishing Shrine buff.\n\t3.3% of ^x7070FFMana ^7Regenerated per second\n\t3.3% of ^xE05030Life ^7Regenerated per second", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:LesserReplenishingShrine", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "buffLesserResistanceShrine", type = "check", label = "Have Lesser Resistance Shrine?", ifFlag = "Condition:CanHaveLesserShrines", tooltip = "This will enable the Lesser Resistance Shrine buff.\n\t+25% to all Elemental Resistances\n\t+2% to all maximum Resistances", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:LesserResistanceShrine", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
 	-- Section: Effective DPS options
 	{ section = "For Effective DPS", col = 1 },
 	{ var = "skillForkCount", type = "count", label = "# of times Skill has Forked:", ifFlag = "forking", apply = function(val, modList, enemyModList)
@@ -1520,8 +1583,8 @@ Huge sets the radius to 11.
 	{ var = "skillPierceCount", type = "count", label = "# of times Skill has Pierced:", ifStat = "PiercedCount", ifFlag = "piercing", apply = function(val, modList, enemyModList)
 		modList:NewMod("PiercedCount", "BASE", val, "Config", { type = "Condition", var = "Effective" })
 	end },
-	{ var = "meleeDistance", type = "count", label = "Melee distance to enemy:", ifTagType = "MeleeProximity", ifFlag = "melee" },
-	{ var = "projectileDistance", type = "count", label = "Projectile travel distance:", ifTagType = "DistanceRamp", ifFlag = "projectile" },
+	{ var = "meleeDistance", type = "count", label = "Melee distance to enemy:", tooltip = "10 units equals 1 metre", ifTagType = "MeleeProximity", ifFlag = "melee" },
+	{ var = "projectileDistance", type = "count", label = "Projectile travel distance:", tooltip = "10 units equals 1 metre", ifTagType = "DistanceRamp", ifFlag = "projectile" },
 	{ var = "conditionAtCloseRange", type = "check", label = "Is the enemy at Close Range?", ifCond = "AtCloseRange", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:AtCloseRange", "FLAG", true, "Config", { type = "Condition", var = "Effective" })
 	end },

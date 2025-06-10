@@ -133,8 +133,6 @@ function calcs.getMiscCalculator(build)
 	end
 	return function(override, useFullDPS)
 		local env, cachedPlayerDB, cachedEnemyDB, cachedMinionDB = calcs.initEnv(build, "CALCULATOR", override)
-		-- we need to preserve the override somewhere for use by possible trigger-based build-outs with overrides
-		env.override = override
 		calcs.perform(env)
 		if (useFullDPS ~= false or build.viewMode == "TREE") and usedFullDPS then
 			-- prevent upcoming calculation from using Cached Data and thus forcing it to re-calculate new FullDPS roll-up 
@@ -183,7 +181,7 @@ function calcs.calcFullDPS(build, mode, override, specEnv)
 		combinedDPS = 0,
 		TotalDotDPS = 0,
 		skills = { },
-		poisonDPS = 0,
+		TotalPoisonDPS = 0,
 		causticGroundDPS = 0,
 		impaleDPS = 0,
 		igniteDPS = 0,
@@ -224,7 +222,7 @@ function calcs.calcFullDPS(build, mode, override, specEnv)
 						igniteSource = activeSkill.activeEffect.grantedEffect.name
 					end
 					if usedEnv.minion.output.PoisonDPS and usedEnv.minion.output.PoisonDPS > 0 then
-						fullDPS.poisonDPS = fullDPS.poisonDPS + usedEnv.minion.output.PoisonDPS * activeSkillCount
+						fullDPS.TotalPoisonDPS = fullDPS.TotalPoisonDPS + usedEnv.minion.output.TotalPoisonDPS * activeSkillCount
 					end
 					if usedEnv.minion.output.ImpaleDPS and usedEnv.minion.output.ImpaleDPS > 0 then
 						fullDPS.impaleDPS = fullDPS.impaleDPS + usedEnv.minion.output.ImpaleDPS * activeSkillCount
@@ -238,8 +236,9 @@ function calcs.calcFullDPS(build, mode, override, specEnv)
 					if usedEnv.minion.output.CullMultiplier and usedEnv.minion.output.CullMultiplier > 1 and usedEnv.minion.output.CullMultiplier > fullDPS.cullingMulti then
 						fullDPS.cullingMulti = usedEnv.minion.output.CullMultiplier
 					end
-					-- This is a fix to prevent Absolution spell hit from being counted multiple times when increasing minions count
-					if activeSkill.activeEffect.grantedEffect.name == "Absolution" and fullEnv.modDB:Flag(false, "Condition:AbsolutionSkillDamageCountedOnce") then
+					-- This is a fix to prevent skills such as Absolution or Dominating Blow from being counted multiple times when increasing minions count
+					if (activeSkill.activeEffect.grantedEffect.name == "Absolution" and fullEnv.modDB:Flag(false, "Condition:AbsolutionSkillDamageCountedOnce"))
+						or (activeSkill.activeEffect.grantedEffect.name == "Dominating Blow" and fullEnv.modDB:Flag(false, "Condition:DominatingBlowSkillDamageCountedOnce")) then
 						activeSkillCount = 1
 						activeSkill.infoMessage2 = "Skill Damage"
 					end
@@ -260,7 +259,7 @@ function calcs.calcFullDPS(build, mode, override, specEnv)
 						igniteSource = activeSkill.activeEffect.grantedEffect.name .. " (Mirage)"
 					end
 					if activeSkill.mirage.output.PoisonDPS and activeSkill.mirage.output.PoisonDPS > 0 then
-						fullDPS.poisonDPS = fullDPS.poisonDPS + activeSkill.mirage.output.PoisonDPS * mirageCount
+						fullDPS.TotalPoisonDPS = fullDPS.TotalPoisonDPS + activeSkill.mirage.output.TotalPoisonDPS * mirageCount
 					end
 					if activeSkill.mirage.output.ImpaleDPS and activeSkill.mirage.output.ImpaleDPS > 0 then
 						fullDPS.impaleDPS = fullDPS.impaleDPS + activeSkill.mirage.output.ImpaleDPS * mirageCount
@@ -305,7 +304,7 @@ function calcs.calcFullDPS(build, mode, override, specEnv)
 					burningGroundSource = activeSkill.activeEffect.grantedEffect.name
 				end
 				if usedEnv.player.output.PoisonDPS and usedEnv.player.output.PoisonDPS > 0 then
-					fullDPS.poisonDPS = fullDPS.poisonDPS + usedEnv.player.output.PoisonDPS * activeSkillCount
+					fullDPS.TotalPoisonDPS = fullDPS.TotalPoisonDPS + usedEnv.player.output.TotalPoisonDPS * activeSkillCount
 				end
 				if usedEnv.player.output.CausticGroundDPS and usedEnv.player.output.CausticGroundDPS > fullDPS.causticGroundDPS then
 					fullDPS.causticGroundDPS = usedEnv.player.output.CausticGroundDPS
@@ -355,10 +354,10 @@ function calcs.calcFullDPS(build, mode, override, specEnv)
 		t_insert(fullDPS.skills, { name = "Best Burning Ground DPS", dps = fullDPS.burningGroundDPS, count = 1, source = burningGroundSource })
 		fullDPS.TotalDotDPS = fullDPS.TotalDotDPS + fullDPS.burningGroundDPS
 	end
-	if fullDPS.poisonDPS > 0 then
-		fullDPS.poisonDPS = m_min(fullDPS.poisonDPS, data.misc.DotDpsCap)
-		t_insert(fullDPS.skills, { name = "Full Poison DPS", dps = fullDPS.poisonDPS, count = 1 })
-		fullDPS.TotalDotDPS = fullDPS.TotalDotDPS + fullDPS.poisonDPS
+	if fullDPS.TotalPoisonDPS > 0 then
+		fullDPS.TotalPoisonDPS = m_min(fullDPS.TotalPoisonDPS, data.misc.DotDpsCap)
+		t_insert(fullDPS.skills, { name = "Full Poison DPS", dps = fullDPS.TotalPoisonDPS, count = 1 })
+		fullDPS.TotalDotDPS = fullDPS.TotalDotDPS + fullDPS.TotalPoisonDPS
 	end
 	if fullDPS.causticGroundDPS > 0 then
 		t_insert(fullDPS.skills, { name = "Best Caustic Ground DPS", dps = fullDPS.causticGroundDPS, count = 1, source = causticGroundSource })
@@ -701,17 +700,56 @@ function calcs.buildOutput(build, mode)
 		if env.modDB:Flag(nil, "HerEmbrace") then
 			t_insert(combatList, "Her Embrace")
 		end
-		if env.modDB:Flag(nil, "LesserMassiveShrine") then
-			t_insert(combatList, "Lesser Massive Shrine")
+		if env.modDB:Flag(nil, "AccelerationShrine") then
+			t_insert(combatList, "Acceleration Shrine")
 		end
-		if env.modDB:Flag(nil, "LesserBrutalShrine") then
-			t_insert(combatList, "Lesser Brutal Shrine")
+		if env.modDB:Flag(nil, "BrutalShrine") then
+			t_insert(combatList, "Brutal Shrine")
 		end
 		if env.modDB:Flag(nil, "DiamondShrine") then
 			t_insert(combatList, "Diamond Shrine")
 		end
+		if env.modDB:Flag(nil, "DivineShrine") then
+			t_insert(combatList, "Divine Shrine")
+		end
+		if env.modDB:Flag(nil, "EchoingShrine") then
+			t_insert(combatList, "Echoing Shrine")
+		end
+		if env.modDB:Flag(nil, "GloomShrine") then
+			t_insert(combatList, "Gloom Shrine")
+		end
+		if env.modDB:Flag(nil, "ImpenetrableShrine") then
+			t_insert(combatList, "Impenetrable Shrine")
+		end
 		if env.modDB:Flag(nil, "MassiveShrine") then
 			t_insert(combatList, "Massive Shrine")
+		end
+		if env.modDB:Flag(nil, "ReplenishingShrine") then
+			t_insert(combatList, "Replenishing Shrine")
+		end
+		if env.modDB:Flag(nil, "ResistanceShrine") then
+			t_insert(combatList, "Resistance Shrine")
+		end
+		if env.modDB:Flag(nil, "ResonatingShrine") then
+			t_insert(combatList, "Resonating Shrine")
+		end
+		if env.modDB:Flag(nil, "LesserAccelerationShrine") then
+			t_insert(combatList, "Lesser Acceleration Shrine")
+		end
+		if env.modDB:Flag(nil, "LesserBrutalShrine") then
+			t_insert(combatList, "Lesser Brutal Shrine")
+		end
+		if env.modDB:Flag(nil, "LesserImpenetrableShrine") then
+			t_insert(combatList, "Lesser Impenetrable Shrine")
+		end
+		if env.modDB:Flag(nil, "LesserMassiveShrine") then
+			t_insert(combatList, "Lesser Massive Shrine")
+		end
+		if env.modDB:Flag(nil, "LesserReplenishingShrine") then
+			t_insert(combatList, "Lesser Replenishing Shrine")
+		end
+		if env.modDB:Flag(nil, "LesserResistanceShrine") then
+			t_insert(combatList, "Lesser Resistance Shrine")
 		end
 		for name in pairs(env.buffs) do
 			t_insert(buffList, name)

@@ -48,7 +48,7 @@ local function getCatalystScalar(catalystId, tags, quality)
 	return 1
 end
 
-local influenceInfo = itemLib.influenceInfo
+local influenceInfo = itemLib.influenceInfo.all
 
 local ItemClass = newClass("Item", function(self, raw, rarity, highQuality)
 	if raw then
@@ -574,8 +574,8 @@ function ItemClass:ParseRaw(raw, rarity, highQuality)
 					self.requirements[specName:sub(1,3):lower()] = specToNumber(specVal)
 				elseif specName == "Critical Strike Range" or specName == "Attacks per Second" or specName == "Weapon Range" or
 				       specName == "Critical Strike Chance" or specName == "Physical Damage" or specName == "Elemental Damage" or
-				       specName == "Chaos Damage" or specName == "Chance to Block" or specName == "Armour" or
-					   specName == "Energy Shield" or specName == "Evasion" then
+				       specName == "Chaos Damage" or specName == "Chance to Block" or specName == "Block chance" or
+					specName == "Armour" or specName == "Energy Shield" or specName == "Evasion" then
 					self.hidden_specs = true
 				-- Anything else is an explicit with a colon in it (Fortress Covenant, Pure Talent, etc) unless it's part of the custom name
 				elseif not (self.name:match(specName) and self.name:match(specVal)) then
@@ -757,6 +757,13 @@ function ItemClass:ParseRaw(raw, rarity, highQuality)
 					self.canHaveTwoEnchants = true
 					self.canHaveThreeEnchants = true
 					self.canHaveFourEnchants = true
+				elseif lineLower == "has elder, shaper and all conqueror influences" then
+					self.HasElderShaperAndAllConquerorInfluences = true
+					for _, curInfluenceInfo in ipairs(itemLib.influenceInfo.default) do
+						self[curInfluenceInfo.key] = true
+					end
+				elseif lineLower:match("if the eater of worlds is dominant") then
+					self.canHaveEldritchInfluence = true
 				elseif lineLower == "has a crucible passive skill tree with only support passive skills" then
 					self.canHaveOnlySupportSkillsCrucibleTree = true
 				elseif lineLower == "has a crucible passive skill tree" then
@@ -806,7 +813,7 @@ function ItemClass:ParseRaw(raw, rarity, highQuality)
 					elseif gameModeStage == "FINDEXPLICIT" then
 						gameModeStage = "DONE"
 					end
-				elseif foundExplicit then
+				elseif foundExplicit or (not foundExplicit and gameModeStage == "EXPLICIT") then
 					modLine.modList = { }
 					modLine.extra = line
 					t_insert(modLines, modLine)
@@ -1509,7 +1516,8 @@ function ItemClass:BuildModListForSlotNum(baseList, slotNum)
 	elseif self.base.tincture then
 		local tinctureData = self.tinctureData
 		tinctureData.manaBurn = (self.base.tincture.manaBurn + 0.01) / (1 + calcLocal(modList, "TinctureManaBurnRate", "INC", 0) / 100) / (1 + calcLocal(modList, "TinctureManaBurnRate", "MORE", 0) / 100)
-		tinctureData.cooldown = self.base.tincture.cooldown / (1 + calcLocal(modList, "TinctureCooldownRecovery", "INC", 0) / 100)
+		tinctureData.cooldownInc = calcLocal(modList, "TinctureCooldownRecovery", "INC", 0) + calcLocal(modList, "CooldownRecovery", "INC", 0)
+		tinctureData.cooldown = self.base.tincture.cooldown / (1 + tinctureData.cooldownInc / 100)
 		tinctureData.effectInc = calcLocal(modList, "TinctureEffect", "INC", 0) + calcLocal(modList, "LocalEffect", "INC", 0)
 		for _, value in ipairs(modList:List(nil, "TinctureData")) do
 			tinctureData[value.key] = value.value

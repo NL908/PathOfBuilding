@@ -32,7 +32,7 @@ local socketDropList = {
 
 local baseSlots = { "Weapon 1", "Weapon 2", "Helmet", "Body Armour", "Gloves", "Boots", "Amulet", "Ring 1", "Ring 2", "Belt", "Flask 1", "Flask 2", "Flask 3", "Flask 4", "Flask 5" }
 
-local influenceInfo = itemLib.influenceInfo
+local influenceInfo = itemLib.influenceInfo.all
 
 local catalystQualityFormat = {
 	"^x7F7F7FQuality (Attack Modifiers): "..colorCodes.MAGIC.."+%d%% (augmented)",
@@ -505,9 +505,15 @@ holding Shift will put it in the second.]])
 	end
 	local function setDisplayItemInfluence(influenceIndexList)
 		self.displayItem:ResetInfluence()
-		for _, index in ipairs(influenceIndexList) do
-			if index > 0 then
-				self.displayItem[influenceInfo[index].key] = true;
+		if self.displayItem.HasElderShaperAndAllConquerorInfluences then
+			for i, curInfluenceInfo in ipairs(itemLib.influenceInfo.default) do
+				self.displayItem[influenceInfo[i].key] = true
+			end
+		else
+			for _, index in ipairs(influenceIndexList) do
+				if index > 0 then
+					self.displayItem[influenceInfo[index].key] = true
+				end
 			end
 		end
 
@@ -1567,6 +1573,12 @@ function ItemsTabClass:SetDisplayItem(item)
 		-- Set both influence dropdowns
 		local influence1 = 1
 		local influence2 = 1
+		local influenceDisplayList = { "Influence" }
+		for i, curInfluenceInfo in ipairs((item.canHaveEldritchInfluence or item.type == "Helmet" or item.type == "Body Armour" or item.type == "Gloves" or item.type == "Boots") and itemLib.influenceInfo.all or itemLib.influenceInfo.default) do
+			influenceDisplayList[i + 1] = curInfluenceInfo.display
+		end
+		self.controls.displayItemInfluence.list = influenceDisplayList
+		self.controls.displayItemInfluence2.list = influenceDisplayList
 		for i, curInfluenceInfo in ipairs(influenceInfo) do
 			if item[curInfluenceInfo.key] then
 				if influence1 == 1 then
@@ -1751,13 +1763,13 @@ function ItemsTabClass:UpdateAffixControl(control, item, type, outputTable, outp
 		local lastSeries
 		for _, modId in ipairs(affixList) do
 			local mod = item.affixes[modId]
-			if not lastSeries or lastSeries.statOrderKey ~= mod.statOrderKey then
+			if not lastSeries or not tableDeepEquals(lastSeries.statOrder, mod.statOrder) then
 				local modString = table.concat(mod, "/")
 				lastSeries = {
 					label = modString,
 					modList = { },
 					haveRange = modString:match("%(%-?[%d%.]+%-%-?[%d%.]+%)"),
-					statOrderKey = mod.statOrderKey,
+					statOrder = mod.statOrder,
 				}
 				t_insert(control.list, lastSeries)
 			end
@@ -3669,12 +3681,12 @@ function ItemsTabClass:AddItemTooltip(tooltip, item, slot, dbMode)
 		if effectMod ~= 1 then
 			t_insert(stats, s_format("^8Tincture effect modifier: ^7%+d%%", effectMod * 100 - 100))
 		end
-		t_insert(stats, s_format("^8Mana Burn Inflicted Every Second: ^7%.2f", tinctureData.manaBurn / (1 + modDB:Sum("INC", { actor = "player" }, "TinctureManaBurnRate")/100) / (1 + modDB:Sum("MORE", { actor = "player" }, "TinctureManaBurnRate")/100)))
+		t_insert(stats, s_format("^8Mana Burn Inflicted Every Second: ^7%.2f", 1 / (tinctureData.manaBurn / (1 + modDB:Sum("INC", { actor = "player" }, "TinctureManaBurnRate") / 100) / (1 + modDB:Sum("MORE", { actor = "player" }, "TinctureManaBurnRate") / 100))))
 		local TincturesNotInflictManaBurn = m_min(modDB:Sum("BASE", nil, "TincturesNotInflictManaBurn"), 100)
 		if TincturesNotInflictManaBurn ~= 0 then
 			t_insert(stats, s_format("^8Chance to not inflict Mana Burn: ^7%d%%", TincturesNotInflictManaBurn))
 		end
-		t_insert(stats, s_format("^8Tincture Cooldown when deactivated: ^7%.2f^8 seconds", tinctureData.cooldown / (1 + modDB:Sum("INC", { actor = "player" }, "TinctureCooldownRecovery")/100)))
+		t_insert(stats, s_format("^8Tincture Cooldown when deactivated: ^7%.2f^8 seconds", base.tincture.cooldown / (1 + (modDB:Sum("INC", { actor = "player" }, "TinctureCooldownRecovery") + tinctureData.cooldownInc) / 100)))
 
 		if stats[1] then
 			tooltip:AddLine(14, "^7Effective tincture stats:")

@@ -1,3 +1,99 @@
+VERSION[2.52.3][2025/02/20]
+
+--- New to Path of Building ---
+* Add new Harbinger skills (Wires77)
+
+--- Fixed Bugs ---
+* Fix error when crafting a fishing rod enchant (Wires77)
+
+
+VERSION[2.52.2][2025/02/20]
+
+--- Fixed Crashes ---
+* Fix Tawhoa's Chosen crash when no active skill is enabled (Paliak)
+
+--- User Interface ---
+* Dynamically expand some dropdowns that were too narrow to read (Wires77)
+
+--- Fixed Behaviours ---
+* Fix Forbidden jewels not finding the right ascendancy nodes (Wires77)
+* Update tree data with missing cluster jewel nodes (Wires77)
+
+
+VERSION[2.52.1][2025/02/20]
+
+--- Fixed Bugs ---
+Fixed update error (Wires77)
+
+VERSION[2.52.0][2025/02/20]
+
+--- New to Path of Building ---
+* Add tree for Legacy of Phrecia (Wires77)
+* Add checkbox for Sacrificial Zeal (Paliak)
+* Add black background to detail text in character dropdown (Paliak)
+* Add Molten Strike (+Zenith) ball average overlap calculations (andyli00)
+
+--- Fixed Behaviours ---
+* Fix Firestorm of Pelting skill effect duration (Peechey)
+
+--- Accuracy Improvements ---
+* Fix Eyes of the Greatwolf DoT Multi wording (henbe)
+* Fix influences not importing correctly (Wires77)
+
+--- Fixed Calculations ---
+* Fix several bugs with infinite EHP and wrong phys max hit (Edvinas-Smita)
+
+VERSION[2.51.0][2025/02/14]
+
+--- New to Path of Building ---
+* Add Wildspeaker, Blind Prophet, Aristocrat and Puppeteer ascendancy jewels (LocalIdentity)
+* Add Ancestral Commander, Behemoth, Bog Shaman, and Scavenger ascendancy jewels (Peechey)
+
+--- Fixed Calculations ---
+* Fix maximum virulence parsing for multi-digit increases (deathbeam)
+* Fix "Full Poison DPS" value capping to one stack (Wires77)
+* Fix ES bypass regression (Edvinas-Smita)
+
+--- Accuracy Improvements ---
+* Fix various issues with Legacy of Phrecia ascendancies (Wires77)
+
+
+VERSION[2.50.1][2025/02/12]
+
+--- Fixed Calculations ---
+* Fix "Full Poison DPS" value capping to one stack (Wires77)
+
+
+VERSION[2.50.0][2025/02/12]
+
+--- New to Path of Building ---
+* Add support for Legacy Of Phrecia Ascendancies (LocalIdentity)
+  * Add unique jewel for each Ascendancy to make it easier to test
+* Add Support for Shrine buffs from The Gull and staff Rune craft (LocalIdentity)
+* Add poedb.tw to import website list (Chuanhsing)
+* Basic Unicode support (zao)
+* Implement ability to delete folders with contents (Paliak)
+
+--- Fixed Crashes ---
+* Fix crash related to trigger calculations (Paliak)
+
+--- Fixed Calculations ---
+* Fix Viper Strike of Mamba poison (Regisle)
+* Improve EHP accuracy (Edvinas-Smita)
+* Fixed Non-Damaging Ailment issue with Critical Mastery in Calc Screen (Jonathan-Dang)
+
+--- Fixed Behaviours ---
+* Fixed interaction between block replacement effect from Determined Survivor and Necromantic Aegis (Jonathan-Dang)
+* Disable "gain when hit" for builds which cannot survive unlucky hits (Regisle)
+
+--- User Interface ---
+* Show Poison DPS in sidebar as the DPS for a single poison (Regisle)
+
+--- Fixed Bugs ---
+* Fixes Cinderswallow Urn missing the damage taken mod (n1tr0xs)
+* Update Breathstealer's unique mods (n1tr0xs)
+
+
 VERSION[2.49.3][2024/11/24]
 
 --- Fixed Bugs ---

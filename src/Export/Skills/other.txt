@@ -265,6 +265,7 @@ local skills, mod, flag, skill = ...
 #skill TriggeredSummonLesserShrine
 #flags spell duration
 	fromItem = true,
+#baseMod flag("Condition:CanHaveLesserShrines", { type = "GlobalEffect", effectType = "Buff", effectName = "Shrines" })
 #mods
 
 #noGem
@@ -868,6 +869,23 @@ local skills, mod, flag, skill = ...
 #skill SummonHarbingerOfTheArcane
 #flags spell minion
 	fromItem = true,
+#mods
+
+#skill SummonHarbingerOfFocusAscendancy
+#flags spell minion
+	fromTree = true,
+#mods
+
+#skill SummonHarbingerOfTimeAscendancy
+#flags spell minion
+	fromTree = true,
+#baseMod mod("ActionSpeed", "INC", 10, 0, 0, { type = "GlobalEffect", effectType = "Buff", effectName = "Harbinger of Time", modCond = "HarbingerOfTime" })
+#baseMod skill("buffAllies", true)
+#mods
+
+#skill SummonHarbingerOfTheArcaneAscendancy
+#flags spell minion
+	fromTree = true,
 #mods
 
 #skill SummonHarbingerOfBrutality

@@ -24,6 +24,7 @@ local TreeTabClass = newClass("TreeTab", "ControlHost", function(self, build)
 
 	self.build = build
 	self.isComparing = false;
+	self.isCustomMaxDepth = false;
 
 	self.viewer = new("PassiveTreeView")
 
@@ -158,6 +159,7 @@ local TreeTabClass = newClass("TreeTab", "ControlHost", function(self, build)
 	self.controls.versionSelect.maxDroppedWidth = 1000
 	self.controls.versionSelect.enableDroppedWidth = true
 	self.controls.versionSelect.enableChangeBoxWidth = true
+	self.controls.versionSelect:CheckDroppedWidth(true)
 	self.controls.versionSelect.selIndex = #self.treeVersions
 
 	-- Tree Search Textbox
@@ -187,7 +189,20 @@ local TreeTabClass = newClass("TreeTab", "ControlHost", function(self, build)
 	end)
 
 	-- Control for setting max node depth to limit calculation time of the heat map
-	self.controls.nodePowerMaxDepthSelect = new("DropDownControl", { "LEFT", self.controls.treeHeatMap, "RIGHT" }, { 8, 0, 50, 20 }, { "All", 5, 10, 15 }, function(index, value)
+	self.controls.nodePowerMaxDepthSelect = new("DropDownControl", { "LEFT", self.controls.treeHeatMap, "RIGHT" }, { 8, 0, 55, 20 }, { "All", 5, 10, 15, "Custom" }, function(index, value)
+		-- Show custom value control and resize/move elements
+		self.isCustomMaxDepth = value == "Custom"
+		if self.isCustomMaxDepth then
+			self.controls.nodePowerMaxDepthSelect.width = 70
+			self.controls.nodePowerMaxDepthCustom.shown = true
+			self.controls.treeHeatMapStatSelect:SetAnchor("LEFT", self.controls.nodePowerMaxDepthCustom, "RIGHT", nil, nil, nil)
+			return
+		end
+
+		self.controls.nodePowerMaxDepthSelect.width = 55
+		self.controls.nodePowerMaxDepthCustom.shown = false
+		self.controls.treeHeatMapStatSelect:SetAnchor("LEFT", self.controls.nodePowerMaxDepthSelect, "RIGHT", nil, nil, nil)
+
 		local oldMax = self.build.calcsTab.nodePowerMaxDepth
 
 		if type(value) == "number" then
@@ -205,6 +220,17 @@ local TreeTabClass = newClass("TreeTab", "ControlHost", function(self, build)
 		end
 	end)
 	self.controls.nodePowerMaxDepthSelect.tooltipText = "Limit of Node distance to search (lower = faster)"
+
+	-- Control for setting max node depth by custom value
+	self.controls.nodePowerMaxDepthCustom = new("EditControl", { "LEFT", self.controls.nodePowerMaxDepthSelect, "RIGHT" }, { 8, 0, 70, 20 }, "0", nil, "%D", nil, function(value)
+		self.build.calcsTab.nodePowerMaxDepth = tonumber(value)
+
+		-- If the heat map is shown, recalculate it with new value
+		if self.viewer.showHeatMap then
+			self:SetPowerCalc(self.build.calcsTab.powerStat)
+		end
+	end)
+	self.controls.nodePowerMaxDepthCustom.shown = false
 
 	-- Control for selecting the power stat to sort by (Defense, DPS, etc)
 	self.controls.treeHeatMapStatSelect = new("DropDownControl", { "LEFT", self.controls.nodePowerMaxDepthSelect, "RIGHT" }, { 8, 0, 150, 20 }, nil, function(index, value)
@@ -313,15 +339,42 @@ function TreeTabClass:Draw(viewPort, inputEvents)
 	self:ProcessControlsInput(inputEvents, viewPort)
 
 	-- Determine positions if one line of controls doesn't fit in the screen width
-	local twoLineHeight = 24
-	if viewPort.width >= 1336 + (self.isComparing and 198 or 0) + (self.viewer.showHeatMap and 316 or 0) then
-		twoLineHeight = 0
+	local linesHeight = 24
+	local rightMargin = 10
+	local widthFirstLineControls = self.controls.specSelect.width + 8
+								+ self.controls.compareCheck.width + self.controls.compareCheck.x
+								+ self.controls.reset.width + self.controls.reset.x
+								+ self.controls.versionText.width() + self.controls.versionText.x
+								+ self.controls.versionSelect.width + self.controls.versionSelect.x
+								+ (self.isComparing and (self.controls.compareSelect.width + self.controls.compareSelect.x) or 0)
+	
+	local widthSecondLineControls = self.controls.treeSearch.width + 8
+									+ self.controls.findTimelessJewel.width + self.controls.findTimelessJewel.x
+									+ self.controls.treeHeatMap.width + 130
+									+ self.controls.nodePowerMaxDepthSelect.width + self.controls.nodePowerMaxDepthSelect.x
+									+ (self.isCustomMaxDepth and (self.controls.nodePowerMaxDepthCustom.width + self.controls.nodePowerMaxDepthCustom.x) or 0)
+									+ (self.viewer.showHeatMap and (self.controls.treeHeatMapStatSelect.width + self.controls.treeHeatMapStatSelect.x 
+																	+ self.controls.powerReport.width + self.controls.powerReport.x) or 0)
+	
+	-- Check first line
+	if viewPort.width >= widthFirstLineControls + widthSecondLineControls + rightMargin then
+		linesHeight = 0
 		self.controls.treeSearch:SetAnchor("LEFT", self.controls.versionSelect, "RIGHT", 8, 0)
-		self.controls.powerReportList:SetAnchor("TOPLEFT", self.controls.specSelect, "BOTTOMLEFT", 0, self.controls.specSelect.height + 4)
+		self.controls.powerReportList:SetAnchor("TOPLEFT", self.controls.specSelect, "BOTTOMLEFT", 0, self.controls.specSelect.height + 6)
 	else
 		self.controls.treeSearch:SetAnchor("TOPLEFT", self.controls.specSelect, "BOTTOMLEFT", 0, 4)
-		self.controls.powerReportList:SetAnchor("TOPLEFT", self.controls.treeSearch, "BOTTOMLEFT", 0, self.controls.treeHeatMap.y + self.controls.treeHeatMap.height + 4)
+		self.controls.powerReportList:SetAnchor("TOPLEFT", self.controls.treeSearch, "BOTTOMLEFT", 0, self.controls.treeSearch.height + 6)
 	end
+
+	-- Check second line
+	if viewPort.width >= widthSecondLineControls + rightMargin then
+		self.controls.treeHeatMap:SetAnchor("LEFT", self.controls.findTimelessJewel, "RIGHT", 130, 0)
+	else
+		linesHeight = linesHeight * 2
+		self.controls.treeHeatMap:SetAnchor("TOPLEFT", self.controls.treeSearch, "BOTTOMLEFT", 124, 4)
+		self.controls.powerReportList:SetAnchor("TOPLEFT", self.controls.treeHeatMap, "BOTTOMLEFT", -124, self.controls.treeHeatMap.height + 6)
+	end
+
 	-- determine positions for convert line of controls
 	local convertTwoLineHeight = 24
 	local convertMaxWidth = 900
@@ -335,9 +388,9 @@ function TreeTabClass:Draw(viewPort, inputEvents)
 	end
 
 	local bottomDrawerHeight = self.controls.powerReportList.shown and 194 or 0
-	self.controls.specSelect.y = -bottomDrawerHeight - twoLineHeight
+	self.controls.specSelect.y = -bottomDrawerHeight - linesHeight
 
-	local treeViewPort = { x = viewPort.x, y = viewPort.y, width = viewPort.width, height = viewPort.height - (self.showConvert and 64 + bottomDrawerHeight + twoLineHeight or 32 + bottomDrawerHeight + twoLineHeight)}
+	local treeViewPort = { x = viewPort.x, y = viewPort.y, width = viewPort.width, height = viewPort.height - (self.showConvert and 64 + bottomDrawerHeight + linesHeight or 32 + bottomDrawerHeight + linesHeight)}
 	if self.jumpToNode then
 		self.viewer:Focus(self.jumpToX, self.jumpToY, treeViewPort, self.build)
 		self.jumpToNode = false
@@ -368,17 +421,17 @@ function TreeTabClass:Draw(viewPort, inputEvents)
 	SetDrawLayer(1)
 
 	SetDrawColor(0.05, 0.05, 0.05)
-	DrawImage(nil, viewPort.x, viewPort.y + viewPort.height - (28 + bottomDrawerHeight + twoLineHeight), viewPort.width, 28 + bottomDrawerHeight + twoLineHeight)
+	DrawImage(nil, viewPort.x, viewPort.y + viewPort.height - (28 + bottomDrawerHeight + linesHeight), viewPort.width, 28 + bottomDrawerHeight + linesHeight)
 	if self.showConvert then
-		local height = viewPort.width < convertMaxWidth and (bottomDrawerHeight + twoLineHeight) or 0
+		local height = viewPort.width < convertMaxWidth and (bottomDrawerHeight + linesHeight) or 0
 		SetDrawColor(0.05, 0.05, 0.05)
-		DrawImage(nil, viewPort.x, viewPort.y + viewPort.height - (60 + bottomDrawerHeight + twoLineHeight + convertTwoLineHeight), viewPort.width, 28 + height)
+		DrawImage(nil, viewPort.x, viewPort.y + viewPort.height - (60 + bottomDrawerHeight + linesHeight + convertTwoLineHeight), viewPort.width, 28 + height)
 		SetDrawColor(0.85, 0.85, 0.85)
-		DrawImage(nil, viewPort.x, viewPort.y + viewPort.height - (64 + bottomDrawerHeight + twoLineHeight + convertTwoLineHeight), viewPort.width, 4)
+		DrawImage(nil, viewPort.x, viewPort.y + viewPort.height - (64 + bottomDrawerHeight + linesHeight + convertTwoLineHeight), viewPort.width, 4)
 	end
 	-- let white lines overwrite the black sections, regardless of showConvert
 	SetDrawColor(0.85, 0.85, 0.85)
-	DrawImage(nil, viewPort.x, viewPort.y + viewPort.height - (32 + bottomDrawerHeight + twoLineHeight), viewPort.width, 4)
+	DrawImage(nil, viewPort.x, viewPort.y + viewPort.height - (32 + bottomDrawerHeight + linesHeight), viewPort.width, 4)
 
 	self:DrawControls(viewPort)
 end
@@ -447,6 +500,7 @@ function TreeTabClass:SetActiveSpec(specId)
 	self.build.spec = curSpec
 	self.build.buildFlag = true
 	self.build.spec:SetWindowTitleWithBuildClass()
+	self.build:UpdateClassDropdowns(curSpec.treeVersion)
 	for _, slot in pairs(self.build.itemsTab.slots) do
 		if slot.nodeId then
 			if prevSpec then
@@ -483,10 +537,11 @@ function TreeTabClass:SetCompareSpec(specId)
 	self.compareSpec = curSpec
 end
 
-function TreeTabClass:ConvertToVersion(version, remove, success, ignoreRuthlessCheck)
-	if not ignoreRuthlessCheck and self.build.spec.treeVersion:match("ruthless") and not version:match("ruthless") then
-		if isValueInTable(treeVersionList, version.."_ruthless") then
-			version = version.."_ruthless"
+function TreeTabClass:ConvertToVersion(version, remove, success, ignoreTreeSubType)
+	local treeSubTypeCapture = self.build.spec.treeVersion:match("(_%l+_?%l*)")
+	if not ignoreTreeSubType and treeSubTypeCapture and not version:match(treeSubTypeCapture) then
+		if isValueInTable(treeVersionList, version..treeSubTypeCapture) then
+			version = version..treeSubTypeCapture
 		end
 	end
 	local newSpec = new("PassiveSpec", self.build, version)
@@ -543,16 +598,16 @@ function TreeTabClass:OpenSpecManagePopup()
 	})
 end
 
-function TreeTabClass:OpenVersionConvertPopup(version, ignoreRuthlessCheck)
+function TreeTabClass:OpenVersionConvertPopup(version, ignoreTreeSubType)
 	local controls = { }
 	controls.warningLabel = new("LabelControl", nil, {0, 20, 0, 16}, "^7Warning: some or all of the passives may be de-allocated due to changes in the tree.\n\n" ..
 		"Convert will replace your current tree.\nCopy + Convert will backup your current tree.\n")
 	controls.convert = new("ButtonControl", nil, {-125, 105, 100, 20}, "Convert", function()
-		self:ConvertToVersion(version, true, false, ignoreRuthlessCheck)
+		self:ConvertToVersion(version, true, false, ignoreTreeSubType)
 		main:ClosePopup()
 	end)
 	controls.convertCopy = new("ButtonControl", nil, {0, 105, 125, 20}, "Copy + Convert", function()
-		self:ConvertToVersion(version, false, false, ignoreRuthlessCheck)
+		self:ConvertToVersion(version, false, false, ignoreTreeSubType)
 		main:ClosePopup()
 	end)
 	controls.cancel = new("ButtonControl", nil, {125, 105, 100, 20}, "Cancel", function()
@@ -620,7 +675,7 @@ function TreeTabClass:OpenImportPopup()
 			main:ClosePopup()
 		end
 	end
-	local function validateTreeVersion(isRuthless, major, minor)
+	local function validateTreeVersion(alternateType, major, minor)
 		-- Take the Major and Minor version numbers and confirm it is a valid tree version. The point release is also passed in but it is not used
 		-- Return: the passed in tree version as text or latestTreeVersion
 		if major and minor then
@@ -628,12 +683,12 @@ function TreeTabClass:OpenImportPopup()
 			local newTreeVersionNum = tonumber(string.format("%d.%02d", major, minor))
 			if newTreeVersionNum >= treeVersions[defaultTreeVersion].num and newTreeVersionNum <= treeVersions[latestTreeVersion].num then
 				-- no leading 0 here
-				return string.format("%s_%s", major, minor) .. (isRuthless and "_ruthless" or "")
+				return string.format("%s_%s", major, minor) .. (alternateType and ("_" .. alternateType:gsub("-", "_")) or "")
 			else
 				print(string.format("Version '%d_%02d' is out of bounds", major, minor))
 			end
 		end
-		return latestTreeVersion .. (isRuthless and "_ruthless" or "")
+		return latestTreeVersion .. (alternateType and ("_" .. alternateType:gsub("-", "_")) or "")
 	end
 
 	controls.nameLabel = new("LabelControl", nil, {-180, 20, 0, 16}, "Enter name for this passive tree:")
@@ -679,21 +734,23 @@ function TreeTabClass:OpenImportPopup()
 						controls.import.enabled = true
 						return
 					else
-						decodeTreeLink(treeLink, validateTreeVersion(treeLink:match("tree/ruthless"), treeLink:match(versionLookup)))
+						decodeTreeLink(treeLink, validateTreeVersion(treeLink:match("tree/(%w+%-?%w*)"), treeLink:match(versionLookup)))
 					end
 				end)
 			end
 		elseif treeLink:match("poeplanner.com/") then
 			decodePoePlannerTreeLink(treeLink:gsub("/%?v=.+#","/"))
 		elseif treeLink:match("poeskilltree.com/") then
-			local oldStyleVersionLookup = "/%?v=([0-9]+)%.([0-9]+)%.([0-9]+)%-?r?u?t?h?l?e?s?s?#"
+			local oldStyleVersionLookup = "/%?v=([0-9]+)%.([0-9]+)%.([0-9]+)%-?%w?%-?%w?#"
 			-- Strip the version from the tree : https://poeskilltree.com/?v=3.6.0#AAAABAMAABEtfIOFMo6-ksHfsOvu -> https://poeskilltree.com/AAAABAMAABEtfIOFMo6-ksHfsOvu
-			decodeTreeLink(treeLink:gsub("/%?v=.+#","/"), validateTreeVersion(treeLink:match("-ruthless#"), treeLink:match(oldStyleVersionLookup)))
+			decodeTreeLink(treeLink:gsub("/%?v=.+#","/"), validateTreeVersion(treeLink:match("%-(%w+%-?%w*)#"), treeLink:match(oldStyleVersionLookup)))
 		else
 			-- EG: https://www.pathofexile.com/passive-skill-tree/3.15.0/AAAABgMADI6-HwKSwQQHLJwtH9-wTLNfKoP3ES3r5AAA
 			-- EG: https://www.pathofexile.com/fullscreen-passive-skill-tree/3.15.0/AAAABgMADAQHES0fAiycLR9Ms18qg_eOvpLB37Dr5AAA
 			-- EG: https://www.pathofexile.com/passive-skill-tree/ruthless/AAAABgAAAAAA (Ruthless doesn't have versions)
-			decodeTreeLink(treeLink, validateTreeVersion(treeLink:match("tree/ruthless"), treeLink:match(versionLookup)))
+			-- EG: https://www.pathofexile.com/passive-skill-tree/ruthless-alternate/AAAABgAAAAAA
+			-- EG: https://www.pathofexile.com/passive-skill-tree/alternate/AAAABgAAAAAA
+			decodeTreeLink(treeLink, validateTreeVersion(treeLink:match("tree/(%w+%-?%w*)"), treeLink:match(versionLookup)))
 		end
 	end)
 	controls.import.enabled = false
