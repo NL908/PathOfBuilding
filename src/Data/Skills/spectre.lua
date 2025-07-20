@@ -34,6 +34,12 @@ skills["AxisCasterGlacialCascade"] = {
 		"spell_maximum_base_cold_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
+	},
 	levels = {
 		[1] = { 0.25999999046326, 0.40000000596046, 0.47999998927116, 0.73000001907349, damageEffectiveness = 0.8, critChance = 6, levelRequirement = 4, statInterpolation = { 3, 3, 3, 3, }, },
 		[2] = { 0.25999999046326, 0.40000000596046, 0.47999998927116, 0.73000001907349, damageEffectiveness = 0.8, critChance = 6, levelRequirement = 75, statInterpolation = { 3, 3, 3, 3, }, },
@@ -387,6 +393,10 @@ skills["CageSpiderSandSpark"] = {
 		"spell_maximum_base_physical_damage",
 		"base_is_projectile",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, levelRequirement = 61, statInterpolation = { 3, 3, }, },
 	},
@@ -429,6 +439,10 @@ skills["DelayedBlastSpectre"] = {
 		"spell_minimum_base_physical_damage",
 		"spell_maximum_base_physical_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, storedUses = 3, levelRequirement = 3, cooldown = 1.3, statInterpolation = { 3, 3, }, },
@@ -539,6 +553,10 @@ skills["DemonModularBladeVortexSpectre"] = {
 		"is_area_damage",
 		"skill_can_add_multiple_charges_per_action",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 6, levelRequirement = 3, statInterpolation = { 3, 3, }, },
 	},
@@ -586,6 +604,9 @@ skills["ElementalHitSkeletonKnight"] = {
 		"use_scaled_contact_offset",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { 150, baseMultiplier = 1.5, levelRequirement = 1, statInterpolation = { 2, }, },
 		[3] = { 300, baseMultiplier = 1.5, levelRequirement = 45, statInterpolation = { 2, }, },
@@ -618,6 +639,9 @@ skills["ElementalHitSkeletonKnightIncursion"] = {
 		"use_scaled_contact_offset",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { 0, baseMultiplier = 1.5, levelRequirement = 1, statInterpolation = { 2, }, },
 		[3] = { 1, baseMultiplier = 1.5, levelRequirement = 45, statInterpolation = { 2, }, },
@@ -647,6 +671,10 @@ skills["ExperimenterDetonateDead"] = {
 		"secondary_maximum_base_fire_damage",
 		"corpse_explosion_monster_life_%",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"secondary_minimum_base_fire_damage",
+		"secondary_maximum_base_fire_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, 7, critChance = 5, levelRequirement = 3, statInterpolation = { 3, 3, 1, }, },
@@ -678,6 +706,10 @@ skills["FireballIncursionChaos"] = {
 		"spell_maximum_base_chaos_damage",
 		"base_is_projectile",
 	},
+	notMinionStat = {
+		"spell_minimum_base_chaos_damage",
+		"spell_maximum_base_chaos_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 6, levelRequirement = 0, statInterpolation = { 3, 3, }, },
 	},
@@ -706,6 +738,10 @@ skills["FireballIncusionFire"] = {
 		"spell_maximum_base_fire_damage",
 		"base_is_projectile",
 	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 6, levelRequirement = 0, statInterpolation = { 3, 3, }, },
 	},
@@ -733,6 +769,10 @@ skills["FireballIncusionLightning"] = {
 		"spell_minimum_base_lightning_damage",
 		"spell_maximum_base_lightning_damage",
 		"base_is_projectile",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 6, levelRequirement = 0, statInterpolation = { 3, 3, }, },
@@ -808,6 +848,10 @@ skills["FlamebearerFlameBlue"] = {
 		"base_is_projectile",
 		"always_pierce",
 	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, -78, damageEffectiveness = 0.25, storedUses = 1, levelRequirement = 4, cooldown = 4, statInterpolation = { 3, 3, 1, }, },
 		[2] = { 0.80000001192093, 1.2000000476837, -75, damageEffectiveness = 0.25, storedUses = 1, levelRequirement = 8, cooldown = 4, statInterpolation = { 3, 3, 1, }, },
@@ -843,6 +887,10 @@ skills["GhostPirateBladeVortexSpectre"] = {
 		"spell_maximum_base_physical_damage",
 		"is_area_damage",
 		"skill_can_add_multiple_charges_per_action",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 6, levelRequirement = 3, statInterpolation = { 3, 3, }, },
@@ -911,6 +959,10 @@ skills["GoatmanFireMagmaOrb"] = {
 		"projectile_uses_contact_position",
 		"maintain_projectile_direction_when_using_contact_position",
 	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, storedUses = 1, levelRequirement = 3, cooldown = 3, statInterpolation = { 3, 3, }, },
 		[2] = { 1.3799999952316, 1.8400000333786, critChance = 5, storedUses = 1, levelRequirement = 68, cooldown = 3, statInterpolation = { 3, 3, }, },
@@ -943,6 +995,10 @@ skills["GoatmanMoltenShell"] = {
 		"base_physical_damage_reduction_rating",
 		"is_area_damage",
 		"always_ignite",
+	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, 20, 335, critChance = 5, storedUses = 1, levelRequirement = 3, cooldown = 7.5, statInterpolation = { 3, 3, 1, 1, }, },
@@ -1055,6 +1111,10 @@ skills["GuardianArc"] = {
 		"spell_minimum_base_lightning_damage",
 		"spell_maximum_base_lightning_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, damageEffectiveness = 0.7, critChance = 5, levelRequirement = 2, statInterpolation = { 3, 3, }, },
 		[2] = { 0.60000002384186, 1.7999999523163, damageEffectiveness = 0.7, critChance = 5, levelRequirement = 70, statInterpolation = { 3, 3, }, },
@@ -1120,6 +1180,10 @@ skills["HolyFireElementalFireball"] = {
 		"spell_minimum_base_fire_damage",
 		"spell_maximum_base_fire_damage",
 		"base_is_projectile",
+	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 6, levelRequirement = 3, statInterpolation = { 3, 3, }, },
@@ -1202,6 +1266,13 @@ skills["IncaMinionProjectile"] = {
 		"visual_hit_effect_chaos_is_green",
 		"base_is_projectile",
 	},
+	notMinionStat = {
+		"spell_minimum_base_chaos_damage",
+		"spell_maximum_base_chaos_damage",
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { 0.27000001072884, 0.40000000596046, 0.40000000596046, 0.60000002384186, 60, critChance = 5, levelRequirement = 4, statInterpolation = { 3, 3, 3, 3, 2, }, },
 		[2] = { 0.27000001072884, 0.40000000596046, 0.40000000596046, 0.60000002384186, 40, critChance = 5, levelRequirement = 21, statInterpolation = { 3, 3, 3, 3, 2, }, },
@@ -1264,6 +1335,10 @@ skills["IncursionMeteorUpheaval"] = {
 		"spell_minimum_base_physical_damage",
 		"spell_maximum_base_physical_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, storedUses = 1, levelRequirement = 1, cooldown = 8, statInterpolation = { 3, 3, }, },
@@ -1334,6 +1409,10 @@ skills["KaomFireBeamTotemSpectre"] = {
 		"base_skill_is_totemified",
 		"totem_ignores_cooldown",
 		"ignores_totem_cooldown_limit",
+	},
+	notMinionStat = {
+		"base_fire_damage_to_deal_per_minute",
+		"base_active_skill_totem_level",
 	},
 	levels = {
 		[1] = { 16.666667039196, 1, storedUses = 1, levelRequirement = 1, cooldown = 3, statInterpolation = { 3, 2, }, },
@@ -1540,6 +1619,10 @@ skills["KitavaDemonXMortar"] = {
 		"base_is_projectile",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, storedUses = 1, levelRequirement = 1, cooldown = 3, statInterpolation = { 3, 3, }, },
 		[2] = { 0.54000002145767, 0.80000001192093, storedUses = 1, levelRequirement = 68, cooldown = 3, statInterpolation = { 3, 3, }, },
@@ -1604,6 +1687,12 @@ skills["MinerThrowFireSpectre"] = {
 		"base_is_projectile",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"base_fire_damage_to_deal_per_minute",
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+		"base_skill_effect_duration",
+	},
 	levels = {
 		[1] = { 26.666667660077, 0.20000000298023, 0.30000001192093, 2000, storedUses = 1, levelRequirement = 3, cooldown = 1.5, statInterpolation = { 3, 3, 3, 1, }, },
 		[2] = { 26.666667660077, 0.20000000298023, 0.30000001192093, 2100, storedUses = 1, levelRequirement = 5, cooldown = 1.5, statInterpolation = { 3, 3, 3, 1, }, },
@@ -1639,6 +1728,10 @@ skills["MonsterArc"] = {
 		{ "skill_range_+%", -50 },
 	},
 	stats = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
+	notMinionStat = {
 		"spell_minimum_base_lightning_damage",
 		"spell_maximum_base_lightning_damage",
 	},
@@ -1682,6 +1775,9 @@ skills["MonsterCausticArrow"] = {
 		"projectile_damage_modifiers_apply_to_skill_dot",
 		"visual_hit_effect_chaos_is_green",
 		"skill_can_fire_arrows",
+	},
+	notMinionStat = {
+		"base_skill_effect_duration",
 	},
 	levels = {
 		[1] = { 16.666667039196, 1200, levelRequirement = 3, statInterpolation = { 3, 1, }, cost = { Mana = 10, }, },
@@ -1766,6 +1862,10 @@ skills["MonsterCausticBomb"] = {
 		"base_skill_is_trapped",
 		"ignores_trap_and_mine_cooldown_limit",
 	},
+	notMinionStat = {
+		"spell_minimum_base_chaos_damage",
+		"spell_maximum_base_chaos_damage",
+	},
 	levels = {
 		[1] = { 0.30000001192093, 0.40000000596046, 16.666667039196, critChance = 5, storedUses = 1, levelRequirement = 4, cooldown = 4, statInterpolation = { 3, 3, 3, }, },
 		[2] = { 0.30000001192093, 0.40000000596046, 16.666667039196, critChance = 5, storedUses = 1, levelRequirement = 7, cooldown = 4, statInterpolation = { 3, 3, 3, }, },
@@ -1791,6 +1891,7 @@ skills["MonsterDischarge"] = {
 	},
 	constantStats = {
 		{ "spell_maximum_action_distance_+%", -75 },
+		{ "active_skill_base_area_of_effect_radius", 25 },
 	},
 	stats = {
 		"spell_minimum_base_lightning_damage_per_removable_power_charge",
@@ -1801,6 +1902,14 @@ skills["MonsterDischarge"] = {
 		"spell_maximum_base_cold_damage_per_removable_frenzy_charge",
 		"is_area_damage",
 		"disable_skill_repeats",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage_per_removable_power_charge",
+		"spell_maximum_base_lightning_damage_per_removable_power_charge",
+		"spell_minimum_base_fire_damage_per_removable_endurance_charge",
+		"spell_maximum_base_fire_damage_per_removable_endurance_charge",
+		"spell_minimum_base_cold_damage_per_removable_frenzy_charge",
+		"spell_maximum_base_cold_damage_per_removable_frenzy_charge",
 	},
 	levels = {
 		[1] = { 0.56000000238419, 1.6900000572205, 0.80000001192093, 1.2000000476837, 0.64999997615814, 0.98000001907349, damageEffectiveness = 1.5, critChance = 4, levelRequirement = 4, statInterpolation = { 3, 3, 3, 3, 3, 3, }, },
@@ -1931,6 +2040,10 @@ skills["MonsterFireballContactPos"] = {
 		"projectile_uses_contact_position",
 		"maintain_projectile_direction_when_using_contact_position",
 	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 6, levelRequirement = 3, statInterpolation = { 3, 3, }, },
 		[2] = { 1.9400000572205, 3.0099999904633, critChance = 6, levelRequirement = 68, statInterpolation = { 3, 3, }, },
@@ -1966,6 +2079,11 @@ skills["MonsterFireBomb"] = {
 		"is_area_damage",
 		"base_skill_is_trapped",
 		"ignores_trap_and_mine_cooldown_limit",
+	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+		"base_fire_damage_to_deal_per_minute",
 	},
 	levels = {
 		[1] = { 0.40000000596046, 0.60000002384186, 16.666667039196, critChance = 5, levelRequirement = 4, statInterpolation = { 3, 3, 3, }, },
@@ -2041,6 +2159,10 @@ skills["MonsterFlameRedCannibal"] = {
 		"always_pierce",
 		"use_scaled_contact_offset",
 	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+	},
 	levels = {
 		[1] = { 0.30000001192093, 0.60000002384186, damageEffectiveness = 0.25, levelRequirement = 3, statInterpolation = { 3, 3, }, },
 	},
@@ -2101,6 +2223,10 @@ skills["MountainGoatmanIceSpear"] = {
 		"ice_spear_second_form_damage_+%",
 		"base_is_projectile",
 		"projectile_uses_contact_position",
+	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, 50, critChance = 7, levelRequirement = 40, statInterpolation = { 3, 3, 1, }, },
@@ -2205,6 +2331,10 @@ skills["MonsterLesserMultiFireballSpectre"] = {
 		"spell_maximum_base_fire_damage",
 		"base_is_projectile",
 	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 6, levelRequirement = 3, statInterpolation = { 3, 3, }, },
 		[2] = { 1.7599999904633, 2.6400001049042, critChance = 6, levelRequirement = 68, statInterpolation = { 3, 3, }, },
@@ -2232,6 +2362,10 @@ skills["MonsterLesserMultiIceSpear"] = {
 		"spell_minimum_base_cold_damage",
 		"spell_maximum_base_cold_damage",
 		"base_is_projectile",
+	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, damageEffectiveness = 0.8, critChance = 7, levelRequirement = 3, statInterpolation = { 3, 3, }, },
@@ -2347,6 +2481,10 @@ skills["MonsterMultiFireballSpectre"] = {
 		"spell_maximum_base_fire_damage",
 		"base_is_projectile",
 	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 6, levelRequirement = 3, statInterpolation = { 3, 3, }, },
 		[2] = { 1.7599999904633, 2.6400001049042, critChance = 6, levelRequirement = 68, statInterpolation = { 3, 3, }, },
@@ -2374,6 +2512,10 @@ skills["MonsterMultiIceSpear"] = {
 		"spell_minimum_base_cold_damage",
 		"spell_maximum_base_cold_damage",
 		"base_is_projectile",
+	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, damageEffectiveness = 0.8, critChance = 7, levelRequirement = 3, statInterpolation = { 3, 3, }, },
@@ -2406,6 +2548,9 @@ skills["MonsterProjectileWeakness"] = {
 	},
 	stats = {
 		"projectile_damage_taken_+%",
+		"active_skill_area_of_effect_radius_+%_final",
+	},
+	notMinionStat = {
 		"active_skill_area_of_effect_radius_+%_final",
 	},
 	levels = {
@@ -2464,6 +2609,9 @@ skills["MonsterPuncture"] = {
 		"skill_can_fire_arrows",
 		"global_bleed_on_hit",
 	},
+	notMinionStat = {
+		"active_skill_bleeding_damage_+%_final",
+	},
 	levels = {
 		[1] = { 112, baseMultiplier = 1.2, levelRequirement = 9, statInterpolation = { 1, }, },
 		[2] = { 155, baseMultiplier = 1.2, levelRequirement = 30, statInterpolation = { 1, }, },
@@ -2489,6 +2637,9 @@ skills["MonsterRighteousFireWhileSpectred"] = {
 		{ "active_skill_area_of_effect_radius_+%_final", 27 },
 	},
 	stats = {
+		"base_fire_damage_to_deal_per_minute",
+	},
+	notMinionStat = {
 		"base_fire_damage_to_deal_per_minute",
 	},
 	levels = {
@@ -2520,6 +2671,10 @@ skills["MonsterShockNova"] = {
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 3, levelRequirement = 4, statInterpolation = { 3, 3, }, },
 		[2] = { 1.460000038147, 4.3899998664856, critChance = 3, levelRequirement = 68, statInterpolation = { 3, 3, }, },
@@ -2549,6 +2704,10 @@ skills["MonsterSpark"] = {
 		"spell_minimum_base_lightning_damage",
 		"spell_maximum_base_lightning_damage",
 		"base_is_projectile",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 	levels = {
 		[1] = { 0.5, 1.5, damageEffectiveness = 0.7, critChance = 5, levelRequirement = 4, statInterpolation = { 3, 3, }, },
@@ -2586,6 +2745,10 @@ skills["MonsterSplitFireballSpectre"] = {
 		"projectiles_fork",
 		"base_is_projectile",
 	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 6, levelRequirement = 3, statInterpolation = { 3, 3, }, },
 		[2] = { 1.7599999904633, 2.6400001049042, critChance = 6, levelRequirement = 68, statInterpolation = { 3, 3, }, },
@@ -2613,6 +2776,10 @@ skills["MonsterSplitIceSpear"] = {
 		"spell_maximum_base_cold_damage",
 		"base_is_projectile",
 		"projectiles_fork",
+	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, damageEffectiveness = 0.8, critChance = 7, levelRequirement = 3, statInterpolation = { 3, 3, }, },
@@ -2719,6 +2886,10 @@ skills["MotherOfFlamesMagmaOrb3"] = {
 		"spell_maximum_base_fire_damage",
 		"is_area_damage",
 		"base_is_projectile",
+	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, storedUses = 3, levelRequirement = 1, cooldown = 3, statInterpolation = { 3, 3, }, },
@@ -2940,6 +3111,9 @@ skills["NecromancerProjectileWeakness"] = {
 		"projectile_damage_taken_+%",
 		"active_skill_area_of_effect_radius_+%_final",
 	},
+	notMinionStat = {
+		"active_skill_area_of_effect_radius_+%_final",
+	},
 	levels = {
 		[1] = { 22, 24, storedUses = 1, levelRequirement = 25, cooldown = 12, statInterpolation = { 1, 1, }, },
 		[2] = { 24, 42, storedUses = 1, levelRequirement = 55, cooldown = 12, statInterpolation = { 1, 1, }, },
@@ -3034,6 +3208,12 @@ skills["PyroChaosFireball"] = {
 		"spell_maximum_base_chaos_damage",
 		"base_is_projectile",
 	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+		"spell_minimum_base_chaos_damage",
+		"spell_maximum_base_chaos_damage",
+	},
 	levels = {
 		[1] = { 0.40000000596046, 0.60000002384186, 0.27000001072884, 0.33000001311302, critChance = 6, storedUses = 1, levelRequirement = 3, cooldown = 3, statInterpolation = { 3, 3, 3, 3, }, },
 	},
@@ -3062,6 +3242,10 @@ skills["PyroFireball"] = {
 		"spell_maximum_base_fire_damage",
 		"base_is_projectile",
 	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 6, levelRequirement = 3, statInterpolation = { 3, 3, }, },
 		[2] = { 1.1200000047684, 1.6799999475479, critChance = 6, levelRequirement = 68, statInterpolation = { 3, 3, }, },
@@ -3085,6 +3269,10 @@ skills["PyroSuicideExplosion"] = {
 		"secondary_maximum_base_fire_damage",
 		"grant_kill_to_target_when_exploding_self",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"secondary_minimum_base_fire_damage",
+		"secondary_maximum_base_fire_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, levelRequirement = 3, statInterpolation = { 3, 3, }, },
@@ -3120,6 +3308,10 @@ skills["RevenantSpellProjectileSpectre"] = {
 		"spell_maximum_base_lightning_damage",
 		"base_is_projectile",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.60000002384186, 1.3999999761581, storedUses = 2, levelRequirement = 3, cooldown = 3, statInterpolation = { 3, 3, }, },
 	},
@@ -3143,6 +3335,10 @@ skills["SeawitchFrostbolt"] = {
 		"spell_maximum_base_cold_damage",
 		"base_is_projectile",
 		"always_pierce",
+	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, storedUses = 1, levelRequirement = 3, cooldown = 3, statInterpolation = { 3, 3, }, },
@@ -3171,6 +3367,10 @@ skills["SeaWitchScreech"] = {
 		"spell_minimum_base_cold_damage",
 		"spell_maximum_base_cold_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, storedUses = 1, levelRequirement = 3, cooldown = 6.5, statInterpolation = { 3, 3, }, },
@@ -3239,6 +3439,10 @@ skills["SkeletonBlackAbyssBoneLance"] = {
 		"always_pierce",
 		"projectile_uses_contact_position",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, storedUses = 1, levelRequirement = 1, cooldown = 6, statInterpolation = { 3, 3, }, },
 		[2] = { 0.80000001192093, 1.2000000476837, storedUses = 1, levelRequirement = 82, cooldown = 6, statInterpolation = { 3, 3, }, },
@@ -3274,6 +3478,10 @@ skills["SkeletonCannonMortar"] = {
 		"base_is_projectile",
 		"projectiles_not_offset",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.87999999523163, 1.3200000524521, critChance = 5, levelRequirement = 45, statInterpolation = { 3, 3, }, },
 		[2] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 68, statInterpolation = { 3, 3, }, },
@@ -3307,6 +3515,10 @@ skills["SkeletonCannonBoneMortar"] = {
 		"spell_maximum_base_physical_damage",
 		"is_area_damage",
 		"base_is_projectile",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
 	},
 	levels = {
 		[1] = { 0.87999999523163, 1.3200000524521, critChance = 5, storedUses = 1, levelRequirement = 45, cooldown = 4, statInterpolation = { 3, 3, }, },
@@ -3388,6 +3600,10 @@ skills["SkeletonProjectileBlack"] = {
 		"base_is_projectile",
 		"projectile_uses_contact_position",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -3414,6 +3630,9 @@ skills["SkeletonSoldierTornadoShot"] = {
 		"active_skill_damage_+%_final",
 		"base_is_projectile",
 		"skill_can_fire_arrows",
+	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
 	},
 	levels = {
 		[1] = { -30, levelRequirement = 2, statInterpolation = { 1, }, },
@@ -3445,6 +3664,10 @@ skills["SkeletonSpark"] = {
 		"spell_minimum_base_lightning_damage",
 		"spell_maximum_base_lightning_damage",
 		"base_is_projectile",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 	levels = {
 		[1] = { 0.5, 1.5, damageEffectiveness = 0.7, critChance = 5, levelRequirement = 4, statInterpolation = { 3, 3, }, cost = { Mana = 50, }, },
@@ -3556,6 +3779,10 @@ skills["SlavedriverFlameWhip"] = {
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 6, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -3585,6 +3812,10 @@ skills["KitavaSlavedriverFlameWhip"] = {
 		"spell_minimum_base_physical_damage",
 		"spell_maximum_base_physical_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 6, levelRequirement = 1, statInterpolation = { 3, 3, }, },
@@ -3639,6 +3870,10 @@ skills["SolarisChampionFlameVortex"] = {
 		"base_is_projectile",
 		"projectiles_not_offset",
 	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -3663,6 +3898,10 @@ skills["SpecialBeamCannon"] = {
 		"spell_minimum_base_fire_damage",
 		"spell_maximum_base_fire_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, storedUses = 1, levelRequirement = 1, cooldown = 8, statInterpolation = { 3, 3, }, },
@@ -3697,6 +3936,10 @@ skills["TarMortarTaster"] = {
 		"base_projectile_speed_+%",
 		"is_area_damage",
 		"base_is_projectile",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, storedUses = 1, levelRequirement = 3, cooldown = 4, statInterpolation = { 3, 3, }, },
@@ -3835,6 +4078,10 @@ skills["VaalincursionMortar"] = {
 		"base_is_projectile",
 		"projectile_uses_contact_position",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -3879,6 +4126,10 @@ skills["VaalIncursionFirestorm"] = {
 		"spell_maximum_base_fire_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, storedUses = 1, levelRequirement = 1, cooldown = 6, statInterpolation = { 3, 3, }, },
 	},
@@ -3903,6 +4154,10 @@ skills["VaalIncursionSpecialBeamCannonBlood"] = {
 		"spell_minimum_base_physical_damage",
 		"spell_maximum_base_physical_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, storedUses = 1, levelRequirement = 83, cooldown = 8, statInterpolation = { 3, 3, }, },
@@ -3932,6 +4187,9 @@ skills["MeleeEyrieArrow"] = {
 		"skill_can_fire_wand_projectiles",
 		"use_scaled_contact_offset",
 		"projectile_uses_contact_position",
+	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
 	},
 	levels = {
 		[1] = { 0, baseMultiplier = 0.75, levelRequirement = 1, statInterpolation = { 2, }, },
@@ -3965,6 +4223,10 @@ skills["AtlasEyrieArcherMortar"] = {
 		"projectile_uses_contact_position",
 		"use_scaled_contact_offset",
 	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, storedUses = 1, levelRequirement = 0, cooldown = 10, statInterpolation = { 3, 3, }, },
 	},
@@ -3993,6 +4255,9 @@ skills["AtlasEyrieArcherSnipe"] = {
 		"use_scaled_contact_offset",
 		"always_pierce",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { 0, levelRequirement = 1, statInterpolation = { 2, }, },
 		[2] = { 0, levelRequirement = 19, statInterpolation = { 2, }, },
@@ -4018,6 +4283,10 @@ skills["AtlasEyrieArcherCrystalImpact"] = {
 		"spell_minimum_base_cold_damage",
 		"spell_maximum_base_cold_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
@@ -4048,6 +4317,10 @@ skills["AtlasExilesCrusaderMageguardProjectile"] = {
 		"projectile_uses_contact_position",
 		"use_scaled_contact_offset",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
 	},
@@ -4071,6 +4344,10 @@ skills["AtlasExileCrusaderMageguardBombExplodeSpectre"] = {
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
 	},
@@ -4093,6 +4370,10 @@ skills["AtlasCrusaderMageguardBeam"] = {
 		"spell_minimum_base_lightning_damage",
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, storedUses = 1, levelRequirement = 0, cooldown = 8, statInterpolation = { 3, 3, }, },
@@ -4128,6 +4409,10 @@ skills["AtlasCrusaderSisterMortarSpectre"] = {
 		"base_is_projectile",
 		"projectile_uses_contact_position",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.69999998807907, 1.2999999523163, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
 	},
@@ -4158,6 +4443,10 @@ skills["BreachLightningWhip"] = {
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, storedUses = 1, levelRequirement = 1, cooldown = 5, statInterpolation = { 3, 3, }, },
 		[2] = { 1, 3, critChance = 5, storedUses = 1, levelRequirement = 68, cooldown = 5, statInterpolation = { 3, 3, }, },
@@ -4182,6 +4471,10 @@ skills["BreachArc"] = {
 		{ "spell_maximum_action_distance_+%", -65 },
 	},
 	stats = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
+	notMinionStat = {
 		"spell_minimum_base_lightning_damage",
 		"spell_maximum_base_lightning_damage",
 	},
@@ -4240,6 +4533,10 @@ skills["BreachLightningOrbsCommander"] = {
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
 		"cannot_stun",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, storedUses = 1, levelRequirement = 1, cooldown = 5, statInterpolation = { 3, 3, }, },
@@ -4305,6 +4602,10 @@ skills["SynthesisSoulstealerProjectileLightning"] = {
 		"base_is_projectile",
 		"projectile_uses_contact_position",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
 	},
@@ -4329,6 +4630,10 @@ skills["SynthesisSoulstealerLaser"] = {
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
 		"cannot_stun",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
@@ -4360,6 +4665,10 @@ skills["SynthesisSoulstealerBolt"] = {
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.69999998807907, 1.2999999523163, critChance = 5, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -4385,6 +4694,9 @@ skills["MeleeCold"] = {
 		"active_skill_damage_+%_final",
 		"skill_can_fire_arrows",
 		"skill_can_fire_wand_projectiles",
+	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
 	},
 	levels = {
 		[1] = { 0, baseMultiplier = 0.75, levelRequirement = 1, statInterpolation = { 2, }, },
@@ -4420,6 +4732,10 @@ skills["AtlasCrusaderJudgeBallLightning"] = {
 		"spell_maximum_base_lightning_damage",
 		"base_is_projectile",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 6, levelRequirement = 0, statInterpolation = { 3, 3, }, },
 	},
@@ -4449,6 +4765,10 @@ skills["AtlasCruasderJudgeFadingNova"] = {
 		"always_pierce",
 		"use_scaled_contact_offset",
 		"projectiles_nova",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, storedUses = 1, levelRequirement = 0, cooldown = 8, statInterpolation = { 3, 3, }, },
@@ -4483,6 +4803,9 @@ skills["GAHarvestCrabDashSlam"] = {
 		"active_skill_damage_+%_final",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 }
 skills["HarvestCrabAbyssSlam"] = {
 	name = "Slam Attack",
@@ -4509,6 +4832,9 @@ skills["HarvestCrabAbyssSlam"] = {
 	stats = {
 		"active_skill_damage_+%_final",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
 	},
 	levels = {
 		[1] = { -30, baseMultiplier = 0.75, storedUses = 1, levelRequirement = 1, cooldown = 10, statInterpolation = { 2, }, },
@@ -4594,6 +4920,9 @@ skills["HarvestRhexLeapSlam"] = {
 		"is_area_damage",
 		"cast_time_overrides_attack_duration",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { 0, storedUses = 1, levelRequirement = 1, cooldown = 10, statInterpolation = { 2, }, },
 		[2] = { 0, storedUses = 1, levelRequirement = 19, cooldown = 10, statInterpolation = { 2, }, },
@@ -4630,6 +4959,9 @@ skills["GAHarvestRhexDashSlash"] = {
 		"active_skill_damage_+%_final",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 }
 skills["GSHarvestRhexScreech"] = {
 	name = "Screech",
@@ -4656,6 +4988,10 @@ skills["GSHarvestRhexScreech"] = {
 		"spell_minimum_base_lightning_damage",
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 }
 skills["HarvestRhexScreechDebuff"] = {
@@ -4709,6 +5045,10 @@ skills["LegionTemplarJudgeBallLightning"] = {
 		"base_is_projectile",
 		"visual_hit_effect_elemental_is_holy",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
 	},
@@ -4739,6 +5079,10 @@ skills["LegionTemplarJudgeStormCall"] = {
 		"is_area_damage",
 		"visual_hit_effect_elemental_is_holy",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -4768,6 +5112,9 @@ skills["MPWHeistThugRangedBurningArrow"] = {
 		"projectile_uses_contact_position",
 		"maintain_projectile_direction_when_using_contact_position",
 		"always_ignite",
+	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
 	},
 	levels = {
 		[1] = { -30, levelRequirement = 1, statInterpolation = { 2, }, },
@@ -4801,6 +5148,10 @@ skills["MPSHeistRobotClockworkGolemBasicProjectile"] = {
 		"use_scaled_contact_offset",
 		"projectile_uses_contact_position",
 	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, levelRequirement = 0, statInterpolation = { 3, 3, }, },
 	},
@@ -4832,6 +5183,10 @@ skills["MMSHeistRobotClockworkGolemMortarSpectre"] = {
 		"base_is_projectile",
 		"projectile_uses_contact_position",
 		"use_scaled_contact_offset",
+	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, storedUses = 1, levelRequirement = 1, cooldown = 6, statInterpolation = { 3, 3, }, },
@@ -4948,6 +5303,9 @@ skills["BetrayalSecretPoliceCurveDagger1"] = {
 		"base_is_projectile",
 		"projectile_uses_contact_position",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { -50, levelRequirement = 1, statInterpolation = { 2, }, },
 		[2] = { 0, levelRequirement = 100, statInterpolation = { 2, }, },
@@ -4981,6 +5339,10 @@ skills["AtlasEyrieKiwethMortarSpectre"] = {
 		"projectile_uses_contact_position",
 		"use_scaled_contact_offset",
 	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, storedUses = 1, levelRequirement = 0, cooldown = 10, statInterpolation = { 3, 3, }, },
 	},
@@ -5005,6 +5367,10 @@ skills["AtlasEyrieKiwethMortarShards"] = {
 		"spell_maximum_base_cold_damage",
 		"base_is_projectile",
 		"projectile_uses_contact_position",
+	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
@@ -5055,6 +5421,9 @@ skills["GAHeistThugRangedShotgun"] = {
 		"is_area_damage",
 		"cast_time_overrides_attack_duration",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { -30, baseMultiplier = 1.3, levelRequirement = 1, statInterpolation = { 2, }, },
 		[2] = { 0, baseMultiplier = 1.3, levelRequirement = 19, statInterpolation = { 2, }, },
@@ -5085,6 +5454,10 @@ skills["GSHeistRobotPyreBeamBlast"] = {
 		"spell_maximum_base_fire_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -5108,6 +5481,10 @@ skills["GSHeistRobotPyreNukeBeam"] = {
 		"spell_minimum_base_fire_damage",
 		"spell_maximum_base_fire_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, storedUses = 1, levelRequirement = 1, cooldown = 13, statInterpolation = { 3, 3, }, },
@@ -5133,6 +5510,10 @@ skills["GSHeistRobotPyreNukeBeamChannelled"] = {
 		"spell_maximum_base_fire_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, storedUses = 1, levelRequirement = 1, cooldown = 13, statInterpolation = { 3, 3, }, },
 	},
@@ -5156,6 +5537,10 @@ skills["GSHeistRobotPyreBeamSweepBeam"] = {
 		"spell_minimum_base_fire_damage",
 		"spell_maximum_base_fire_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 1, statInterpolation = { 3, 3, }, },
@@ -5186,6 +5571,9 @@ skills["MeleeEyrieBird"] = {
 		"global_knockback",
 		"determine_knockback_direction_from_melee_pattern",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { 0, attackSpeedMultiplier = -38, storedUses = 1, baseMultiplier = 0.75, cooldown = 8, levelRequirement = 1, statInterpolation = { 2, }, },
 		[2] = { 0, attackSpeedMultiplier = -38, storedUses = 1, baseMultiplier = 0.75, cooldown = 8, levelRequirement = 19, statInterpolation = { 2, }, },
@@ -5214,6 +5602,10 @@ skills["AtlasEyrieBirdBreath"] = {
 		"spell_minimum_base_cold_damage",
 		"spell_maximum_base_cold_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, storedUses = 1, levelRequirement = 0, cooldown = 10, statInterpolation = { 3, 3, }, },
@@ -5306,6 +5698,9 @@ skills["UltimatumGuardMeleeCold"] = {
 		"action_attack_or_cast_time_uses_animation_length",
 		"use_scaled_contact_offset",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { -50, levelRequirement = 1, statInterpolation = { 2, }, },
 		[2] = { 0, levelRequirement = 68, statInterpolation = { 2, }, },
@@ -5330,6 +5725,9 @@ skills["UltimatumGuardConeArrowCold"] = {
 	stats = {
 		"active_skill_damage_+%_final",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
 	},
 	levels = {
 		[1] = { 0, storedUses = 1, levelRequirement = 1, cooldown = 8, statInterpolation = { 2, }, },
@@ -5359,6 +5757,9 @@ skills["MPWVaalGuardBarrage"] = {
 		"projectile_uses_contact_position",
 		"use_scaled_contact_offset",
 		"maintain_projectile_direction_when_using_contact_position",
+	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
 	},
 	levels = {
 		[1] = { -70, levelRequirement = 1, statInterpolation = { 2, }, },
@@ -5412,6 +5813,9 @@ skills["MeleeKaruiArcher"] = {
 		"active_skill_damage_+%_final",
 		"skill_can_fire_arrows",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { 0, levelRequirement = 1, statInterpolation = { 2, }, },
 		[2] = { 0, levelRequirement = 19, statInterpolation = { 2, }, },
@@ -5441,6 +5845,9 @@ skills["LegionKaruiArcherSnipe"] = {
 		"base_is_projectile",
 		"always_pierce",
 		"skill_can_fire_arrows",
+	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
 	},
 	levels = {
 		[1] = { 0, baseMultiplier = 1.65, storedUses = 1, levelRequirement = 1, cooldown = 10, statInterpolation = { 2, }, },
@@ -5474,6 +5881,9 @@ skills["MeleeAtAnimationSpeedFire"] = {
 		"projectile_uses_contact_position",
 		"use_scaled_contact_offset",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { 0, baseMultiplier = 0.75, levelRequirement = 1, statInterpolation = { 2, }, },
 		[2] = { 0, baseMultiplier = 0.75, levelRequirement = 19, statInterpolation = { 2, }, },
@@ -5500,6 +5910,9 @@ skills["GAHellscapeDemonElite1DashSlash"] = {
 	stats = {
 		"active_skill_damage_+%_final",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
 	},
 	levels = {
 		[1] = { -30, levelRequirement = 1, statInterpolation = { 2, }, },
@@ -5531,6 +5944,10 @@ skills["GSHellscapeDemonElite1Screech"] = {
 		"spell_maximum_base_physical_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -5553,6 +5970,10 @@ skills["TBHellscapePaleLightningBoltSpammableLeft"] = {
 		{ "generic_skill_trigger_skills_with_id", 1 },
 	},
 	stats = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
+	notMinionStat = {
 		"spell_minimum_base_lightning_damage",
 		"spell_maximum_base_lightning_damage",
 	},
@@ -5583,6 +6004,10 @@ skills["GSHellscapePaleEliteBoltImpact"] = {
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -5610,6 +6035,11 @@ skills["GSHellscapePaleEliteOmegaBeam"] = {
 		"spell_maximum_base_lightning_damage",
 		"active_skill_damage_+%_final",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+		"active_skill_damage_+%_final",
 	},
 	levels = {
 		[1] = { 0.5, 1.5, -50, critChance = 5, storedUses = 1, levelRequirement = 1, cooldown = 6, statInterpolation = { 3, 3, 2, }, },
@@ -5646,6 +6076,11 @@ skills["MMSHellscapeDemonEliteTripleMortar"] = {
 		"base_is_projectile",
 		"projectile_uses_contact_position",
 		"use_scaled_contact_offset",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+		"active_skill_damage_+%_final",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, -30, critChance = 5, levelRequirement = 1, statInterpolation = { 3, 3, 2, }, },
@@ -5685,6 +6120,11 @@ skills["MMSHellscapeDemonEliteVomitMortar"] = {
 		"projectile_uses_contact_position",
 		"use_scaled_contact_offset",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, -30, critChance = 5, levelRequirement = 1, statInterpolation = { 3, 3, 2, }, },
 		[2] = { 0.80000001192093, 1.2000000476837, 0, critChance = 5, levelRequirement = 19, statInterpolation = { 3, 3, 2, }, },
@@ -5716,6 +6156,11 @@ skills["GSHellscapeDemonEliteBeamNuke"] = {
 		"spell_maximum_base_physical_damage",
 		"active_skill_damage_+%_final",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+		"active_skill_damage_+%_final",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, -30, critChance = 5, storedUses = 1, levelRequirement = 1, cooldown = 7, statInterpolation = { 3, 3, 2, }, },
@@ -5820,6 +6265,10 @@ skills["HellscapeFleshFodderArc"] = {
 		"spell_maximum_base_lightning_damage",
 		"disable_visual_hit_effect",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -5844,6 +6293,10 @@ skills["SynthesisSoulstealerProjectilePhysical"] = {
 		"spell_maximum_base_physical_damage",
 		"base_is_projectile",
 		"projectile_uses_contact_position",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
@@ -5875,6 +6328,10 @@ skills["SynthesisPhysicalTripleMortar"] = {
 		"base_is_projectile",
 		"projectile_uses_contact_position",
 		"mortar_projectile_scale_animation_speed_instead_of_projectile_speed",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, storedUses = 1, levelRequirement = 0, cooldown = 12, statInterpolation = { 3, 3, }, },
@@ -6052,6 +6509,10 @@ skills["DelveWraithScreechChaos"] = {
 		"spell_maximum_base_chaos_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_chaos_damage",
+		"spell_maximum_base_chaos_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -6130,6 +6591,10 @@ skills["WraithEtherealKnives"] = {
 		"spell_maximum_base_physical_damage",
 		"monster_penalty_against_minions_damage_+%_final_vs_player_minions",
 		"base_is_projectile",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, 0, critChance = 5, levelRequirement = 51, statInterpolation = { 3, 3, 1, }, },
@@ -6268,6 +6733,10 @@ skills["CrucibleIceStormTrap"] = {
 		"is_trap",
 		"ignores_trap_and_mine_cooldown_limit",
 	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
+	},
 	levels = {
 		[1] = { 0.40000000596046, 0.60000002384186, critChance = 5, storedUses = 1, levelRequirement = 0, cooldown = 8, statInterpolation = { 3, 3, }, },
 	},
@@ -6299,6 +6768,10 @@ skills["MMSPyromaniacIceMortar"] = {
 		"projectile_uses_contact_position",
 		"use_scaled_contact_offset",
 	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -6327,6 +6800,11 @@ skills["AzmeriHailrakeGlacialCascade"] = {
 		"base_cast_speed_+%",
 		"active_skill_area_of_effect_radius_+%_final",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+		"active_skill_area_of_effect_radius_+%_final",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, 6, 0, -20, critChance = 5, levelRequirement = 3, statInterpolation = { 3, 3, 1, 1, 1, }, },
@@ -6411,6 +6889,10 @@ skills["GSAzmeriHailrakeIceNova"] = {
 		"spell_maximum_base_cold_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, storedUses = 1, levelRequirement = 0, cooldown = 0.2, statInterpolation = { 3, 3, }, },
 	},
@@ -6484,6 +6966,9 @@ skills["AzmeriHailrakeColdResistAura"] = {
 		"base_maximum_cold_damage_resistance_%",
 		"active_skill_area_of_effect_radius_+%_final",
 		"base_deal_no_damage",
+	},
+	notMinionStat = {
+		"active_skill_area_of_effect_radius_+%_final",
 	},
 	levels = {
 		[1] = { 20, 0, 20, storedUses = 1, levelRequirement = 1, cooldown = 0.5, statInterpolation = { 2, 2, 2, }, },
@@ -6573,6 +7058,10 @@ skills["FemaleCannibalBossFireStorm"] = {
 		"spell_maximum_base_fire_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 2, statInterpolation = { 3, 3, }, },
 	},
@@ -6600,6 +7089,11 @@ skills["FemaleCannibalBossFlameDash"] = {
 		"spell_maximum_base_fire_damage",
 		"base_fire_damage_to_deal_per_minute",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+		"base_fire_damage_to_deal_per_minute",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, 90.000003601114, critChance = 5, storedUses = 1, levelRequirement = 1, cooldown = 6, statInterpolation = { 3, 3, 3, }, },
@@ -6640,6 +7134,10 @@ skills["AzmeriFirefuryCremation"] = {
 		"is_area_damage",
 		"base_is_projectile",
 	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, storedUses = 1, levelRequirement = 0, cooldown = 5, statInterpolation = { 3, 3, }, },
 	},
@@ -6672,6 +7170,9 @@ skills["AzmeriFirefuryFireResistAura"] = {
 		"base_maximum_fire_damage_resistance_%",
 		"active_skill_area_of_effect_radius_+%_final",
 		"base_deal_no_damage",
+	},
+	notMinionStat = {
+		"active_skill_area_of_effect_radius_+%_final",
 	},
 	levels = {
 		[1] = { 20, 0, 20, storedUses = 1, levelRequirement = 1, cooldown = 0.5, statInterpolation = { 2, 2, 2, }, },
@@ -6914,6 +7415,10 @@ skills["AzmeriKudukuShockNova"] = {
 		"is_area_damage",
 		"action_attack_or_cast_time_uses_animation_length",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, storedUses = 1, levelRequirement = 7, cooldown = 6, statInterpolation = { 3, 3, }, },
 	},
@@ -6944,6 +7449,10 @@ skills["AzmeriKudukuSparkExtraProj"] = {
 		"base_is_projectile",
 		"action_attack_or_cast_time_uses_animation_length",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, levelRequirement = 6, statInterpolation = { 3, 3, }, },
 	},
@@ -6972,6 +7481,10 @@ skills["AzmeriKudukuWarp"] = {
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
 		"action_attack_or_cast_time_uses_animation_length",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, storedUses = 1, levelRequirement = 0, cooldown = 2, statInterpolation = { 3, 3, }, },
@@ -7043,6 +7556,9 @@ skills["MeleeAtAnimationSpeedCold"] = {
 		"projectile_uses_contact_position",
 		"use_scaled_contact_offset",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { 0, baseMultiplier = 0.75, levelRequirement = 1, statInterpolation = { 2, }, },
 		[2] = { 0, baseMultiplier = 0.75, levelRequirement = 19, statInterpolation = { 2, }, },
@@ -7067,6 +7583,9 @@ skills["AzmeriAdmiralDoubleStrikeTriggered"] = {
 		"active_skill_damage_+%_final",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { 0, damageEffectiveness = 0.7, baseMultiplier = 0.7, levelRequirement = 1, statInterpolation = { 2, }, },
 	},
@@ -7089,6 +7608,9 @@ skills["AzmeriAdmiralDashThrustTriggered"] = {
 		"active_skill_damage_+%_final",
 		"is_area_damage",
 		"always_freeze",
+	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
 	},
 	levels = {
 		[1] = { 0, levelRequirement = 0, statInterpolation = { 2, }, },
@@ -7117,6 +7639,10 @@ skills["AzmeriAdmiralGeyserDamage"] = {
 		"spell_minimum_base_cold_damage",
 		"spell_maximum_base_cold_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
@@ -7170,6 +7696,10 @@ skills["AzmeriAdmiralDashMortars"] = {
 		"projectile_uses_contact_direction",
 		"mortar_projectile_scale_animation_speed_instead_of_projectile_speed",
 	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
 	},
@@ -7192,6 +7722,10 @@ skills["GSAzmeriAdmiralCannonball"] = {
 		"spell_minimum_base_physical_damage",
 		"spell_maximum_base_physical_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
@@ -7349,6 +7883,10 @@ skills["AzmeriSwordStormCascade"] = {
 		"base_skill_show_average_damage_instead_of_dps",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, storedUses = 1, levelRequirement = 68, cooldown = 10, statInterpolation = { 3, 3, }, },
 	},
@@ -7454,6 +7992,10 @@ skills["AzmeriBarrageDemonSpinestorm"] = {
 		"is_area_damage",
 		"action_attack_or_cast_time_uses_animation_length",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 70, statInterpolation = { 3, 3, }, },
 	},
@@ -7516,6 +8058,10 @@ skills["AzmeriBasiliskShoulderMortar"] = {
 		"base_is_projectile",
 		"projectile_uses_contact_position",
 		"visual_hit_effect_chaos_is_green",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
@@ -7757,6 +8303,10 @@ skills["AzmeriBasiliskShoulderMortar2"] = {
 		"projectile_uses_contact_position",
 		"visual_hit_effect_chaos_is_green",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
 	},
@@ -7817,6 +8367,10 @@ skills["AzmeriCasterDemonProjectile"] = {
 		"projectile_uses_contact_position",
 		"use_scaled_contact_offset",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 1, levelRequirement = 0, statInterpolation = { 3, 3, }, },
 	},
@@ -7846,6 +8400,10 @@ skills["DeceleratingProjectileAzmeriCasterDemon"] = {
 		"use_scaled_contact_offset",
 		"cast_time_overrides_attack_duration",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 1, storedUses = 1, levelRequirement = 0, cooldown = 5, statInterpolation = { 3, 3, }, },
 	},
@@ -7870,6 +8428,10 @@ skills["DeceleratingProjectileAzmeriCasterDemonExplode"] = {
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
 		"always_shock",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 1, levelRequirement = 0, statInterpolation = { 3, 3, }, },
@@ -8005,6 +8567,9 @@ skills["GAExpeditionDeathKnightSlam"] = {
 		"active_skill_damage_+%_final",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { 35, attackSpeedMultiplier = -10, storedUses = 1, baseMultiplier = 1.65, cooldown = 4, levelRequirement = 0, statInterpolation = { 2, }, },
 		[2] = { 0, attackSpeedMultiplier = -10, storedUses = 1, baseMultiplier = 1.65, cooldown = 4, levelRequirement = 68, statInterpolation = { 2, }, },
@@ -8033,6 +8598,10 @@ skills["GSExpeditionDeathKnightNova"] = {
 		"spell_minimum_base_physical_damage",
 		"spell_maximum_base_physical_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1, critChance = 5, storedUses = 1, levelRequirement = 0, cooldown = 2.5, statInterpolation = { 3, 3, }, },
@@ -8137,6 +8706,10 @@ skills["GSAncestralDruidFlaskExplode"] = {
 		"is_area_damage",
 		"visual_hit_effect_chaos_is_green",
 	},
+	notMinionStat = {
+		"spell_minimum_base_chaos_damage",
+		"spell_maximum_base_chaos_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
 	},
@@ -8160,6 +8733,9 @@ skills["GAHeistRobotHoundStomp"] = {
 		"global_knockback",
 		"is_area_damage",
 		"always_stun",
+	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
 	},
 	levels = {
 		[1] = { -30, levelRequirement = 1, statInterpolation = { 2, }, },
@@ -8187,6 +8763,10 @@ skills["GSRoboHoundBellyDamage"] = {
 		"spell_maximum_base_fire_damage",
 		"is_area_damage",
 		"cannot_stun",
+	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, levelRequirement = 1, statInterpolation = { 3, 3, }, },
@@ -8434,6 +9014,10 @@ skills["AzmeriGoddessSpiritMortar"] = {
 		"base_is_projectile",
 		"distribute_projectiles_over_contact_points",
 	},
+	notMinionStat = {
+		"spell_minimum_base_fire_damage",
+		"spell_maximum_base_fire_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 81, statInterpolation = { 3, 3, }, },
 	},
@@ -8459,6 +9043,9 @@ skills["AzmeriGoddessOfferingOfJudgement"] = {
 		"base_fire_damage_to_deal_per_minute",
 		"is_area_damage",
 		"base_is_projectile",
+	},
+	notMinionStat = {
+		"base_fire_damage_to_deal_per_minute",
 	},
 	levels = {
 		[1] = { 16.666667039196, storedUses = 1, levelRequirement = 1, cooldown = 5, statInterpolation = { 3, }, },
@@ -8511,6 +9098,9 @@ skills["AzmeriGoddessBeam"] = {
 		"base_fire_damage_to_deal_per_minute",
 		"is_area_damage",
 		"disable_skill_repeats",
+	},
+	notMinionStat = {
+		"base_fire_damage_to_deal_per_minute",
 	},
 	levels = {
 		[1] = { 16.666667039196, storedUses = 1, levelRequirement = 68, cooldown = 18, statInterpolation = { 3, }, },
@@ -8619,6 +9209,9 @@ skills["MeleeAtAnimationSpeedLightning"] = {
 		"projectile_uses_contact_position",
 		"use_scaled_contact_offset",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { 0, baseMultiplier = 0.75, levelRequirement = 1, statInterpolation = { 2, }, },
 		[2] = { 0, baseMultiplier = 0.75, levelRequirement = 19, statInterpolation = { 2, }, },
@@ -8647,6 +9240,10 @@ skills["AzmeriBirdBeam"] = {
 		"spell_minimum_base_lightning_damage",
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
@@ -8679,6 +9276,10 @@ skills["AzmeriBirdScreechExposure"] = {
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 25, levelRequirement = 0, statInterpolation = { 3, 3, }, },
 	},
@@ -8701,6 +9302,10 @@ skills["GSAzmeriBirdDashZap"] = {
 		"spell_minimum_base_lightning_damage",
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 	levels = {
 		[1] = { 0.69999998807907, 1.2999999523163, critChance = 15, levelRequirement = 0, statInterpolation = { 3, 3, }, },
@@ -8765,6 +9370,9 @@ skills["AzmeriLightningMelee"] = {
 		"skill_can_fire_wand_projectiles",
 		"action_attack_or_cast_time_uses_animation_length",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { 0, baseMultiplier = 0.75, levelRequirement = 1, statInterpolation = { 2, }, },
 	},
@@ -8787,6 +9395,10 @@ skills["AzmeriPhantasmExplode"] = {
 		"spell_minimum_base_lightning_damage",
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, storedUses = 1, levelRequirement = 0, cooldown = 12, statInterpolation = { 3, 3, }, },
@@ -8819,6 +9431,10 @@ skills["AzmeriPhantasmExplodeSap"] = {
 		"spell_minimum_base_lightning_damage",
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, storedUses = 1, levelRequirement = 0, cooldown = 8, statInterpolation = { 3, 3, }, },
@@ -8937,6 +9553,9 @@ skills["AzmeriOakSweep"] = {
 		"active_skill_physical_damage_+%_final",
 		"is_area_damage",
 		"cast_time_overrides_attack_duration",
+	},
+	notMinionStat = {
+		"active_skill_physical_damage_+%_final",
 	},
 	levels = {
 		[1] = { 20, levelRequirement = 19, statInterpolation = { 1, }, },
@@ -9130,6 +9749,10 @@ skills["MMSAzmeriShepherdTripleMortar"] = {
 		"projectile_uses_contact_position",
 		"use_scaled_contact_offset",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -9162,6 +9785,10 @@ skills["MMSAzmeriShepherdVomitMortar"] = {
 		"projectile_uses_contact_position",
 		"use_scaled_contact_offset",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -9188,6 +9815,10 @@ skills["GSAzmeriShepherdBeamNuke"] = {
 		"spell_minimum_base_physical_damage",
 		"spell_maximum_base_physical_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, storedUses = 1, levelRequirement = 1, cooldown = 7, statInterpolation = { 3, 3, }, },
@@ -9277,6 +9908,10 @@ skills["AzmeriSpiderLeaderMortar"] = {
 		"summoned_monsters_are_minions",
 		"summoned_monsters_no_drops_or_experience",
 		"base_is_projectile",
+	},
+	notMinionStat = {
+		"spell_minimum_base_chaos_damage",
+		"spell_maximum_base_chaos_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, storedUses = 1, levelRequirement = 68, cooldown = 5, statInterpolation = { 3, 3, }, },
@@ -9368,6 +10003,10 @@ skills["ElderTentacleMinionProjectile"] = {
 		"base_is_projectile",
 		"projectile_uses_contact_position",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -9396,6 +10035,10 @@ skills["ElderTentacleMinionProjectileEpic"] = {
 		"base_is_projectile",
 		"projectile_uses_contact_position",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, storedUses = 1, levelRequirement = 68, cooldown = 5, statInterpolation = { 3, 3, }, },
 		[2] = { 0.5, 1.5, critChance = 5, storedUses = 1, levelRequirement = 82, cooldown = 5, statInterpolation = { 3, 3, }, },
@@ -9420,6 +10063,10 @@ skills["GSAzmeriTentacleMonsterBeam"] = {
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
 	},
@@ -9442,6 +10089,10 @@ skills["GSAzmeriTentacleMonsterShockExplode"] = {
 		"spell_minimum_base_lightning_damage",
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, storedUses = 1, levelRequirement = 0, cooldown = 0.1, statInterpolation = { 3, 3, }, },
@@ -9472,6 +10123,9 @@ skills["AzmeriTentacleMinionLightningResistAura"] = {
 		"base_maximum_lightning_damage_resistance_%",
 		"active_skill_base_radius_+",
 		"base_deal_no_damage",
+	},
+	notMinionStat = {
+		"active_skill_base_radius_+",
 	},
 	levels = {
 		[1] = { 20, 0, 20, storedUses = 1, levelRequirement = 1, cooldown = 0.5, statInterpolation = { 2, 2, 2, }, },
@@ -9726,6 +10380,10 @@ skills["AzmeriOversoulRocksTriggered"] = {
 		"spell_maximum_base_physical_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.40000000596046, 0.60000002384186, levelRequirement = 23, statInterpolation = { 3, 3, }, },
 	},
@@ -9787,6 +10445,11 @@ skills["AzmeriOversoulLaserMaxShock"] = {
 		"active_skill_cast_speed_+%_final",
 		"action_attack_or_cast_time_uses_animation_length",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+		"active_skill_cast_speed_+%_final",
+	},
 	levels = {
 		[1] = { 1.1000000238419, 1.6000000238419, 15, critChance = 5, levelRequirement = 23, statInterpolation = { 3, 3, 1, }, },
 	},
@@ -9820,6 +10483,10 @@ skills["AzmeriOversoulColdSnapTriggered"] = {
 		"active_skill_chill_effect_+%_final",
 		"base_chance_to_freeze_%",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_cold_damage",
+		"spell_maximum_base_cold_damage",
 	},
 	levels = {
 		[1] = { 0, 0, 40.000002483527, 200, 0, levelRequirement = 23, statInterpolation = { 3, 3, 3, 2, 2, }, },
@@ -9894,6 +10561,9 @@ skills["AzmeriVikingUpheaval"] = {
 		"base_fire_damage_to_deal_per_minute",
 		"global_cannot_crit",
 		"always_ignite",
+	},
+	notMinionStat = {
+		"base_fire_damage_to_deal_per_minute",
 	},
 	levels = {
 		[1] = { 33.333334078391, damageEffectiveness = 0.7, baseMultiplier = 0.7, levelRequirement = 66, statInterpolation = { 3, }, },
@@ -9979,6 +10649,10 @@ skills["GSHeistLightningVolatileExplode"] = {
 		"always_shock",
 		"cannot_stun",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -10007,6 +10681,10 @@ skills["HeistCultistLightningBolt"] = {
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
 	},
@@ -10032,6 +10710,10 @@ skills["GSHeistLightningWaterfallHit"] = {
 		"spell_minimum_base_lightning_damage",
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 	levels = {
 		[1] = { 0.69999998807907, 1.2999999523163, critChance = 5, levelRequirement = 1, statInterpolation = { 3, 3, }, },
@@ -10062,6 +10744,10 @@ skills["MPSHeistCultistStaffProjectileGreen"] = {
 		"maintain_projectile_direction_when_using_contact_position",
 		"visual_hit_effect_chaos_is_green",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, storedUses = 1, levelRequirement = 0, cooldown = 2.2, statInterpolation = { 3, 3, }, },
 	},
@@ -10090,6 +10776,10 @@ skills["GSHeistScienceLightningDashImpact"] = {
 		"is_area_damage",
 		"always_shock",
 		"cannot_stun",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 	levels = {
 		[1] = { 0.5, 1.5, critChance = 5, levelRequirement = 1, statInterpolation = { 3, 3, }, },
@@ -10125,6 +10815,11 @@ skills["AzmeriDemonTeethShot"] = {
 		"use_scaled_contact_offset",
 		"always_pierce",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, -30, critChance = 5, baseMultiplier = 0.7, levelRequirement = 1, statInterpolation = { 3, 3, 2, }, },
 	},
@@ -10151,6 +10846,9 @@ skills["GAAzmeriDemonLeapSlamDamage"] = {
 		"active_skill_damage_+%_final",
 		"is_area_damage",
 	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
+	},
 	levels = {
 		[1] = { -30, damageEffectiveness = 1.3, baseMultiplier = 2, levelRequirement = 1, statInterpolation = { 2, }, },
 	},
@@ -10176,6 +10874,9 @@ skills["GAAzmeriDemonMeleeMiniSlam1"] = {
 	stats = {
 		"active_skill_damage_+%_final",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
 	},
 	levels = {
 		[1] = { -30, baseMultiplier = 1.5, levelRequirement = 1, statInterpolation = { 2, }, },
@@ -10208,6 +10909,10 @@ skills["MMSAzmeriDemonBloodVomitSmall"] = {
 		"always_pierce",
 		"mortar_projectile_scale_animation_speed_instead_of_projectile_speed",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -10239,6 +10944,10 @@ skills["MMSAzmeriDemonBloodVomitMedium"] = {
 		"always_pierce",
 		"mortar_projectile_scale_animation_speed_instead_of_projectile_speed",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -10269,6 +10978,10 @@ skills["MMSAzmeriDemonBloodVomitLarge"] = {
 		"projectile_uses_contact_position",
 		"always_pierce",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -10289,6 +11002,10 @@ skills["GSAzmeriDemonBossCorruptExplode"] = {
 		"spell_minimum_base_physical_damage",
 		"spell_maximum_base_physical_damage",
 		"is_area_damage",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, storedUses = 1, levelRequirement = 0, cooldown = 0.5, statInterpolation = { 3, 3, }, },
@@ -10378,6 +11095,10 @@ skills["AzmeriGolemVTurretProjectile"] = {
 		"spell_maximum_base_physical_damage",
 		"base_is_projectile",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, levelRequirement = 1, statInterpolation = { 3, 3, }, },
 	},
@@ -10426,6 +11147,10 @@ skills["AzmeriGuardian4BeamGun"] = {
 		"spell_maximum_base_physical_damage",
 		"is_area_damage",
 		"cannot_stun",
+	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
@@ -10520,6 +11245,10 @@ skills["AzmeriBossShockRifleSingle"] = {
 		"skill_cannot_be_stunned",
 		"base_is_projectile",
 	},
+	notMinionStat = {
+		"spell_minimum_base_physical_damage",
+		"spell_maximum_base_physical_damage",
+	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, storedUses = 1, levelRequirement = 0, cooldown = 6, statInterpolation = { 3, 3, }, },
 	},
@@ -10543,6 +11272,10 @@ skills["AzmeriGolemRotateZap"] = {
 		"spell_maximum_base_lightning_damage",
 		"is_area_damage",
 		"cannot_stun",
+	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
 	},
 	levels = {
 		[1] = { 0.80000001192093, 1.2000000476837, critChance = 5, levelRequirement = 0, statInterpolation = { 3, 3, }, },
@@ -10575,6 +11308,10 @@ skills["RevenantBossSpellProjectile"] = {
 		"spell_maximum_base_lightning_damage",
 		"base_is_projectile",
 	},
+	notMinionStat = {
+		"spell_minimum_base_lightning_damage",
+		"spell_maximum_base_lightning_damage",
+	},
 	levels = {
 		[1] = { 0.60000002384186, 1.3999999761581, levelRequirement = 3, statInterpolation = { 3, 3, }, },
 	},
@@ -10599,6 +11336,9 @@ skills["MeleeFire"] = {
 		"active_skill_damage_+%_final",
 		"skill_can_fire_arrows",
 		"skill_can_fire_wand_projectiles",
+	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
 	},
 	levels = {
 		[1] = { 0, baseMultiplier = 0.75, levelRequirement = 1, statInterpolation = { 2, }, },
@@ -10639,6 +11379,9 @@ skills["LegionKaruiMeleeLeapSlam"] = {
 		"active_skill_damage_+%_final",
 		"is_area_damage",
 		"cast_time_overrides_attack_duration",
+	},
+	notMinionStat = {
+		"active_skill_damage_+%_final",
 	},
 	levels = {
 		[1] = { 0, baseMultiplier = 0.75, storedUses = 1, levelRequirement = 1, cooldown = 8, statInterpolation = { 2, }, },

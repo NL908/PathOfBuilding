@@ -458,37 +458,95 @@ describe("TestDefence", function()
 		assert.are.equals(1250, build.calcsTab.calcsOutput.ChaosMaximumHitTaken)
 	end)
 
-	it("energy shield increased by spell block chance if corresponding flag is present", function()
-		build.configTab.input.enemyIsBoss = "None"
-		build.configTab.input.customMods = "\z
-		You have no intelligence\n\z
-		100 Energy shield \n\z
-		energy shield is increased by chance to block spell damage\n\z
-		50% chance to block spell damage\n\z
-		"
-		build.configTab:BuildModList()
-		runCallback("OnFrame")
+	describe("Energy shield increased by spell block chance", function()
 
-		assert.are.equals(0, build.calcsTab.calcsOutput.SpellBlockChanceOverCap )
-		assert.are.equals(50, build.calcsTab.calcsOutput.SpellBlockChance)
-		assert.are.equals(150, build.calcsTab.calcsOutput.EnergyShield)
+		it("energy shield increased by spell block chance if corresponding 'maximum es' flag is present", function()
+			build.configTab.input.enemyIsBoss = "None"
+			build.configTab.input.customMods = "\z
+			You have no intelligence\n\z
+			100 Energy shield \n\z
+			maximum energy shield is increased by chance to block spell damage\n\z
+			50% chance to block spell damage\n\z
+			"
+			build.configTab:BuildModList()
+			runCallback("OnFrame")
+
+			assert.are.equals(0, build.calcsTab.calcsOutput.SpellBlockChanceOverCap )
+			assert.are.equals(50, build.calcsTab.calcsOutput.SpellBlockChance)
+			assert.are.equals(150, build.calcsTab.calcsOutput.EnergyShield)
+		end)
+
+		it("energy shield increased by spell block chance if corresponding 'maximum es' flag is present should be capped to max block", function()
+			build.configTab.input.enemyIsBoss = "None"
+
+			build.configTab.input.customMods = "\z
+			You have no intelligence\n\z
+			100 Energy shield \n\z
+			maximum energy shield is increased by chance to block spell damage\n\z
+			100% chance to block spell damage\n\z
+			"
+			build.configTab:BuildModList()
+			runCallback("OnFrame")
+
+			assert.are.equals(25, build.calcsTab.calcsOutput.SpellBlockChanceOverCap )
+			assert.are.equals(75, build.calcsTab.calcsOutput.SpellBlockChance)
+			assert.are.equals(175, build.calcsTab.calcsOutput.EnergyShield)
+		end)
+
 	end)
 
-	it("energy shield increased by spell block chance if corresponding flag is present should be capped to max block", function()
-		build.configTab.input.enemyIsBoss = "None"
+	describe("enemy damage lessened by half of chill effect", function ()
+		it("enemy damage lessened by half of chill effect if the corresponding conditions are fulfilled", function()
+			build.configTab.input.enemyIsBoss = "None"
+			build.configTab.input.conditionEnemyChilled = true
+			-- default max chill effect
+			build.configTab.input.conditionEnemyChilledEffect = 30
+			build.configTab.input.customMods = "\z
+			enemies chilled by your hits lessen their damage dealt by half of chill effect\n\z
+			"
+			build.configTab:BuildModList()
+			runCallback("OnFrame")
 
-		build.configTab.input.customMods = "\z
-		You have no intelligence\n\z
-		100 Energy shield \n\z
-		energy shield is increased by chance to block spell damage\n\z
-		100% chance to block spell damage\n\z
-		"
-		build.configTab:BuildModList()
-		runCallback("OnFrame")
+			-- 15% less since it's half of current chill effect
+			assert.are.equals(0.85, build.calcsTab.calcsOutput.PhysicalEnemyDamageMult)
+			assert.are.equals(0.85, build.calcsTab.calcsOutput.LightningEnemyDamageMult)
+			assert.are.equals(0.85, build.calcsTab.calcsOutput.ColdEnemyDamageMult)
+			assert.are.equals(0.85, build.calcsTab.calcsOutput.FireEnemyDamageMult)
+			assert.are.equals(0.85, build.calcsTab.calcsOutput.ChaosEnemyDamageMult)
+		end)
 
-		assert.are.equals(25, build.calcsTab.calcsOutput.SpellBlockChanceOverCap )
-		assert.are.equals(75, build.calcsTab.calcsOutput.SpellBlockChance)
-		assert.are.equals(175, build.calcsTab.calcsOutput.EnergyShield)
+		it("enemy damage is not lessened if the enemy is not chilled", function()
+			build.configTab.input.enemyIsBoss = "None"
+			build.configTab.input.customMods = "\z
+			enemies chilled by your hits lessen their damage dealt by half of chill effect\n\z
+			"
+			build.configTab:BuildModList()
+			runCallback("OnFrame")
+
+			assert.are.equals(1, build.calcsTab.calcsOutput.PhysicalEnemyDamageMult)
+			assert.are.equals(1, build.calcsTab.calcsOutput.LightningEnemyDamageMult)
+			assert.are.equals(1, build.calcsTab.calcsOutput.ColdEnemyDamageMult)
+			assert.are.equals(1, build.calcsTab.calcsOutput.FireEnemyDamageMult)
+			assert.are.equals(1, build.calcsTab.calcsOutput.ChaosEnemyDamageMult)
+		end)
+
+		it("lessened enemy damage respects chill cap", function()
+			build.configTab.input.enemyIsBoss = "None"
+			build.configTab.input.conditionEnemyChilled = true
+			-- default max chill effect is 30%, so this shouldn't affect the resulting enemy damage multiplier beyond the cap
+			build.configTab.input.conditionEnemyChilledEffect = 100
+			build.configTab.input.customMods = "\z
+			enemies chilled by your hits lessen their damage dealt by half of chill effect\n\z
+			"
+			build.configTab:BuildModList()
+			runCallback("OnFrame")
+
+			assert.are.equals(0.85, build.calcsTab.calcsOutput.PhysicalEnemyDamageMult)
+			assert.are.equals(0.85, build.calcsTab.calcsOutput.LightningEnemyDamageMult)
+			assert.are.equals(0.85, build.calcsTab.calcsOutput.ColdEnemyDamageMult)
+			assert.are.equals(0.85, build.calcsTab.calcsOutput.FireEnemyDamageMult)
+			assert.are.equals(0.85, build.calcsTab.calcsOutput.ChaosEnemyDamageMult)
+		end)
 	end)
 
 	local function withinTenPercent(value, otherValue)
@@ -840,7 +898,102 @@ describe("TestDefence", function()
 		assert.are.equals(0, floor(poolsRemaining.Life))
 		assert.are.equals(0, floor(poolsRemaining.OverkillDamage))
 	end)
+	
+	it("Unbreakable + Iron Reflexes", function()
+		build.configTab.input.customMods = [[
+			you have no dexterity
+		]]
+		build.configTab:BuildModList()
+		runCallback("OnFrame")
 
+		-- Get the base to make this test more adaptable to changes
+		local baseArmour = build.calcsTab.mainOutput.Armour
+		local baseEvasion = build.calcsTab.mainOutput.Evasion
+
+		build.configTab.input.customMods = [[
+			Converts all Evasion Rating to Armour. Dexterity provides no bonus to Evasion Rating
+			you have no dexterity
+		]]
+		build.itemsTab:CreateDisplayItemFromRaw([[
+			New Item
+			Shabby Jerkin
+			Quality: 20
+		]])
+		build.itemsTab:AddDisplayItem()
+		build.configTab:BuildModList()
+		runCallback("OnFrame")
+
+		-- Get the base + Shabby Jerkin to make this test more adaptable to changes
+		local ironReflexesArmour = build.calcsTab.mainOutput.Armour - baseArmour - baseEvasion
+
+		print("build.calcsTab.mainOutput.Armour:" .. build.calcsTab.mainOutput.Armour)
+
+		build.configTab.input.customMods = [[
+			Armour from Equipped Body Armour is doubled
+			Converts all Evasion Rating to Armour. Dexterity provides no bonus to Evasion Rating
+			you have no dexterity
+		]]
+		build.configTab:BuildModList()
+		runCallback("OnFrame")
+
+		-- Evasion from Body Armour is converted to Armour before being doubled
+		assert.are.equals(2*ironReflexesArmour + baseArmour + baseEvasion, build.calcsTab.mainOutput.Armour)
+
+		build.configTab.input.customMods = [[
+			Armour from Equipped Body Armour is doubled
+			Converts all Evasion Rating to Armour. Dexterity provides no bonus to Evasion Rating
+			Gain no armour from equipped body armour
+			you have no dexterity
+		]]
+		build.configTab:BuildModList()
+		runCallback("OnFrame")
+
+		-- Only the base armour from the chest is affected.
+		-- Armour converted with Iron Reflexes still applies
+		assert.are.equals(2*ironReflexesArmour + baseArmour + baseEvasion, build.calcsTab.mainOutput.Armour)
+		build.configTab.input.customMods = [[
+			Armour from Equipped Body Armour is doubled
+			Converts all Evasion Rating to Armour. Dexterity provides no bonus to Evasion Rating
+			Gain no armour from equipped body armour
+			defences from equipped body armour are doubled if it has no socketed gems
+			you have no dexterity
+		]]
+		build.configTab:BuildModList()
+		runCallback("OnFrame")
+
+		-- Oath Of Maji double defences stack with Unbreakable
+		assert.are.equals(2*2*ironReflexesArmour + baseArmour + baseEvasion, build.calcsTab.mainOutput.Armour)
+
+		build.configTab.input.customMods = [[
+			Armour from Equipped Body Armour is doubled
+			Armour from Equipped Body Armour is doubled
+			Converts all Evasion Rating to Armour. Dexterity provides no bonus to Evasion Rating
+			Gain no armour from equipped body armour
+			defences from equipped body armour are doubled if it has no socketed gems
+			you have no dexterity
+		]]
+		build.configTab:BuildModList()
+		runCallback("OnFrame")
+
+		-- Mod form unbreakable should apply only once
+		assert.are.equals(2*2*ironReflexesArmour + baseArmour + baseEvasion, build.calcsTab.mainOutput.Armour)
+
+		build.configTab.input.customMods = [[
+			Armour from Equipped Body Armour is doubled
+			Armour from Equipped Body Armour is doubled
+			Converts all Evasion Rating to Armour. Dexterity provides no bonus to Evasion Rating
+			Gain no armour from equipped body armour
+			defences from equipped body armour are doubled if it has no socketed gems
+			defences from equipped body armour are doubled if it has no socketed gems
+			you have no dexterity
+		]]
+		build.configTab:BuildModList()
+		runCallback("OnFrame")
+
+		-- Oath Of Maji should apply only once
+		assert.are.equals(2*2*ironReflexesArmour + baseArmour + baseEvasion, build.calcsTab.mainOutput.Armour)
+	end)
+	
 	it("MoM + EB", function()
 		build.configTab.input.enemyIsBoss = "None"
 		-- enough mana and es, 0% and 100% bypass
