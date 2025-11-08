@@ -835,7 +835,6 @@ minions["RhoaUniqueSummoned"] = {
 		"SummonedRhoaShieldCharge",
 	},
 	modList = {
-		mod("SkillData", "LIST", { key = "cannotBeEvaded", value = true }, 0, 0), -- MonsterAlwaysHits [global_always_hit = 1]
 		-- MonsterNearbyEnemiesAreIntimidated [is_intimidated = 1]
 		-- MonsterNearbyEnemiesAreIntimidated [local_display_nearby_enemies_are_intimidated = 1]
 	},
@@ -861,7 +860,6 @@ minions["SnakeSpitUniqueSummoned"] = {
 		"SummonedSnakeProjectile",
 	},
 	modList = {
-		mod("SkillData", "LIST", { key = "cannotBeEvaded", value = true }, 0, 0), -- MonsterAlwaysHits [global_always_hit = 1]
 		mod("PhysicalDamageConvertToChaos", "BASE", 30, 0, 0), -- MonsterSnakeChaos [base_physical_damage_%_to_convert_to_chaos = 30]
 	},
 }
@@ -889,7 +887,6 @@ minions["DropBearUniqueSummoned"] = {
 		"DropBearSummonedRallyingCry",
 	},
 	modList = {
-		mod("SkillData", "LIST", { key = "cannotBeEvaded", value = true }, 0, 0), -- MonsterAlwaysHits [global_always_hit = 1]
 	},
 }
 
@@ -1198,8 +1195,8 @@ minions["GuardianRelicLightning"] = {
 minions["VoidSpawn"] = {
 	name = "Void Spawn",
 	monsterTags = { "caster", "construct", "elder_monster", "eldritch", "extra_large_height", "flesh_armour", "influence_monster", "is_unarmed", "lightning_affinity", "medium_movement", "not_dex", "not_str", "ranged", "red_blood", },
-	life = 3,
-	energyShield = 0.2,
+	life = 6,
+	energyShield = 1,
 	fireResist = 30,
 	coldResist = 30,
 	lightningResist = 30,
@@ -1215,6 +1212,296 @@ minions["VoidSpawn"] = {
 	},
 	modList = {
 		-- MonsterNoDropsOrExperience [monster_no_drops_or_experience = 1]
+		-- CannotBeAugmented [cannot_have_azmeri_dust = 1]
+		-- CannotBeAugmented [cant_possess_this = 1]
+		-- CannotBeAugmented [cant_touch_this = 1]
+		-- CannotBeAugmented [cannot_be_tagged_by_sentinel = 1]
+		-- CannotBeAugmented [cannot_be_afflicted = 1]
+		-- CannotBeAugmented [cannot_have_affliction_mods = 1]
+	},
+}
+
+minions["AncestralAhuanaMinion"] = {
+	name = "Spirit of Ahuana",
+	monsterTags = { "human", "humanoid", "medium_movement", "not_int", "not_str", "red_blood", },
+	baseDamageIgnoresAttackSpeed = true,
+	life = 0.9,
+	evasion = 1,
+	fireResist = 0,
+	coldResist = 0,
+	lightningResist = 0,
+	chaosResist = 0,
+	damage = 1.3,
+	damageSpread = 0.2,
+	attackTime = 1,
+	attackRange = 70,
+	accuracy = 1,
+	weaponType1 = "Bow",
+	skillList = {
+		"MPWAhuanaIceShot",
+		"MonsterSnipeAhuana",
+		"MPWAhuanaFakeArrow",
+	},
+	modList = {
+	},
+}
+
+minions["AncestralAkoyaMinion"] = {
+	name = "Spirit of Akoya",
+	monsterTags = { "human", "humanoid", "medium_movement", "not_int", "red_blood", },
+	baseDamageIgnoresAttackSpeed = true,
+	life = 1.1,
+	armour = 0.75,
+	evasion = 0.25,
+	fireResist = 0,
+	coldResist = 0,
+	lightningResist = 0,
+	chaosResist = 0,
+	damage = 1.2,
+	damageSpread = 0.2,
+	attackTime = 1,
+	attackRange = 20,
+	accuracy = 1,
+	weaponType1 = "Two Handed Axe",
+	skillList = {
+		"MeleeAtAnimationSpeedUnique",
+		"MPSAkoyaJadeSpray",
+		"GSAkoyaRockExplosion",
+	},
+	modList = {
+	},
+}
+
+minions["AncestralIkiahoMinion"] = {
+	name = "Spirit of Ikiaho",
+	monsterTags = { "human", "humanoid", "medium_movement", "not_dex", "not_str", "red_blood", },
+	baseDamageIgnoresAttackSpeed = true,
+	life = 1,
+	energyShield = 4,
+	fireResist = 0,
+	coldResist = 0,
+	lightningResist = 0,
+	chaosResist = 0,
+	damage = 1.2,
+	damageSpread = 0.2,
+	attackTime = 1,
+	attackRange = 10,
+	accuracy = 1,
+	skillList = {
+		"AncestralIkiahoArcticBreath",
+		"AncestralIkiahoIceStorm",
+		"EASIkiahoIceStorm",
+	},
+	modList = {
+	},
+}
+
+minions["AncestralKahuturoaMinion"] = {
+	name = "Spirit of Kahuturoa",
+	monsterTags = { "fast_movement", "human", "humanoid", "not_dex", "not_int", "red_blood", },
+	baseDamageIgnoresAttackSpeed = true,
+	life = 1.2,
+	armour = 1,
+	fireResist = 0,
+	coldResist = 0,
+	lightningResist = 0,
+	chaosResist = 0,
+	damage = 1.6,
+	damageSpread = 0.2,
+	attackTime = 1,
+	attackRange = 24,
+	accuracy = 1,
+	skillList = {
+		"KahuturoaMelee",
+		"DTTKahuturoaLeapSlam",
+		"GAKahuturoaLeapSlamImpact",
+		"GAKahuturoaForwardMelee",
+		"GAKahuturoaLeapSlamWeaponSwing",
+	},
+	modList = {
+	},
+}
+
+minions["AncestralKaomMinion"] = {
+	name = "Spirit of Kaom",
+	monsterTags = { "human", "humanoid", "not_int", "red_blood", "slow_movement", },
+	baseDamageIgnoresAttackSpeed = true,
+	life = 2,
+	armour = 0.75,
+	evasion = 0.25,
+	fireResist = 0,
+	coldResist = 0,
+	lightningResist = 0,
+	chaosResist = 0,
+	damage = 1.3,
+	damageSpread = 0.2,
+	attackTime = 1,
+	attackRange = 20,
+	accuracy = 1,
+	weaponType1 = "Two Handed Axe",
+	skillList = {
+		"MeleeAtAnimationSpeedUnique",
+		"MPSKaomFireFist",
+		"GAKaomFistBlast",
+		"GAKaomFistBlastFinal",
+		"AncestralKaomUnarmedCombo",
+	},
+	modList = {
+	},
+}
+
+minions["AncestralKiloavaMinion"] = {
+	name = "Spirit of Kiloava",
+	monsterTags = { "fast_movement", "human", "humanoid", "not_int", "red_blood", },
+	baseDamageIgnoresAttackSpeed = true,
+	life = 1.2,
+	armour = 0.75,
+	evasion = 0.25,
+	fireResist = 0,
+	coldResist = 0,
+	lightningResist = 0,
+	chaosResist = 0,
+	damage = 1,
+	damageSpread = 0.2,
+	attackTime = 1,
+	attackRange = 19,
+	accuracy = 1,
+	skillList = {
+		"MeleeAtAnimationSpeedUnique",
+		"MPWKiloavaSpearThrow",
+		"GSKiloavaLightningBolt",
+	},
+	modList = {
+	},
+}
+
+minions["AncestralMaataMinion"] = {
+	name = "Spirit of Maata",
+	monsterTags = { "human", "humanoid", "medium_movement", "not_str", "red_blood", },
+	baseDamageIgnoresAttackSpeed = true,
+	life = 0.9,
+	energyShield = 1.6,
+	evasion = 0.4,
+	fireResist = 0,
+	coldResist = 0,
+	lightningResist = 0,
+	chaosResist = 0,
+	damage = 1,
+	damageSpread = 0.2,
+	attackTime = 1,
+	attackRange = 20,
+	accuracy = 1,
+	weaponType1 = "One Handed Mace",
+	skillList = {
+		"MeleeAtAnimationSpeedUnique",
+		"DonutCircleMaata",
+		"SSMMaataVine",
+		"GSMaataVineCascade",
+		"GTMaataVineCascade",
+	},
+	modList = {
+	},
+}
+
+minions["AncestralRakiataMinion"] = {
+	name = "Spirit of Rakiata",
+	monsterTags = { "fast_movement", "human", "humanoid", "not_int", "red_blood", },
+	baseDamageIgnoresAttackSpeed = true,
+	life = 1,
+	armour = 0.75,
+	evasion = 0.3,
+	fireResist = 0,
+	coldResist = 0,
+	lightningResist = 0,
+	chaosResist = 0,
+	damage = 1.3,
+	damageSpread = 0.2,
+	attackTime = 1,
+	attackRange = 20,
+	accuracy = 1,
+	weaponType1 = "Two Handed Sword",
+	skillList = {
+		"GARakiataSlam",
+		"RakiataSweep",
+		"RakiataSlam",
+		"RakiataLacerate",
+		"GTRakiataSlam",
+	},
+	modList = {
+	},
+}
+
+minions["AncestralTawhanukuMinion"] = {
+	name = "Spirit of Tawhanuku",
+	monsterTags = { "human", "humanoid", "medium_movement", "not_dex", "not_str", "red_blood", },
+	baseDamageIgnoresAttackSpeed = true,
+	life = 2,
+	energyShield = 0.4,
+	fireResist = 0,
+	coldResist = 0,
+	lightningResist = 0,
+	chaosResist = 0,
+	damage = 1.2,
+	damageSpread = 0.2,
+	attackTime = 1,
+	attackRange = 10,
+	accuracy = 1,
+	skillList = {
+		"GSAncestralTawhanukuWave",
+		"AncestralTawhanukuSoulRend",
+		"GTTawhanukuMultiSoulrend",
+	},
+	modList = {
+	},
+}
+
+minions["AncestralUtulaMinion"] = {
+	name = "Spirit of Utula",
+	monsterTags = { "fast_movement", "human", "humanoid", "not_int", "red_blood", },
+	baseDamageIgnoresAttackSpeed = true,
+	life = 1.2,
+	armour = 0.75,
+	evasion = 0.1,
+	fireResist = 0,
+	coldResist = 0,
+	lightningResist = 0,
+	chaosResist = 0,
+	damage = 1.2,
+	damageSpread = 0.2,
+	attackTime = 1,
+	attackRange = 19,
+	accuracy = 1,
+	weaponType1 = "One Handed Axe",
+	weaponType2 = "One Handed Axe",
+	skillList = {
+		"MeleeAtAnimationSpeedUnique",
+		"UtulaFireSwing",
+		"MPSUtulaFireball",
+	},
+	modList = {
+	},
+}
+
+minions["LivingLightningMinion"] = {
+	name = "Living Lightning",
+	monsterTags = { "elemental", "lightning", "not_dex", "not_str", "small_height", "very_fast_movement", },
+	baseDamageIgnoresAttackSpeed = true,
+	life = 1.4,
+	energyShield = 0.2,
+	fireResist = 40,
+	coldResist = 40,
+	lightningResist = 40,
+	chaosResist = 20,
+	damage = 1.4,
+	damageSpread = 0.8,
+	attackTime = 1.17,
+	attackRange = 20,
+	accuracy = 1,
+	limit = "ActiveLivingLightningLimit",
+	skillList = {
+		"SummonedLivingLightningZap",
+	},
+	modList = {
 		-- CannotBeAugmented [cannot_have_azmeri_dust = 1]
 		-- CannotBeAugmented [cant_possess_this = 1]
 		-- CannotBeAugmented [cant_touch_this = 1]

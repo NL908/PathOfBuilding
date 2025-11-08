@@ -236,7 +236,7 @@ return {
 	skill("triggeredByAutomation", nil, { type = "SkillType", skillTypeList = {SkillType.Triggerable, SkillType.Spell, SkillType.Instant} }),
 },
 ["support_autocast_warcries"] = {
-	skill("triggeredByAutoexertion", nil, { type = "SkillType", skillType = SkillType.Triggerable }, { type = "SkillType", skillType = SkillType.Warcry }),
+	skill("triggeredByAutoexertion", nil, { type = "SkillType", skillType = SkillType.Warcry }),
 },
 ["cast_on_stunned_%"] = {
 	skill("chanceToTriggerOnStun", nil, { type = "SkillType", skillType = SkillType.Triggerable }, { type = "SkillType", skillType = SkillType.Spell }),
@@ -263,7 +263,7 @@ return {
 	skill("doubleHitsWhenDualWielding", true),
 },
 ["base_spell_repeat_count"] = {
-	mod("RepeatCount", "BASE", nil, 0, 0, {type = "SkillType", skillType = SkillType.Multicastable }),
+	mod("RepeatCount", "BASE", nil, ModFlag.Cast),
 },
 ["base_melee_attack_repeat_count"] = {
 	mod("RepeatCount", "BASE", nil, 0, 0, { type = "ModFlagOr", modFlags = bit.bor(ModFlag.WeaponMelee, ModFlag.Unarmed) }),
@@ -274,6 +274,9 @@ return {
 },
 ["display_skill_minions_level_is_corpse_level"] = {
 	skill("minionLevelIsEnemyLevel", true),
+},
+["minion_actor_level_is_user_level_up_to_maximum"] = {
+	skill("minionLevelIsPlayerLevel", true),
 },
 ["active_skill_minion_added_damage_+%_final"] = {
 	skill("minionDamageEffectiveness", nil),
@@ -749,7 +752,7 @@ return {
 ["damage_+%_vs_frozen_enemies"] = {
 	mod("Damage", "INC", nil, ModFlag.Hit, 0, { type = "ActorCondition", actor = "enemy", var = "Frozen" }),
 },
-["damage_+%_final_vs_stunned_enemies"] = {
+["active_skill_damage_+%_final_vs_stunned_enemies"] = {
 	mod("Damage", "MORE", nil, 0, 0, { type = "ActorCondition", actor = "enemy", var = "Stunned" }),
 },
 ["base_reduce_enemy_fire_resistance_%"] = {
@@ -1347,6 +1350,10 @@ return {
 ["number_of_additional_projectiles"] = {
 	mod("ProjectileCount", "BASE", nil),
 },
+["base_number_of_projectiles_in_spiral_nova"] = {
+	mod("ProjectileCount", "BASE", nil),
+	base = -1
+},
 ["projectile_damage_+%_per_remaining_chain"] = {
 	mod("Damage", "INC", nil, ModFlag.Projectile, 0, { type = "PerStat", stat = "ChainRemaining" }),
 	mod("Damage", "INC", nil, ModFlag.Ailment, 0, { type = "PerStat", stat = "ChainRemaining" }),
@@ -1834,6 +1841,9 @@ return {
 ["minion_cast_speed_+%"] = {
 	mod("MinionModifier", "LIST", { mod = mod("Speed", "INC", nil, ModFlag.Cast) }),
 },
+["minion_base_physical_damage_%_to_convert_to_lightning"] = {
+	mod("MinionModifier", "LIST", { mod = mod("PhysicalDamageConvertToLightning", "BASE", nil) }),
+},
 ["minion_elemental_resistance_%"] = {
 	mod("MinionModifier", "LIST", { mod = mod("ElementalResist", "BASE", nil) }),
 },
@@ -1900,6 +1910,9 @@ return {
 },
 ["base_number_of_void_spawns_allowed"] = {
 	mod("ActiveVoidSpawnLimit", "BASE", nil),
+},
+["base_number_of_living_lightning_allowed"] = {
+	mod("ActiveLivingLightningLimit", "BASE", nil),
 },
 ["active_skill_minion_damage_+%_final"] = {
 	mod("MinionModifier", "LIST", { mod = mod("Damage", "MORE", nil) }),
@@ -2079,7 +2092,7 @@ return {
 	mod("AdditionalCooldownUses", "BASE", nil)
 },
 ["kill_enemy_on_hit_if_under_10%_life"] = {
-	mod("CullPercent", "MAX", nil), 
+	mod("CullPercent", "MAX", nil),
 	value = 10
 },
 ["spell_cast_time_added_to_cooldown_if_triggered"] = {

@@ -157,11 +157,7 @@ function calcs.buildModListForNode(env, node)
 		end
 	end
 
-	if modList:Flag(nil, "CanExplode") then
-		t_insert(env.explodeSources, node)
-	end
-
-	return modList
+	return modList, modList:Flag(nil, "CanExplode") and node
 end
 
 -- Build list of modifiers from the listed tree nodes
@@ -174,8 +170,10 @@ function calcs.buildModListForNodeList(env, nodeList, finishJewels)
 
 	-- Add node modifiers
 	local modList = new("ModList")
+	local explodeSources = {}
 	for _, node in pairs(nodeList) do
-		local nodeModList = calcs.buildModListForNode(env, node)
+		local nodeModList, explode = calcs.buildModListForNode(env, node)
+		t_insert(explodeSources, explode)
 		modList:AddList(nodeModList)
 		if env.mode == "MAIN" then
 			node.finalModList = nodeModList
@@ -203,7 +201,7 @@ function calcs.buildModListForNodeList(env, nodeList, finishJewels)
 		end
 	end
 
-	return modList
+	return modList, explodeSources
 end
 
 function wipeEnv(env, accelerate)
@@ -282,13 +280,6 @@ function wipeEnv(env, accelerate)
 	end
 end
 
-local function getGemModList(env, groupCfg, socketColor, socketNum)
-	local gemCfg = copyTable(groupCfg, true)
-	gemCfg.socketColor = socketColor
-	gemCfg.socketNum = socketNum
-	return env.modDB:Tabulate("LIST", gemCfg, "GemProperty")
-end
-
 local function applyGemMods(effect, modList)
 	for _, mod in ipairs(modList) do
 		local match = true
@@ -359,6 +350,7 @@ end
 -- 5. Builds a list of active skills and their supports (calcs.createActiveSkill)
 -- 6. Builds modifier lists for all active skills (calcs.buildActiveSkillModList)
 function calcs.initEnv(build, mode, override, specEnv)
+	ClearMatchKeywordFlagsCache()
 	-- accelerator variables
 	local cachedPlayerDB = specEnv and specEnv.cachedPlayerDB or nil
 	local cachedEnemyDB = specEnv and specEnv.cachedEnemyDB or nil
@@ -587,6 +579,7 @@ function calcs.initEnv(build, mode, override, specEnv)
 	local allocatedMasteryCount = env.spec.allocatedMasteryCount
 	local allocatedMasteryTypeCount = env.spec.allocatedMasteryTypeCount
 	local allocatedMasteryTypes = copyTable(env.spec.allocatedMasteryTypes)
+	local allocatedTattooTypes = copyTable(env.spec.allocatedTattooTypes)
 
 
 
@@ -614,6 +607,14 @@ function calcs.initEnv(build, mode, override, specEnv)
 					elseif node.type == "Notable" then
 						allocatedNotableCount = allocatedNotableCount + 1
 					end
+					if node.isTattoo and node.overrideType then
+						if not allocatedTattooTypes[node.overrideType] then
+							allocatedTattooTypes[node.overrideType] = 1
+						else
+							local prevCount = allocatedTattooTypes[node.overrideType]
+							allocatedTattooTypes[node.overrideType] = prevCount + 1
+						end
+					end
 				end
 			end
 			for _, node in pairs(env.spec.allocNodes) do
@@ -630,6 +631,11 @@ function calcs.initEnv(build, mode, override, specEnv)
 					elseif node.type == "Notable" then
 						allocatedNotableCount = allocatedNotableCount - 1
 					end
+					if node.isTattoo and node.overrideType then
+						if allocatedTattooTypes[node.overrideType] then
+							allocatedTattooTypes[node.overrideType] = allocatedTattooTypes[node.overrideType] - 1
+						end
+					end
 				end
 			end
 		else
@@ -637,6 +643,7 @@ function calcs.initEnv(build, mode, override, specEnv)
 		end
 		env.allocNodes = nodes
 		env.initialNodeModDB = calcs.buildModListForNodeList(env, env.allocNodes, true)
+		modLib.mergeKeystones(env, env.initialNodeModDB)
 	end
 
 	if allocatedNotableCount and allocatedNotableCount > 0 then
@@ -650,6 +657,11 @@ function calcs.initEnv(build, mode, override, specEnv)
 	end
 	if allocatedMasteryTypes["Life Mastery"] and allocatedMasteryTypes["Life Mastery"] > 0 then
 		modDB:NewMod("Multiplier:AllocatedLifeMastery", "BASE", allocatedMasteryTypes["Life Mastery"])
+	end
+	if allocatedTattooTypes then
+		for type, count in pairs(allocatedTattooTypes) do
+			env.modDB.multipliers[type] = count
+		end
 	end
 
 	-- Build and merge item modifiers, and create list of radius jewels
@@ -781,8 +793,20 @@ function calcs.initEnv(build, mode, override, specEnv)
 		if not env.configInput.ignoreItemDisablers then
 			local itemDisabled = {}
 			local itemDisablers = {}
-			if modDB:Flag(nil, "CanNotUseHelm") then
-				itemDisabled["Helmet"] = { disabled = true, size = 1 }
+			-- First check tree nodes for disabled items.  This will break if there's ever an anointable node that disables items
+			for _, mod in ipairs(env.initialNodeModDB:Tabulate("Flag", { source = "Tree" }, "CanNotUseItem")) do
+				mod = mod.mod
+				-- checks if it disables another slot
+				for _, tag in ipairs(mod) do
+					if tag.type == "DisablesItem" then
+						if tag.excludeItemType and items[tag.slotName] and items[tag.slotName].type == tag.excludeItemType then
+							break
+						end
+						itemDisablers[mod.source] = tag.slotName
+						itemDisabled[tag.slotName] = mod.source
+						break
+					end
+				end
 			end
 			for _, slot in pairs(build.itemsTab.orderedSlots) do
 				local slotName = slot.slotName
@@ -989,17 +1013,6 @@ function calcs.initEnv(build, mode, override, specEnv)
 						end
 					end
 				elseif item.name:match("Kalandra's Touch") then
-					-- Reset mult counters since they don't work for kalandra
-					for mult, property in pairs({["CorruptedItem"] = "corrupted", ["ShaperItem"] = "shaper", ["ElderItem"] = "elder", ["WarlordItem"] = "warlord", ["HunterItem"] = "hunter", ["CrusaderItem"] = "crusader", ["RedeemerItem"] = "redeemer"}) do
-						if item[property] then
-							env.itemModDB.multipliers[mult] = (env.itemModDB.multipliers[mult] or 0) - 1
-						else
-							env.itemModDB.multipliers["Non"..mult] = (env.itemModDB.multipliers["Non"..mult] or 0) + 1
-						end
-					end
-					if item.shaper or item.elder then
-						env.itemModDB.multipliers.ShaperOrElderItem = (env.itemModDB.multipliers.ShaperOrElderItem or 0) - 1
-					end
 					local otherRing = items[(slotName == "Ring 1" and "Ring 2") or (slotName == "Ring 2" and "Ring 1")]
 					if otherRing and not otherRing.name:match("Kalandra's Touch") then
 						for _, mod in ipairs(otherRing.modList or otherRing.slotModList[slot.slotNum] or {}) do
@@ -1017,7 +1030,7 @@ function calcs.initEnv(build, mode, override, specEnv)
 							::skip_mod::
 						end
 						-- Adjust multipliers based on other ring
-						for mult, property in pairs({["CorruptedItem"] = "corrupted", ["ShaperItem"] = "shaper", ["ElderItem"] = "elder", ["WarlordItem"] = "warlord", ["HunterItem"] = "hunter", ["CrusaderItem"] = "crusader", ["RedeemerItem"] = "redeemer"}) do
+						for mult, property in pairs({["CorruptedItem"] = "corrupted", ["ShaperItem"] = "shaper", ["ElderItem"] = "elder", ["WarlordItem"] = "adjudicator", ["HunterItem"] = "basilisk", ["CrusaderItem"] = "crusader", ["RedeemerItem"] = "eyrie"}) do
 							if otherRing[property] then
 								env.itemModDB.multipliers[mult] = (env.itemModDB.multipliers[mult] or 0) + 1
 								env.itemModDB.multipliers["Non"..mult] = (env.itemModDB.multipliers["Non"..mult] or 0) - 1
@@ -1051,19 +1064,29 @@ function calcs.initEnv(build, mode, override, specEnv)
 					end	
 					env.itemModDB:ScaleAddList(combinedList, scale)
 				elseif item.type == "Gloves" and calcLib.mod(env.initialNodeModDB, nil, "EffectOfBonusesFromGloves") ~=1 then
-					scale = calcLib.mod(env.initialNodeModDB, nil, "EffectOfBonusesFromGloves")
+					scale = calcLib.mod(env.initialNodeModDB, nil, "EffectOfBonusesFromGloves") - 1
 					local combinedList = new("ModList")
 					for _, mod in ipairs(srcList) do
 						combinedList:MergeMod(mod)
 					end
-					env.itemModDB:ScaleAddList(combinedList, scale)
+					local scaledList = new("ModList")
+					scaledList:ScaleAddList(combinedList, scale)
+					for _, mod in ipairs(scaledList) do
+						combinedList:MergeMod(mod, true)
+					end
+					env.itemModDB:AddList(combinedList)
 				elseif item.type == "Boots" and calcLib.mod(env.initialNodeModDB, nil, "EffectOfBonusesFromBoots") ~= 1 then
-					scale = calcLib.mod(env.initialNodeModDB, nil, "EffectOfBonusesFromBoots")
+					scale = calcLib.mod(env.initialNodeModDB, nil, "EffectOfBonusesFromBoots") - 1
 					local combinedList = new("ModList")
 					for _, mod in ipairs(srcList) do
 						combinedList:MergeMod(mod)
 					end
-					env.itemModDB:ScaleAddList(combinedList, scale)
+					local scaledList = new("ModList")
+					scaledList:ScaleAddList(combinedList, scale)
+					for _, mod in ipairs(scaledList) do
+						combinedList:MergeMod(mod, true)
+					end
+					env.itemModDB:AddList(combinedList)
 				else
 					env.itemModDB:ScaleAddList(srcList, scale)
 				end
@@ -1188,8 +1211,11 @@ function calcs.initEnv(build, mode, override, specEnv)
 	end
 
 	-- Merge modifiers for allocated passives
-	env.modDB:AddList(calcs.buildModListForNodeList(env, env.allocNodes, true))
-
+	do
+		local modList, explodeSources = calcs.buildModListForNodeList(env, env.allocNodes, true)
+		env.modDB:AddList(modList)
+		env.explodeSources = tableConcat(explodeSources, env.explodeSources)
+	end
 	if not override or (override and not override.extraJewelFuncs) then
 		override = override or {}
 		override.extraJewelFuncs = new("ModList")
@@ -1446,7 +1472,10 @@ function calcs.initEnv(build, mode, override, specEnv)
 							if gemInstance.gemData then
 								local playerItems = env.player.itemList
 								local socketedIn = playerItems[groupCfg.slotName] and playerItems[groupCfg.slotName].sockets and playerItems[groupCfg.slotName].sockets[gemIndex]
-								applyGemMods(supportEffect, socketedIn and getGemModList(env, groupCfg, socketedIn.color, gemIndex) or propertyModList)
+								supportEffect.gemCfg = copyTable(groupCfg, true)
+								supportEffect.gemCfg.socketColor = socketedIn and socketedIn.color
+								supportEffect.gemCfg.socketNum = gemIndex
+								applyGemMods(supportEffect, socketedIn and env.modDB:Tabulate("LIST", supportEffect.gemCfg, "GemProperty") or propertyModList)
 								if not processedSockets[gemInstance] then
 									processedSockets[gemInstance] = true
 									applySocketMods(env, gemInstance.gemData, groupCfg, gemIndex, playerItems[groupCfg.slotName] and playerItems[groupCfg.slotName].name)
@@ -1508,7 +1537,10 @@ function calcs.initEnv(build, mode, override, specEnv)
 								if gemInstance.gemData then
 									local playerItems = env.player.itemList
 									local socketedIn = playerItems[groupCfg.slotName] and playerItems[groupCfg.slotName].sockets and playerItems[groupCfg.slotName].sockets[gemIndex]
-									applyGemMods(activeEffect, socketedIn and getGemModList(env, groupCfg, socketedIn.color, gemIndex) or propertyModList)
+									activeEffect.gemCfg = copyTable(groupCfg, true)
+									activeEffect.gemCfg.socketColor = socketedIn and socketedIn.color
+									activeEffect.gemCfg.socketNum = gemIndex
+									applyGemMods(activeEffect, socketedIn and env.modDB:Tabulate("LIST", activeEffect.gemCfg, "GemProperty") or propertyModList)
 									if not processedSockets[gemInstance] then
 										processedSockets[gemInstance] = true
 										applySocketMods(env, gemInstance.gemData, groupCfg, gemIndex, playerItems[groupCfg.slotName] and playerItems[groupCfg.slotName].name)

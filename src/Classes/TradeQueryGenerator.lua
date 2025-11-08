@@ -85,7 +85,7 @@ local tradeStatCategoryIndices = {
 local influenceSuffixes = { "_shaper", "_elder", "_adjudicator", "_basilisk", "_crusader", "_eyrie"}
 local influenceDropdownNames = { "None" }
 local hasInfluenceModIds = { }
-for i, curInfluenceInfo in ipairs(itemLib.influenceInfo) do
+for i, curInfluenceInfo in ipairs(itemLib.influenceInfo.default) do
 	influenceDropdownNames[i + 1] = curInfluenceInfo.display
 	hasInfluenceModIds[i] = "pseudo.pseudo_has_" .. string.lower(curInfluenceInfo.display) .. "_influence"
 end
@@ -779,7 +779,7 @@ function TradeQueryGeneratorClass:StartQuery(slot, options)
 	elseif slot.slotName == "Amulet" then
 		itemCategoryQueryStr = "accessory.amulet"
 		itemCategory = "Amulet"
-	elseif slot.slotName == "Ring 1" or slot.slotName == "Ring 2" then
+	elseif slot.slotName == "Ring 1" or slot.slotName == "Ring 2" or slot.slotName == "Ring 3" then
 		itemCategoryQueryStr = "accessory.ring"
 		itemCategory = "Ring"
 	elseif slot.slotName == "Belt" then
@@ -810,10 +810,10 @@ function TradeQueryGeneratorClass:StartQuery(slot, options)
 
 	-- Apply any requests influences
 	if options.influence1 > 1 then
-		testItem[itemLib.influenceInfo[options.influence1 - 1].key] = true
+		testItem[itemLib.influenceInfo.default[options.influence1 - 1].key] = true
 	end
 	if options.influence2 > 1 then
-		testItem[itemLib.influenceInfo[options.influence2 - 1].key] = true
+		testItem[itemLib.influenceInfo.default[options.influence2 - 1].key] = true
 	end
 
 	-- Calculate base output with a blank item
@@ -915,7 +915,7 @@ function TradeQueryGeneratorClass:FinishQuery()
 					}
 				}
 			},
-			status = { option = "online" },
+			status = { option = "available" },
 			stats = {
 				{
 					type = "weight",

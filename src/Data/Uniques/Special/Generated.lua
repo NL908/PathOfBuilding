@@ -364,7 +364,7 @@ Variant: Prismatic Ring]]
 
 for _, type in ipairs({ { prefix = "Endurance - ", mods = enduranceChargeMods }, { prefix = "Frenzy - ", mods = frenzyChargeMods }, { prefix = "Power - ", mods = powerChargeMods } }) do
 	for tier, mods in ipairs(type.mods) do
-		for desc, mod in pairs(mods) do
+		for desc in pairsSortByKey(mods) do
 			table.insert(precursorsEmblem, "Variant: " .. type.prefix .. desc)
 		end
 	end
@@ -395,7 +395,7 @@ Implicits: 7
 local index = 8
 for _, type in ipairs({ enduranceChargeMods, frenzyChargeMods, powerChargeMods }) do
 	for tier, mods in ipairs(type) do
-		for desc, mod in pairs(mods) do
+		for desc, mod in pairsSortByKey(mods) do
 			if mod:match("[%+%-]?[%d%.]*%d+%%") then
 				mod = mod:gsub("([%d%.]*%d+)", function(num) return "(" .. num .. "-" .. tonumber(num) * tier .. ")" end)
 			elseif mod:match("%(%-?[%d%.]+%-%-?[%d%.]+%)%%") then
@@ -446,15 +446,15 @@ local balanceOfTerror = {
 -- adding a blank variant for 3 mod jewels
 table.insert(balanceOfTerror, "Variant: None")
 
-for name, _ in pairs(balanceOfTerrorMods) do
+for name in pairsSortByKey(balanceOfTerrorMods) do
 	table.insert(balanceOfTerror, "Variant: "..name)
 end
 
 table.insert(balanceOfTerror, "+(10-15)% to all Elemental Resistances")
 
 local index = 2
-for _, line in pairs(balanceOfTerrorMods) do
-	table.insert(balanceOfTerror, "{variant:"..index.."}"..line)
+for name, line in pairsSortByKey(balanceOfTerrorMods) do
+	table.insert(balanceOfTerror, "{variant:"..index.."}"..balanceOfTerrorMods[name])
 	index = index + 1
 end
 
@@ -643,10 +643,15 @@ local unsortedMods = LoadModule("Data/Uniques/Special/BoundByDestiny")
 local sortedMods = { }
 local boundByDestinyMods = { }
 
-for i, mod in pairs(unsortedMods) do
-	table.insert(sortedMods, { mod.type, i} )
+for id, mod in pairs(unsortedMods) do
+	table.insert(sortedMods, { mod.type, id } )
 end
-table.sort(sortedMods, function (m1, m2) return m1[1] < m2[1] end )
+table.sort(sortedMods, function (m1, m2)
+	if m1[1] == m2[1] then
+		return m1[2] < m2[2]
+	end
+	return m1[1] < m2[1]
+end )
 for _, modId in ipairs(sortedMods) do
 	table.insert(boundByDestinyMods, {
 		Id = modId[2],
@@ -824,7 +829,7 @@ function buildKeystoneItems(keystoneMap)
 	table.insert(impossibleEscape, "Variant: Everything (QoL Test Variant)")
 	local variantCount = #impossibleEscapeKeystones + 1
 	for index, name in ipairs(impossibleEscapeKeystones) do
-		table.insert(impossibleEscape, "{variant:"..index..","..variantCount.."}Passives in radius of "..name.." can be allocated without being connected to your tree")
+		table.insert(impossibleEscape, "{variant:"..index..","..variantCount.."}Passive Skills in radius of "..name.." can be allocated without being connected to your tree")
 	end
 	table.insert(impossibleEscape, "Corrupted")
 	table.insert(data.uniques.generated, table.concat(impossibleEscape, "\n"))
@@ -908,8 +913,20 @@ Variant: Current
 ]]
 )
 
-for name, _ in pairs(replicaDragonfangsFlightMods) do
-	table.insert(replicaDragonfangsFlight, "Variant: "..name)
+local sortedReplicaDragonfangsFlightMods = { }
+
+for name, line in pairs(replicaDragonfangsFlightMods) do
+	table.insert(sortedReplicaDragonfangsFlightMods, { line, name } )
+end
+table.sort(sortedReplicaDragonfangsFlightMods, function (m1, m2)
+	if m1[1] == m2[1] then
+		return m1[2] < m2[2]
+	end
+	return m1[1] < m2[1]
+end )
+
+for _, mod in ipairs(sortedReplicaDragonfangsFlightMods) do
+	table.insert(replicaDragonfangsFlight, "Variant: "..mod[2])
 end
 
 table.insert(replicaDragonfangsFlight,
@@ -921,8 +938,8 @@ table.insert(replicaDragonfangsFlight,
 )
 
 local index = 3
-for _, line in pairs(replicaDragonfangsFlightMods) do
-	table.insert(replicaDragonfangsFlight, "{variant:"..index.."}"..line)
+for _, mod in ipairs(sortedReplicaDragonfangsFlightMods) do
+	table.insert(replicaDragonfangsFlight, "{variant:"..index.."}"..mod[1])
 	index = index + 1
 end
 

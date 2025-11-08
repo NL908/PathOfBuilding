@@ -46,6 +46,7 @@ local itemTypes = {
 	"jewel",
 	"flask",
 	"tincture",
+	"graft",
 }
 
 local function makeSkillMod(modName, modType, modVal, flags, keywordFlags, ...)
@@ -170,7 +171,7 @@ data.misc = { -- magic numbers
 	DodgeChanceCap = 75,
 	BlockChanceCap = 90,
 	SuppressionChanceCap = 100,
-	SuppressionEffect = 50,
+	SuppressionEffect = 40,
 	AvoidChanceCap = 75,
 	EnergyShieldRechargeBase = 0.33,
 	EnergyShieldRechargeDelay = 2,
@@ -267,7 +268,8 @@ data.cursePriority = {
 	["Boots"] = 7000,
 	["Ring 1"] = 8000,
 	["Ring 2"] = 9000,
-	["CurseFromEquipment"] = 10000,
+	["Ring 3"] = 10000,
+	["CurseFromEquipment"] = 11000,
 	["CurseFromAura"] = 20000,
 }
 
@@ -524,6 +526,8 @@ data.jewelRadii = {
 		{ inner = 0, outer = 960, col = "^xBB6600", label = "Small" },
 		{ inner = 0, outer = 1440, col = "^x66FFCC", label = "Medium" },
 		{ inner = 0, outer = 1800, col = "^x2222CC", label = "Large" },
+		{ inner = 0, outer = 2400, col = "^xC100FF", label = "Very Large" },	
+		{ inner = 0, outer = 2880, col = "^x0B9300", label = "Massive" },
 
 		{ inner = 960, outer = 1320, col = "^xD35400", label = "Variable" },
 		{ inner = 1320, outer = 1680, col = "^x66FFCC", label = "Variable" },
@@ -559,6 +563,7 @@ data.itemMods = {
 	Item = LoadModule("Data/ModItem"),
 	Flask = LoadModule("Data/ModFlask"),
 	Tincture = LoadModule("Data/ModTincture"),
+	Graft = LoadModule("Data/ModGraft"),
 	Jewel = LoadModule("Data/ModJewel"),
 	JewelAbyss = LoadModule("Data/ModJewelAbyss"),
 	JewelCluster = LoadModule("Data/ModJewelCluster"),
@@ -594,10 +599,12 @@ do
 end
 data.essences = LoadModule("Data/Essence")
 data.veiledMods = LoadModule("Data/ModVeiled")
+data.beastCraft = LoadModule("Data/BeastCraft")
 data.necropolisMods = LoadModule("Data/ModNecropolis")
 data.crucible = LoadModule("Data/Crucible")
 data.pantheons = LoadModule("Data/Pantheons")
 data.costs = LoadModule("Data/Costs")
+
 do
 	local map = { }
 	for i, value in ipairs(data.costs) do
@@ -1122,3 +1129,5 @@ for _, modId in ipairs(sortedMods) do
 end
 LoadModule("Data/Uniques/Special/Generated")
 LoadModule("Data/Uniques/Special/New")
+
+data.flavourText = LoadModule("Data/FlavourText")
