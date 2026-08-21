@@ -1,132 +1,7 @@
-local skillTypes = {
-	"Attack",
-	"Spell",
-	"Projectile",
-	"DualWieldOnly",
-	"Buff",
-	"Minion",
-	"Damage",
-	"Area",
-	"Duration",
-	"RequiresShield",
-	"ProjectileSpeed",
-	"HasReservation",
-	"ReservationBecomesCost",
-	"Trappable",
-	"Totemable",
-	"Mineable",
-	"ElementalStatus",
-	"MinionsCanExplode",
-	"Chains",
-	"Melee",
-	"MeleeSingleTarget",
-	"Multicastable",
-	"TotemCastsAlone",
-	"Multistrikeable",
-	"CausesBurning",
-	"SummonsTotem",
-	"TotemCastsWhenNotDetached",
-	"Physical",
-	"Fire",
-	"Cold",
-	"Lightning",
-	"Triggerable",
-	"Trapped",
-	"Movement",
-	"DamageOverTime",
-	"RemoteMined",
-	"Triggered",
-	"Vaal",
-	"Aura",
-	"CanTargetUnusableCorpse",
-	"RangedAttack",
-	"Chaos",
-	"FixedSpeedProjectile",
-	"ThresholdJewelArea",
-	"ThresholdJewelProjectile",
-	"ThresholdJewelDuration",
-	"ThresholdJewelRangedAttack",
-	"Channel",
-	"DegenOnlySpellDamage",
-	"InbuiltTrigger",
-	"Golem",
-	"Herald",
-	"AuraAffectsEnemies",
-	"NoRuthless",
-	"ThresholdJewelSpellDamage",
-	"Cascadable",
-	"ProjectilesFromUser",
-	"MirageArcherCanUse",
-	"ProjectileSpiral",
-	"SingleMainProjectile",
-	"MinionsPersistWhenSkillRemoved",
-	"ProjectileNumber",
-	"Warcry",
-	"Instant",
-	"Brand",
-	"DestroysCorpse",
-	"NonHitChill",
-	"ChillingArea",
-	"AppliesCurse",
-	"CanRapidFire",
-	"AuraDuration",
-	"AreaSpell",
-	"OR",
-	"AND",
-	"NOT",
-	"AppliesMaim",
-	"CreatesMinion",
-	"Guard",
-	"Travel",
-	"Blink",
-	"CanHaveBlessing",
-	"ProjectilesNotFromUser",
-	"AttackInPlaceIsDefault",
-	"Nova",
-	"InstantNoRepeatWhenHeld",
-	"InstantShiftAttackForLeftMouse",
-	"AuraNotOnCaster",
-	"Banner",
-	"Rain",
-	"Cooldown",
-	"ThresholdJewelChaining",
-	"Slam",
-	"Stance",
-	"NonRepeatable",
-	"OtherThingUsesSkill",
-	"Steel",
-	"Hex",
-	"Mark",
-	"Aegis",
-	"Orb",
-	"KillNoDamageModifiers",
-	"RandomElement",
-	"LateConsumeCooldown",
-	"Arcane",
-	"FixedCastTime",
-	"RequiresOffHandNotWeapon",
-	"Link",
-	"Blessing",
-	"ZeroReservation",
-	"DynamicCooldown",
-	"Microtransaction",
-	"OwnerCannotUse",
-	"ProjectilesNotFired",
-	"TotemsAreBallistae",
-	"SkillGrantedBySupport",
-	"PreventHexTransfer",
-	"MinionsAreUndamageable",
-	"InnateTrauma",
-	"DualWieldRequiresDifferentTypes",
-	"NoVolley",
-	"Retaliation",
-	"NeverExertable",
-	"DisallowTriggerSupports",
-	"ProjectileCannotReturn",
-	"Offering",
-	"SupportedByBane",
-	"WandAttack",
-}
+local skillTypeMap = { }
+for row in dat("ActiveSkillType"):Rows() do
+	table.insert(skillTypeMap, row.Id)
+end
 
 -- This is here to fix name collisions like in the case of Barrage
 local fullNameGems = {
@@ -134,7 +9,7 @@ local fullNameGems = {
 }
 
 local function mapAST(ast)
-	return "SkillType."..(skillTypes[ast._rowIndex] or ("Unknown"..ast._rowIndex))
+	return "SkillType."..(skillTypeMap[ast._rowIndex] or ("Unknown"..ast._rowIndex))
 end
 
 local weaponClassMap = {
@@ -146,7 +21,7 @@ local weaponClassMap = {
 	["One Hand Axe"] = "One Handed Axe",
 	["One Hand Mace"] = "One Handed Mace",
 	["Bow"] = "Bow",
-	["Fishing Rod"] = "Fishing Rod",
+	["FishingRod"] = "Fishing Rod",
 	["Staff"] = "Staff",
 	["Two Hand Sword"] = "Two Handed Sword",
 	["Two Hand Axe"] = "Two Handed Axe",
@@ -166,6 +41,22 @@ do
 	end
 end
 
+local function cleanAndSplit(str) -- Same as in Flavour Text exporter.
+	-- Normalize newlines
+	str = str:gsub("\r\n", "\n")
+
+	local lines = {}
+	for line in str:gmatch("[^\n]+") do
+		line = line:match("^%s*(.-)%s*$") -- trim each line
+		if line ~= "" then
+			-- Escape quotes
+			line = line:gsub('"', '\\"')
+			table.insert(lines, line)
+		end
+	end
+
+	return lines
+end
 local gems = { }
 local trueGemNames = { }
 
@@ -231,7 +122,7 @@ directiveTable.skill = function(state, args, out)
 		if granted.IsSupport then
 			out:write('\tname = "', fullNameGems[skillGem.BaseItemType.Id] and skillGem.BaseItemType.Name or skillGem.BaseItemType.Name:gsub(" Support",""), '",\n')
 			if #gemEffect.Description > 0 then
-				out:write('\tdescription = "', gemEffect.Description:gsub('\n','\\n'), '",\n')
+				out:write('\tdescription = "', escapeGGGString(gemEffect.Description:gsub('"','\\"'):gsub('\r',''):gsub('\n','\\n')), '",\n')
 			end
 		else
 			out:write('\tname = "', secondaryEffect and granted.ActiveSkill.DisplayName or trueGemNames[gemEffect.Id] or granted.ActiveSkill.DisplayName, '",\n')
@@ -244,6 +135,13 @@ directiveTable.skill = function(state, args, out)
 		end
 		out:write('\tname = "', displayName, '",\n')
 		out:write('\thidden = true,\n')
+	end
+	if skillGem and skillGem.BaseItemType and skillGem.BaseItemType.FlavourTextKey then
+		out:write('\tflavourText = {')
+		for _, line in ipairs(cleanAndSplit(skillGem.BaseItemType.FlavourTextKey.Text)) do
+			out:write('"', line, '", ')
+		end
+		out:write('},\n')
 	end
 	state.noGem = false
 	skill.baseFlags = { }
@@ -314,7 +212,7 @@ directiveTable.skill = function(state, args, out)
 		out:write('\tstatDescriptionScope = "gem_stat_descriptions",\n')
 	else
 		if #granted.ActiveSkill.Description > 0 then
-			out:write('\tdescription = "', granted.ActiveSkill.Description:gsub('"','\\"'):gsub('\r',''):gsub('\n','\\n'), '",\n')
+			out:write('\tdescription = "', escapeGGGString(granted.ActiveSkill.Description:gsub('"','\\"'):gsub('\r',''):gsub('\n','\\n')), '",\n')
 		end
 		out:write('\tskillTypes = { ')
 		for _, type in ipairs(granted.ActiveSkill.SkillTypes) do
@@ -529,10 +427,11 @@ directiveTable.skill = function(state, args, out)
 	if not skill.qualityStats then
 		skill.qualityStats = { }
 		for i, qualityStatsRow in ipairs(dat("GrantedEffectQualityStats"):GetRowList("GrantedEffect", granted)) do
-			skill.qualityStats[i] = { }
 			for j, stat in ipairs(qualityStatsRow.GrantedStats) do
-				table.insert(skill.qualityStats[i], { stat.Id, qualityStatsRow.StatValues[j] / 1000 })
-				--ConPrintf("[%d] %s %s", i, granted.ActiveSkill.DisplayName, stat.Id)
+				if stat.Id ~= "dummy_stat_display_nothing" then
+					table.insert(skill.qualityStats, { stat.Id, qualityStatsRow.StatValues[j] / 1000 })
+				end
+				--ConPrintf("%s %s", granted.ActiveSkill.DisplayName, stat.Id)
 			end
 		end
 	end
@@ -579,17 +478,8 @@ directiveTable.mods = function(state, args, out)
 	if not args:match("noQualityStats") then
 		if next(skill.qualityStats) ~= nil then
 			out:write('\tqualityStats = {\n')
-			for i, alternates in ipairs(skill.qualityStats) do
-				if i == 1 then
-					out:write('\t\tDefault = {\n')
-				else
-					local value = i - 1
-					out:write('\t\tAlternate' .. value .. ' = {\n')
-				end
-				for _, stat in ipairs(alternates) do
-					out:write('\t\t\t{ "', stat[1], '", ', stat[2], ' },\n')
-				end
-				out:write('\t\t},\n')
+			for _, stat in ipairs(skill.qualityStats) do
+				out:write('\t\t{ "', stat[1], '", ', stat[2], ' },\n')
 			end
 			out:write('\t},\n')
 		end
@@ -659,6 +549,7 @@ out:write('-- Gem data (c) Grinding Gear Games\n\nreturn {\n')
 for skillGem in dat("SkillGems"):Rows() do
 	for _, gemEffect in ipairs(skillGem.GemVariants) do
 		if gems[gemEffect.Id] then
+			gems[gemEffect.Id] = nil -- Some skills have an additional old version that exists in the game files and messes up transfigured gem matching
 			out:write('\t["', "Metadata/Items/Gems/SkillGem" .. gemEffect.Id, '"] = {\n')
 			out:write('\t\tname = "', fullNameGems[skillGem.BaseItemType.Id] and skillGem.BaseItemType.Name or trueGemNames[gemEffect.Id] or skillGem.BaseItemType.Name:gsub(" Support",""), '",\n')
 			-- Hybrid gems (e.g. Vaal gems) use the display name of the active skill e.g. Vaal Summon Skeletons of Sorcery
@@ -680,6 +571,7 @@ for skillGem in dat("SkillGems"):Rows() do
 			local tagNames = { }
 			out:write('\t\ttags = {\n')
 			for _, tag in ipairs(gemEffect.Tags) do
+				tag.Name = escapeGGGString(tag.Name) --Remove the words in brackets e.g. [DurationSkill|Duration] -> Duration
 				out:write('\t\t\t', tag.Id, ' = true,\n')
 				if #tag.Name > 0 then
 					table.insert(tagNames, tag.Name)

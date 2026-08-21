@@ -12,6 +12,7 @@ SetWindowTitle(APP_NAME)
 ConExecute("set vid_mode 8")
 ConExecute("set vid_resizable 3")
 
+---@diagnostic disable-next-line: lowercase-global
 launch = { }
 SetMainObject(launch)
 jit.opt.start('maxtrace=4000','maxmcode=8192')
@@ -110,6 +111,10 @@ function launch:OnFrame()
 		if self.main.OnFrame then
 			local errMsg = PCall(self.main.OnFrame, self.main)
 			if errMsg then
+				-- Send user to build list menu if a build crashes on initial load
+				if self.main.modes.BUILD.outputRevision == 1 and self.main.modes.BUILD.buildFlag and not self.devMode then
+					main:SetMode("LIST")
+				end
 				self:ShowErrMsg("In 'OnFrame': %s", errMsg)
 			end
 		end
@@ -122,7 +127,7 @@ function launch:OnFrame()
 		self:DrawPopup(r, g, b, "^0%s", self.promptMsg)
 	end
 	if self.doRestart then
-		local screenW, screenH = GetScreenSize()
+		local screenW, screenH = GetVirtualScreenSize()
 		SetDrawColor(0, 0, 0, 0.75)
 		DrawImage(nil, 0, 0, screenW, screenH)
 		SetDrawColor(1, 1, 1)
@@ -250,7 +255,7 @@ end
 ---Download the given page in the background, and calls the provided callback function when done:
 ---@param url string
 ---@param callback fun(response:table, errMsg:string) @ response = { header, body }
----@param params table @ params = { header, body }
+---@param params? table @ params = { header, body }
 function launch:DownloadPage(url, callback, params)
 	params = params or {}
 	local script = [[
@@ -317,16 +322,15 @@ function launch:DownloadPage(url, callback, params)
 		}
 	end
 end
-
 function launch:ApplyUpdate(mode)
 	if mode == "basic" then
 		-- Need to revert to the basic environment to fully apply the update
-		LoadModule("UpdateApply", "Update/opFile.txt")
+		LoadModule("UpdateApply")("Update/opFile.txt")
 		SpawnProcess(GetRuntimePath()..'/Update', 'UpdateApply.lua Update/opFileRuntime.txt')
 		Exit()
 	elseif mode == "normal" then
 		-- Update can be applied while normal environment is running
-		LoadModule("UpdateApply", "Update/opFile.txt")
+		LoadModule("UpdateApply")("Update/opFile.txt")
 		Restart()
 		self.doRestart = "Updating..."
 	end
@@ -357,6 +361,13 @@ function launch:ShowPrompt(r, g, b, str, func)
 	self.promptFunc = func or function(key)
 		if key == "RETURN" or key == "ESCAPE" then
 			return true
+		elseif key == "F4" then
+			if self.main then
+				self.main.popups = { }
+				self.main.inputEvents = { }
+				self.main:SetMode("LIST")
+			end
+			return true
 		elseif key == "c" and IsKeyDown("CTRL") then
 			local cleanStr = str:gsub("%^%d", "")
 			Copy(cleanStr)
@@ -372,7 +383,7 @@ function launch:ShowErrMsg(fmt, ...)
 		local version = self.versionNumber and 
 			"^8v"..self.versionNumber..(self.versionBranch and " "..self.versionBranch or "")
 			or ""
-		self:ShowPrompt(1, 0, 0, "^1Error:\n\n^0"..string.format(fmt, ...).."\n"..version.."\n^0Press Enter/Escape to dismiss, or F5 to restart the application.\nPress CTRL + C to copy error text.")
+		self:ShowPrompt(1, 0, 0, "^1Error:\n\n^0"..string.format(fmt, ...).."\n"..version.."\n^0Press Enter/Escape to dismiss, F4 to return to build selection, or F5 to restart the application.\nPress CTRL + C to copy error text.")
 	end
 end
 
@@ -387,7 +398,7 @@ function launch:RunPromptFunc(key)
 end
 
 function launch:DrawPopup(r, g, b, fmt, ...)
-	local screenW, screenH = GetScreenSize()
+	local screenW, screenH = GetVirtualScreenSize()
 	SetDrawColor(0, 0, 0, 0.5)
 	DrawImage(nil, 0, 0, screenW, screenH)
 	local txt = string.format(fmt, ...)

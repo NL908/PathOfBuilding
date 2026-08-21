@@ -16,9 +16,13 @@ local bor = bit.bor
 
 local mod_createMod = modLib.createMod
 
-local ModListClass = newClass("ModList", "ModStore", function(self, parent)
-	self.ModStore(parent)
-end)
+---@class ModList: ModStore
+local ModListClass = newClass("ModList", "ModStore")
+
+function ModListClass:ModList(parent)
+	self:ModStore(parent)
+	return self
+end
 
 function ModListClass:AddMod(mod)
 	t_insert(self, mod)
@@ -42,6 +46,27 @@ function ModListClass:ReplaceModInternal(mod)
 		return self.parent:ReplaceModInternal(mod)
 	end
 	
+	return false
+end
+
+---ConvertModInternal
+---  Converts an existing mod with oldName to a new mod with a different name.
+---  If no matching mod exists, then the function returns false
+---@param oldName string @The name of the existing mod to find
+---@param mod table @The new mod to replace it with
+---@return boolean @Whether any mod was converted
+function ModListClass:ConvertModInternal(oldName, mod)
+	for i, curMod in ipairs(self) do
+		if oldName == curMod.name and mod.type == curMod.type and mod.flags == curMod.flags and mod.keywordFlags == curMod.keywordFlags and mod.source == curMod.source then
+			self[i] = mod
+			return true
+		end
+	end
+
+	if self.parent then
+		return self.parent:ConvertModInternal(oldName, mod)
+	end
+
 	return false
 end
 

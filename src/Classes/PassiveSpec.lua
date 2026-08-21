@@ -16,8 +16,11 @@ local b_rshift = bit.rshift
 local band = bit.band
 local bor = bit.bor
 
-local PassiveSpecClass = newClass("PassiveSpec", "UndoHandler", function(self, build, treeVersion, convert)
-	self.UndoHandler()
+---@class PassiveSpec: UndoHandler
+local PassiveSpecClass = newClass("PassiveSpec", "UndoHandler")
+
+function PassiveSpecClass:PassiveSpec(build, treeVersion, convert)
+	self:UndoHandler()
 
 	self.build = build
 
@@ -25,7 +28,8 @@ local PassiveSpecClass = newClass("PassiveSpec", "UndoHandler", function(self, b
 	self:Init(treeVersion, convert)
 
 	self:SelectClass(0)
-end)
+	return self
+end
 
 function PassiveSpecClass:Init(treeVersion, convert)
 	self.treeVersion = treeVersion
@@ -81,10 +85,18 @@ function PassiveSpecClass:Init(treeVersion, convert)
 
 	-- Keys are node IDs, values are the replacement node
 	self.hashOverrides = { }
+
+	-- Cached highlight path for Split Personality jewels
+	self.splitPersonalityPath = { }
+
+	-- Cluster hash format version used by saved builds; 2 is current.
+	self.clusterHashFormatVersion = 2
 end
 
 function PassiveSpecClass:Load(xml, dbFileName)
 	self.title = xml.attrib.title
+	-- Specs without this attribute predate the hash-fix migration and are treated as legacy.
+	self.clusterHashFormatVersion = tonumber(xml.attrib.clusterHashFormatVersion) or (xml.attrib.nodes and 1 or 2)
 	local url
 	for _, node in pairs(xml) do
 		if type(node) == "table" then
@@ -168,7 +180,7 @@ function PassiveSpecClass:Load(xml, dbFileName)
 				end
 			end
 		end
-		self:ImportFromNodeList(tonumber(xml.attrib.classId), tonumber(xml.attrib.ascendClassId), tonumber(xml.attrib.secondaryAscendClassId or 0), hashList, self.hashOverrides, masteryEffects)
+		self:ImportFromNodeList(nil, tonumber(xml.attrib.classId), tonumber(xml.attrib.ascendClassId), tonumber(xml.attrib.secondaryAscendClassId or 0), hashList, self.hashOverrides, masteryEffects)
 	elseif url then
 		self:DecodeURL(url)
 	end
@@ -187,6 +199,7 @@ function PassiveSpecClass:Save(xml)
 	xml.attrib = {
 		title = self.title,
 		treeVersion = self.treeVersion,
+		clusterHashFormatVersion = tostring(self.clusterHashFormatVersion or 2),
 		-- New format
 		classId = tostring(self.curClassId),
 		ascendClassId = tostring(self.curAscendClassId),
@@ -233,13 +246,20 @@ function PassiveSpecClass:PostLoad()
 end
 
 -- Import passive spec from the provided class IDs and node hash list
-function PassiveSpecClass:ImportFromNodeList(classId, ascendClassId, secondaryAscendClassId, hashList, hashOverrides, masteryEffects, treeVersion)
+function PassiveSpecClass:ImportFromNodeList(className, classId, ascendClassId, secondaryAscendClassId, hashList, hashOverrides, masteryEffects, treeVersion)
   if hashOverrides == nil then hashOverrides = {} end
 	if treeVersion and treeVersion ~= self.treeVersion then
 		self:Init(treeVersion)
 		self.build.treeTab.showConvert = self.treeVersion ~= latestTreeVersion
 	end
 	self:ResetNodes()
+	if className then
+		classId = self.tree.classNameMap[className] or
+		(self.tree.ascendNameMap[className] and self.tree.ascendNameMap[className].classId) or
+		(self.tree.internalAscendNameMap[className] and self.tree.internalAscendNameMap[className].classId)
+		ascendClassId = (self.tree.ascendNameMap[className] and self.tree.ascendNameMap[className].ascendClassId) or
+		(self.tree.internalAscendNameMap[className] and self.tree.internalAscendNameMap[className].ascendClassId) or 0
+	end
 	self:SelectClass(classId)
 	self:SelectAscendClass(ascendClassId)
 	self:SelectSecondaryAscendClass(secondaryAscendClassId)
@@ -663,6 +683,80 @@ function PassiveSpecClass:IsClassConnected(classId)
 	return false
 end
 
+-- Find and allocate the shortest path to connect to a target class's starting node
+function PassiveSpecClass:ConnectToClass(classId)
+	local classData = self.tree.classes[classId]
+	if not classData then
+		return false
+	end
+	local targetStartNode = self.nodes[classData.startNodeId]
+	if not targetStartNode then
+		return false
+	end
+
+	local function isMainTreeNode(node)
+		return node
+			and not node.isProxy
+			and not node.ascendancyName
+			and node.type ~= "ClassStart"
+			and node.type ~= "AscendClassStart"
+	end
+
+	local visited = {}
+	local prev = {}
+	local queue = { targetStartNode }
+	visited[targetStartNode] = true
+	local head = 1
+	local foundNode = nil
+
+	while queue[head] and not foundNode do
+		local node = queue[head]
+		head = head + 1
+
+		if node ~= targetStartNode and node.alloc and node.connectedToStart and node.type ~= "ClassStart" and node.type ~= "AscendClassStart" then
+			foundNode = node
+			break
+		end
+
+		for _, linked in ipairs(node.linked) do
+			if isMainTreeNode(linked) and not visited[linked] then
+				visited[linked] = true
+				prev[linked] = node
+				queue[#queue + 1] = linked
+			end
+		end
+	end
+
+	if not foundNode then
+		return false
+	end
+
+	local pathBack = {}
+	local current = foundNode
+	while current do
+		t_insert(pathBack, current)
+		if current == targetStartNode then
+			break
+		end
+		current = prev[current]
+	end
+
+	if pathBack[#pathBack] ~= targetStartNode then
+		return false
+	end
+
+	local altPath = { pathBack[1] }
+	for idx = 2, #pathBack - 1 do
+		altPath[idx] = pathBack[idx]
+		local node = pathBack[idx]
+		if not node.alloc then
+			self:AllocNode(node, altPath)
+		end
+	end
+
+	return true
+end
+
 -- Clear the allocated status of all non-class-start nodes
 function PassiveSpecClass:ResetNodes()
 	for id, node in pairs(self.nodes) do
@@ -791,6 +885,17 @@ function PassiveSpecClass:GetJewel(itemId)
 	return item
 end
 
+function PassiveSpecClass:GetSocketedJewel(nodeId)
+	local itemId = self.jewels[nodeId]
+	if (not itemId or itemId == 0) and self.legacyClusterNodeMapReverse then
+		local legacyNodeId = self.legacyClusterNodeMapReverse[nodeId]
+		if legacyNodeId then
+			itemId = self.jewels[legacyNodeId]
+		end
+	end
+	return self:GetJewel(itemId)
+end
+
 -- Perform a breadth-first search of the tree, starting from this node, and determine if it is the closest node to any other nodes
 function PassiveSpecClass:BuildPathFromNode(root)
 	root.pathDist = 0
@@ -804,30 +909,39 @@ function PassiveSpecClass:BuildPathFromNode(root)
 		o = o + 1
 		local curDist = node.pathDist
 		-- Iterate through all nodes that are connected to this one
-		for _, other in ipairs(node.linked) do
-			-- Paths must obey these rules:
-			-- 1. They must not pass through class or ascendancy class start nodes (but they can start from such nodes)
-			-- 2. They cannot pass between different ascendancy classes or between an ascendancy class and the main tree
-			--    The one exception to that rule is that a path may start from an ascendancy node and pass into the main tree
-			--    This permits pathing from the Ascendant 'Path of the X' nodes into the respective class start areas
-			-- 3. They must not pass away from mastery nodes
-			if not other.pathDist then
-				ConPrintTable(other, true)
+		for index, other in ipairs(node.linked) do
+			-- Cluster subgraph rebuilds can replace node objects while retaining IDs.
+			-- Normalize stale link references to the canonical node object.
+			local canonicalNode = other and other.id and self.nodes[other.id]
+			if not canonicalNode then
+				other = nil
+			elseif canonicalNode ~= other then
+				node.linked[index] = canonicalNode
+				other = canonicalNode
 			end
-			if node.type ~= "Mastery" and other.type ~= "ClassStart" and other.type ~= "AscendClassStart" and other.pathDist > curDist and (node.ascendancyName == other.ascendancyName or (curDist == 0 and not other.ascendancyName)) then
-				-- The shortest path to the other node is through the current node
-				other.pathDist = curDist
-				if not other.alloc then
-					other.pathDist = other.pathDist + 1
+			if other then
+				-- Paths must obey these rules:
+				-- 1. They must not pass through class or ascendancy class start nodes (but they can start from such nodes)
+				-- 2. They cannot pass between different ascendancy classes or between an ascendancy class and the main tree
+				--    The one exception to that rule is that a path may start from an ascendancy node and pass into the main tree
+				--    This permits pathing from the Ascendant 'Path of the X' nodes into the respective class start areas
+				-- 3. They must not pass away from mastery nodes
+				local otherPathDist = other.pathDist or 1000
+				if node.type ~= "Mastery" and other.type ~= "ClassStart" and other.type ~= "AscendClassStart" and otherPathDist > curDist and (node.ascendancyName == other.ascendancyName or (curDist == 0 and not other.ascendancyName)) then
+					-- The shortest path to the other node is through the current node
+					other.pathDist = curDist
+					if not other.alloc then
+						other.pathDist = other.pathDist + 1
+					end
+					other.path = wipeTable(other.path)
+					other.path[1] = other
+					for i, n in ipairs(node.path) do
+						other.path[i+1] = n
+					end
+					-- Add the other node to the end of the queue
+					queue[i] = other
+					i = i + 1
 				end
-				other.path = wipeTable(other.path)
-				other.path[1] = other
-				for i, n in ipairs(node.path) do
-					other.path[i+1] = n
-				end
-				-- Add the other node to the end of the queue
-				queue[i] = other
-				i = i + 1
 			end
 		end
 	end
@@ -874,6 +988,67 @@ function PassiveSpecClass:SetNodeDistanceToClassStart(root)
 			end
 		end
 	end
+end
+
+-- Determine the shortest path from the given node to the class' start
+-- Only allocated nodes can be traversed
+function PassiveSpecClass:GetShortestPathToClassStart(rootId)
+	local root = self.nodes[rootId]
+	if not root or not root.alloc then
+		return nil
+	end
+
+	-- Stop once the current class' starting node is reached
+	local targetNodeId = self.curClass.startNodeId
+
+	local parent = { }
+	parent[root.id] = nil
+
+	local queue = { root }
+	local o, i = 1, 2 -- Out, in
+	while o < i do
+		local node = queue[o]
+		o = o + 1
+		-- Iterate through all nodes that are connected to this one
+		for _, other in ipairs(node.linked) do
+			-- If this connected node is the correct class start node, then construct and return the path
+			if other.id == targetNodeId then
+				local path = { [root.id] = true, [other.id] = true }
+				local cur = node
+				while cur do
+					path[cur.id] = true
+					cur = parent[cur.id]
+				end
+				return path
+			end
+
+			-- Otherwise, record the parent of this node if it hasn't already been visited
+			if other.alloc and node.type ~= "Mastery" and other.type ~= "ClassStart" and other.type ~= "AscendClassStart" and not parent[other.id] and other.id ~= root.id then
+				parent[other.id] = node
+
+				-- Add the other node to the end of the queue
+				queue[i] = other
+				i = i + 1
+			end
+		end
+	end
+	return nil
+end
+
+function PassiveSpecClass:BuildSplitPersonalityPath()
+	local splitPersonalityPath = { }
+	for nodeId, itemId in pairs(self.jewels) do
+		local item = self.build.itemsTab.items[itemId]
+		if item and item.jewelData and item.jewelData.jewelIncEffectFromClassStart then
+			local path = self:GetShortestPathToClassStart(nodeId)
+			if path then
+				for id in pairs(path) do
+					splitPersonalityPath[id] = true
+				end
+			end
+		end
+	end
+	self.splitPersonalityPath = splitPersonalityPath
 end
 
 function PassiveSpecClass:AddMasteryEffectOptionsToNode(node)
@@ -925,9 +1100,40 @@ end
 
 -- Rebuilds dependencies and paths for all nodes
 function PassiveSpecClass:BuildAllDependsAndPaths()
+	local timelessJewelTypeByConqueror = {
+		vaal = 1,
+		karui = 2,
+		maraketh = 3,
+		templar = 4,
+		eternal = 5,
+		kalguur = 6,
+		abyss_murderous = 7,
+		abyss_searching = 8,
+		abyss_hypnotic = 9,
+		abyss_ghastly = 10,
+		abyss_special = 11,
+	}
 	-- This table will keep track of which nodes have been visited during each path-finding attempt
 	local visited = { }
 	local attributes = { "Dexterity", "Intelligence", "Strength" }
+	-- Read Abyss changes before resetting the nodes. Zorath needs the currently
+	-- allocated path from its socket to the class starting node.
+	local abyssConquests = { }
+	for socketId, itemId in pairs(self.jewels) do
+		local item = self.build.itemsTab.items[itemId]
+		local conqueredBy = item and item.jewelData and item.jewelData.conqueredBy
+		local jewelType = conqueredBy and timelessJewelTypeByConqueror[conqueredBy.conqueror.type]
+		if jewelType and jewelType >= 7 and self.allocNodes[socketId] and not item.jewelData.limitDisabled then
+			local path = jewelType == 11 and self:GetShortestPathToClassStart(socketId)
+			for nodeId, modification in pairs(data.readAbyssJewelLUT(conqueredBy.id, socketId, jewelType, path)) do
+				abyssConquests[nodeId] = {
+					id = conqueredBy.id,
+					conqueror = conqueredBy.conqueror,
+					modification = modification,
+				}
+			end
+		end
+	end
 	-- Check all nodes for other nodes which depend on them (i.e. are only connected to the tree through that node)
 	for id, node in pairs(self.nodes) do
 		node.depends = wipeTable(node.depends)
@@ -938,6 +1144,7 @@ function PassiveSpecClass:BuildAllDependsAndPaths()
 		if self.tree.nodes[id] then
 			self:ReplaceNode(node,self.tree.nodes[id])
 		end
+		node.conqueredBy = abyssConquests[id]
 
 		if node.type ~= "ClassStart" and node.type ~= "Socket" and not node.ascendancyName then
 			for nodeId, itemId in pairs(self.jewels) do
@@ -946,7 +1153,7 @@ function PassiveSpecClass:BuildAllDependsAndPaths()
 					local radiusIndex = item.jewelRadiusIndex
 					if self.nodes[nodeId].nodesInRadius and self.nodes[nodeId].nodesInRadius[radiusIndex][node.id] then
 						if itemId ~= 0 then
-							if item.jewelData.intuitiveLeapLike then
+							if item.jewelData.intuitiveLeapLike and not (item.jewelData.intuitiveLeapKeystoneOnly and node.type ~= "Keystone") then
 								-- This node depends on Intuitive Leap-like behaviour
 								-- This flag:
 								-- 1. Prevents generation of paths from this node unless it's also connected to the start
@@ -954,7 +1161,10 @@ function PassiveSpecClass:BuildAllDependsAndPaths()
 								t_insert(node.intuitiveLeapLikesAffecting, self.nodes[nodeId])
 							end
 							if item.jewelData.conqueredBy then
-								node.conqueredBy = item.jewelData.conqueredBy
+								local radiusJewelType = timelessJewelTypeByConqueror[item.jewelData.conqueredBy.conqueror.type]
+								if not radiusJewelType or radiusJewelType < 7 then
+									node.conqueredBy = item.jewelData.conqueredBy
+								end
 							end
 						end
 					end
@@ -988,17 +1198,7 @@ function PassiveSpecClass:BuildAllDependsAndPaths()
 			local legionNodes = self.tree.legion.nodes
 			local legionAdditions = self.tree.legion.additions
 
-			-- FIXME - continue implementing
-			local jewelType = 5
-			if conqueredBy.conqueror.type == "vaal" then
-				jewelType = 1
-			elseif conqueredBy.conqueror.type == "karui" then
-				jewelType = 2
-			elseif conqueredBy.conqueror.type == "maraketh" then
-				jewelType = 3
-			elseif conqueredBy.conqueror.type == "templar" then
-				jewelType = 4
-			end
+			local jewelType = timelessJewelTypeByConqueror[conqueredBy.conqueror.type] or 5
 			local seed = conqueredBy.id
 			if jewelType == 5 then
 				seed = seed / 20
@@ -1023,7 +1223,24 @@ function PassiveSpecClass:BuildAllDependsAndPaths()
 				return statToFix -- if it doesn't need to be changed
 			end
 
-			if node.type == "Notable" then
+			if jewelType >= 7 then
+				for _, component in ipairs(conqueredBy.modification) do
+					local changedNode, replacesNode = data.resolveAbyssJewelComponent(component, self.tree.legion)
+					if changedNode then
+						if replacesNode then
+							self:ReplaceNode(node, changedNode)
+						end
+						for statIndex, statLine in ipairs(changedNode.sd) do
+							for statKey, statMod in pairs(changedNode.stats) do
+								statLine = replaceHelperFunc(statLine, statKey, statMod, component.rolls[statMod.index])
+							end
+							self:NodeAdditionOrReplacementFromString(node, (replacesNode and "" or " \n") .. statLine, replacesNode and statIndex == 1)
+						end
+					else
+						ConPrintf("Unhandled Abyss component ID: " .. component.id)
+					end
+				end
+			elseif node.type == "Notable" then
 				local jewelDataTbl = { }
 				if seed ~= m_max(m_min(seed, data.timelessJewelSeedMax[jewelType]), data.timelessJewelSeedMin[jewelType]) then
 					ConPrintf("ERROR: Seed " .. seed .. " is outside of valid range [" .. data.timelessJewelSeedMin[jewelType] .. " - " .. data.timelessJewelSeedMax[jewelType] .. "] for jewel type: " .. data.timelessJewelTypes[jewelType])
@@ -1144,6 +1361,9 @@ function PassiveSpecClass:BuildAllDependsAndPaths()
 				elseif conqueredBy.conqueror.type == "maraketh" then
 					local dex = (isValueInArray(attributes, node.dn) or node.isTattoo) and "2" or "4"
 					self:NodeAdditionOrReplacementFromString(node, " \n+" .. dex .. " to Dexterity")
+				elseif conqueredBy.conqueror.type == "kalguur" then
+					local ward = (isValueInArray(attributes, node.dn) or node.isTattoo) and "1" or "2"
+					self:NodeAdditionOrReplacementFromString(node, " \n" .. ward .. "% increased Ward")
 				elseif conqueredBy.conqueror.type == "templar" then
 					if (isValueInArray(attributes, node.dn) or node.isTattoo) then
 						local legionNode = legionNodes[91] -- templar_devotion_node
@@ -1163,6 +1383,7 @@ function PassiveSpecClass:BuildAllDependsAndPaths()
 	-- Add selected mastery effect mods to mastery nodes
 	self.allocatedMasteryCount = 0
 	self.allocatedNotableCount = 0
+	self.allocatedKeystoneCount = 0
 	self.allocatedMasteryTypes = { }
 	self.allocatedMasteryTypeCount = 0
 	self.allocatedTattooTypes = { }
@@ -1205,6 +1426,8 @@ function PassiveSpecClass:BuildAllDependsAndPaths()
 				self:AddMasteryEffectOptionsToNode(node)
 			elseif node.type == "Notable" and node.alloc then
 				self.allocatedNotableCount = self.allocatedNotableCount + 1
+			elseif node.type == "Keystone" and node.alloc then
+				self.allocatedKeystoneCount = self.allocatedKeystoneCount + 1	
 			end
 			if node.isTattoo and node.alloc and node.overrideType then
 				if not self.allocatedTattooTypes[node.overrideType] then
@@ -1388,6 +1611,8 @@ function PassiveSpecClass:BuildAllDependsAndPaths()
 			end
 		end
 	end
+
+	self:BuildSplitPersonalityPath()
 end
 
 function PassiveSpecClass:ReplaceNode(old, newNode)
@@ -1400,7 +1625,7 @@ function PassiveSpecClass:ReplaceNode(old, newNode)
 	old.name = newNode.name
 	old.mods = newNode.mods
 	old.modKey = newNode.modKey
-	old.modList = new("ModList")
+	old.modList = new("ModList"):ModList()
 	old.modList:AddList(newNode.modList)
 	old.sprites = newNode.sprites
 	old.effectSprites = newNode.effectSprites
@@ -1425,7 +1650,83 @@ function PassiveSpecClass:ReconnectNodeToClassStart(node)
 	end
 end
 
+-- Initializes temporary lookup tables used when loading legacy (v1) cluster hashes.
+-- Returns true when legacy conversion is active for this graph rebuild.
+function PassiveSpecClass:BeginLegacyClusterHashConversion()
+	local needsLegacyClusterHashConversion = (self.clusterHashFormatVersion or 2) < 2
+	self.legacyClusterNodeMap = needsLegacyClusterHashConversion and { } or nil
+	self.legacyClusterNodeMapReverse = needsLegacyClusterHashConversion and { } or nil
+	return needsLegacyClusterHashConversion
+end
+
+-- Legacy conversion updates node IDs while rebuilding cluster subgraphs.
+-- This helper keeps forward and reverse mappings in sync.
+function PassiveSpecClass:RegisterLegacyClusterNodeMap(legacyNodeId, currentNodeId)
+	if not self.legacyClusterNodeMap or not legacyNodeId or not currentNodeId then
+		return
+	end
+	self.legacyClusterNodeMap[legacyNodeId] = currentNodeId
+	if self.legacyClusterNodeMapReverse then
+		self.legacyClusterNodeMapReverse[currentNodeId] = legacyNodeId
+	end
+end
+
+-- Returns the remapped node ID when a valid legacy -> current cluster mapping exists.
+function PassiveSpecClass:GetMappedClusterNodeId(nodeId)
+	local mappedNodeId = self.legacyClusterNodeMap and self.legacyClusterNodeMap[nodeId]
+	if mappedNodeId and self.nodes[mappedNodeId] then
+		return mappedNodeId
+	end
+	return nodeId
+end
+
+-- Applies legacy -> current remapping to both cluster allocations and socketed jewel ownership.
+function PassiveSpecClass:ApplyLegacyClusterNodeRemap()
+	if not self.legacyClusterNodeMap then
+		return
+	end
+
+	local convertedNodeIds = { }
+	local seenNodeIds = { }
+	for _, nodeId in ipairs(self.allocSubgraphNodes) do
+		nodeId = self:GetMappedClusterNodeId(nodeId)
+		if not seenNodeIds[nodeId] then
+			seenNodeIds[nodeId] = true
+			t_insert(convertedNodeIds, nodeId)
+		end
+	end
+	self.allocSubgraphNodes = convertedNodeIds
+
+	-- Legacy cluster socket IDs can be normal tree node IDs (< 65536), so they bypass allocSubgraphNodes.
+	-- Move any such allocations onto their mapped current cluster node IDs.
+	for legacyNodeId, currentNodeId in pairs(self.legacyClusterNodeMap) do
+		if legacyNodeId ~= currentNodeId and self.allocNodes[legacyNodeId] and self.nodes[currentNodeId] then
+			self.allocNodes[legacyNodeId].alloc = false
+			self.allocNodes[legacyNodeId] = nil
+			if not seenNodeIds[currentNodeId] then
+				seenNodeIds[currentNodeId] = true
+				t_insert(self.allocSubgraphNodes, currentNodeId)
+			end
+		end
+	end
+
+	local convertedJewels = { }
+	for nodeId, itemId in pairs(self.jewels) do
+		convertedJewels[self:GetMappedClusterNodeId(nodeId)] = itemId
+	end
+	self.jewels = convertedJewels
+end
+
+-- Finalizes cluster hash conversion state after each graph rebuild.
+function PassiveSpecClass:EndLegacyClusterHashConversion()
+	self.clusterHashFormatVersion = 2
+	self.legacyClusterNodeMap = nil
+	self.legacyClusterNodeMapReverse = nil
+end
+
 function PassiveSpecClass:BuildClusterJewelGraphs()
+	local needsLegacyClusterHashConversion = self:BeginLegacyClusterHashConversion()
+
 	-- Remove old subgraphs
 	for id, subGraph in pairs(self.subGraphs) do
 		for _, node in ipairs(subGraph.nodes) do
@@ -1463,11 +1764,15 @@ function PassiveSpecClass:BuildClusterJewelGraphs()
 	end
 	for nodeId in pairs(self.tree.sockets) do
 		local node = self.tree.nodes[nodeId]
-		local jewel = self:GetJewel(self.jewels[nodeId])
+		local jewel = self:GetSocketedJewel(nodeId)
 		if node and node.expansionJewel and node.expansionJewel.size == 2 and jewel and jewel.jewelData.clusterJewelValid then
 			-- This is a Large Jewel Socket, and it has a cluster jewel in it
 			self:BuildSubgraph(jewel, self.nodes[nodeId], nil, nil, importedNodes, importedGroups)
 		end
+	end
+
+	if needsLegacyClusterHashConversion then
+		self:ApplyLegacyClusterNodeRemap()
 	end
 
 	-- (Re-)allocate subgraph nodes
@@ -1477,7 +1782,9 @@ function PassiveSpecClass:BuildClusterJewelGraphs()
 			node.alloc = true
 			if not self.allocNodes[nodeId] then
 				self.allocNodes[nodeId] = node
-				t_insert(self.allocExtendedNodes, nodeId)
+				if not isValueInArray(self.allocExtendedNodes, nodeId) then
+					t_insert(self.allocExtendedNodes, nodeId)
+				end
 			end
 		end
 	end
@@ -1488,6 +1795,95 @@ function PassiveSpecClass:BuildClusterJewelGraphs()
 
 	-- Rebuild node search cache because the tree might have changed
 	self.build.treeTab.viewer.searchStrCached = ""
+	self:EndLegacyClusterHashConversion()
+end
+
+-- Finds a specific expansion socket entry within a passive-tree group.
+function PassiveSpecClass:FindClusterSocket(group, index)
+	for _, nodeId in ipairs(group.n) do
+		local node = self.tree.nodes[tonumber(nodeId)]
+		if node.expansionJewel and node.expansionJewel.index == index then
+			return node
+		end
+	end
+end
+
+-- Legacy parser behavior downsized the proxy group while descending into nested clusters.
+-- Reproducing that traversal lets us recover legacy socket IDs for migration.
+function PassiveSpecClass:BuildLegacyProxyGroup(proxyGroup, expansionJewelSize, clusterSizeIndex)
+	local legacyGroup = proxyGroup
+	local groupSize = expansionJewelSize
+	local guard = 0
+	while clusterSizeIndex < groupSize and guard < 4 do
+		local socket = self:FindClusterSocket(legacyGroup, 1) or self:FindClusterSocket(legacyGroup, 0)
+		if not socket then
+			break
+		end
+		local legacyProxyNode = self.tree.nodes[tonumber(socket.expansionJewel.proxy)]
+		if not legacyProxyNode or not legacyProxyNode.group then
+			break
+		end
+		legacyGroup = legacyProxyNode.group
+		groupSize = socket.expansionJewel.size
+		guard = guard + 1
+	end
+	return legacyGroup
+end
+
+-- Converts cluster orbit indices between different node-count spaces.
+-- 12<->16 mappings reflect the 3.17 cluster export change; 6<->16 supports legacy nested mapping.
+function PassiveSpecClass:TranslateClusterOrbitIndex(srcOidx, srcNodesPerOrbit, destNodesPerOrbit)
+	if srcNodesPerOrbit == destNodesPerOrbit then
+		return srcOidx
+	elseif srcNodesPerOrbit == 12 and destNodesPerOrbit == 16 then
+		return ({[0] = 0, 1,    3, 4, 5,    7, 8, 9,    11, 12, 13,     15})[srcOidx]
+	elseif srcNodesPerOrbit == 16 and destNodesPerOrbit == 12 then
+		return ({[0] = 0, 1, 1, 2, 3, 4, 4, 5, 6, 7, 7,  8,  9, 10, 10, 11})[srcOidx]
+	elseif srcNodesPerOrbit == 6 and destNodesPerOrbit == 16 then
+		return ({[0] = 0, 3, 5, 8, 11, 13})[srcOidx]
+	elseif srcNodesPerOrbit == 16 and destNodesPerOrbit == 6 then
+		return ({[0] = 0, 0, 0, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 5, 5, 5})[srcOidx]
+	else
+		-- there is no known case where this should happen...
+		launch:ShowErrMsg("^1Error: unexpected cluster jewel node counts %d -> %d", srcNodesPerOrbit, destNodesPerOrbit)
+		-- ...but if a future patch adds one, this should end up only a little krangled, close enough for initial skill data imports:
+		return m_floor(srcOidx * destNodesPerOrbit / srcNodesPerOrbit)
+	end
+end
+
+-- Applies proxy orbit offsets and converts from cluster template indices into tree orbit-space indices.
+function PassiveSpecClass:ApplyClusterOrbitIndexAdjustment(indicies, startOidx, clusterTotalIndicies, skillsPerOrbit)
+	for _, node in pairs(indicies) do
+		local correctedNodeOidxRelativeToClusterIndicies = (node.oidx + startOidx) % clusterTotalIndicies
+		node.oidx = self:TranslateClusterOrbitIndex(correctedNodeOidxRelativeToClusterIndicies, clusterTotalIndicies, skillsPerOrbit)
+	end
+end
+
+-- Builds additional legacy node mappings by matching equivalent nodes in legacy and current orbit spaces.
+function PassiveSpecClass:BuildLegacyClusterOrbitMappings(indicies, proxyNode, clusterTotalIndicies, skillsPerOrbit)
+	if not self.legacyClusterNodeMap then
+		return
+	end
+
+	local legacySkillsPerOrbit = self.tree.skillsPerOrbit[proxyNode.o + 1]
+	local legacyProxyNodeOidxRelativeToClusterIndicies = self:TranslateClusterOrbitIndex(proxyNode.oidx, legacySkillsPerOrbit, clusterTotalIndicies)
+	local legacyNodeIdsByOidx = { }
+	local currentNodeIdsByOidx = { }
+	for nodeIndex, node in pairs(indicies) do
+		local legacyNodeOidxRelativeToClusterIndicies = (nodeIndex + legacyProxyNodeOidxRelativeToClusterIndicies) % clusterTotalIndicies
+		local legacyNodeOidx = self:TranslateClusterOrbitIndex(legacyNodeOidxRelativeToClusterIndicies, clusterTotalIndicies, legacySkillsPerOrbit)
+		legacyNodeIdsByOidx[legacyNodeOidx] = node.id
+
+		local currentNodeOidxRelativeToClusterIndicies = self:TranslateClusterOrbitIndex(node.oidx, skillsPerOrbit, clusterTotalIndicies)
+		local currentNodeOidxInLegacySkillsPerOrbit = self:TranslateClusterOrbitIndex(currentNodeOidxRelativeToClusterIndicies, clusterTotalIndicies, legacySkillsPerOrbit)
+		currentNodeIdsByOidx[currentNodeOidxInLegacySkillsPerOrbit] = node.id
+	end
+	for oidx, legacyNodeId in pairs(legacyNodeIdsByOidx) do
+		local currentNodeId = currentNodeIdsByOidx[oidx]
+		if currentNodeId and legacyNodeId ~= currentNodeId then
+			self:RegisterLegacyClusterNodeMap(legacyNodeId, currentNodeId)
+		end
+	end
 end
 
 function PassiveSpecClass:BuildSubgraph(jewel, parentSocket, id, upSize, importedNodes, importedGroups)
@@ -1567,13 +1963,17 @@ function PassiveSpecClass:BuildSubgraph(jewel, parentSocket, id, upSize, importe
 	end
 
 	local function addToAllocatedSubgraphNodes(node)
+		-- Don't add to allocSubgraphNodes if node already exists
+		if isValueInArray(self.allocSubgraphNodes, node.id) then
+			return false
+		end
 		local proxyGroup = matchGroup(expansionJewel.proxy)
 		if proxyGroup then
 			for id, data in pairs(importedNodes) do
 				if proxyGroup == data.group then
 					if node.oidx == data.orbitIndex and not data.isMastery then
 						for _, extendedId in ipairs(importedGroups[proxyGroup].nodes) do
-							if id == tonumber(extendedId) and inExtendedHashes(id) then
+							if id == extendedId and inExtendedHashes(tonumber(id)) then
 								return true
 							end
 						end
@@ -1613,34 +2013,13 @@ function PassiveSpecClass:BuildSubgraph(jewel, parentSocket, id, upSize, importe
 		self.nodes[node.id] = node
 		if addToAllocatedSubgraphNodes(node) then
 			t_insert(self.allocSubgraphNodes, node.id)
-			t_insert(self.allocExtendedNodes, node.id)
 		end
 		return
 	end
 
-	local function findSocket(group, index)
-		-- Find the given socket index in the group
-		for _, nodeId in ipairs(group.n) do
-			local node = self.tree.nodes[tonumber(nodeId)]
-			if node.expansionJewel and node.expansionJewel.index == index then
-				return node
-			end
-		end
-	end
-
-	-- Check if we need to downsize the group
-	local groupSize = expansionJewel.size
-	upSize = upSize or 0
-	while clusterJewel.sizeIndex < groupSize do
-		-- Look for the socket with index 1 first (middle socket of large groups), then index 0
-		local socket = findSocket(proxyGroup, 1) or findSocket(proxyGroup, 0)
-		assert(socket, "Downsizing socket not found")
-
-		-- Grab the proxy node/group from the socket
-		proxyNode = self.tree.nodes[tonumber(socket.expansionJewel.proxy)]
-		proxyGroup = proxyNode.group
-		groupSize = socket.expansionJewel.size
-		upSize = upSize + 1
+	local legacyProxyGroup
+	if self.legacyClusterNodeMap then
+		legacyProxyGroup = self:BuildLegacyProxyGroup(proxyGroup, expansionJewel.size, clusterJewel.sizeIndex)
 	end
 
 	-- Initialise orbit flags
@@ -1692,7 +2071,7 @@ function PassiveSpecClass:BuildSubgraph(jewel, parentSocket, id, upSize, importe
 
 	local function makeJewel(nodeIndex, jewelIndex)
 		-- Look for the socket
-		local socket = findSocket(proxyGroup, jewelIndex)
+		local socket = self:FindClusterSocket(proxyGroup, jewelIndex)
 		assert(socket, "Socket not found (ran out of sockets nani?)")
 
 		-- Construct the new node
@@ -1709,6 +2088,13 @@ function PassiveSpecClass:BuildSubgraph(jewel, parentSocket, id, upSize, importe
 		}
 		t_insert(subGraph.nodes, node)
 		indicies[nodeIndex] = node
+
+		if legacyProxyGroup and self.legacyClusterNodeMap then
+			local legacySocket = self:FindClusterSocket(legacyProxyGroup, jewelIndex)
+			if legacySocket then
+				self:RegisterLegacyClusterNodeMap(legacySocket.id, node.id)
+			end
+		end
 	end
 
 	-- First pass: sockets
@@ -1834,35 +2220,11 @@ function PassiveSpecClass:BuildSubgraph(jewel, parentSocket, id, upSize, importe
 	assert(indicies[0], "No entrance to subgraph")
 	subGraph.entranceNode = indicies[0]
 
-	-- The nodes' oidx values we just calculated are all relative to the totalIndicies properties of Data/ClusterJewels,
-	-- but the PassiveTree rendering logic treats node.oidx as relative to the tree.skillsPerOrbit constants. Those used
-	-- to be the same, but as of 3.17 they can differ, so we need to translate the ClusterJewels-relative indices into
-	-- tree.skillsPerOrbit-relative indices before we invoke tree:ProcessNode or do math against proxyNode.oidx.
-	--
-	-- The specific 12<->16 mappings are derived from https://github.com/grindinggear/skilltree-export/blob/3.17.0/README.md
-	local function translateOidx(srcOidx, srcNodesPerOrbit, destNodesPerOrbit)
-		if srcNodesPerOrbit == destNodesPerOrbit then
-			return srcOidx
-		elseif srcNodesPerOrbit == 12 and destNodesPerOrbit == 16 then
-			return ({[0] = 0, 1,    3, 4, 5,    7, 8, 9,    11, 12, 13,     15})[srcOidx]
-		elseif srcNodesPerOrbit == 16 and destNodesPerOrbit == 12 then
-			return ({[0] = 0, 1, 1, 2, 3, 4, 4, 5, 6, 7, 7,  8,  9, 10, 10, 11})[srcOidx]
-		else
-			-- there is no known case where this should happen...
-			launch:ShowErrMsg("^1Error: unexpected cluster jewel node counts %d -> %d", srcNodesPerOrbit, destNodesPerOrbit)
-			-- ...but if a future patch adds one, this should end up only a little krangled, close enough for initial skill data imports:
-			return m_floor(srcOidx * destNodesPerOrbit / srcNodesPerOrbit)
-		end
-	end
-	local proxyNodeSkillsPerOrbit = self.tree.skillsPerOrbit[proxyNode.o+1]
-
-	-- Translate oidx positioning to TreeData-relative values
-	for _, node in pairs(indicies) do
-		local proxyNodeOidxRelativeToClusterIndicies = translateOidx(proxyNode.oidx, proxyNodeSkillsPerOrbit, clusterJewel.totalIndicies)
-		local correctedNodeOidxRelativeToClusterIndicies = (node.oidx + proxyNodeOidxRelativeToClusterIndicies) % clusterJewel.totalIndicies
-		local correctedNodeOidxRelativeToTreeSkillsPerOrbit = translateOidx(correctedNodeOidxRelativeToClusterIndicies, clusterJewel.totalIndicies, proxyNodeSkillsPerOrbit)
-		node.oidx = correctedNodeOidxRelativeToTreeSkillsPerOrbit
-	end
+	-- Convert from cluster-template index space into the tree's orbit index space.
+	local skillsPerOrbit = self.tree.skillsPerOrbit[clusterJewel.sizeIndex+2]
+	local startOidx = data.clusterJewels.orbitOffsets[proxyNode.id][clusterJewel.sizeIndex]
+	self:ApplyClusterOrbitIndexAdjustment(indicies, startOidx, clusterJewel.totalIndicies, skillsPerOrbit)
+	self:BuildLegacyClusterOrbitMappings(indicies, proxyNode, clusterJewel.totalIndicies, skillsPerOrbit)
 
 	-- Perform processing on nodes to calculate positions, parse mods, and other goodies
 	for _, node in ipairs(subGraph.nodes) do
@@ -1902,7 +2264,7 @@ function PassiveSpecClass:BuildSubgraph(jewel, parentSocket, id, upSize, importe
 		end
 		if node.type == "Socket" then
 			-- Recurse to smaller jewels
-			local jewel = self:GetJewel(self.jewels[node.id])
+			local jewel = self:GetSocketedJewel(node.id)
 			if jewel and jewel.jewelData.clusterJewelValid then
 				self:BuildSubgraph(jewel, node, id, upSize, importedNodes, importedGroups)
 			end
@@ -1937,23 +2299,27 @@ function PassiveSpecClass:CreateUndoState()
 end
 
 function PassiveSpecClass:RestoreUndoState(state, treeVersion)
-	self:ImportFromNodeList(state.classId, state.ascendClassId, state.secondaryAscendClassId, state.hashList, state.hashOverrides, state.masteryEffects, treeVersion or state.treeVersion)
+	self:ImportFromNodeList(nil, state.classId, state.ascendClassId, state.secondaryAscendClassId, state.hashList, state.hashOverrides, state.masteryEffects, treeVersion or state.treeVersion)
 	self:SetWindowTitleWithBuildClass()
 end
 
 function PassiveSpecClass:SetWindowTitleWithBuildClass()
-	main:SetWindowTitleSubtext(string.format("%s (%s)", self.build.buildName, self.curAscendClassId == 0 and self.curClassName or self.curAscendClassName))
+	local classText = self.curAscendClassId == 0 and self.curClassName or self.curAscendClassName
+	if self.curSecondaryAscendClassId and self.curSecondaryAscendClassId ~= 0 and self.curSecondaryAscendClassName then
+		classText = classText .. " + " .. self.curSecondaryAscendClassName
+	end
+	main:SetWindowTitleSubtext(string.format("%s (%s)", self.build.buildName, classText))
 end
 
 --- Adds a line to or replaces a node given a line to add/replace with
 --- @param node table The node to replace/add to
 --- @param sd string The line being parsed and added
---- @param replacement boolean true to replace the node with the new mod, false to simply add it
+--- @param replacement? boolean true to replace the node with the new mod, false to simply add it
 function PassiveSpecClass:NodeAdditionOrReplacementFromString(node,sd,replacement)
 	local addition = {}
 	addition.sd = {sd}
 	addition.mods = { }
-	addition.modList = new("ModList")
+	addition.modList = new("ModList"):ModList()
 	addition.modKey = ""
 	local i = 1
 	while addition.sd[i] do
@@ -2024,7 +2390,7 @@ function PassiveSpecClass:NodeAdditionOrReplacementFromString(node,sd,replacemen
 		node.mods = tableConcat(node.mods, addition.mods)
 		node.modKey = node.modKey .. addition.modKey
 	end
-	local modList = new("ModList")
+	local modList = new("ModList"):ModList()
 	modList:AddList(addition.modList)
 	if not replacement then
 		modList:AddList(node.modList)

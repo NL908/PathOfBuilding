@@ -13,19 +13,24 @@ local m_cos = math.cos
 local m_pi = math.pi
 local band = bit.band
 
-local CalcBreakdownClass = newClass("CalcBreakdownControl", "Control", "ControlHost", function(self, calcsTab)
-	self.Control()
-	self.ControlHost()
+---@class CalcBreakdownControl: Control, ControlHost
+local CalcBreakdownClass = newClass("CalcBreakdownControl", "Control", "ControlHost")
+
+function CalcBreakdownClass:CalcBreakdownControl(calcsTab)
+	self:Control()
+	self:ControlHost()
 	self.calcsTab = calcsTab
 	self.shown = false
-	self.tooltip = new("Tooltip")
-	self.nodeViewer = new("PassiveTreeView")
+	self.tooltip = new("Tooltip"):Tooltip()
+	self.nodeViewer = new("PassiveTreeView"):PassiveTreeView()
 	self.rangeGuide = NewImageHandle()
 	self.rangeGuide:Load("Assets/range_guide.png")
 	self.uiOverlay = NewImageHandle()
 	self.uiOverlay:Load("Assets/game_ui_small.png")
-	self.controls.scrollBar = new("ScrollBarControl", {"RIGHT",self,"RIGHT"}, {-2, 0, 18, 0}, 80, "VERTICAL", true)
-end)
+	self.controls.scrollBar = new("ScrollBarControl"):ScrollBarControl({ "RIGHT", self, "RIGHT" }, { -2, 0, 18, 0 }, 80,
+	"VERTICAL", true)
+	return self
+end
 
 function CalcBreakdownClass:IsMouseOver()
 	if not self:IsShown() then
@@ -183,6 +188,7 @@ function CalcBreakdownClass:AddBreakdownSection(sectionData)
 				{ label = "More/less", key = "more" },
 				{ label = "Inc/red", key = "inc" },
 				{ label = "Efficiency", key = "efficiency" },
+				{ label = "Efficiency More/less", key = "efficiencyMore" },
 				{ label = "Reservation", key = "total" },
 			}
 		}
@@ -380,10 +386,10 @@ function CalcBreakdownClass:AddModSection(sectionData, modList)
 			-- Multiple stat names specified, add this modifier's stat to the table
 			row.name = self:FormatModName(row.mod.name)
 		end
-		local sourceType = row.mod.source:match("[^:]+")
+		local sourceType = row.mod.source:match("[^:]+") or ""
+		row.source = sourceType
 		if not modList and not sectionData.modSource then
 			-- No modifier source specified, add the source type to the table
-			row.source = sourceType
 			row.sourceTooltip = function(tooltip)
 				tooltip:AddLine(16, "Total from "..sourceType..":")
 				for _, line in ipairs(sourceTotals[sourceType]) do
@@ -404,11 +410,14 @@ function CalcBreakdownClass:AddModSection(sectionData, modList)
 		elseif sourceType == "Tree" then
 			-- Modifier is from a passive node, add node name, and add node ID (used to show node location)
 			local nodeId = row.mod.source:match("Tree:(%d+)")
+			local tattooNodeId = row.mod.source:match("Tree:(%w+)")
 			if nodeId then
 				local nodeIdNumber = tonumber(nodeId)
 				local node = build.spec.nodes[nodeIdNumber] or build.spec.tree.nodes[nodeIdNumber] or build.latestTree.nodes[nodeIdNumber]
 				row.sourceName = node.dn
 				row.sourceNameNode = node
+			elseif tattooNodeId then
+				row.sourceName = build.spec.tree.tattoo.idMap[tattooNodeId]
 			end
 		elseif sourceType == "Skill" then
 			-- Extract skill name
@@ -417,6 +426,8 @@ function CalcBreakdownClass:AddModSection(sectionData, modList)
 			row.sourceName = row.mod.source:match("Pantheon:(.+)")
 		elseif sourceType == "Spectre" then
 			row.sourceName = row.mod.source:match("Spectre:(.+)")
+		elseif sourceType == "Custom" then
+			row.sourceName = row.mod.source:match("Custom:(.+)")
 		end
 
 		if row.mod.flags ~= 0 or row.mod.keywordFlags ~= 0 then
@@ -457,7 +468,7 @@ function CalcBreakdownClass:AddModSection(sectionData, modList)
 				elseif tag.type == "MultiplierThreshold" or tag.type == "StatThreshold" then
 					desc = "If "..self:FormatVarNameOrList(tag.var or tag.stat, tag.varList or tag.statList)..(tag.upper and " <= " or " >= ")..(tag.thresholdPercent and tag.thresholdPercent.."% " or "")..(tag.threshold or self:FormatModName(tag.thresholdVar or tag.thresholdStat))
 				elseif tag.type == "SkillName" then
-					desc = "Skill: "..(tag.skillNameList and table.concat(tag.skillNameList, "/") or tag.skillName)
+					desc = "Skill: "..(tag.skillNameList and table.concat(tag.skillNameList, " / ") or tag.skillName)
 				elseif tag.type == "SkillId" then
 					desc = "Skill: "..build.data.skills[tag.skillId].name
 				elseif tag.type == "SkillType" then
@@ -470,6 +481,8 @@ function CalcBreakdownClass:AddModSection(sectionData, modList)
 					if not desc then
 						desc = "Skill type: "..(tag.neg and "Not " or "").."?"
 					end
+				elseif tag.type == "BaseFlag" then
+					desc = "Base flag: "..(tag.neg and "Not " or "")..self:FormatModName(tostring(tag.baseFlag))
 				elseif tag.type == "SlotNumber" then
 					desc = "When in slot #"..tag.num
 				elseif tag.type == "GlobalEffect" then
@@ -494,7 +507,7 @@ function CalcBreakdownClass:FormatModName(modName)
 end
 
 function CalcBreakdownClass:FormatVarNameOrList(var, varList)
-	return var and self:FormatModName(var) or table.concat(varList, "/")
+	return var and self:FormatModName(var) or self:FormatModName(table.concat(varList, " / "))
 end
 
 function CalcBreakdownClass:FormatModBase(mod, base)
@@ -685,10 +698,11 @@ function CalcBreakdownClass:Draw(viewPort)
 	else
 		SetDrawColor(0.33, 0.66, 0.33)
 	end
-	DrawImage(nil, x, y, width, 2)
-	DrawImage(nil, x, y + height - 2, width, 2)
-	DrawImage(nil, x, y, 2, height)
-	DrawImage(nil, x + width - 2, y, 2, height)
+	local borderThickness = 2
+	DrawImage(nil, x, y, width, borderThickness)
+	DrawImage(nil, x, y + height - borderThickness, width, borderThickness)
+	DrawImage(nil, x, y, borderThickness, height)
+	DrawImage(nil, x + width - borderThickness, y, borderThickness, height)
 	SetDrawLayer(nil, 10)
 	self:DrawControls(viewPort)
 	-- Draw the sections

@@ -18,7 +18,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1268, 
+					["statOrder"] = 1384, 
 				}, 
 			}, 
 		}, 
@@ -37,7 +37,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1277, 
+					["statOrder"] = 1393, 
 				}, 
 			}, 
 		}, 
@@ -56,7 +56,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1288, 
+					["statOrder"] = 1404, 
 				}, 
 			}, 
 		}, 
@@ -75,7 +75,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 10693, 
+					["statOrder"] = 11105, 
 				}, 
 			}, 
 		}, 
@@ -94,7 +94,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1296, 
+					["statOrder"] = 1412, 
 				}, 
 			}, 
 		}, 
@@ -113,7 +113,7 @@ return {
 					["index"] = 1, 
 					["max"] = 13, 
 					["min"] = 8, 
-					["statOrder"] = 1882, 
+					["statOrder"] = 1999, 
 				}, 
 			}, 
 		}, 
@@ -132,7 +132,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1110, 
+					["statOrder"] = 1224, 
 				}, 
 			}, 
 		}, 
@@ -151,7 +151,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1135, 
+					["statOrder"] = 1249, 
 				}, 
 			}, 
 		}, 
@@ -170,7 +170,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1944, 
+					["statOrder"] = 2061, 
 				}, 
 			}, 
 		}, 
@@ -189,7 +189,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1905, 
+					["statOrder"] = 2022, 
 				}, 
 			}, 
 		}, 
@@ -208,7 +208,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1122, 
+					["statOrder"] = 1236, 
 				}, 
 			}, 
 		}, 
@@ -227,7 +227,7 @@ return {
 					["index"] = 1, 
 					["max"] = 7, 
 					["min"] = 4, 
-					["statOrder"] = 1791, 
+					["statOrder"] = 1906, 
 				}, 
 			}, 
 		}, 
@@ -246,7 +246,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1707, 
+					["statOrder"] = 1822, 
 				}, 
 			}, 
 		}, 
@@ -265,7 +265,7 @@ return {
 					["index"] = 1, 
 					["max"] = 14, 
 					["min"] = 7, 
-					["statOrder"] = 10665, 
+					["statOrder"] = 11074, 
 				}, 
 			}, 
 		}, 
@@ -284,7 +284,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 6, 
-					["statOrder"] = 10666, 
+					["statOrder"] = 11075, 
 				}, 
 			}, 
 		}, 
@@ -303,7 +303,7 @@ return {
 					["index"] = 1, 
 					["max"] = 4, 
 					["min"] = 3, 
-					["statOrder"] = 1321, 
+					["statOrder"] = 1437, 
 				}, 
 			}, 
 		}, 
@@ -322,7 +322,7 @@ return {
 					["index"] = 1, 
 					["max"] = 3, 
 					["min"] = 2, 
-					["statOrder"] = 1357, 
+					["statOrder"] = 1473, 
 				}, 
 			}, 
 		}, 
@@ -341,7 +341,7 @@ return {
 					["index"] = 1, 
 					["max"] = 3, 
 					["min"] = 2, 
-					["statOrder"] = 1709, 
+					["statOrder"] = 1824, 
 				}, 
 			}, 
 		}, 
@@ -360,7 +360,7 @@ return {
 					["index"] = 1, 
 					["max"] = 6, 
 					["min"] = 3, 
-					["statOrder"] = 1935, 
+					["statOrder"] = 2052, 
 				}, 
 			}, 
 		}, 
@@ -379,7 +379,7 @@ return {
 					["index"] = 1, 
 					["max"] = 6, 
 					["min"] = 3, 
-					["statOrder"] = 1938, 
+					["statOrder"] = 2055, 
 				}, 
 			}, 
 		}, 
@@ -398,7 +398,7 @@ return {
 					["index"] = 1, 
 					["max"] = 6, 
 					["min"] = 3, 
-					["statOrder"] = 1942, 
+					["statOrder"] = 2059, 
 				}, 
 			}, 
 		}, 
@@ -417,7 +417,7 @@ return {
 					["index"] = 1, 
 					["max"] = 7, 
 					["min"] = 4, 
-					["statOrder"] = 1806, 
+					["statOrder"] = 1921, 
 				}, 
 			}, 
 		}, 
@@ -436,7 +436,7 @@ return {
 					["index"] = 1, 
 					["max"] = 4, 
 					["min"] = 2, 
-					["statOrder"] = 1482, 
+					["statOrder"] = 1596, 
 				}, 
 			}, 
 		}, 
@@ -455,7 +455,7 @@ return {
 					["index"] = 1, 
 					["max"] = 6, 
 					["min"] = 4, 
-					["statOrder"] = 1491, 
+					["statOrder"] = 1606, 
 				}, 
 			}, 
 		}, 
@@ -474,7 +474,7 @@ return {
 					["index"] = 1, 
 					["max"] = 17, 
 					["min"] = 12, 
-					["statOrder"] = 1495, 
+					["statOrder"] = 1610, 
 				}, 
 			}, 
 		}, 
@@ -493,7 +493,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1452, 
+					["statOrder"] = 1566, 
 				}, 
 			}, 
 		}, 
@@ -512,7 +512,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1460, 
+					["statOrder"] = 1574, 
 				}, 
 			}, 
 		}, 
@@ -531,7 +531,7 @@ return {
 					["index"] = 1, 
 					["max"] = 5, 
 					["min"] = 3, 
-					["statOrder"] = 1472, 
+					["statOrder"] = 1586, 
 				}, 
 			}, 
 		}, 
@@ -550,7 +550,7 @@ return {
 					["index"] = 1, 
 					["max"] = 2, 
 					["min"] = 2, 
-					["statOrder"] = 2367, 
+					["statOrder"] = 2486, 
 				}, 
 			}, 
 		}, 
@@ -569,7 +569,7 @@ return {
 					["index"] = 1, 
 					["max"] = 2, 
 					["min"] = 2, 
-					["statOrder"] = 1072, 
+					["statOrder"] = 1186, 
 				}, 
 			}, 
 		}, 
@@ -588,7 +588,7 @@ return {
 					["index"] = 1, 
 					["max"] = 3, 
 					["min"] = 3, 
-					["statOrder"] = 1754, 
+					["statOrder"] = 1869, 
 				}, 
 			}, 
 		}, 
@@ -607,7 +607,7 @@ return {
 					["index"] = 1, 
 					["max"] = 4, 
 					["min"] = 4, 
-					["statOrder"] = 1056, 
+					["statOrder"] = 1170, 
 				}, 
 			}, 
 		}, 
@@ -626,7 +626,7 @@ return {
 					["index"] = 1, 
 					["max"] = 4, 
 					["min"] = 2, 
-					["statOrder"] = 3474, 
+					["statOrder"] = 3605, 
 				}, 
 			}, 
 		}, 
@@ -645,7 +645,7 @@ return {
 					["index"] = 1, 
 					["max"] = 2, 
 					["min"] = 2, 
-					["statOrder"] = 2505, 
+					["statOrder"] = 2625, 
 				}, 
 			}, 
 		}, 
@@ -664,7 +664,7 @@ return {
 					["index"] = 1, 
 					["max"] = 14, 
 					["min"] = 9, 
-					["statOrder"] = 1536, 
+					["statOrder"] = 1651, 
 				}, 
 			}, 
 		}, 
@@ -683,7 +683,7 @@ return {
 					["index"] = 1, 
 					["max"] = 14, 
 					["min"] = 9, 
-					["statOrder"] = 1542, 
+					["statOrder"] = 1657, 
 				}, 
 			}, 
 		}, 
@@ -702,7 +702,7 @@ return {
 					["index"] = 1, 
 					["max"] = 14, 
 					["min"] = 9, 
-					["statOrder"] = 1547, 
+					["statOrder"] = 1662, 
 				}, 
 			}, 
 		}, 
@@ -721,7 +721,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 6, 
-					["statOrder"] = 1552, 
+					["statOrder"] = 1667, 
 				}, 
 			}, 
 		}, 
@@ -740,7 +740,7 @@ return {
 					["index"] = 1, 
 					["max"] = 2, 
 					["min"] = 2, 
-					["statOrder"] = 10631, 
+					["statOrder"] = 11040, 
 				}, 
 			}, 
 		}, 
@@ -759,7 +759,7 @@ return {
 					["index"] = 1, 
 					["max"] = 4, 
 					["min"] = 4, 
-					["statOrder"] = 10631, 
+					["statOrder"] = 11040, 
 				}, 
 			}, 
 		}, 
@@ -778,7 +778,7 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 10631, 
+					["statOrder"] = 11040, 
 				}, 
 			}, 
 		}, 
@@ -797,7 +797,7 @@ return {
 					["index"] = 1, 
 					["max"] = 5, 
 					["min"] = 5, 
-					["statOrder"] = 10632, 
+					["statOrder"] = 11041, 
 				}, 
 			}, 
 		}, 
@@ -816,7 +816,7 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 1452, 
+					["statOrder"] = 1566, 
 				}, 
 			}, 
 		}, 
@@ -835,7 +835,7 @@ return {
 					["index"] = 1, 
 					["max"] = 0.4, 
 					["min"] = 0.4, 
-					["statOrder"] = 1575, 
+					["statOrder"] = 1690, 
 				}, 
 			}, 
 		}, 
@@ -854,7 +854,7 @@ return {
 					["index"] = 1, 
 					["max"] = 5, 
 					["min"] = 5, 
-					["statOrder"] = 5557, 
+					["statOrder"] = 5742, 
 				}, 
 			}, 
 		}, 
@@ -873,7 +873,7 @@ return {
 					["index"] = 1, 
 					["max"] = 4, 
 					["min"] = 4, 
-					["statOrder"] = 1482, 
+					["statOrder"] = 1596, 
 				}, 
 			}, 
 		}, 
@@ -892,7 +892,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 4925, 
+					["statOrder"] = 5102, 
 				}, 
 			}, 
 		}, 
@@ -911,7 +911,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 1853, 
+					["statOrder"] = 1970, 
 				}, 
 			}, 
 		}, 
@@ -930,7 +930,7 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 1536, 
+					["statOrder"] = 1651, 
 				}, 
 			}, 
 		}, 
@@ -949,7 +949,7 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 1146, 
+					["statOrder"] = 1260, 
 				}, 
 			}, 
 		}, 
@@ -968,7 +968,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 1423, 
+					["statOrder"] = 1538, 
 				}, 
 			}, 
 		}, 
@@ -987,7 +987,7 @@ return {
 					["index"] = 1, 
 					["max"] = 30, 
 					["min"] = 30, 
-					["statOrder"] = 1390, 
+					["statOrder"] = 1505, 
 				}, 
 			}, 
 		}, 
@@ -1006,7 +1006,7 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 1788, 
+					["statOrder"] = 1903, 
 				}, 
 			}, 
 		}, 
@@ -1025,7 +1025,7 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 1105, 
+					["statOrder"] = 1219, 
 				}, 
 			}, 
 		}, 
@@ -1044,7 +1044,7 @@ return {
 					["index"] = 1, 
 					["max"] = 15, 
 					["min"] = 15, 
-					["statOrder"] = 1413, 
+					["statOrder"] = 1528, 
 				}, 
 			}, 
 		}, 
@@ -1063,7 +1063,7 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 10693, 
+					["statOrder"] = 11105, 
 				}, 
 			}, 
 		}, 
@@ -1082,7 +1082,7 @@ return {
 					["index"] = 1, 
 					["max"] = 8, 
 					["min"] = 8, 
-					["statOrder"] = 10348, 
+					["statOrder"] = 10733, 
 				}, 
 			}, 
 		}, 
@@ -1101,7 +1101,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 12, 
-					["statOrder"] = 2487, 
+					["statOrder"] = 2607, 
 				}, 
 			}, 
 		}, 
@@ -1120,7 +1120,7 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 1774, 
+					["statOrder"] = 1889, 
 				}, 
 			}, 
 		}, 
@@ -1139,7 +1139,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 2473, 
+					["statOrder"] = 2593, 
 				}, 
 			}, 
 		}, 
@@ -1158,7 +1158,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 1428, 
+					["statOrder"] = 1543, 
 				}, 
 			}, 
 		}, 
@@ -1177,7 +1177,7 @@ return {
 					["index"] = 1, 
 					["max"] = 5, 
 					["min"] = 5, 
-					["statOrder"] = 1841, 
+					["statOrder"] = 1958, 
 				}, 
 			}, 
 		}, 
@@ -1196,7 +1196,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 6725, 
+					["statOrder"] = 6949, 
 				}, 
 			}, 
 		}, 
@@ -1215,7 +1215,7 @@ return {
 					["index"] = 1, 
 					["max"] = 5, 
 					["min"] = 5, 
-					["statOrder"] = 2537, 
+					["statOrder"] = 2658, 
 				}, 
 			}, 
 		}, 
@@ -1234,7 +1234,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 5612, 
+					["statOrder"] = 5798, 
 				}, 
 			}, 
 		}, 
@@ -1253,7 +1253,7 @@ return {
 					["index"] = 1, 
 					["max"] = 2, 
 					["min"] = 2, 
-					["statOrder"] = 10633, 
+					["statOrder"] = 11042, 
 				}, 
 			}, 
 		}, 
@@ -1272,7 +1272,7 @@ return {
 					["index"] = 1, 
 					["max"] = 4, 
 					["min"] = 4, 
-					["statOrder"] = 10633, 
+					["statOrder"] = 11042, 
 				}, 
 			}, 
 		}, 
@@ -1291,7 +1291,7 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 10633, 
+					["statOrder"] = 11042, 
 				}, 
 			}, 
 		}, 
@@ -1310,7 +1310,7 @@ return {
 					["index"] = 1, 
 					["max"] = 5, 
 					["min"] = 5, 
-					["statOrder"] = 10634, 
+					["statOrder"] = 11043, 
 				}, 
 			}, 
 		}, 
@@ -1329,7 +1329,7 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 1460, 
+					["statOrder"] = 1574, 
 				}, 
 			}, 
 		}, 
@@ -1348,7 +1348,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 2092, 
+					["statOrder"] = 2209, 
 				}, 
 			}, 
 		}, 
@@ -1367,7 +1367,7 @@ return {
 					["index"] = 1, 
 					["max"] = 5, 
 					["min"] = 5, 
-					["statOrder"] = 1955, 
+					["statOrder"] = 2072, 
 				}, 
 			}, 
 		}, 
@@ -1386,7 +1386,7 @@ return {
 					["index"] = 1, 
 					["max"] = 4, 
 					["min"] = 4, 
-					["statOrder"] = 1482, 
+					["statOrder"] = 1596, 
 				}, 
 			}, 
 		}, 
@@ -1405,7 +1405,7 @@ return {
 					["index"] = 1, 
 					["max"] = 5, 
 					["min"] = 5, 
-					["statOrder"] = 10676, 
+					["statOrder"] = 11085, 
 				}, 
 			}, 
 		}, 
@@ -1424,7 +1424,7 @@ return {
 					["index"] = 1, 
 					["max"] = 5, 
 					["min"] = 5, 
-					["statOrder"] = 1709, 
+					["statOrder"] = 1824, 
 				}, 
 			}, 
 		}, 
@@ -1443,7 +1443,7 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 1542, 
+					["statOrder"] = 1657, 
 				}, 
 			}, 
 		}, 
@@ -1462,7 +1462,7 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 1905, 
+					["statOrder"] = 2022, 
 				}, 
 			}, 
 		}, 
@@ -1481,7 +1481,7 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 1762, 
+					["statOrder"] = 1877, 
 				}, 
 			}, 
 		}, 
@@ -1500,7 +1500,7 @@ return {
 					["index"] = 1, 
 					["max"] = 25, 
 					["min"] = 25, 
-					["statOrder"] = 10665, 
+					["statOrder"] = 11074, 
 				}, 
 			}, 
 		}, 
@@ -1519,7 +1519,7 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 3089, 
+					["statOrder"] = 3220, 
 				}, 
 			}, 
 		}, 
@@ -1538,7 +1538,7 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 1882, 
+					["statOrder"] = 1999, 
 				}, 
 			}, 
 		}, 
@@ -1546,7 +1546,7 @@ return {
 			["dn"] = "Add Accuracy", 
 			["id"] = "maraketh_notable_add_accuracy", 
 			["sd"] = {
-				[1] = "5% increased Global Accuracy Rating", 
+				[1] = "5% increased Accuracy Rating", 
 			}, 
 			["sortedStats"] = {
 				[1] = "accuracy_rating_+%", 
@@ -1557,7 +1557,7 @@ return {
 					["index"] = 1, 
 					["max"] = 5, 
 					["min"] = 5, 
-					["statOrder"] = 1345, 
+					["statOrder"] = 11090, 
 				}, 
 			}, 
 		}, 
@@ -1576,7 +1576,7 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 1889, 
+					["statOrder"] = 2006, 
 				}, 
 			}, 
 		}, 
@@ -1595,7 +1595,7 @@ return {
 					["index"] = 1, 
 					["max"] = 8, 
 					["min"] = 8, 
-					["statOrder"] = 3474, 
+					["statOrder"] = 3605, 
 				}, 
 			}, 
 		}, 
@@ -1614,7 +1614,7 @@ return {
 					["index"] = 1, 
 					["max"] = 15, 
 					["min"] = 15, 
-					["statOrder"] = 1680, 
+					["statOrder"] = 1795, 
 				}, 
 			}, 
 		}, 
@@ -1633,7 +1633,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 1772, 
+					["statOrder"] = 1887, 
 				}, 
 			}, 
 		}, 
@@ -1652,7 +1652,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 6431, 
+					["statOrder"] = 6644, 
 				}, 
 			}, 
 		}, 
@@ -1671,7 +1671,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 9296, 
+					["statOrder"] = 9644, 
 				}, 
 			}, 
 		}, 
@@ -1690,7 +1690,7 @@ return {
 					["index"] = 1, 
 					["max"] = 5, 
 					["min"] = 5, 
-					["statOrder"] = 1842, 
+					["statOrder"] = 1959, 
 				}, 
 			}, 
 		}, 
@@ -1709,7 +1709,7 @@ return {
 					["index"] = 1, 
 					["max"] = 25, 
 					["min"] = 25, 
-					["statOrder"] = 6605, 
+					["statOrder"] = 6822, 
 				}, 
 			}, 
 		}, 
@@ -1728,7 +1728,7 @@ return {
 					["index"] = 1, 
 					["max"] = 5, 
 					["min"] = 5, 
-					["statOrder"] = 2539, 
+					["statOrder"] = 2660, 
 				}, 
 			}, 
 		}, 
@@ -1747,7 +1747,7 @@ return {
 					["index"] = 1, 
 					["max"] = 8, 
 					["min"] = 8, 
-					["statOrder"] = 2551, 
+					["statOrder"] = 2672, 
 				}, 
 			}, 
 		}, 
@@ -1766,7 +1766,7 @@ return {
 					["index"] = 1, 
 					["max"] = 5, 
 					["min"] = 5, 
-					["statOrder"] = 10630, 
+					["statOrder"] = 11039, 
 				}, 
 			}, 
 		}, 
@@ -1785,7 +1785,5184 @@ return {
 					["index"] = 1, 
 					["max"] = 5, 
 					["min"] = 5, 
-					["statOrder"] = 10630, 
+					["statOrder"] = 11039, 
+				}, 
+			}, 
+		}, 
+		[95] = {
+			["dn"] = "Ward", 
+			["id"] = "kalguuran_small_ward", 
+			["sd"] = {
+				[1] = "2% increased Ward", 
+			}, 
+			["sortedStats"] = {
+				[1] = "ward_+%", 
+			}, 
+			["stats"] = {
+				["ward_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 2, 
+					["min"] = 2, 
+					["statOrder"] = 1554, 
+				}, 
+			}, 
+		}, 
+		[96] = {
+			["dn"] = "Ward", 
+			["id"] = "kalguuran_attribute_ward", 
+			["sd"] = {
+				[1] = "1% increased Ward", 
+			}, 
+			["sortedStats"] = {
+				[1] = "ward_+%", 
+			}, 
+			["stats"] = {
+				["ward_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 1, 
+					["statOrder"] = 1554, 
+				}, 
+			}, 
+		}, 
+		[97] = {
+			["dn"] = "Notable 1", 
+			["id"] = "abyss_murderous_notable_1", 
+			["sd"] = {
+				[1] = "+(21-30) to maximum Life", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_life", 
+			}, 
+			["stats"] = {
+				["base_maximum_life"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 30, 
+					["min"] = 21, 
+					["statOrder"] = 1594, 
+				}, 
+			}, 
+		}, 
+		[98] = {
+			["dn"] = "Notable 2", 
+			["id"] = "abyss_murderous_notable_2", 
+			["sd"] = {
+				[1] = "+(12-16) to Strength", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_strength", 
+			}, 
+			["stats"] = {
+				["additional_strength"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 16, 
+					["min"] = 12, 
+					["statOrder"] = 1203, 
+				}, 
+			}, 
+		}, 
+		[99] = {
+			["dn"] = "Notable 3", 
+			["id"] = "abyss_murderous_notable_3", 
+			["sd"] = {
+				[1] = "+(6-8) to all Attributes", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_all_attributes", 
+			}, 
+			["stats"] = {
+				["additional_all_attributes"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1202, 
+				}, 
+			}, 
+		}, 
+		[100] = {
+			["dn"] = "Notable 4", 
+			["id"] = "abyss_murderous_notable_4", 
+			["sd"] = {
+				[1] = "+(12-15)% to Fire Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_fire_damage_resistance_%", 
+			}, 
+			["stats"] = {
+				["base_fire_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 15, 
+					["min"] = 12, 
+					["statOrder"] = 1651, 
+				}, 
+			}, 
+		}, 
+		[101] = {
+			["dn"] = "Notable 5", 
+			["id"] = "abyss_murderous_notable_5", 
+			["sd"] = {
+				[1] = "+(6-8)% to all Elemental Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_resist_all_elements_%", 
+			}, 
+			["stats"] = {
+				["base_resist_all_elements_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1645, 
+				}, 
+			}, 
+		}, 
+		[102] = {
+			["dn"] = "Notable 6", 
+			["id"] = "abyss_murderous_notable_6", 
+			["sd"] = {
+				[1] = "(3-5)% increased Attack Speed", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_speed_+%", 
+			}, 
+			["stats"] = {
+				["attack_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 3, 
+					["statOrder"] = 1437, 
+				}, 
+			}, 
+		}, 
+		[103] = {
+			["dn"] = "Notable 7", 
+			["id"] = "abyss_murderous_notable_7", 
+			["sd"] = {
+				[1] = "Regenerate (9-16) Life per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_life_regeneration_rate_per_minute", 
+			}, 
+			["stats"] = {
+				["base_life_regeneration_rate_per_minute"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 16, 
+					["min"] = 9, 
+					["statOrder"] = 1599, 
+				}, 
+			}, 
+		}, 
+		[104] = {
+			["dn"] = "Notable 8", 
+			["id"] = "abyss_murderous_notable_8", 
+			["sd"] = {
+				[1] = "(3-8)% chance to Taunt Enemies on Hit with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attacks_chance_to_taunt_on_hit_%", 
+			}, 
+			["stats"] = {
+				["attacks_chance_to_taunt_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 3, 
+					["statOrder"] = 4971, 
+				}, 
+			}, 
+		}, 
+		[105] = {
+			["dn"] = "Notable 9", 
+			["id"] = "abyss_murderous_notable_9", 
+			["sd"] = {
+				[1] = "(31-40)% chance to Avoid being Ignited", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_ignite_%", 
+			}, 
+			["stats"] = {
+				["base_avoid_ignite_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 40, 
+					["min"] = 31, 
+					["statOrder"] = 1872, 
+				}, 
+			}, 
+		}, 
+		[106] = {
+			["dn"] = "Notable 10", 
+			["id"] = "abyss_murderous_notable_10", 
+			["sd"] = {
+				[1] = "(21-30)% chance to Avoid being Stunned", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_stun_%", 
+			}, 
+			["stats"] = {
+				["base_avoid_stun_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 30, 
+					["min"] = 21, 
+					["statOrder"] = 1877, 
+				}, 
+			}, 
+		}, 
+		[107] = {
+			["dn"] = "Notable 11", 
+			["id"] = "abyss_murderous_notable_11", 
+			["sd"] = {
+				[1] = "+(61-100) to Armour", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_physical_damage_reduction_rating", 
+			}, 
+			["stats"] = {
+				["base_physical_damage_reduction_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 100, 
+					["min"] = 61, 
+					["statOrder"] = 1564, 
+				}, 
+			}, 
+		}, 
+		[108] = {
+			["dn"] = "Notable 12", 
+			["id"] = "abyss_murderous_notable_12", 
+			["sd"] = {
+				[1] = "(3-5)% increased Impale Effect", 
+			}, 
+			["sortedStats"] = {
+				[1] = "impale_debuff_effect_+%", 
+			}, 
+			["stats"] = {
+				["impale_debuff_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 3, 
+					["statOrder"] = 7354, 
+				}, 
+			}, 
+		}, 
+		[109] = {
+			["dn"] = "Notable 13", 
+			["id"] = "abyss_murderous_notable_13", 
+			["sd"] = {
+				[1] = "(15-20)% increased Damage if you've Killed Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_+%_if_enemy_killed_recently", 
+			}, 
+			["stats"] = {
+				["damage_+%_if_enemy_killed_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 6133, 
+				}, 
+			}, 
+		}, 
+		[110] = {
+			["dn"] = "Notable 14", 
+			["id"] = "abyss_murderous_notable_14", 
+			["sd"] = {
+				[1] = "Regenerate (0.5-1)% of Life per second while moving", 
+			}, 
+			["sortedStats"] = {
+				[1] = "life_regeneration_rate_per_minute_%_while_moving", 
+			}, 
+			["stats"] = {
+				["life_regeneration_rate_per_minute_%_while_moving"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 0.5, 
+					["statOrder"] = 7536, 
+				}, 
+			}, 
+		}, 
+		[111] = {
+			["dn"] = "Notable 15", 
+			["id"] = "abyss_murderous_notable_15", 
+			["sd"] = {
+				[1] = "+(3-4)% Chance to Block Attack Damage if you were Damaged by a Hit Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "block_chance_on_damage_taken_%", 
+			}, 
+			["stats"] = {
+				["block_chance_on_damage_taken_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 3, 
+					["statOrder"] = 3255, 
+				}, 
+			}, 
+		}, 
+		[112] = {
+			["dn"] = "Notable 16", 
+			["id"] = "abyss_murderous_notable_16", 
+			["sd"] = {
+				[1] = "Enemies Maimed by you take (4-5)% increased Damage Over Time", 
+			}, 
+			["sortedStats"] = {
+				[1] = "enemies_you_maim_have_damage_taken_over_time_+%", 
+			}, 
+			["stats"] = {
+				["enemies_you_maim_have_damage_taken_over_time_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 4, 
+					["statOrder"] = 6513, 
+				}, 
+			}, 
+		}, 
+		[113] = {
+			["dn"] = "Notable 17", 
+			["id"] = "abyss_murderous_notable_17", 
+			["sd"] = {
+				[1] = "Enemies Intimidated by you have 10% increased duration of stuns against them", 
+			}, 
+			["sortedStats"] = {
+				[1] = "enemies_you_intimidate_have_stun_duration_on_self_+%", 
+			}, 
+			["stats"] = {
+				["enemies_you_intimidate_have_stun_duration_on_self_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 10, 
+					["statOrder"] = 6512, 
+				}, 
+			}, 
+		}, 
+		[114] = {
+			["dn"] = "Notable 18", 
+			["id"] = "abyss_murderous_notable_18", 
+			["sd"] = {
+				[1] = "(5-6) to (7-8) Added Physical Damage with Dagger Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_physical_damage_with_daggers", 
+				[2] = "attack_maximum_added_physical_damage_with_daggers", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_physical_damage_with_daggers"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 8, 
+					["min"] = 7, 
+					["statOrder"] = 2098, 
+				}, 
+				["attack_minimum_added_physical_damage_with_daggers"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 5, 
+					["statOrder"] = 2098, 
+				}, 
+			}, 
+		}, 
+		[115] = {
+			["dn"] = "Notable 19", 
+			["id"] = "abyss_murderous_notable_19", 
+			["sd"] = {
+				[1] = "(5-6) to (7-8) Added Physical Damage with Claw Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_physical_damage_with_claws", 
+				[2] = "attack_maximum_added_physical_damage_with_claws", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_physical_damage_with_claws"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 8, 
+					["min"] = 7, 
+					["statOrder"] = 2097, 
+				}, 
+				["attack_minimum_added_physical_damage_with_claws"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 5, 
+					["statOrder"] = 2097, 
+				}, 
+			}, 
+		}, 
+		[116] = {
+			["dn"] = "Notable 20", 
+			["id"] = "abyss_murderous_notable_20", 
+			["sd"] = {
+				[1] = "(5-6) to (7-8) Added Physical Damage with Sword Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_physical_damage_with_swords", 
+				[2] = "attack_maximum_added_physical_damage_with_swords", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_physical_damage_with_swords"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 8, 
+					["min"] = 7, 
+					["statOrder"] = 2101, 
+				}, 
+				["attack_minimum_added_physical_damage_with_swords"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 5, 
+					["statOrder"] = 2101, 
+				}, 
+			}, 
+		}, 
+		[117] = {
+			["dn"] = "Notable 21", 
+			["id"] = "abyss_murderous_notable_21", 
+			["sd"] = {
+				[1] = "(5-6) to (7-8) Added Physical Damage with Axe Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_physical_damage_with_axes", 
+				[2] = "attack_maximum_added_physical_damage_with_axes", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_physical_damage_with_axes"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 8, 
+					["min"] = 7, 
+					["statOrder"] = 2095, 
+				}, 
+				["attack_minimum_added_physical_damage_with_axes"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 5, 
+					["statOrder"] = 2095, 
+				}, 
+			}, 
+		}, 
+		[118] = {
+			["dn"] = "Notable 22", 
+			["id"] = "abyss_murderous_notable_22", 
+			["sd"] = {
+				[1] = "(5-6) to (7-8) Added Physical Damage with Mace or Sceptre Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_physical_damage_with_maces", 
+				[2] = "attack_maximum_added_physical_damage_with_maces", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_physical_damage_with_maces"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 8, 
+					["min"] = 7, 
+					["statOrder"] = 2099, 
+				}, 
+				["attack_minimum_added_physical_damage_with_maces"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 5, 
+					["statOrder"] = 2099, 
+				}, 
+			}, 
+		}, 
+		[119] = {
+			["dn"] = "Notable 23", 
+			["id"] = "abyss_murderous_notable_23", 
+			["sd"] = {
+				[1] = "(5-6) to (7-8) Added Physical Damage with Staff Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_physical_damage_with_staves", 
+				[2] = "attack_maximum_added_physical_damage_with_staves", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_physical_damage_with_staves"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 8, 
+					["min"] = 7, 
+					["statOrder"] = 2100, 
+				}, 
+				["attack_minimum_added_physical_damage_with_staves"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 5, 
+					["statOrder"] = 2100, 
+				}, 
+			}, 
+		}, 
+		[120] = {
+			["dn"] = "Notable 24", 
+			["id"] = "abyss_murderous_notable_24", 
+			["sd"] = {
+				[1] = "(1-4) to (33-35) Added Lightning Damage with Dagger Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_lightning_damage_with_daggers", 
+				[2] = "attack_maximum_added_lightning_damage_with_daggers", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_lightning_damage_with_daggers"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 35, 
+					["min"] = 33, 
+					["statOrder"] = 2124, 
+				}, 
+				["attack_minimum_added_lightning_damage_with_daggers"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 1, 
+					["statOrder"] = 2124, 
+				}, 
+			}, 
+		}, 
+		[121] = {
+			["dn"] = "Notable 25", 
+			["id"] = "abyss_murderous_notable_25", 
+			["sd"] = {
+				[1] = "(1-4) to (33-35) Added Lightning Damage with Claw Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_lightning_damage_with_claws", 
+				[2] = "attack_maximum_added_lightning_damage_with_claws", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_lightning_damage_with_claws"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 35, 
+					["min"] = 33, 
+					["statOrder"] = 2123, 
+				}, 
+				["attack_minimum_added_lightning_damage_with_claws"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 1, 
+					["statOrder"] = 2123, 
+				}, 
+			}, 
+		}, 
+		[122] = {
+			["dn"] = "Notable 26", 
+			["id"] = "abyss_murderous_notable_26", 
+			["sd"] = {
+				[1] = "(1-4) to (33-35) Added Lightning Damage with Sword Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_lightning_damage_with_swords", 
+				[2] = "attack_maximum_added_lightning_damage_with_swords", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_lightning_damage_with_swords"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 35, 
+					["min"] = 33, 
+					["statOrder"] = 2127, 
+				}, 
+				["attack_minimum_added_lightning_damage_with_swords"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 1, 
+					["statOrder"] = 2127, 
+				}, 
+			}, 
+		}, 
+		[123] = {
+			["dn"] = "Notable 27", 
+			["id"] = "abyss_murderous_notable_27", 
+			["sd"] = {
+				[1] = "(1-4) to (33-35) Added Lightning Damage with Axe Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_lightning_damage_with_axes", 
+				[2] = "attack_maximum_added_lightning_damage_with_axes", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_lightning_damage_with_axes"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 35, 
+					["min"] = 33, 
+					["statOrder"] = 2121, 
+				}, 
+				["attack_minimum_added_lightning_damage_with_axes"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 1, 
+					["statOrder"] = 2121, 
+				}, 
+			}, 
+		}, 
+		[124] = {
+			["dn"] = "Notable 28", 
+			["id"] = "abyss_murderous_notable_28", 
+			["sd"] = {
+				[1] = "(1-4) to (33-35) Added Lightning Damage with Mace or Sceptre Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_lightning_damage_with_maces", 
+				[2] = "attack_maximum_added_lightning_damage_with_maces", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_lightning_damage_with_maces"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 35, 
+					["min"] = 33, 
+					["statOrder"] = 2125, 
+				}, 
+				["attack_minimum_added_lightning_damage_with_maces"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 1, 
+					["statOrder"] = 2125, 
+				}, 
+			}, 
+		}, 
+		[125] = {
+			["dn"] = "Notable 29", 
+			["id"] = "abyss_murderous_notable_29", 
+			["sd"] = {
+				[1] = "(1-4) to (33-35) Added Lightning Damage with Staff Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_lightning_damage_with_staves", 
+				[2] = "attack_maximum_added_lightning_damage_with_staves", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_lightning_damage_with_staves"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 35, 
+					["min"] = 33, 
+					["statOrder"] = 2126, 
+				}, 
+				["attack_minimum_added_lightning_damage_with_staves"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 1, 
+					["statOrder"] = 2126, 
+				}, 
+			}, 
+		}, 
+		[126] = {
+			["dn"] = "Notable 30", 
+			["id"] = "abyss_murderous_notable_30", 
+			["sd"] = {
+				[1] = "(12-13) to (20-22) Added Fire Damage with Dagger Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_fire_damage_with_daggers", 
+				[2] = "attack_maximum_added_fire_damage_with_daggers", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_fire_damage_with_daggers"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 22, 
+					["min"] = 20, 
+					["statOrder"] = 2108, 
+				}, 
+				["attack_minimum_added_fire_damage_with_daggers"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 13, 
+					["min"] = 12, 
+					["statOrder"] = 2108, 
+				}, 
+			}, 
+		}, 
+		[127] = {
+			["dn"] = "Notable 31", 
+			["id"] = "abyss_murderous_notable_31", 
+			["sd"] = {
+				[1] = "(12-13) to (20-22) Added Fire Damage with Claw Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_fire_damage_with_claws", 
+				[2] = "attack_maximum_added_fire_damage_with_claws", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_fire_damage_with_claws"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 22, 
+					["min"] = 20, 
+					["statOrder"] = 2107, 
+				}, 
+				["attack_minimum_added_fire_damage_with_claws"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 13, 
+					["min"] = 12, 
+					["statOrder"] = 2107, 
+				}, 
+			}, 
+		}, 
+		[128] = {
+			["dn"] = "Notable 32", 
+			["id"] = "abyss_murderous_notable_32", 
+			["sd"] = {
+				[1] = "(12-13) to (20-22) Added Fire Damage with Sword Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_fire_damage_with_swords", 
+				[2] = "attack_maximum_added_fire_damage_with_swords", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_fire_damage_with_swords"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 22, 
+					["min"] = 20, 
+					["statOrder"] = 2111, 
+				}, 
+				["attack_minimum_added_fire_damage_with_swords"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 13, 
+					["min"] = 12, 
+					["statOrder"] = 2111, 
+				}, 
+			}, 
+		}, 
+		[129] = {
+			["dn"] = "Notable 33", 
+			["id"] = "abyss_murderous_notable_33", 
+			["sd"] = {
+				[1] = "(12-13) to (20-22) Added Fire Damage with Axe Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_fire_damage_with_axes", 
+				[2] = "attack_maximum_added_fire_damage_with_axes", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_fire_damage_with_axes"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 22, 
+					["min"] = 20, 
+					["statOrder"] = 2105, 
+				}, 
+				["attack_minimum_added_fire_damage_with_axes"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 13, 
+					["min"] = 12, 
+					["statOrder"] = 2105, 
+				}, 
+			}, 
+		}, 
+		[130] = {
+			["dn"] = "Notable 34", 
+			["id"] = "abyss_murderous_notable_34", 
+			["sd"] = {
+				[1] = "(12-13) to (20-22) Added Fire Damage with Mace or Sceptre Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_fire_damage_with_maces", 
+				[2] = "attack_maximum_added_fire_damage_with_maces", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_fire_damage_with_maces"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 22, 
+					["min"] = 20, 
+					["statOrder"] = 2109, 
+				}, 
+				["attack_minimum_added_fire_damage_with_maces"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 13, 
+					["min"] = 12, 
+					["statOrder"] = 2109, 
+				}, 
+			}, 
+		}, 
+		[131] = {
+			["dn"] = "Notable 35", 
+			["id"] = "abyss_murderous_notable_35", 
+			["sd"] = {
+				[1] = "(12-13) to (20-22) Added Fire Damage with Staff Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_fire_damage_with_staves", 
+				[2] = "attack_maximum_added_fire_damage_with_staves", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_fire_damage_with_staves"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 22, 
+					["min"] = 20, 
+					["statOrder"] = 2110, 
+				}, 
+				["attack_minimum_added_fire_damage_with_staves"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 13, 
+					["min"] = 12, 
+					["statOrder"] = 2110, 
+				}, 
+			}, 
+		}, 
+		[132] = {
+			["dn"] = "Notable 36", 
+			["id"] = "abyss_murderous_notable_36", 
+			["sd"] = {
+				[1] = "(10-11) to (17-20) Added Cold Damage with Dagger Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_cold_damage_with_daggers", 
+				[2] = "attack_maximum_added_cold_damage_with_daggers", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_cold_damage_with_daggers"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 20, 
+					["min"] = 17, 
+					["statOrder"] = 2116, 
+				}, 
+				["attack_minimum_added_cold_damage_with_daggers"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 10, 
+					["statOrder"] = 2116, 
+				}, 
+			}, 
+		}, 
+		[133] = {
+			["dn"] = "Notable 37", 
+			["id"] = "abyss_murderous_notable_37", 
+			["sd"] = {
+				[1] = "(10-11) to (17-20) Added Cold Damage with Claw Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_cold_damage_with_claws", 
+				[2] = "attack_maximum_added_cold_damage_with_claws", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_cold_damage_with_claws"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 20, 
+					["min"] = 17, 
+					["statOrder"] = 2115, 
+				}, 
+				["attack_minimum_added_cold_damage_with_claws"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 10, 
+					["statOrder"] = 2115, 
+				}, 
+			}, 
+		}, 
+		[134] = {
+			["dn"] = "Notable 38", 
+			["id"] = "abyss_murderous_notable_38", 
+			["sd"] = {
+				[1] = "(10-11) to (17-20) Added Cold Damage with Sword Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_cold_damage_with_swords", 
+				[2] = "attack_maximum_added_cold_damage_with_swords", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_cold_damage_with_swords"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 20, 
+					["min"] = 17, 
+					["statOrder"] = 2119, 
+				}, 
+				["attack_minimum_added_cold_damage_with_swords"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 10, 
+					["statOrder"] = 2119, 
+				}, 
+			}, 
+		}, 
+		[135] = {
+			["dn"] = "Notable 39", 
+			["id"] = "abyss_murderous_notable_39", 
+			["sd"] = {
+				[1] = "(10-11) to (17-20) Added Cold Damage with Axe Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_cold_damage_with_axes", 
+				[2] = "attack_maximum_added_cold_damage_with_axes", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_cold_damage_with_axes"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 20, 
+					["min"] = 17, 
+					["statOrder"] = 2113, 
+				}, 
+				["attack_minimum_added_cold_damage_with_axes"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 10, 
+					["statOrder"] = 2113, 
+				}, 
+			}, 
+		}, 
+		[136] = {
+			["dn"] = "Notable 40", 
+			["id"] = "abyss_murderous_notable_40", 
+			["sd"] = {
+				[1] = "(10-11) to (17-20) Added Cold Damage with Mace or Sceptre Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_cold_damage_with_maces", 
+				[2] = "attack_maximum_added_cold_damage_with_maces", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_cold_damage_with_maces"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 20, 
+					["min"] = 17, 
+					["statOrder"] = 2117, 
+				}, 
+				["attack_minimum_added_cold_damage_with_maces"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 10, 
+					["statOrder"] = 2117, 
+				}, 
+			}, 
+		}, 
+		[137] = {
+			["dn"] = "Notable 41", 
+			["id"] = "abyss_murderous_notable_41", 
+			["sd"] = {
+				[1] = "(10-11) to (17-20) Added Cold Damage with Staff Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_cold_damage_with_staves", 
+				[2] = "attack_maximum_added_cold_damage_with_staves", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_cold_damage_with_staves"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 20, 
+					["min"] = 17, 
+					["statOrder"] = 2118, 
+				}, 
+				["attack_minimum_added_cold_damage_with_staves"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 10, 
+					["statOrder"] = 2118, 
+				}, 
+			}, 
+		}, 
+		[138] = {
+			["dn"] = "Notable 42", 
+			["id"] = "abyss_murderous_notable_42", 
+			["sd"] = {
+				[1] = "(10-11) to (17-20) Added Chaos Damage with Dagger Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_chaos_damage_with_daggers", 
+				[2] = "attack_maximum_added_chaos_damage_with_daggers", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_chaos_damage_with_daggers"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 20, 
+					["min"] = 17, 
+					["statOrder"] = 2131, 
+				}, 
+				["attack_minimum_added_chaos_damage_with_daggers"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 10, 
+					["statOrder"] = 2131, 
+				}, 
+			}, 
+		}, 
+		[139] = {
+			["dn"] = "Notable 43", 
+			["id"] = "abyss_murderous_notable_43", 
+			["sd"] = {
+				[1] = "(10-11) to (17-20) Added Chaos Damage with Claw Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_chaos_damage_with_claws", 
+				[2] = "attack_maximum_added_chaos_damage_with_claws", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_chaos_damage_with_claws"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 20, 
+					["min"] = 17, 
+					["statOrder"] = 2130, 
+				}, 
+				["attack_minimum_added_chaos_damage_with_claws"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 10, 
+					["statOrder"] = 2130, 
+				}, 
+			}, 
+		}, 
+		[140] = {
+			["dn"] = "Notable 44", 
+			["id"] = "abyss_murderous_notable_44", 
+			["sd"] = {
+				[1] = "3% increased Cooldown Recovery Rate", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cooldown_speed_+%", 
+			}, 
+			["stats"] = {
+				["base_cooldown_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 3, 
+					["statOrder"] = 5063, 
+				}, 
+			}, 
+		}, 
+		[141] = {
+			["dn"] = "Notable 45", 
+			["id"] = "abyss_murderous_notable_45", 
+			["sd"] = {
+				[1] = "Adds (6-7) to (13-16) Fire Damage to Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_fire_damage", 
+				[2] = "attack_maximum_added_fire_damage", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_fire_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 16, 
+					["min"] = 13, 
+					["statOrder"] = 1387, 
+				}, 
+				["attack_minimum_added_fire_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 7, 
+					["min"] = 6, 
+					["statOrder"] = 1387, 
+				}, 
+			}, 
+		}, 
+		[142] = {
+			["dn"] = "Notable 46", 
+			["id"] = "abyss_murderous_notable_46", 
+			["sd"] = {
+				[1] = "Adds (6-7) to (11-13) Cold Damage to Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_cold_damage", 
+				[2] = "attack_maximum_added_cold_damage", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_cold_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 13, 
+					["min"] = 11, 
+					["statOrder"] = 1396, 
+				}, 
+				["attack_minimum_added_cold_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 7, 
+					["min"] = 6, 
+					["statOrder"] = 1396, 
+				}, 
+			}, 
+		}, 
+		[143] = {
+			["dn"] = "Notable 47", 
+			["id"] = "abyss_murderous_notable_47", 
+			["sd"] = {
+				[1] = "Adds (1-2) to (25-27) Lightning Damage to Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_lightning_damage", 
+				[2] = "attack_maximum_added_lightning_damage", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_lightning_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 27, 
+					["min"] = 25, 
+					["statOrder"] = 1407, 
+				}, 
+				["attack_minimum_added_lightning_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 2, 
+					["min"] = 1, 
+					["statOrder"] = 1407, 
+				}, 
+			}, 
+		}, 
+		[144] = {
+			["dn"] = "Notable 48", 
+			["id"] = "abyss_murderous_notable_48", 
+			["sd"] = {
+				[1] = "Adds (2-3) to (4-5) Physical Damage to Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_physical_damage", 
+				[2] = "attack_maximum_added_physical_damage", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_physical_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 5, 
+					["min"] = 4, 
+					["statOrder"] = 1293, 
+				}, 
+				["attack_minimum_added_physical_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 1293, 
+				}, 
+			}, 
+		}, 
+		[145] = {
+			["dn"] = "Notable 49", 
+			["id"] = "abyss_murderous_notable_49", 
+			["sd"] = {
+				[1] = "Adds (8-9) to (14-17) Chaos Damage to Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_chaos_damage", 
+				[2] = "attack_maximum_added_chaos_damage", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_chaos_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 17, 
+					["min"] = 14, 
+					["statOrder"] = 1414, 
+				}, 
+				["attack_minimum_added_chaos_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 9, 
+					["min"] = 8, 
+					["statOrder"] = 1414, 
+				}, 
+			}, 
+		}, 
+		[146] = {
+			["dn"] = "Notable 50", 
+			["id"] = "abyss_murderous_notable_50", 
+			["sd"] = {
+				[1] = "(8-10)% increased Damage over Time while Dual Wielding", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_over_time_+%_while_dual_wielding", 
+			}, 
+			["stats"] = {
+				["damage_over_time_+%_while_dual_wielding"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 2161, 
+				}, 
+			}, 
+		}, 
+		[147] = {
+			["dn"] = "Notable 51", 
+			["id"] = "abyss_murderous_notable_51", 
+			["sd"] = {
+				[1] = "(8-10)% increased Damage over Time while wielding a Two Handed Weapon", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_over_time_+%_while_wielding_two_handed_weapon", 
+			}, 
+			["stats"] = {
+				["damage_over_time_+%_while_wielding_two_handed_weapon"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 2163, 
+				}, 
+			}, 
+		}, 
+		[148] = {
+			["dn"] = "Notable 52", 
+			["id"] = "abyss_murderous_notable_52", 
+			["sd"] = {
+				[1] = "(8-10)% increased Damage over Time while holding a Shield", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_over_time_+%_while_holding_a_shield", 
+			}, 
+			["stats"] = {
+				["damage_over_time_+%_while_holding_a_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 2162, 
+				}, 
+			}, 
+		}, 
+		[149] = {
+			["dn"] = "Notable 1", 
+			["id"] = "abyss_searching_notable_1", 
+			["sd"] = {
+				[1] = "+(21-30) to maximum Life", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_life", 
+			}, 
+			["stats"] = {
+				["base_maximum_life"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 30, 
+					["min"] = 21, 
+					["statOrder"] = 1594, 
+				}, 
+			}, 
+		}, 
+		[150] = {
+			["dn"] = "Notable 2", 
+			["id"] = "abyss_searching_notable_2", 
+			["sd"] = {
+				[1] = "10% increased Effect of Cold Ailments", 
+			}, 
+			["sortedStats"] = {
+				[1] = "cold_ailment_effect_+%", 
+			}, 
+			["stats"] = {
+				["cold_ailment_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 10, 
+					["statOrder"] = 5885, 
+				}, 
+			}, 
+		}, 
+		[151] = {
+			["dn"] = "Notable 3", 
+			["id"] = "abyss_searching_notable_3", 
+			["sd"] = {
+				[1] = "+(12-16) to Dexterity", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_dexterity", 
+			}, 
+			["stats"] = {
+				["additional_dexterity"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 16, 
+					["min"] = 12, 
+					["statOrder"] = 1204, 
+				}, 
+			}, 
+		}, 
+		[152] = {
+			["dn"] = "Notable 4", 
+			["id"] = "abyss_searching_notable_4", 
+			["sd"] = {
+				[1] = "+(6-8) to all Attributes", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_all_attributes", 
+			}, 
+			["stats"] = {
+				["additional_all_attributes"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1202, 
+				}, 
+			}, 
+		}, 
+		[153] = {
+			["dn"] = "Notable 5", 
+			["id"] = "abyss_searching_notable_5", 
+			["sd"] = {
+				[1] = "+(12-15)% to Cold Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cold_damage_resistance_%", 
+			}, 
+			["stats"] = {
+				["base_cold_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 15, 
+					["min"] = 12, 
+					["statOrder"] = 1657, 
+				}, 
+			}, 
+		}, 
+		[154] = {
+			["dn"] = "Notable 6", 
+			["id"] = "abyss_searching_notable_6", 
+			["sd"] = {
+				[1] = "+(6-8)% to all Elemental Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_resist_all_elements_%", 
+			}, 
+			["stats"] = {
+				["base_resist_all_elements_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1645, 
+				}, 
+			}, 
+		}, 
+		[155] = {
+			["dn"] = "Notable 7", 
+			["id"] = "abyss_searching_notable_7", 
+			["sd"] = {
+				[1] = "(3-5)% increased Attack Speed", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_speed_+%", 
+			}, 
+			["stats"] = {
+				["attack_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 3, 
+					["statOrder"] = 1437, 
+				}, 
+			}, 
+		}, 
+		[156] = {
+			["dn"] = "Notable 8", 
+			["id"] = "abyss_searching_notable_8", 
+			["sd"] = {
+				[1] = "(8-12)% increased Critical Strike Chance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "critical_strike_chance_+%", 
+			}, 
+			["stats"] = {
+				["critical_strike_chance_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 8, 
+					["statOrder"] = 11074, 
+				}, 
+			}, 
+		}, 
+		[157] = {
+			["dn"] = "Notable 9", 
+			["id"] = "abyss_searching_notable_9", 
+			["sd"] = {
+				[1] = "+(4-8)% to Critical Strike Multiplier", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_critical_strike_multiplier_+", 
+			}, 
+			["stats"] = {
+				["base_critical_strike_multiplier_+"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 4, 
+					["statOrder"] = 11075, 
+				}, 
+			}, 
+		}, 
+		[158] = {
+			["dn"] = "Notable 10", 
+			["id"] = "abyss_searching_notable_10", 
+			["sd"] = {
+				[1] = "(10-18)% increased Damage over Time while Dual Wielding", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_over_time_+%_while_dual_wielding", 
+			}, 
+			["stats"] = {
+				["damage_over_time_+%_while_dual_wielding"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 18, 
+					["min"] = 10, 
+					["statOrder"] = 2161, 
+				}, 
+			}, 
+		}, 
+		[159] = {
+			["dn"] = "Notable 11", 
+			["id"] = "abyss_searching_notable_11", 
+			["sd"] = {
+				[1] = "(10-18)% increased Damage over Time while wielding a Two Handed Weapon", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_over_time_+%_while_wielding_two_handed_weapon", 
+			}, 
+			["stats"] = {
+				["damage_over_time_+%_while_wielding_two_handed_weapon"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 18, 
+					["min"] = 10, 
+					["statOrder"] = 2163, 
+				}, 
+			}, 
+		}, 
+		[160] = {
+			["dn"] = "Notable 12", 
+			["id"] = "abyss_searching_notable_12", 
+			["sd"] = {
+				[1] = "(10-18)% increased Damage over Time while holding a Shield", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_over_time_+%_while_holding_a_shield", 
+			}, 
+			["stats"] = {
+				["damage_over_time_+%_while_holding_a_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 18, 
+					["min"] = 10, 
+					["statOrder"] = 2162, 
+				}, 
+			}, 
+		}, 
+		[161] = {
+			["dn"] = "Notable 13", 
+			["id"] = "abyss_searching_notable_13", 
+			["sd"] = {
+				[1] = "(3-6)% chance to Blind Enemies on Hit with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attacks_chance_to_blind_on_hit_%", 
+			}, 
+			["stats"] = {
+				["attacks_chance_to_blind_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 3, 
+					["statOrder"] = 4970, 
+				}, 
+			}, 
+		}, 
+		[162] = {
+			["dn"] = "Notable 14", 
+			["id"] = "abyss_searching_notable_14", 
+			["sd"] = {
+				[1] = "(31-40)% chance to Avoid being Frozen", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_freeze_%", 
+			}, 
+			["stats"] = {
+				["base_avoid_freeze_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 40, 
+					["min"] = 31, 
+					["statOrder"] = 1871, 
+				}, 
+			}, 
+		}, 
+		[163] = {
+			["dn"] = "Notable 15", 
+			["id"] = "abyss_searching_notable_15", 
+			["sd"] = {
+				[1] = "(31-40)% chance to Avoid Bleeding", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_bleed_%", 
+			}, 
+			["stats"] = {
+				["base_avoid_bleed_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 40, 
+					["min"] = 31, 
+					["statOrder"] = 4255, 
+				}, 
+			}, 
+		}, 
+		[164] = {
+			["dn"] = "Notable 16", 
+			["id"] = "abyss_searching_notable_16", 
+			["sd"] = {
+				[1] = "+(31-120) to Accuracy Rating", 
+			}, 
+			["sortedStats"] = {
+				[1] = "accuracy_rating", 
+			}, 
+			["stats"] = {
+				["accuracy_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 120, 
+					["min"] = 31, 
+					["statOrder"] = 1460, 
+				}, 
+			}, 
+		}, 
+		[165] = {
+			["dn"] = "Notable 17", 
+			["id"] = "abyss_searching_notable_17", 
+			["sd"] = {
+				[1] = "+(36-100) to Evasion Rating", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_evasion_rating", 
+			}, 
+			["stats"] = {
+				["base_evasion_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 100, 
+					["min"] = 36, 
+					["statOrder"] = 1569, 
+				}, 
+			}, 
+		}, 
+		[166] = {
+			["dn"] = "Notable 18", 
+			["id"] = "abyss_searching_notable_18", 
+			["sd"] = {
+				[1] = "2% increased Cooldown Recovery Rate", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cooldown_speed_+%", 
+			}, 
+			["stats"] = {
+				["base_cooldown_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 2, 
+					["min"] = 2, 
+					["statOrder"] = 5063, 
+				}, 
+			}, 
+		}, 
+		[167] = {
+			["dn"] = "Notable 19", 
+			["id"] = "abyss_searching_notable_19", 
+			["sd"] = {
+				[1] = "2% additional Physical Damage Reduction if you weren't Damaged by a Hit Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_physical_damage_reduction_%_if_not_damaged_by_a_hit_recently", 
+			}, 
+			["stats"] = {
+				["additional_physical_damage_reduction_%_if_not_damaged_by_a_hit_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 2, 
+					["min"] = 2, 
+					["statOrder"] = 4622, 
+				}, 
+			}, 
+		}, 
+		[168] = {
+			["dn"] = "Notable 20", 
+			["id"] = "abyss_searching_notable_20", 
+			["sd"] = {
+				[1] = "3% increased Movement Speed if you haven't taken Damage Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "movement_speed_+%_if_have_not_taken_damage_recently", 
+			}, 
+			["stats"] = {
+				["movement_speed_+%_if_have_not_taken_damage_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 3, 
+					["statOrder"] = 9565, 
+				}, 
+			}, 
+		}, 
+		[169] = {
+			["dn"] = "Notable 21", 
+			["id"] = "abyss_searching_notable_21", 
+			["sd"] = {
+				[1] = "+(8-10)% to Critical Strike Multiplier if you've Killed Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "critical_strike_multiplier_+_if_enemy_killed_recently", 
+			}, 
+			["stats"] = {
+				["critical_strike_multiplier_+_if_enemy_killed_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 6045, 
+				}, 
+			}, 
+		}, 
+		[170] = {
+			["dn"] = "Notable 22", 
+			["id"] = "abyss_searching_notable_22", 
+			["sd"] = {
+				[1] = "(20-30)% increased Evasion Rating while moving", 
+			}, 
+			["sortedStats"] = {
+				[1] = "evasion_rating_+%_while_moving", 
+			}, 
+			["stats"] = {
+				["evasion_rating_+%_while_moving"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 30, 
+					["min"] = 20, 
+					["statOrder"] = 6597, 
+				}, 
+			}, 
+		}, 
+		[171] = {
+			["dn"] = "Notable 23", 
+			["id"] = "abyss_searching_notable_23", 
+			["sd"] = {
+				[1] = "(4-6)% increased Attack Speed if you've dealt a Critical Strike Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_speed_+%_if_have_crit_recently", 
+			}, 
+			["stats"] = {
+				["attack_speed_+%_if_have_crit_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 4952, 
+				}, 
+			}, 
+		}, 
+		[172] = {
+			["dn"] = "Notable 24", 
+			["id"] = "abyss_searching_notable_24", 
+			["sd"] = {
+				[1] = "(20-30)% increased Critical Strike Chance if you haven't dealt a Critical Strike Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "critical_strike_chance_+%_if_have_not_crit_recently", 
+			}, 
+			["stats"] = {
+				["critical_strike_chance_+%_if_have_not_crit_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 30, 
+					["min"] = 20, 
+					["statOrder"] = 6015, 
+				}, 
+			}, 
+		}, 
+		[173] = {
+			["dn"] = "Notable 25", 
+			["id"] = "abyss_searching_notable_25", 
+			["sd"] = {
+				[1] = "5% chance to gain Phasing for 4 seconds on Kill", 
+			}, 
+			["sortedStats"] = {
+				[1] = "phasing_for_4_seconds_on_kill_%", 
+			}, 
+			["stats"] = {
+				["phasing_for_4_seconds_on_kill_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 5, 
+					["statOrder"] = 3504, 
+				}, 
+			}, 
+		}, 
+		[174] = {
+			["dn"] = "Notable 26", 
+			["id"] = "abyss_searching_notable_26", 
+			["sd"] = {
+				[1] = "Enemies Blinded by you have (15-20)% reduced Critical Strike Chance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "enemies_you_blind_have_critical_strike_chance_+%", 
+			}, 
+			["stats"] = {
+				["enemies_you_blind_have_critical_strike_chance_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 6503, 
+				}, 
+			}, 
+		}, 
+		[175] = {
+			["dn"] = "Notable 27", 
+			["id"] = "abyss_searching_notable_27", 
+			["sd"] = {
+				[1] = "Adds (6-7) to (13-16) Fire Damage to Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_fire_damage", 
+				[2] = "attack_maximum_added_fire_damage", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_fire_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 16, 
+					["min"] = 13, 
+					["statOrder"] = 1387, 
+				}, 
+				["attack_minimum_added_fire_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 7, 
+					["min"] = 6, 
+					["statOrder"] = 1387, 
+				}, 
+			}, 
+		}, 
+		[176] = {
+			["dn"] = "Notable 28", 
+			["id"] = "abyss_searching_notable_28", 
+			["sd"] = {
+				[1] = "Adds (6-7) to (11-13) Cold Damage to Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_cold_damage", 
+				[2] = "attack_maximum_added_cold_damage", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_cold_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 13, 
+					["min"] = 11, 
+					["statOrder"] = 1396, 
+				}, 
+				["attack_minimum_added_cold_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 7, 
+					["min"] = 6, 
+					["statOrder"] = 1396, 
+				}, 
+			}, 
+		}, 
+		[177] = {
+			["dn"] = "Notable 29", 
+			["id"] = "abyss_searching_notable_29", 
+			["sd"] = {
+				[1] = "Adds (1-2) to (25-27) Lightning Damage to Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_lightning_damage", 
+				[2] = "attack_maximum_added_lightning_damage", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_lightning_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 27, 
+					["min"] = 25, 
+					["statOrder"] = 1407, 
+				}, 
+				["attack_minimum_added_lightning_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 2, 
+					["min"] = 1, 
+					["statOrder"] = 1407, 
+				}, 
+			}, 
+		}, 
+		[178] = {
+			["dn"] = "Notable 30", 
+			["id"] = "abyss_searching_notable_30", 
+			["sd"] = {
+				[1] = "Adds (2-3) to (4-5) Physical Damage to Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_physical_damage", 
+				[2] = "attack_maximum_added_physical_damage", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_physical_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 5, 
+					["min"] = 4, 
+					["statOrder"] = 1293, 
+				}, 
+				["attack_minimum_added_physical_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 1293, 
+				}, 
+			}, 
+		}, 
+		[179] = {
+			["dn"] = "Notable 31", 
+			["id"] = "abyss_searching_notable_31", 
+			["sd"] = {
+				[1] = "Adds (8-9) to (14-17) Chaos Damage to Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_chaos_damage", 
+				[2] = "attack_maximum_added_chaos_damage", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_chaos_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 17, 
+					["min"] = 14, 
+					["statOrder"] = 1414, 
+				}, 
+				["attack_minimum_added_chaos_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 9, 
+					["min"] = 8, 
+					["statOrder"] = 1414, 
+				}, 
+			}, 
+		}, 
+		[180] = {
+			["dn"] = "Notable 32", 
+			["id"] = "abyss_searching_notable_32", 
+			["sd"] = {
+				[1] = "4 to (5-6) Added Physical Damage with Wand Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_physical_damage_with_wands", 
+				[2] = "attack_maximum_added_physical_damage_with_wands", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_physical_damage_with_wands"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 6, 
+					["min"] = 5, 
+					["statOrder"] = 2102, 
+				}, 
+				["attack_minimum_added_physical_damage_with_wands"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 4, 
+					["statOrder"] = 2102, 
+				}, 
+			}, 
+		}, 
+		[181] = {
+			["dn"] = "Notable 33", 
+			["id"] = "abyss_searching_notable_33", 
+			["sd"] = {
+				[1] = "4 to (5-6) Added Physical Damage with Bow Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_physical_damage_with_bow", 
+				[2] = "attack_maximum_added_physical_damage_with_bow", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_physical_damage_with_bow"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 6, 
+					["min"] = 5, 
+					["statOrder"] = 2096, 
+				}, 
+				["attack_minimum_added_physical_damage_with_bow"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 4, 
+					["statOrder"] = 2096, 
+				}, 
+			}, 
+		}, 
+		[182] = {
+			["dn"] = "Notable 34", 
+			["id"] = "abyss_searching_notable_34", 
+			["sd"] = {
+				[1] = "(1-3) to (28-30) Added Lightning Damage with Wand Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_lightning_damage_with_wand", 
+				[2] = "attack_maximum_added_lightning_damage_with_wand", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_lightning_damage_with_wand"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 30, 
+					["min"] = 28, 
+					["statOrder"] = 2128, 
+				}, 
+				["attack_minimum_added_lightning_damage_with_wand"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 1, 
+					["statOrder"] = 2128, 
+				}, 
+			}, 
+		}, 
+		[183] = {
+			["dn"] = "Notable 35", 
+			["id"] = "abyss_searching_notable_35", 
+			["sd"] = {
+				[1] = "(1-3) to (28-30) Added Lightning Damage with Bow Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_lightning_damage_with_bows", 
+				[2] = "attack_maximum_added_lightning_damage_with_bows", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_lightning_damage_with_bows"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 30, 
+					["min"] = 28, 
+					["statOrder"] = 2122, 
+				}, 
+				["attack_minimum_added_lightning_damage_with_bows"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 1, 
+					["statOrder"] = 2122, 
+				}, 
+			}, 
+		}, 
+		[184] = {
+			["dn"] = "Notable 36", 
+			["id"] = "abyss_searching_notable_36", 
+			["sd"] = {
+				[1] = "(9-11) to (16-19) Added Fire Damage with Wand Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_fire_damage_with_wand", 
+				[2] = "attack_maximum_added_fire_damage_with_wand", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_fire_damage_with_wand"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 19, 
+					["min"] = 16, 
+					["statOrder"] = 2112, 
+				}, 
+				["attack_minimum_added_fire_damage_with_wand"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 9, 
+					["statOrder"] = 2112, 
+				}, 
+			}, 
+		}, 
+		[185] = {
+			["dn"] = "Notable 37", 
+			["id"] = "abyss_searching_notable_37", 
+			["sd"] = {
+				[1] = "(9-11) to (16-19) Added Fire Damage with Bow Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_fire_damage_with_bow", 
+				[2] = "attack_maximum_added_fire_damage_with_bow", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_fire_damage_with_bow"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 19, 
+					["min"] = 16, 
+					["statOrder"] = 2106, 
+				}, 
+				["attack_minimum_added_fire_damage_with_bow"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 9, 
+					["statOrder"] = 2106, 
+				}, 
+			}, 
+		}, 
+		[186] = {
+			["dn"] = "Notable 38", 
+			["id"] = "abyss_searching_notable_38", 
+			["sd"] = {
+				[1] = "(8-9) to (14-16) Added Cold Damage with Wand Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_cold_damage_with_wand", 
+				[2] = "attack_maximum_added_cold_damage_with_wand", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_cold_damage_with_wand"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 16, 
+					["min"] = 14, 
+					["statOrder"] = 2120, 
+				}, 
+				["attack_minimum_added_cold_damage_with_wand"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 9, 
+					["min"] = 8, 
+					["statOrder"] = 2120, 
+				}, 
+			}, 
+		}, 
+		[187] = {
+			["dn"] = "Notable 39", 
+			["id"] = "abyss_searching_notable_39", 
+			["sd"] = {
+				[1] = "(8-9) to (14-16) Added Cold Damage with Bow Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_cold_damage_with_bows", 
+				[2] = "attack_maximum_added_cold_damage_with_bows", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_cold_damage_with_bows"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 16, 
+					["min"] = 14, 
+					["statOrder"] = 2114, 
+				}, 
+				["attack_minimum_added_cold_damage_with_bows"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 9, 
+					["min"] = 8, 
+					["statOrder"] = 2114, 
+				}, 
+			}, 
+		}, 
+		[188] = {
+			["dn"] = "Notable 40", 
+			["id"] = "abyss_searching_notable_40", 
+			["sd"] = {
+				[1] = "(8-9) to (14-16) Added Chaos Damage with Bow Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_minimum_added_chaos_damage_with_bows", 
+				[2] = "attack_maximum_added_chaos_damage_with_bows", 
+			}, 
+			["stats"] = {
+				["attack_maximum_added_chaos_damage_with_bows"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 16, 
+					["min"] = 14, 
+					["statOrder"] = 2129, 
+				}, 
+				["attack_minimum_added_chaos_damage_with_bows"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 9, 
+					["min"] = 8, 
+					["statOrder"] = 2129, 
+				}, 
+			}, 
+		}, 
+		[189] = {
+			["dn"] = "Notable 41", 
+			["id"] = "abyss_searching_notable_41", 
+			["sd"] = {
+				[1] = "3% increased Cooldown Recovery Rate", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cooldown_speed_+%", 
+			}, 
+			["stats"] = {
+				["base_cooldown_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 3, 
+					["statOrder"] = 5063, 
+				}, 
+			}, 
+		}, 
+		[190] = {
+			["dn"] = "Notable 42", 
+			["id"] = "abyss_searching_notable_42", 
+			["sd"] = {
+				[1] = "(8-10)% increased Damage over Time while Dual Wielding", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_over_time_+%_while_dual_wielding", 
+			}, 
+			["stats"] = {
+				["damage_over_time_+%_while_dual_wielding"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 2161, 
+				}, 
+			}, 
+		}, 
+		[191] = {
+			["dn"] = "Notable 43", 
+			["id"] = "abyss_searching_notable_43", 
+			["sd"] = {
+				[1] = "(8-10)% increased Damage over Time while wielding a Two Handed Weapon", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_over_time_+%_while_wielding_two_handed_weapon", 
+			}, 
+			["stats"] = {
+				["damage_over_time_+%_while_wielding_two_handed_weapon"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 2163, 
+				}, 
+			}, 
+		}, 
+		[192] = {
+			["dn"] = "Notable 44", 
+			["id"] = "abyss_searching_notable_44", 
+			["sd"] = {
+				[1] = "(8-10)% increased Damage over Time while holding a Shield", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_over_time_+%_while_holding_a_shield", 
+			}, 
+			["stats"] = {
+				["damage_over_time_+%_while_holding_a_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 2162, 
+				}, 
+			}, 
+		}, 
+		[193] = {
+			["dn"] = "Notable 1", 
+			["id"] = "abyss_hypnotic_notable_1", 
+			["sd"] = {
+				[1] = "+(21-30) to maximum Mana", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_mana", 
+			}, 
+			["stats"] = {
+				["base_maximum_mana"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 30, 
+					["min"] = 21, 
+					["statOrder"] = 1605, 
+				}, 
+			}, 
+		}, 
+		[194] = {
+			["dn"] = "Notable 2", 
+			["id"] = "abyss_hypnotic_notable_2", 
+			["sd"] = {
+				[1] = "(10-15)% increased Effect of Lightning Ailments", 
+			}, 
+			["sortedStats"] = {
+				[1] = "lightning_ailment_effect_+%", 
+			}, 
+			["stats"] = {
+				["lightning_ailment_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 15, 
+					["min"] = 10, 
+					["statOrder"] = 7546, 
+				}, 
+			}, 
+		}, 
+		[195] = {
+			["dn"] = "Notable 3", 
+			["id"] = "abyss_hypnotic_notable_3", 
+			["sd"] = {
+				[1] = "+(12-16) to Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_intelligence", 
+			}, 
+			["stats"] = {
+				["additional_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 16, 
+					["min"] = 12, 
+					["statOrder"] = 1205, 
+				}, 
+			}, 
+		}, 
+		[196] = {
+			["dn"] = "Notable 4", 
+			["id"] = "abyss_hypnotic_notable_4", 
+			["sd"] = {
+				[1] = "+(6-8) to all Attributes", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_all_attributes", 
+			}, 
+			["stats"] = {
+				["additional_all_attributes"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1202, 
+				}, 
+			}, 
+		}, 
+		[197] = {
+			["dn"] = "Notable 5", 
+			["id"] = "abyss_hypnotic_notable_5", 
+			["sd"] = {
+				[1] = "+(12-15)% to Lightning Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_lightning_damage_resistance_%", 
+			}, 
+			["stats"] = {
+				["base_lightning_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 15, 
+					["min"] = 12, 
+					["statOrder"] = 1662, 
+				}, 
+			}, 
+		}, 
+		[198] = {
+			["dn"] = "Notable 6", 
+			["id"] = "abyss_hypnotic_notable_6", 
+			["sd"] = {
+				[1] = "+(6-8)% to all Elemental Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_resist_all_elements_%", 
+			}, 
+			["stats"] = {
+				["base_resist_all_elements_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1645, 
+				}, 
+			}, 
+		}, 
+		[199] = {
+			["dn"] = "Notable 7", 
+			["id"] = "abyss_hypnotic_notable_7", 
+			["sd"] = {
+				[1] = "(2-4)% increased Cast Speed", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cast_speed_+%", 
+			}, 
+			["stats"] = {
+				["base_cast_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 2, 
+					["statOrder"] = 1473, 
+				}, 
+			}, 
+		}, 
+		[200] = {
+			["dn"] = "Notable 8", 
+			["id"] = "abyss_hypnotic_notable_8", 
+			["sd"] = {
+				[1] = "Regenerate (1.1-3) Mana per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_mana_regeneration_rate_per_minute", 
+			}, 
+			["stats"] = {
+				["base_mana_regeneration_rate_per_minute"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 1.1, 
+					["statOrder"] = 1608, 
+				}, 
+			}, 
+		}, 
+		[201] = {
+			["dn"] = "Notable 9", 
+			["id"] = "abyss_hypnotic_notable_9", 
+			["sd"] = {
+				[1] = "(3-8)% chance to Hinder Enemies on Hit with Spells", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spells_chance_to_hinder_on_hit_%", 
+			}, 
+			["stats"] = {
+				["spells_chance_to_hinder_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 3, 
+					["statOrder"] = 10346, 
+				}, 
+			}, 
+		}, 
+		[202] = {
+			["dn"] = "Notable 10", 
+			["id"] = "abyss_hypnotic_notable_10", 
+			["sd"] = {
+				[1] = "(31-40)% chance to Avoid being Shocked", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_shock_%", 
+			}, 
+			["stats"] = {
+				["base_avoid_shock_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 40, 
+					["min"] = 31, 
+					["statOrder"] = 1874, 
+				}, 
+			}, 
+		}, 
+		[203] = {
+			["dn"] = "Notable 11", 
+			["id"] = "abyss_hypnotic_notable_11", 
+			["sd"] = {
+				[1] = "2% of Damage taken Recouped as Mana", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_taken_goes_to_mana_%", 
+			}, 
+			["stats"] = {
+				["damage_taken_goes_to_mana_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 2, 
+					["min"] = 2, 
+					["statOrder"] = 2483, 
+				}, 
+			}, 
+		}, 
+		[204] = {
+			["dn"] = "Notable 12", 
+			["id"] = "abyss_hypnotic_notable_12", 
+			["sd"] = {
+				[1] = "+(3-4)% Chance to Block Spell Damage if you were Damaged by a Hit Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "chance_to_block_spells_%_if_damaged_by_a_hit_recently", 
+			}, 
+			["stats"] = {
+				["chance_to_block_spells_%_if_damaged_by_a_hit_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 3, 
+					["statOrder"] = 5734, 
+				}, 
+			}, 
+		}, 
+		[205] = {
+			["dn"] = "Notable 13", 
+			["id"] = "abyss_hypnotic_notable_13", 
+			["sd"] = {
+				[1] = "Damage Penetrates 2% Elemental Resistances if you haven't Killed Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_penetrates_%_elemental_resistance_if_enemy_not_killed_recently", 
+			}, 
+			["stats"] = {
+				["damage_penetrates_%_elemental_resistance_if_enemy_not_killed_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 2, 
+					["min"] = 2, 
+					["statOrder"] = 6123, 
+				}, 
+			}, 
+		}, 
+		[206] = {
+			["dn"] = "Notable 14", 
+			["id"] = "abyss_hypnotic_notable_14", 
+			["sd"] = {
+				[1] = "(20-25)% increased Mana Regeneration Rate while moving", 
+			}, 
+			["sortedStats"] = {
+				[1] = "mana_regeneration_rate_+%_while_moving", 
+			}, 
+			["stats"] = {
+				["mana_regeneration_rate_+%_while_moving"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 25, 
+					["min"] = 20, 
+					["statOrder"] = 8336, 
+				}, 
+			}, 
+		}, 
+		[207] = {
+			["dn"] = "Notable 15", 
+			["id"] = "abyss_hypnotic_notable_15", 
+			["sd"] = {
+				[1] = "(5-7)% increased Cast Speed if you've dealt a Critical Strike Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "cast_speed_+%_if_have_crit_recently", 
+			}, 
+			["stats"] = {
+				["cast_speed_+%_if_have_crit_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 7, 
+					["min"] = 5, 
+					["statOrder"] = 5548, 
+				}, 
+			}, 
+		}, 
+		[208] = {
+			["dn"] = "Notable 16", 
+			["id"] = "abyss_hypnotic_notable_16", 
+			["sd"] = {
+				[1] = "(10-15)% reduced Effect of Curses on you while on Consecrated Ground", 
+			}, 
+			["sortedStats"] = {
+				[1] = "curse_effect_on_self_+%_while_on_consecrated_ground", 
+			}, 
+			["stats"] = {
+				["curse_effect_on_self_+%_while_on_consecrated_ground"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 15, 
+					["min"] = 10, 
+					["statOrder"] = 6084, 
+				}, 
+			}, 
+		}, 
+		[209] = {
+			["dn"] = "Notable 17", 
+			["id"] = "abyss_hypnotic_notable_17", 
+			["sd"] = {
+				[1] = "Enemies Hindered by you have (15-20)% reduced Life Regeneration rate", 
+			}, 
+			["sortedStats"] = {
+				[1] = "enemies_you_hinder_have_life_regeneration_rate_+%", 
+			}, 
+			["stats"] = {
+				["enemies_you_hinder_have_life_regeneration_rate_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 6509, 
+				}, 
+			}, 
+		}, 
+		[210] = {
+			["dn"] = "Notable 18", 
+			["id"] = "abyss_hypnotic_notable_18", 
+			["sd"] = {
+				[1] = "Enemies Withered by you have -2% to all Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "enemies_you_wither_have_all_resistances_%", 
+			}, 
+			["stats"] = {
+				["enemies_you_wither_have_all_resistances_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = -2, 
+					["min"] = -2, 
+					["statOrder"] = 6515, 
+				}, 
+			}, 
+		}, 
+		[211] = {
+			["dn"] = "Notable 19", 
+			["id"] = "abyss_hypnotic_notable_19", 
+			["sd"] = {
+				[1] = "(13-16) to (18-21) Added Spell Fire Damage while Dual Wielding", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_fire_damage_while_dual_wielding", 
+				[2] = "spell_maximum_added_fire_damage_while_dual_wielding", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_fire_damage_while_dual_wielding"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 21, 
+					["min"] = 18, 
+					["statOrder"] = 2138, 
+				}, 
+				["spell_minimum_added_fire_damage_while_dual_wielding"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 16, 
+					["min"] = 13, 
+					["statOrder"] = 2138, 
+				}, 
+			}, 
+		}, 
+		[212] = {
+			["dn"] = "Notable 20", 
+			["id"] = "abyss_hypnotic_notable_20", 
+			["sd"] = {
+				[1] = "(12-14) to (17-19) Added Spell Cold Damage while Dual Wielding", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_cold_damage_while_dual_wielding", 
+				[2] = "spell_maximum_added_cold_damage_while_dual_wielding", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_cold_damage_while_dual_wielding"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 19, 
+					["min"] = 17, 
+					["statOrder"] = 2135, 
+				}, 
+				["spell_minimum_added_cold_damage_while_dual_wielding"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 14, 
+					["min"] = 12, 
+					["statOrder"] = 2135, 
+				}, 
+			}, 
+		}, 
+		[213] = {
+			["dn"] = "Notable 21", 
+			["id"] = "abyss_hypnotic_notable_21", 
+			["sd"] = {
+				[1] = "(1-4) to (29-34) Added Spell Lightning Damage while Dual Wielding", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_lightning_damage_while_dual_wielding", 
+				[2] = "spell_maximum_added_lightning_damage_while_dual_wielding", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_lightning_damage_while_dual_wielding"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 34, 
+					["min"] = 29, 
+					["statOrder"] = 2141, 
+				}, 
+				["spell_minimum_added_lightning_damage_while_dual_wielding"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 1, 
+					["statOrder"] = 2141, 
+				}, 
+			}, 
+		}, 
+		[214] = {
+			["dn"] = "Notable 22", 
+			["id"] = "abyss_hypnotic_notable_22", 
+			["sd"] = {
+				[1] = "(9-12) to (14-17) Added Spell Physical Damage while Dual Wielding", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_physical_damage_while_dual_wielding", 
+				[2] = "spell_maximum_added_physical_damage_while_dual_wielding", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_physical_damage_while_dual_wielding"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 17, 
+					["min"] = 14, 
+					["statOrder"] = 2144, 
+				}, 
+				["spell_minimum_added_physical_damage_while_dual_wielding"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 2144, 
+				}, 
+			}, 
+		}, 
+		[215] = {
+			["dn"] = "Notable 23", 
+			["id"] = "abyss_hypnotic_notable_23", 
+			["sd"] = {
+				[1] = "(9-12) to (14-17) Added Spell Chaos Damage while Dual Wielding", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_chaos_damage_while_dual_wielding", 
+				[2] = "spell_maximum_added_chaos_damage_while_dual_wielding", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_chaos_damage_while_dual_wielding"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 17, 
+					["min"] = 14, 
+					["statOrder"] = 2132, 
+				}, 
+				["spell_minimum_added_chaos_damage_while_dual_wielding"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 2132, 
+				}, 
+			}, 
+		}, 
+		[216] = {
+			["dn"] = "Notable 24", 
+			["id"] = "abyss_hypnotic_notable_24", 
+			["sd"] = {
+				[1] = "(13-16) to (18-21) Added Spell Fire Damage while wielding a Two Handed Weapon", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_fire_damage_while_wielding_two_handed_weapon", 
+				[2] = "spell_maximum_added_fire_damage_while_wielding_two_handed_weapon", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_fire_damage_while_wielding_two_handed_weapon"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 21, 
+					["min"] = 18, 
+					["statOrder"] = 2140, 
+				}, 
+				["spell_minimum_added_fire_damage_while_wielding_two_handed_weapon"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 16, 
+					["min"] = 13, 
+					["statOrder"] = 2140, 
+				}, 
+			}, 
+		}, 
+		[217] = {
+			["dn"] = "Notable 25", 
+			["id"] = "abyss_hypnotic_notable_25", 
+			["sd"] = {
+				[1] = "(12-14) to (17-19) Added Spell Cold Damage while wielding a Two Handed Weapon", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_cold_damage_while_wielding_two_handed_weapon", 
+				[2] = "spell_maximum_added_cold_damage_while_wielding_two_handed_weapon", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_cold_damage_while_wielding_two_handed_weapon"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 19, 
+					["min"] = 17, 
+					["statOrder"] = 2137, 
+				}, 
+				["spell_minimum_added_cold_damage_while_wielding_two_handed_weapon"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 14, 
+					["min"] = 12, 
+					["statOrder"] = 2137, 
+				}, 
+			}, 
+		}, 
+		[218] = {
+			["dn"] = "Notable 26", 
+			["id"] = "abyss_hypnotic_notable_26", 
+			["sd"] = {
+				[1] = "(1-4) to (29-34) Added Spell Lightning Damage while wielding a Two Handed Weapon", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_lightning_damage_while_wielding_two_handed_weapon", 
+				[2] = "spell_maximum_added_lightning_damage_while_wielding_two_handed_weapon", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_lightning_damage_while_wielding_two_handed_weapon"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 34, 
+					["min"] = 29, 
+					["statOrder"] = 2143, 
+				}, 
+				["spell_minimum_added_lightning_damage_while_wielding_two_handed_weapon"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 1, 
+					["statOrder"] = 2143, 
+				}, 
+			}, 
+		}, 
+		[219] = {
+			["dn"] = "Notable 27", 
+			["id"] = "abyss_hypnotic_notable_27", 
+			["sd"] = {
+				[1] = "(9-12) to (14-17) Added Spell Physical Damage while wielding a Two Handed Weapon", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_physical_damage_while_wielding_two_handed_weapon", 
+				[2] = "spell_maximum_added_physical_damage_while_wielding_two_handed_weapon", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_physical_damage_while_wielding_two_handed_weapon"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 17, 
+					["min"] = 14, 
+					["statOrder"] = 2146, 
+				}, 
+				["spell_minimum_added_physical_damage_while_wielding_two_handed_weapon"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 2146, 
+				}, 
+			}, 
+		}, 
+		[220] = {
+			["dn"] = "Notable 28", 
+			["id"] = "abyss_hypnotic_notable_28", 
+			["sd"] = {
+				[1] = "(9-12) to (14-17) Added Spell Chaos Damage while wielding a Two Handed Weapon", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_chaos_damage_while_wielding_two_handed_weapon", 
+				[2] = "spell_maximum_added_chaos_damage_while_wielding_two_handed_weapon", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_chaos_damage_while_wielding_two_handed_weapon"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 17, 
+					["min"] = 14, 
+					["statOrder"] = 2134, 
+				}, 
+				["spell_minimum_added_chaos_damage_while_wielding_two_handed_weapon"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 2134, 
+				}, 
+			}, 
+		}, 
+		[221] = {
+			["dn"] = "Notable 29", 
+			["id"] = "abyss_hypnotic_notable_29", 
+			["sd"] = {
+				[1] = "(13-16) to (18-21) Added Spell Fire Damage while holding a Shield", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_fire_damage_while_holding_a_shield", 
+				[2] = "spell_maximum_added_fire_damage_while_holding_a_shield", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_fire_damage_while_holding_a_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 21, 
+					["min"] = 18, 
+					["statOrder"] = 2139, 
+				}, 
+				["spell_minimum_added_fire_damage_while_holding_a_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 16, 
+					["min"] = 13, 
+					["statOrder"] = 2139, 
+				}, 
+			}, 
+		}, 
+		[222] = {
+			["dn"] = "Notable 30", 
+			["id"] = "abyss_hypnotic_notable_30", 
+			["sd"] = {
+				[1] = "(12-14) to (17-19) Added Spell Cold Damage while holding a Shield", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_cold_damage_while_holding_a_shield", 
+				[2] = "spell_maximum_added_cold_damage_while_holding_a_shield", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_cold_damage_while_holding_a_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 19, 
+					["min"] = 17, 
+					["statOrder"] = 2136, 
+				}, 
+				["spell_minimum_added_cold_damage_while_holding_a_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 14, 
+					["min"] = 12, 
+					["statOrder"] = 2136, 
+				}, 
+			}, 
+		}, 
+		[223] = {
+			["dn"] = "Notable 31", 
+			["id"] = "abyss_hypnotic_notable_31", 
+			["sd"] = {
+				[1] = "(1-4) to (29-34) Added Spell Lightning Damage while holding a Shield", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_lightning_damage_while_holding_a_shield", 
+				[2] = "spell_maximum_added_lightning_damage_while_holding_a_shield", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_lightning_damage_while_holding_a_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 34, 
+					["min"] = 29, 
+					["statOrder"] = 2142, 
+				}, 
+				["spell_minimum_added_lightning_damage_while_holding_a_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 1, 
+					["statOrder"] = 2142, 
+				}, 
+			}, 
+		}, 
+		[224] = {
+			["dn"] = "Notable 32", 
+			["id"] = "abyss_hypnotic_notable_32", 
+			["sd"] = {
+				[1] = "(9-12) to (14-17) Added Spell Physical Damage while holding a Shield", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_physical_damage_while_holding_a_shield", 
+				[2] = "spell_maximum_added_physical_damage_while_holding_a_shield", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_physical_damage_while_holding_a_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 17, 
+					["min"] = 14, 
+					["statOrder"] = 2145, 
+				}, 
+				["spell_minimum_added_physical_damage_while_holding_a_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 2145, 
+				}, 
+			}, 
+		}, 
+		[225] = {
+			["dn"] = "Notable 33", 
+			["id"] = "abyss_hypnotic_notable_33", 
+			["sd"] = {
+				[1] = "(9-12) to (14-17) Added Spell Chaos Damage while holding a Shield", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_chaos_damage_while_holding_a_shield", 
+				[2] = "spell_maximum_added_chaos_damage_while_holding_a_shield", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_chaos_damage_while_holding_a_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 17, 
+					["min"] = 14, 
+					["statOrder"] = 2133, 
+				}, 
+				["spell_minimum_added_chaos_damage_while_holding_a_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 2133, 
+				}, 
+			}, 
+		}, 
+		[226] = {
+			["dn"] = "Notable 34", 
+			["id"] = "abyss_hypnotic_notable_34", 
+			["sd"] = {
+				[1] = "Adds (9-12) to (14-17) Fire Damage to Spells", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_fire_damage", 
+				[2] = "spell_maximum_added_fire_damage", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_fire_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 17, 
+					["min"] = 14, 
+					["statOrder"] = 1431, 
+				}, 
+				["spell_minimum_added_fire_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 1431, 
+				}, 
+			}, 
+		}, 
+		[227] = {
+			["dn"] = "Notable 35", 
+			["id"] = "abyss_hypnotic_notable_35", 
+			["sd"] = {
+				[1] = "Adds (8-11) to (13-16) Cold Damage to Spells", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_cold_damage", 
+				[2] = "spell_maximum_added_cold_damage", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_cold_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 16, 
+					["min"] = 13, 
+					["statOrder"] = 1432, 
+				}, 
+				["spell_minimum_added_cold_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 8, 
+					["statOrder"] = 1432, 
+				}, 
+			}, 
+		}, 
+		[228] = {
+			["dn"] = "Notable 36", 
+			["id"] = "abyss_hypnotic_notable_36", 
+			["sd"] = {
+				[1] = "Adds (1-3) to (22-27) Lightning Damage to Spells", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_lightning_damage", 
+				[2] = "spell_maximum_added_lightning_damage", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_lightning_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 27, 
+					["min"] = 22, 
+					["statOrder"] = 1433, 
+				}, 
+				["spell_minimum_added_lightning_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 1, 
+					["statOrder"] = 1433, 
+				}, 
+			}, 
+		}, 
+		[229] = {
+			["dn"] = "Notable 37", 
+			["id"] = "abyss_hypnotic_notable_37", 
+			["sd"] = {
+				[1] = "Adds (4-7) to (10-13) Physical Damage to Spells", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_physical_damage", 
+				[2] = "spell_maximum_added_physical_damage", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_physical_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 13, 
+					["min"] = 10, 
+					["statOrder"] = 1430, 
+				}, 
+				["spell_minimum_added_physical_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 7, 
+					["min"] = 4, 
+					["statOrder"] = 1430, 
+				}, 
+			}, 
+		}, 
+		[230] = {
+			["dn"] = "Notable 38", 
+			["id"] = "abyss_hypnotic_notable_38", 
+			["sd"] = {
+				[1] = "Adds (4-7) to (10-13) Chaos Damage to Spells", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spell_minimum_added_chaos_damage", 
+				[2] = "spell_maximum_added_chaos_damage", 
+			}, 
+			["stats"] = {
+				["spell_maximum_added_chaos_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 13, 
+					["min"] = 10, 
+					["statOrder"] = 1434, 
+				}, 
+				["spell_minimum_added_chaos_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 7, 
+					["min"] = 4, 
+					["statOrder"] = 1434, 
+				}, 
+			}, 
+		}, 
+		[231] = {
+			["dn"] = "Notable 39", 
+			["id"] = "abyss_hypnotic_notable_39", 
+			["sd"] = {
+				[1] = "3% increased Cooldown Recovery Rate", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cooldown_speed_+%", 
+			}, 
+			["stats"] = {
+				["base_cooldown_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 3, 
+					["statOrder"] = 5063, 
+				}, 
+			}, 
+		}, 
+		[232] = {
+			["dn"] = "Notable 40", 
+			["id"] = "abyss_hypnotic_notable_40", 
+			["sd"] = {
+				[1] = "(8-10)% increased Damage over Time while Dual Wielding", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_over_time_+%_while_dual_wielding", 
+			}, 
+			["stats"] = {
+				["damage_over_time_+%_while_dual_wielding"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 2161, 
+				}, 
+			}, 
+		}, 
+		[233] = {
+			["dn"] = "Notable 41", 
+			["id"] = "abyss_hypnotic_notable_41", 
+			["sd"] = {
+				[1] = "(8-10)% increased Damage over Time while wielding a Two Handed Weapon", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_over_time_+%_while_wielding_two_handed_weapon", 
+			}, 
+			["stats"] = {
+				["damage_over_time_+%_while_wielding_two_handed_weapon"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 2163, 
+				}, 
+			}, 
+		}, 
+		[234] = {
+			["dn"] = "Notable 42", 
+			["id"] = "abyss_hypnotic_notable_42", 
+			["sd"] = {
+				[1] = "(8-10)% increased Damage over Time while holding a Shield", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_over_time_+%_while_holding_a_shield", 
+			}, 
+			["stats"] = {
+				["damage_over_time_+%_while_holding_a_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 2162, 
+				}, 
+			}, 
+		}, 
+		[235] = {
+			["dn"] = "Notable 1", 
+			["id"] = "abyss_ghastly_notable_1", 
+			["sd"] = {
+				[1] = "+(12-16) to Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_intelligence", 
+			}, 
+			["stats"] = {
+				["additional_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 16, 
+					["min"] = 12, 
+					["statOrder"] = 1205, 
+				}, 
+			}, 
+		}, 
+		[236] = {
+			["dn"] = "Notable 2", 
+			["id"] = "abyss_ghastly_notable_2", 
+			["sd"] = {
+				[1] = "+(6-8) to all Attributes", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_all_attributes", 
+			}, 
+			["stats"] = {
+				["additional_all_attributes"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1202, 
+				}, 
+			}, 
+		}, 
+		[237] = {
+			["dn"] = "Notable 3", 
+			["id"] = "abyss_ghastly_notable_3", 
+			["sd"] = {
+				[1] = "+(5-7)% to Chaos Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_chaos_damage_resistance_%", 
+			}, 
+			["stats"] = {
+				["base_chaos_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 7, 
+					["min"] = 5, 
+					["statOrder"] = 1667, 
+				}, 
+			}, 
+		}, 
+		[238] = {
+			["dn"] = "Notable 4", 
+			["id"] = "abyss_ghastly_notable_4", 
+			["sd"] = {
+				[1] = "Minions Regenerate (22-40) Life per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_life_regeneration_rate_per_second", 
+			}, 
+			["stats"] = {
+				["minion_life_regeneration_rate_per_second"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 40, 
+					["min"] = 22, 
+					["statOrder"] = 9457, 
+				}, 
+			}, 
+		}, 
+		[239] = {
+			["dn"] = "Notable 5", 
+			["id"] = "abyss_ghastly_notable_5", 
+			["sd"] = {
+				[1] = "Regenerate (9-16) Energy Shield per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "energy_shield_regeneration_rate_per_second", 
+			}, 
+			["stats"] = {
+				["energy_shield_regeneration_rate_per_second"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 16, 
+					["min"] = 9, 
+					["statOrder"] = 6560, 
+				}, 
+			}, 
+		}, 
+		[240] = {
+			["dn"] = "Notable 6", 
+			["id"] = "abyss_ghastly_notable_6", 
+			["sd"] = {
+				[1] = "Minions have (3-5)% chance to Blind on Hit with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_attacks_chance_to_blind_on_hit_%", 
+			}, 
+			["stats"] = {
+				["minion_attacks_chance_to_blind_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 3, 
+					["statOrder"] = 9418, 
+				}, 
+			}, 
+		}, 
+		[241] = {
+			["dn"] = "Notable 7", 
+			["id"] = "abyss_ghastly_notable_7", 
+			["sd"] = {
+				[1] = "Minions have (3-5)% chance to Taunt on Hit with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_attacks_chance_to_taunt_on_hit_%", 
+			}, 
+			["stats"] = {
+				["minion_attacks_chance_to_taunt_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 3, 
+					["statOrder"] = 3470, 
+				}, 
+			}, 
+		}, 
+		[242] = {
+			["dn"] = "Notable 8", 
+			["id"] = "abyss_ghastly_notable_8", 
+			["sd"] = {
+				[1] = "Minions have (3-5)% chance to Hinder Enemies on Hit with Spells", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_spells_chance_to_hinder_on_hit_%", 
+			}, 
+			["stats"] = {
+				["minion_spells_chance_to_hinder_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 3, 
+					["statOrder"] = 9477, 
+				}, 
+			}, 
+		}, 
+		[243] = {
+			["dn"] = "Notable 9", 
+			["id"] = "abyss_ghastly_notable_9", 
+			["sd"] = {
+				[1] = "Minions have 10% chance to Poison Enemies on Hit", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minions_chance_to_poison_on_hit_%", 
+			}, 
+			["stats"] = {
+				["minions_chance_to_poison_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 10, 
+					["statOrder"] = 3212, 
+				}, 
+			}, 
+		}, 
+		[244] = {
+			["dn"] = "Notable 10", 
+			["id"] = "abyss_ghastly_notable_10", 
+			["sd"] = {
+				[1] = "Minions have 10% chance to Ignite", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_chance_to_ignite_%", 
+			}, 
+			["stats"] = {
+				["minion_chance_to_ignite_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 10, 
+					["statOrder"] = 9426, 
+				}, 
+			}, 
+		}, 
+		[245] = {
+			["dn"] = "Notable 11", 
+			["id"] = "abyss_ghastly_notable_11", 
+			["sd"] = {
+				[1] = "Minions have 10% chance to cause Bleeding with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_bleed_on_hit_with_attacks_%", 
+			}, 
+			["stats"] = {
+				["minion_bleed_on_hit_with_attacks_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 10, 
+					["statOrder"] = 2519, 
+				}, 
+			}, 
+		}, 
+		[246] = {
+			["dn"] = "Notable 12", 
+			["id"] = "abyss_ghastly_notable_12", 
+			["sd"] = {
+				[1] = "(31-40)% chance to Avoid being Poisoned", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_poison_%", 
+			}, 
+			["stats"] = {
+				["base_avoid_poison_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 40, 
+					["min"] = 31, 
+					["statOrder"] = 1875, 
+				}, 
+			}, 
+		}, 
+		[247] = {
+			["dn"] = "Notable 13", 
+			["id"] = "abyss_ghastly_notable_13", 
+			["sd"] = {
+				[1] = "Minions Regenerate (0.4-0.8)% of Life per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_life_regeneration_rate_per_minute_%", 
+			}, 
+			["stats"] = {
+				["minion_life_regeneration_rate_per_minute_%"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 0.8, 
+					["min"] = 0.4, 
+					["statOrder"] = 2948, 
+				}, 
+			}, 
+		}, 
+		[248] = {
+			["dn"] = "Notable 14", 
+			["id"] = "abyss_ghastly_notable_14", 
+			["sd"] = {
+				[1] = "Minions Leech (0.3-0.5)% of Damage as Life", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_life_leech_from_any_damage_permyriad", 
+			}, 
+			["stats"] = {
+				["minion_life_leech_from_any_damage_permyriad"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 0.5, 
+					["min"] = 0.3, 
+					["statOrder"] = 2947, 
+				}, 
+			}, 
+		}, 
+		[249] = {
+			["dn"] = "Notable 15", 
+			["id"] = "abyss_ghastly_notable_15", 
+			["sd"] = {
+				[1] = "Minions have (6-10)% increased Movement Speed", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_movement_speed_+%", 
+			}, 
+			["stats"] = {
+				["minion_movement_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 6, 
+					["statOrder"] = 1795, 
+				}, 
+			}, 
+		}, 
+		[250] = {
+			["dn"] = "Notable 16", 
+			["id"] = "abyss_ghastly_notable_16", 
+			["sd"] = {
+				[1] = "Minions have (6-10)% increased maximum Life", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_maximum_life_+%", 
+			}, 
+			["stats"] = {
+				["minion_maximum_life_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 6, 
+					["statOrder"] = 1792, 
+				}, 
+			}, 
+		}, 
+		[251] = {
+			["dn"] = "Notable 17", 
+			["id"] = "abyss_ghastly_notable_17", 
+			["sd"] = {
+				[1] = "Minions have +(6-10)% to all Elemental Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_elemental_resistance_%", 
+			}, 
+			["stats"] = {
+				["minion_elemental_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 6, 
+					["statOrder"] = 2949, 
+				}, 
+			}, 
+		}, 
+		[252] = {
+			["dn"] = "Notable 18", 
+			["id"] = "abyss_ghastly_notable_18", 
+			["sd"] = {
+				[1] = "Minions have +(7-11)% to Chaos Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_chaos_resistance_%", 
+			}, 
+			["stats"] = {
+				["minion_chaos_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 7, 
+					["statOrder"] = 2950, 
+				}, 
+			}, 
+		}, 
+		[253] = {
+			["dn"] = "Notable 19", 
+			["id"] = "abyss_ghastly_notable_19", 
+			["sd"] = {
+				[1] = "2% increased Effect of your Curses", 
+			}, 
+			["sortedStats"] = {
+				[1] = "curse_effect_+%", 
+			}, 
+			["stats"] = {
+				["curse_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 2, 
+					["min"] = 2, 
+					["statOrder"] = 2625, 
+				}, 
+			}, 
+		}, 
+		[254] = {
+			["dn"] = "Notable 20", 
+			["id"] = "abyss_ghastly_notable_20", 
+			["sd"] = {
+				[1] = "(6-8)% increased Cast Speed if a Minion has been Killed Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "cast_speed_+%_if_player_minion_has_been_killed_recently", 
+			}, 
+			["stats"] = {
+				["cast_speed_+%_if_player_minion_has_been_killed_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 5549, 
+				}, 
+			}, 
+		}, 
+		[255] = {
+			["dn"] = "Notable 21", 
+			["id"] = "abyss_ghastly_notable_21", 
+			["sd"] = {
+				[1] = "Minions deal (10-15)% increased Damage if you've used a Minion Skill Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_damage_+%_if_have_used_a_minion_skill_recently", 
+			}, 
+			["stats"] = {
+				["minion_damage_+%_if_have_used_a_minion_skill_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 15, 
+					["min"] = 10, 
+					["statOrder"] = 2000, 
+				}, 
+			}, 
+		}, 
+		[256] = {
+			["dn"] = "Notable 22", 
+			["id"] = "abyss_ghastly_notable_22", 
+			["sd"] = {
+				[1] = "Minions have (6-8)% increased Attack and Cast Speed if you or your Minions have Killed Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_attack_and_cast_speed_+%_if_you_or_minions_have_killed_enemy_recently", 
+			}, 
+			["stats"] = {
+				["minion_attack_and_cast_speed_+%_if_you_or_minions_have_killed_enemy_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 9412, 
+				}, 
+			}, 
+		}, 
+		[257] = {
+			["dn"] = "Notable 23", 
+			["id"] = "abyss_ghastly_notable_23", 
+			["sd"] = {
+				[1] = "Minions deal (15-18) to (21-24) additional Fire Damage", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_global_minimum_added_fire_damage", 
+				[2] = "minion_global_maximum_added_fire_damage", 
+			}, 
+			["stats"] = {
+				["minion_global_maximum_added_fire_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 24, 
+					["min"] = 21, 
+					["statOrder"] = 3810, 
+				}, 
+				["minion_global_minimum_added_fire_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 18, 
+					["min"] = 15, 
+					["statOrder"] = 3810, 
+				}, 
+			}, 
+		}, 
+		[258] = {
+			["dn"] = "Notable 24", 
+			["id"] = "abyss_ghastly_notable_24", 
+			["sd"] = {
+				[1] = "Minions deal (15-18) to (21-24) additional Cold Damage", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_global_minimum_added_cold_damage", 
+				[2] = "minion_global_maximum_added_cold_damage", 
+			}, 
+			["stats"] = {
+				["minion_global_maximum_added_cold_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 24, 
+					["min"] = 21, 
+					["statOrder"] = 3809, 
+				}, 
+				["minion_global_minimum_added_cold_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 18, 
+					["min"] = 15, 
+					["statOrder"] = 3809, 
+				}, 
+			}, 
+		}, 
+		[259] = {
+			["dn"] = "Notable 25", 
+			["id"] = "abyss_ghastly_notable_25", 
+			["sd"] = {
+				[1] = "Minions deal (1-3) to (33-39) additional Lightning Damage", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_global_minimum_added_lightning_damage", 
+				[2] = "minion_global_maximum_added_lightning_damage", 
+			}, 
+			["stats"] = {
+				["minion_global_maximum_added_lightning_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 39, 
+					["min"] = 33, 
+					["statOrder"] = 3811, 
+				}, 
+				["minion_global_minimum_added_lightning_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 1, 
+					["statOrder"] = 3811, 
+				}, 
+			}, 
+		}, 
+		[260] = {
+			["dn"] = "Notable 26", 
+			["id"] = "abyss_ghastly_notable_26", 
+			["sd"] = {
+				[1] = "Minions deal (9-12) to (15-18) additional Physical Damage", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_global_minimum_added_physical_damage", 
+				[2] = "minion_global_maximum_added_physical_damage", 
+			}, 
+			["stats"] = {
+				["minion_global_maximum_added_physical_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 18, 
+					["min"] = 15, 
+					["statOrder"] = 3812, 
+				}, 
+				["minion_global_minimum_added_physical_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 3812, 
+				}, 
+			}, 
+		}, 
+		[261] = {
+			["dn"] = "Notable 27", 
+			["id"] = "abyss_ghastly_notable_27", 
+			["sd"] = {
+				[1] = "Minions deal (9-12) to (15-18) additional Chaos Damage", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_global_minimum_added_chaos_damage", 
+				[2] = "minion_global_maximum_added_chaos_damage", 
+			}, 
+			["stats"] = {
+				["minion_global_maximum_added_chaos_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 18, 
+					["min"] = 15, 
+					["statOrder"] = 3808, 
+				}, 
+				["minion_global_minimum_added_chaos_damage"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 3808, 
+				}, 
+			}, 
+		}, 
+		[262] = {
+			["dn"] = "Notable 28", 
+			["id"] = "abyss_ghastly_notable_28", 
+			["sd"] = {
+				[1] = "3% increased Cooldown Recovery Rate", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cooldown_speed_+%", 
+			}, 
+			["stats"] = {
+				["base_cooldown_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 3, 
+					["statOrder"] = 5063, 
+				}, 
+			}, 
+		}, 
+		[263] = {
+			["dn"] = "Notable 1", 
+			["id"] = "abyss_special_notable_1", 
+			["sd"] = {
+				[1] = "+(31-120) to Accuracy Rating", 
+			}, 
+			["sortedStats"] = {
+				[1] = "accuracy_rating", 
+			}, 
+			["stats"] = {
+				["accuracy_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 120, 
+					["min"] = 31, 
+					["statOrder"] = 1460, 
+				}, 
+			}, 
+		}, 
+		[264] = {
+			["dn"] = "Notable 2", 
+			["id"] = "abyss_special_notable_2", 
+			["sd"] = {
+				[1] = "+(6-8) to all Attributes", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_all_attributes", 
+			}, 
+			["stats"] = {
+				["additional_all_attributes"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1202, 
+				}, 
+			}, 
+		}, 
+		[265] = {
+			["dn"] = "Notable 3", 
+			["id"] = "abyss_special_notable_3", 
+			["sd"] = {
+				[1] = "+(12-16) to Dexterity", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_dexterity", 
+			}, 
+			["stats"] = {
+				["additional_dexterity"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 16, 
+					["min"] = 12, 
+					["statOrder"] = 1204, 
+				}, 
+			}, 
+		}, 
+		[266] = {
+			["dn"] = "Notable 4", 
+			["id"] = "abyss_special_notable_4", 
+			["sd"] = {
+				[1] = "+(12-16) to Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_intelligence", 
+			}, 
+			["stats"] = {
+				["additional_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 16, 
+					["min"] = 12, 
+					["statOrder"] = 1205, 
+				}, 
+			}, 
+		}, 
+		[267] = {
+			["dn"] = "Notable 5", 
+			["id"] = "abyss_special_notable_5", 
+			["sd"] = {
+				[1] = "2% additional Physical Damage Reduction if you weren't Damaged by a Hit Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_physical_damage_reduction_%_if_not_damaged_by_a_hit_recently", 
+			}, 
+			["stats"] = {
+				["additional_physical_damage_reduction_%_if_not_damaged_by_a_hit_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 2, 
+					["min"] = 2, 
+					["statOrder"] = 4622, 
+				}, 
+			}, 
+		}, 
+		[268] = {
+			["dn"] = "Notable 6", 
+			["id"] = "abyss_special_notable_6", 
+			["sd"] = {
+				[1] = "+(12-16) to Strength", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_strength", 
+			}, 
+			["stats"] = {
+				["additional_strength"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 16, 
+					["min"] = 12, 
+					["statOrder"] = 1203, 
+				}, 
+			}, 
+		}, 
+		[269] = {
+			["dn"] = "Notable 7", 
+			["id"] = "abyss_special_notable_7", 
+			["sd"] = {
+				[1] = "(3-5)% increased Attack Speed", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_speed_+%", 
+			}, 
+			["stats"] = {
+				["attack_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 3, 
+					["statOrder"] = 1437, 
+				}, 
+			}, 
+		}, 
+		[270] = {
+			["dn"] = "Notable 8", 
+			["id"] = "abyss_special_notable_8", 
+			["sd"] = {
+				[1] = "(4-6)% increased Attack Speed if you've dealt a Critical Strike Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_speed_+%_if_have_crit_recently", 
+			}, 
+			["stats"] = {
+				["attack_speed_+%_if_have_crit_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 4952, 
+				}, 
+			}, 
+		}, 
+		[271] = {
+			["dn"] = "Notable 9", 
+			["id"] = "abyss_special_notable_9", 
+			["sd"] = {
+				[1] = "(3-6)% chance to Blind Enemies on Hit with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attacks_chance_to_blind_on_hit_%", 
+			}, 
+			["stats"] = {
+				["attacks_chance_to_blind_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 3, 
+					["statOrder"] = 4970, 
+				}, 
+			}, 
+		}, 
+		[272] = {
+			["dn"] = "Notable 10", 
+			["id"] = "abyss_special_notable_10", 
+			["sd"] = {
+				[1] = "(3-8)% chance to Taunt Enemies on Hit with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attacks_chance_to_taunt_on_hit_%", 
+			}, 
+			["stats"] = {
+				["attacks_chance_to_taunt_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 3, 
+					["statOrder"] = 4971, 
+				}, 
+			}, 
+		}, 
+		[273] = {
+			["dn"] = "Notable 11", 
+			["id"] = "abyss_special_notable_11", 
+			["sd"] = {
+				[1] = "(31-40)% chance to Avoid Bleeding", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_bleed_%", 
+			}, 
+			["stats"] = {
+				["base_avoid_bleed_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 40, 
+					["min"] = 31, 
+					["statOrder"] = 4255, 
+				}, 
+			}, 
+		}, 
+		[274] = {
+			["dn"] = "Notable 12", 
+			["id"] = "abyss_special_notable_12", 
+			["sd"] = {
+				[1] = "(31-40)% chance to Avoid being Frozen", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_freeze_%", 
+			}, 
+			["stats"] = {
+				["base_avoid_freeze_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 40, 
+					["min"] = 31, 
+					["statOrder"] = 1871, 
+				}, 
+			}, 
+		}, 
+		[275] = {
+			["dn"] = "Notable 13", 
+			["id"] = "abyss_special_notable_13", 
+			["sd"] = {
+				[1] = "(31-40)% chance to Avoid being Ignited", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_ignite_%", 
+			}, 
+			["stats"] = {
+				["base_avoid_ignite_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 40, 
+					["min"] = 31, 
+					["statOrder"] = 1872, 
+				}, 
+			}, 
+		}, 
+		[276] = {
+			["dn"] = "Notable 14", 
+			["id"] = "abyss_special_notable_14", 
+			["sd"] = {
+				[1] = "(31-40)% chance to Avoid being Poisoned", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_poison_%", 
+			}, 
+			["stats"] = {
+				["base_avoid_poison_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 40, 
+					["min"] = 31, 
+					["statOrder"] = 1875, 
+				}, 
+			}, 
+		}, 
+		[277] = {
+			["dn"] = "Notable 15", 
+			["id"] = "abyss_special_notable_15", 
+			["sd"] = {
+				[1] = "(31-40)% chance to Avoid being Shocked", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_shock_%", 
+			}, 
+			["stats"] = {
+				["base_avoid_shock_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 40, 
+					["min"] = 31, 
+					["statOrder"] = 1874, 
+				}, 
+			}, 
+		}, 
+		[278] = {
+			["dn"] = "Notable 16", 
+			["id"] = "abyss_special_notable_16", 
+			["sd"] = {
+				[1] = "(21-30)% chance to Avoid being Stunned", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_stun_%", 
+			}, 
+			["stats"] = {
+				["base_avoid_stun_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 30, 
+					["min"] = 21, 
+					["statOrder"] = 1877, 
+				}, 
+			}, 
+		}, 
+		[279] = {
+			["dn"] = "Notable 17", 
+			["id"] = "abyss_special_notable_17", 
+			["sd"] = {
+				[1] = "(2-4)% increased Cast Speed", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cast_speed_+%", 
+			}, 
+			["stats"] = {
+				["base_cast_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 2, 
+					["statOrder"] = 1473, 
+				}, 
+			}, 
+		}, 
+		[280] = {
+			["dn"] = "Notable 18", 
+			["id"] = "abyss_special_notable_18", 
+			["sd"] = {
+				[1] = "+(5-7)% to Chaos Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_chaos_damage_resistance_%", 
+			}, 
+			["stats"] = {
+				["base_chaos_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 7, 
+					["min"] = 5, 
+					["statOrder"] = 1667, 
+				}, 
+			}, 
+		}, 
+		[281] = {
+			["dn"] = "Notable 19", 
+			["id"] = "abyss_special_notable_19", 
+			["sd"] = {
+				[1] = "+(12-15)% to Cold Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cold_damage_resistance_%", 
+			}, 
+			["stats"] = {
+				["base_cold_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 15, 
+					["min"] = 12, 
+					["statOrder"] = 1657, 
+				}, 
+			}, 
+		}, 
+		[282] = {
+			["dn"] = "Notable 20", 
+			["id"] = "abyss_special_notable_20", 
+			["sd"] = {
+				[1] = "3% increased Cooldown Recovery Rate", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cooldown_speed_+%", 
+			}, 
+			["stats"] = {
+				["base_cooldown_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 3, 
+					["statOrder"] = 5063, 
+				}, 
+			}, 
+		}, 
+		[283] = {
+			["dn"] = "Notable 21", 
+			["id"] = "abyss_special_notable_21", 
+			["sd"] = {
+				[1] = "+(4-8)% to Critical Strike Multiplier", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_critical_strike_multiplier_+", 
+			}, 
+			["stats"] = {
+				["base_critical_strike_multiplier_+"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 4, 
+					["statOrder"] = 11075, 
+				}, 
+			}, 
+		}, 
+		[284] = {
+			["dn"] = "Notable 22", 
+			["id"] = "abyss_special_notable_22", 
+			["sd"] = {
+				[1] = "+(36-100) to Evasion Rating", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_evasion_rating", 
+			}, 
+			["stats"] = {
+				["base_evasion_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 100, 
+					["min"] = 36, 
+					["statOrder"] = 1569, 
+				}, 
+			}, 
+		}, 
+		[285] = {
+			["dn"] = "Notable 23", 
+			["id"] = "abyss_special_notable_23", 
+			["sd"] = {
+				[1] = "+(12-15)% to Fire Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_fire_damage_resistance_%", 
+			}, 
+			["stats"] = {
+				["base_fire_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 15, 
+					["min"] = 12, 
+					["statOrder"] = 1651, 
+				}, 
+			}, 
+		}, 
+		[286] = {
+			["dn"] = "Notable 24", 
+			["id"] = "abyss_special_notable_24", 
+			["sd"] = {
+				[1] = "Regenerate (9-16) Life per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_life_regeneration_rate_per_minute", 
+			}, 
+			["stats"] = {
+				["base_life_regeneration_rate_per_minute"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 16, 
+					["min"] = 9, 
+					["statOrder"] = 1599, 
+				}, 
+			}, 
+		}, 
+		[287] = {
+			["dn"] = "Notable 25", 
+			["id"] = "abyss_special_notable_25", 
+			["sd"] = {
+				[1] = "+(12-15)% to Lightning Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_lightning_damage_resistance_%", 
+			}, 
+			["stats"] = {
+				["base_lightning_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 15, 
+					["min"] = 12, 
+					["statOrder"] = 1662, 
+				}, 
+			}, 
+		}, 
+		[288] = {
+			["dn"] = "Notable 26", 
+			["id"] = "abyss_special_notable_26", 
+			["sd"] = {
+				[1] = "Regenerate (1.1-3) Mana per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_mana_regeneration_rate_per_minute", 
+			}, 
+			["stats"] = {
+				["base_mana_regeneration_rate_per_minute"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 1.1, 
+					["statOrder"] = 1608, 
+				}, 
+			}, 
+		}, 
+		[289] = {
+			["dn"] = "Notable 27", 
+			["id"] = "abyss_special_notable_27", 
+			["sd"] = {
+				[1] = "+(21-30) to maximum Life", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_life", 
+			}, 
+			["stats"] = {
+				["base_maximum_life"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 30, 
+					["min"] = 21, 
+					["statOrder"] = 1594, 
+				}, 
+			}, 
+		}, 
+		[290] = {
+			["dn"] = "Notable 28", 
+			["id"] = "abyss_special_notable_28", 
+			["sd"] = {
+				[1] = "+(21-30) to maximum Mana", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_mana", 
+			}, 
+			["stats"] = {
+				["base_maximum_mana"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 30, 
+					["min"] = 21, 
+					["statOrder"] = 1605, 
+				}, 
+			}, 
+		}, 
+		[291] = {
+			["dn"] = "Notable 29", 
+			["id"] = "abyss_special_notable_29", 
+			["sd"] = {
+				[1] = "+(61-100) to Armour", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_physical_damage_reduction_rating", 
+			}, 
+			["stats"] = {
+				["base_physical_damage_reduction_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 100, 
+					["min"] = 61, 
+					["statOrder"] = 1564, 
+				}, 
+			}, 
+		}, 
+		[292] = {
+			["dn"] = "Notable 30", 
+			["id"] = "abyss_special_notable_30", 
+			["sd"] = {
+				[1] = "+(6-8)% to all Elemental Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_resist_all_elements_%", 
+			}, 
+			["stats"] = {
+				["base_resist_all_elements_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1645, 
+				}, 
+			}, 
+		}, 
+		[293] = {
+			["dn"] = "Notable 31", 
+			["id"] = "abyss_special_notable_31", 
+			["sd"] = {
+				[1] = "+(3-4)% Chance to Block Attack Damage if you were Damaged by a Hit Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "block_chance_on_damage_taken_%", 
+			}, 
+			["stats"] = {
+				["block_chance_on_damage_taken_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 3, 
+					["statOrder"] = 3255, 
+				}, 
+			}, 
+		}, 
+		[294] = {
+			["dn"] = "Notable 32", 
+			["id"] = "abyss_special_notable_32", 
+			["sd"] = {
+				[1] = "(5-7)% increased Cast Speed if you've dealt a Critical Strike Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "cast_speed_+%_if_have_crit_recently", 
+			}, 
+			["stats"] = {
+				["cast_speed_+%_if_have_crit_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 7, 
+					["min"] = 5, 
+					["statOrder"] = 5548, 
+				}, 
+			}, 
+		}, 
+		[295] = {
+			["dn"] = "Notable 33", 
+			["id"] = "abyss_special_notable_33", 
+			["sd"] = {
+				[1] = "(6-8)% increased Cast Speed if a Minion has been Killed Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "cast_speed_+%_if_player_minion_has_been_killed_recently", 
+			}, 
+			["stats"] = {
+				["cast_speed_+%_if_player_minion_has_been_killed_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 5549, 
+				}, 
+			}, 
+		}, 
+		[296] = {
+			["dn"] = "Notable 34", 
+			["id"] = "abyss_special_notable_34", 
+			["sd"] = {
+				[1] = "+(3-4)% Chance to Block Spell Damage if you were Damaged by a Hit Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "chance_to_block_spells_%_if_damaged_by_a_hit_recently", 
+			}, 
+			["stats"] = {
+				["chance_to_block_spells_%_if_damaged_by_a_hit_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 3, 
+					["statOrder"] = 5734, 
+				}, 
+			}, 
+		}, 
+		[297] = {
+			["dn"] = "Notable 35", 
+			["id"] = "abyss_special_notable_35", 
+			["sd"] = {
+				[1] = "10% increased Effect of Cold Ailments", 
+			}, 
+			["sortedStats"] = {
+				[1] = "cold_ailment_effect_+%", 
+			}, 
+			["stats"] = {
+				["cold_ailment_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 10, 
+					["statOrder"] = 5885, 
+				}, 
+			}, 
+		}, 
+		[298] = {
+			["dn"] = "Notable 36", 
+			["id"] = "abyss_special_notable_36", 
+			["sd"] = {
+				[1] = "(8-12)% increased Critical Strike Chance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "critical_strike_chance_+%", 
+			}, 
+			["stats"] = {
+				["critical_strike_chance_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 8, 
+					["statOrder"] = 11074, 
+				}, 
+			}, 
+		}, 
+		[299] = {
+			["dn"] = "Notable 37", 
+			["id"] = "abyss_special_notable_37", 
+			["sd"] = {
+				[1] = "(20-30)% increased Critical Strike Chance if you haven't dealt a Critical Strike Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "critical_strike_chance_+%_if_have_not_crit_recently", 
+			}, 
+			["stats"] = {
+				["critical_strike_chance_+%_if_have_not_crit_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 30, 
+					["min"] = 20, 
+					["statOrder"] = 6015, 
+				}, 
+			}, 
+		}, 
+		[300] = {
+			["dn"] = "Notable 38", 
+			["id"] = "abyss_special_notable_38", 
+			["sd"] = {
+				[1] = "+(8-10)% to Critical Strike Multiplier if you've Killed Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "critical_strike_multiplier_+_if_enemy_killed_recently", 
+			}, 
+			["stats"] = {
+				["critical_strike_multiplier_+_if_enemy_killed_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 6045, 
+				}, 
+			}, 
+		}, 
+		[301] = {
+			["dn"] = "Notable 39", 
+			["id"] = "abyss_special_notable_39", 
+			["sd"] = {
+				[1] = "2% increased Effect of your Curses", 
+			}, 
+			["sortedStats"] = {
+				[1] = "curse_effect_+%", 
+			}, 
+			["stats"] = {
+				["curse_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 2, 
+					["min"] = 2, 
+					["statOrder"] = 2625, 
+				}, 
+			}, 
+		}, 
+		[302] = {
+			["dn"] = "Notable 40", 
+			["id"] = "abyss_special_notable_40", 
+			["sd"] = {
+				[1] = "(10-15)% reduced Effect of Curses on you while on Consecrated Ground", 
+			}, 
+			["sortedStats"] = {
+				[1] = "curse_effect_on_self_+%_while_on_consecrated_ground", 
+			}, 
+			["stats"] = {
+				["curse_effect_on_self_+%_while_on_consecrated_ground"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 15, 
+					["min"] = 10, 
+					["statOrder"] = 6084, 
+				}, 
+			}, 
+		}, 
+		[303] = {
+			["dn"] = "Notable 41", 
+			["id"] = "abyss_special_notable_41", 
+			["sd"] = {
+				[1] = "(15-20)% increased Damage if you've Killed Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_+%_if_enemy_killed_recently", 
+			}, 
+			["stats"] = {
+				["damage_+%_if_enemy_killed_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 6133, 
+				}, 
+			}, 
+		}, 
+		[304] = {
+			["dn"] = "Notable 42", 
+			["id"] = "abyss_special_notable_42", 
+			["sd"] = {
+				[1] = "(10-18)% increased Damage over Time while Dual Wielding", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_over_time_+%_while_dual_wielding", 
+			}, 
+			["stats"] = {
+				["damage_over_time_+%_while_dual_wielding"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 18, 
+					["min"] = 10, 
+					["statOrder"] = 2161, 
+				}, 
+			}, 
+		}, 
+		[305] = {
+			["dn"] = "Notable 43", 
+			["id"] = "abyss_special_notable_43", 
+			["sd"] = {
+				[1] = "(10-18)% increased Damage over Time while holding a Shield", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_over_time_+%_while_holding_a_shield", 
+			}, 
+			["stats"] = {
+				["damage_over_time_+%_while_holding_a_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 18, 
+					["min"] = 10, 
+					["statOrder"] = 2162, 
+				}, 
+			}, 
+		}, 
+		[306] = {
+			["dn"] = "Notable 44", 
+			["id"] = "abyss_special_notable_44", 
+			["sd"] = {
+				[1] = "(10-18)% increased Damage over Time while wielding a Two Handed Weapon", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_over_time_+%_while_wielding_two_handed_weapon", 
+			}, 
+			["stats"] = {
+				["damage_over_time_+%_while_wielding_two_handed_weapon"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 18, 
+					["min"] = 10, 
+					["statOrder"] = 2163, 
+				}, 
+			}, 
+		}, 
+		[307] = {
+			["dn"] = "Notable 45", 
+			["id"] = "abyss_special_notable_45", 
+			["sd"] = {
+				[1] = "Damage Penetrates 2% Elemental Resistances if you haven't Killed Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_penetrates_%_elemental_resistance_if_enemy_not_killed_recently", 
+			}, 
+			["stats"] = {
+				["damage_penetrates_%_elemental_resistance_if_enemy_not_killed_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 2, 
+					["min"] = 2, 
+					["statOrder"] = 6123, 
+				}, 
+			}, 
+		}, 
+		[308] = {
+			["dn"] = "Notable 46", 
+			["id"] = "abyss_special_notable_46", 
+			["sd"] = {
+				[1] = "2% of Damage taken Recouped as Mana", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_taken_goes_to_mana_%", 
+			}, 
+			["stats"] = {
+				["damage_taken_goes_to_mana_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 2, 
+					["min"] = 2, 
+					["statOrder"] = 2483, 
+				}, 
+			}, 
+		}, 
+		[309] = {
+			["dn"] = "Notable 47", 
+			["id"] = "abyss_special_notable_47", 
+			["sd"] = {
+				[1] = "Enemies Blinded by you have (15-20)% reduced Critical Strike Chance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "enemies_you_blind_have_critical_strike_chance_+%", 
+			}, 
+			["stats"] = {
+				["enemies_you_blind_have_critical_strike_chance_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 6503, 
+				}, 
+			}, 
+		}, 
+		[310] = {
+			["dn"] = "Notable 48", 
+			["id"] = "abyss_special_notable_48", 
+			["sd"] = {
+				[1] = "Enemies Hindered by you have (15-20)% reduced Life Regeneration rate", 
+			}, 
+			["sortedStats"] = {
+				[1] = "enemies_you_hinder_have_life_regeneration_rate_+%", 
+			}, 
+			["stats"] = {
+				["enemies_you_hinder_have_life_regeneration_rate_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 6509, 
+				}, 
+			}, 
+		}, 
+		[311] = {
+			["dn"] = "Notable 49", 
+			["id"] = "abyss_special_notable_49", 
+			["sd"] = {
+				[1] = "Enemies Intimidated by you have 10% increased duration of stuns against them", 
+			}, 
+			["sortedStats"] = {
+				[1] = "enemies_you_intimidate_have_stun_duration_on_self_+%", 
+			}, 
+			["stats"] = {
+				["enemies_you_intimidate_have_stun_duration_on_self_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 10, 
+					["statOrder"] = 6512, 
+				}, 
+			}, 
+		}, 
+		[312] = {
+			["dn"] = "Notable 50", 
+			["id"] = "abyss_special_notable_50", 
+			["sd"] = {
+				[1] = "Enemies Maimed by you take (4-5)% increased Damage Over Time", 
+			}, 
+			["sortedStats"] = {
+				[1] = "enemies_you_maim_have_damage_taken_over_time_+%", 
+			}, 
+			["stats"] = {
+				["enemies_you_maim_have_damage_taken_over_time_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 4, 
+					["statOrder"] = 6513, 
+				}, 
+			}, 
+		}, 
+		[313] = {
+			["dn"] = "Notable 51", 
+			["id"] = "abyss_special_notable_51", 
+			["sd"] = {
+				[1] = "Enemies Withered by you have -2% to all Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "enemies_you_wither_have_all_resistances_%", 
+			}, 
+			["stats"] = {
+				["enemies_you_wither_have_all_resistances_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = -2, 
+					["min"] = -2, 
+					["statOrder"] = 6515, 
+				}, 
+			}, 
+		}, 
+		[314] = {
+			["dn"] = "Notable 52", 
+			["id"] = "abyss_special_notable_52", 
+			["sd"] = {
+				[1] = "Regenerate (9-16) Energy Shield per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "energy_shield_regeneration_rate_per_second", 
+			}, 
+			["stats"] = {
+				["energy_shield_regeneration_rate_per_second"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 16, 
+					["min"] = 9, 
+					["statOrder"] = 6560, 
+				}, 
+			}, 
+		}, 
+		[315] = {
+			["dn"] = "Notable 53", 
+			["id"] = "abyss_special_notable_53", 
+			["sd"] = {
+				[1] = "(20-30)% increased Evasion Rating while moving", 
+			}, 
+			["sortedStats"] = {
+				[1] = "evasion_rating_+%_while_moving", 
+			}, 
+			["stats"] = {
+				["evasion_rating_+%_while_moving"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 30, 
+					["min"] = 20, 
+					["statOrder"] = 6597, 
+				}, 
+			}, 
+		}, 
+		[316] = {
+			["dn"] = "Notable 54", 
+			["id"] = "abyss_special_notable_54", 
+			["sd"] = {
+				[1] = "(3-5)% increased Impale Effect", 
+			}, 
+			["sortedStats"] = {
+				[1] = "impale_debuff_effect_+%", 
+			}, 
+			["stats"] = {
+				["impale_debuff_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 3, 
+					["statOrder"] = 7354, 
+				}, 
+			}, 
+		}, 
+		[317] = {
+			["dn"] = "Notable 55", 
+			["id"] = "abyss_special_notable_55", 
+			["sd"] = {
+				[1] = "Regenerate (0.5-1)% of Life per second while moving", 
+			}, 
+			["sortedStats"] = {
+				[1] = "life_regeneration_rate_per_minute_%_while_moving", 
+			}, 
+			["stats"] = {
+				["life_regeneration_rate_per_minute_%_while_moving"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 0.5, 
+					["statOrder"] = 7536, 
+				}, 
+			}, 
+		}, 
+		[318] = {
+			["dn"] = "Notable 56", 
+			["id"] = "abyss_special_notable_56", 
+			["sd"] = {
+				[1] = "(10-15)% increased Effect of Lightning Ailments", 
+			}, 
+			["sortedStats"] = {
+				[1] = "lightning_ailment_effect_+%", 
+			}, 
+			["stats"] = {
+				["lightning_ailment_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 15, 
+					["min"] = 10, 
+					["statOrder"] = 7546, 
+				}, 
+			}, 
+		}, 
+		[319] = {
+			["dn"] = "Notable 57", 
+			["id"] = "abyss_special_notable_57", 
+			["sd"] = {
+				[1] = "(20-25)% increased Mana Regeneration Rate while moving", 
+			}, 
+			["sortedStats"] = {
+				[1] = "mana_regeneration_rate_+%_while_moving", 
+			}, 
+			["stats"] = {
+				["mana_regeneration_rate_+%_while_moving"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 25, 
+					["min"] = 20, 
+					["statOrder"] = 8336, 
+				}, 
+			}, 
+		}, 
+		[320] = {
+			["dn"] = "Notable 58", 
+			["id"] = "abyss_special_notable_58", 
+			["sd"] = {
+				[1] = "Minions have (6-8)% increased Attack and Cast Speed if you or your Minions have Killed Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_attack_and_cast_speed_+%_if_you_or_minions_have_killed_enemy_recently", 
+			}, 
+			["stats"] = {
+				["minion_attack_and_cast_speed_+%_if_you_or_minions_have_killed_enemy_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 9412, 
+				}, 
+			}, 
+		}, 
+		[321] = {
+			["dn"] = "Notable 59", 
+			["id"] = "abyss_special_notable_59", 
+			["sd"] = {
+				[1] = "Minions have (3-5)% chance to Blind on Hit with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_attacks_chance_to_blind_on_hit_%", 
+			}, 
+			["stats"] = {
+				["minion_attacks_chance_to_blind_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 3, 
+					["statOrder"] = 9418, 
+				}, 
+			}, 
+		}, 
+		[322] = {
+			["dn"] = "Notable 60", 
+			["id"] = "abyss_special_notable_60", 
+			["sd"] = {
+				[1] = "Minions have (3-5)% chance to Taunt on Hit with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_attacks_chance_to_taunt_on_hit_%", 
+			}, 
+			["stats"] = {
+				["minion_attacks_chance_to_taunt_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 3, 
+					["statOrder"] = 3470, 
+				}, 
+			}, 
+		}, 
+		[323] = {
+			["dn"] = "Notable 61", 
+			["id"] = "abyss_special_notable_61", 
+			["sd"] = {
+				[1] = "Minions have 10% chance to cause Bleeding with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_bleed_on_hit_with_attacks_%", 
+			}, 
+			["stats"] = {
+				["minion_bleed_on_hit_with_attacks_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 10, 
+					["statOrder"] = 2519, 
+				}, 
+			}, 
+		}, 
+		[324] = {
+			["dn"] = "Notable 62", 
+			["id"] = "abyss_special_notable_62", 
+			["sd"] = {
+				[1] = "Minions have 10% chance to Ignite", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_chance_to_ignite_%", 
+			}, 
+			["stats"] = {
+				["minion_chance_to_ignite_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 10, 
+					["statOrder"] = 9426, 
+				}, 
+			}, 
+		}, 
+		[325] = {
+			["dn"] = "Notable 63", 
+			["id"] = "abyss_special_notable_63", 
+			["sd"] = {
+				[1] = "Minions have +(7-11)% to Chaos Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_chaos_resistance_%", 
+			}, 
+			["stats"] = {
+				["minion_chaos_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 7, 
+					["statOrder"] = 2950, 
+				}, 
+			}, 
+		}, 
+		[326] = {
+			["dn"] = "Notable 64", 
+			["id"] = "abyss_special_notable_64", 
+			["sd"] = {
+				[1] = "Minions deal (10-15)% increased Damage if you've used a Minion Skill Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_damage_+%_if_have_used_a_minion_skill_recently", 
+			}, 
+			["stats"] = {
+				["minion_damage_+%_if_have_used_a_minion_skill_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 15, 
+					["min"] = 10, 
+					["statOrder"] = 2000, 
+				}, 
+			}, 
+		}, 
+		[327] = {
+			["dn"] = "Notable 65", 
+			["id"] = "abyss_special_notable_65", 
+			["sd"] = {
+				[1] = "Minions have +(6-10)% to all Elemental Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_elemental_resistance_%", 
+			}, 
+			["stats"] = {
+				["minion_elemental_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 6, 
+					["statOrder"] = 2949, 
+				}, 
+			}, 
+		}, 
+		[328] = {
+			["dn"] = "Notable 66", 
+			["id"] = "abyss_special_notable_66", 
+			["sd"] = {
+				[1] = "Minions Leech (0.3-0.5)% of Damage as Life", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_life_leech_from_any_damage_permyriad", 
+			}, 
+			["stats"] = {
+				["minion_life_leech_from_any_damage_permyriad"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 0.5, 
+					["min"] = 0.3, 
+					["statOrder"] = 2947, 
+				}, 
+			}, 
+		}, 
+		[329] = {
+			["dn"] = "Notable 67", 
+			["id"] = "abyss_special_notable_67", 
+			["sd"] = {
+				[1] = "Minions Regenerate (0.4-0.8)% of Life per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_life_regeneration_rate_per_minute_%", 
+			}, 
+			["stats"] = {
+				["minion_life_regeneration_rate_per_minute_%"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 0.8, 
+					["min"] = 0.4, 
+					["statOrder"] = 2948, 
+				}, 
+			}, 
+		}, 
+		[330] = {
+			["dn"] = "Notable 68", 
+			["id"] = "abyss_special_notable_68", 
+			["sd"] = {
+				[1] = "Minions Regenerate (22-40) Life per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_life_regeneration_rate_per_second", 
+			}, 
+			["stats"] = {
+				["minion_life_regeneration_rate_per_second"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 40, 
+					["min"] = 22, 
+					["statOrder"] = 9457, 
+				}, 
+			}, 
+		}, 
+		[331] = {
+			["dn"] = "Notable 69", 
+			["id"] = "abyss_special_notable_69", 
+			["sd"] = {
+				[1] = "Minions have (6-10)% increased maximum Life", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_maximum_life_+%", 
+			}, 
+			["stats"] = {
+				["minion_maximum_life_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 6, 
+					["statOrder"] = 1792, 
+				}, 
+			}, 
+		}, 
+		[332] = {
+			["dn"] = "Notable 70", 
+			["id"] = "abyss_special_notable_70", 
+			["sd"] = {
+				[1] = "Minions have (6-10)% increased Movement Speed", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_movement_speed_+%", 
+			}, 
+			["stats"] = {
+				["minion_movement_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 6, 
+					["statOrder"] = 1795, 
+				}, 
+			}, 
+		}, 
+		[333] = {
+			["dn"] = "Notable 71", 
+			["id"] = "abyss_special_notable_71", 
+			["sd"] = {
+				[1] = "Minions have (3-5)% chance to Hinder Enemies on Hit with Spells", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_spells_chance_to_hinder_on_hit_%", 
+			}, 
+			["stats"] = {
+				["minion_spells_chance_to_hinder_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 3, 
+					["statOrder"] = 9477, 
+				}, 
+			}, 
+		}, 
+		[334] = {
+			["dn"] = "Notable 72", 
+			["id"] = "abyss_special_notable_72", 
+			["sd"] = {
+				[1] = "Minions have 10% chance to Poison Enemies on Hit", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minions_chance_to_poison_on_hit_%", 
+			}, 
+			["stats"] = {
+				["minions_chance_to_poison_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 10, 
+					["statOrder"] = 3212, 
+				}, 
+			}, 
+		}, 
+		[335] = {
+			["dn"] = "Notable 73", 
+			["id"] = "abyss_special_notable_73", 
+			["sd"] = {
+				[1] = "3% increased Movement Speed if you haven't taken Damage Recently", 
+			}, 
+			["sortedStats"] = {
+				[1] = "movement_speed_+%_if_have_not_taken_damage_recently", 
+			}, 
+			["stats"] = {
+				["movement_speed_+%_if_have_not_taken_damage_recently"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 3, 
+					["statOrder"] = 9565, 
+				}, 
+			}, 
+		}, 
+		[336] = {
+			["dn"] = "Notable 74", 
+			["id"] = "abyss_special_notable_74", 
+			["sd"] = {
+				[1] = "5% chance to gain Phasing for 4 seconds on Kill", 
+			}, 
+			["sortedStats"] = {
+				[1] = "phasing_for_4_seconds_on_kill_%", 
+			}, 
+			["stats"] = {
+				["phasing_for_4_seconds_on_kill_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 5, 
+					["statOrder"] = 3504, 
+				}, 
+			}, 
+		}, 
+		[337] = {
+			["dn"] = "Notable 75", 
+			["id"] = "abyss_special_notable_75", 
+			["sd"] = {
+				[1] = "(3-8)% chance to Hinder Enemies on Hit with Spells", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spells_chance_to_hinder_on_hit_%", 
+			}, 
+			["stats"] = {
+				["spells_chance_to_hinder_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 3, 
+					["statOrder"] = 10346, 
 				}, 
 			}, 
 		}, 
@@ -1948,6 +7125,232 @@ return {
 				[153] = 153, 
 				[154] = 154, 
 				[155] = 155, 
+				[156] = 156, 
+				[157] = 157, 
+				[158] = 158, 
+				[159] = 159, 
+				[160] = 160, 
+				[161] = 161, 
+				[162] = 162, 
+				[163] = 163, 
+				[164] = 164, 
+				[165] = 165, 
+				[166] = 166, 
+				[167] = 167, 
+				[168] = 168, 
+				[169] = 169, 
+				[170] = 170, 
+				[171] = 171, 
+				[172] = 172, 
+				[173] = 173, 
+				[174] = 174, 
+				[175] = 175, 
+				[176] = 176, 
+				[177] = 177, 
+				[178] = 178, 
+				[179] = 179, 
+				[180] = 180, 
+				[181] = 181, 
+				[182] = 182, 
+				[183] = 183, 
+				[184] = 184, 
+				[185] = 185, 
+				[186] = 186, 
+				[187] = 187, 
+				[188] = 188, 
+				[189] = 189, 
+				[190] = 190, 
+				[191] = 191, 
+				[192] = 192, 
+				[193] = 193, 
+				[194] = 194, 
+				[195] = 195, 
+				[196] = 196, 
+				[197] = 197, 
+				[198] = 198, 
+				[199] = 199, 
+				[200] = 200, 
+				[201] = 201, 
+				[202] = 202, 
+				[203] = 203, 
+				[204] = 204, 
+				[205] = 205, 
+				[206] = 206, 
+				[207] = 207, 
+				[208] = 208, 
+				[209] = 209, 
+				[210] = 210, 
+				[211] = 211, 
+				[212] = 212, 
+				[213] = 213, 
+				[214] = 214, 
+				[215] = 215, 
+				[216] = 216, 
+				[217] = 217, 
+				[218] = 218, 
+				[219] = 219, 
+				[220] = 220, 
+				[221] = 221, 
+				[222] = 222, 
+				[223] = 223, 
+				[224] = 224, 
+				[225] = 225, 
+				[226] = 226, 
+				[227] = 227, 
+				[228] = 228, 
+				[229] = 229, 
+				[230] = 230, 
+				[231] = 231, 
+				[232] = 232, 
+				[233] = 233, 
+				[234] = 234, 
+				[235] = 235, 
+				[236] = 236, 
+				[237] = 237, 
+				[238] = 238, 
+				[239] = 239, 
+				[240] = 240, 
+				[241] = 241, 
+				[242] = 242, 
+				[243] = 243, 
+				[244] = 244, 
+				[245] = 245, 
+				[246] = 246, 
+				[247] = 247, 
+				[248] = 248, 
+				[249] = 249, 
+				[250] = 250, 
+				[251] = 251, 
+				[252] = 252, 
+				[253] = 253, 
+				[254] = 254, 
+				[255] = 255, 
+				[256] = 256, 
+				[257] = 257, 
+				[258] = 258, 
+				[259] = 259, 
+				[260] = 260, 
+				[261] = 261, 
+				[262] = 262, 
+				[263] = 263, 
+				[264] = 264, 
+				[265] = 265, 
+				[266] = 266, 
+				[267] = 267, 
+				[268] = 268, 
+				[269] = 269, 
+				[270] = 270, 
+				[271] = 271, 
+				[272] = 272, 
+				[273] = 273, 
+				[274] = 274, 
+				[275] = 275, 
+				[276] = 276, 
+				[277] = 277, 
+				[278] = 278, 
+				[279] = 279, 
+				[280] = 280, 
+				[281] = 281, 
+				[282] = 282, 
+				[283] = 283, 
+				[284] = 284, 
+				[285] = 285, 
+				[286] = 286, 
+				[287] = 287, 
+				[288] = 288, 
+				[289] = 289, 
+				[290] = 290, 
+				[291] = 291, 
+				[292] = 292, 
+				[293] = 293, 
+				[294] = 294, 
+				[295] = 295, 
+				[296] = 296, 
+				[297] = 297, 
+				[298] = 298, 
+				[299] = 299, 
+				[300] = 300, 
+				[301] = 301, 
+				[302] = 302, 
+				[303] = 303, 
+				[304] = 304, 
+				[305] = 305, 
+				[306] = 306, 
+				[307] = 307, 
+				[308] = 308, 
+				[309] = 309, 
+				[310] = 310, 
+				[311] = 311, 
+				[312] = 312, 
+				[313] = 313, 
+				[314] = 314, 
+				[315] = 315, 
+				[316] = 316, 
+				[317] = 317, 
+				[318] = 318, 
+				[319] = 319, 
+				[320] = 320, 
+				[321] = 321, 
+				[322] = 322, 
+				[323] = 323, 
+				[324] = 324, 
+				[325] = 325, 
+				[326] = 326, 
+				[327] = 327, 
+				[328] = 328, 
+				[329] = 329, 
+				[330] = 330, 
+				[331] = 331, 
+				[332] = 332, 
+				[333] = 333, 
+				[334] = 334, 
+				[335] = 335, 
+				[336] = 336, 
+				[337] = 337, 
+				[338] = 338, 
+				[339] = 339, 
+				[340] = 340, 
+				[341] = 341, 
+				[342] = 342, 
+				[343] = 343, 
+				[344] = 344, 
+				[345] = 345, 
+				[346] = 346, 
+				[347] = 347, 
+				[348] = 348, 
+				[349] = 349, 
+				[350] = 350, 
+				[351] = 351, 
+				[352] = 352, 
+				[353] = 353, 
+				[354] = 354, 
+				[355] = 355, 
+				[356] = 356, 
+				[357] = 357, 
+				[358] = 358, 
+				[359] = 359, 
+				[360] = 360, 
+				[361] = 361, 
+				[362] = 362, 
+				[363] = 363, 
+				[364] = 364, 
+				[365] = 365, 
+				[366] = 366, 
+				[367] = 367, 
+				[368] = 368, 
+				[369] = 369, 
+				[370] = 370, 
+				[371] = 371, 
+				[372] = 372, 
+				[373] = 373, 
+				[374] = 374, 
+				[375] = 375, 
+				[376] = 376, 
+				[377] = 377, 
+				[378] = 378, 
+				[379] = 379, 
+				[380] = 380, 
+				[381] = 381, 
 			}, 
 			["oo"] = {
 			}, 
@@ -1993,7 +7396,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10704, 
+					["statOrder"] = 11122, 
 				}, 
 			}, 
 		}, 
@@ -2034,7 +7437,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10708, 
+					["statOrder"] = 11126, 
 				}, 
 			}, 
 		}, 
@@ -2077,6 +7480,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
+					["statOrder"] = 11156, 
 				}, 
 			}, 
 		}, 
@@ -2116,7 +7520,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10702, 
+					["statOrder"] = 11120, 
 				}, 
 			}, 
 		}, 
@@ -2155,7 +7559,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1268, 
+					["statOrder"] = 1384, 
 				}, 
 			}, 
 		}, 
@@ -2194,7 +7598,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1277, 
+					["statOrder"] = 1393, 
 				}, 
 			}, 
 		}, 
@@ -2233,7 +7637,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1288, 
+					["statOrder"] = 1404, 
 				}, 
 			}, 
 		}, 
@@ -2272,7 +7676,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 10693, 
+					["statOrder"] = 11105, 
 				}, 
 			}, 
 		}, 
@@ -2311,7 +7715,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1296, 
+					["statOrder"] = 1412, 
 				}, 
 			}, 
 		}, 
@@ -2350,7 +7754,7 @@ return {
 					["index"] = 1, 
 					["max"] = 13, 
 					["min"] = 8, 
-					["statOrder"] = 1882, 
+					["statOrder"] = 1999, 
 				}, 
 			}, 
 		}, 
@@ -2389,7 +7793,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1110, 
+					["statOrder"] = 1224, 
 				}, 
 			}, 
 		}, 
@@ -2428,7 +7832,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1135, 
+					["statOrder"] = 1249, 
 				}, 
 			}, 
 		}, 
@@ -2467,7 +7871,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1944, 
+					["statOrder"] = 2061, 
 				}, 
 			}, 
 		}, 
@@ -2506,7 +7910,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1905, 
+					["statOrder"] = 2022, 
 				}, 
 			}, 
 		}, 
@@ -2545,7 +7949,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1122, 
+					["statOrder"] = 1236, 
 				}, 
 			}, 
 		}, 
@@ -2584,7 +7988,7 @@ return {
 					["index"] = 1, 
 					["max"] = 7, 
 					["min"] = 4, 
-					["statOrder"] = 1791, 
+					["statOrder"] = 1906, 
 				}, 
 			}, 
 		}, 
@@ -2623,7 +8027,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1707, 
+					["statOrder"] = 1822, 
 				}, 
 			}, 
 		}, 
@@ -2662,7 +8066,7 @@ return {
 					["index"] = 1, 
 					["max"] = 14, 
 					["min"] = 7, 
-					["statOrder"] = 10665, 
+					["statOrder"] = 11074, 
 				}, 
 			}, 
 		}, 
@@ -2701,7 +8105,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 6, 
-					["statOrder"] = 10666, 
+					["statOrder"] = 11075, 
 				}, 
 			}, 
 		}, 
@@ -2740,7 +8144,7 @@ return {
 					["index"] = 1, 
 					["max"] = 4, 
 					["min"] = 3, 
-					["statOrder"] = 1321, 
+					["statOrder"] = 1437, 
 				}, 
 			}, 
 		}, 
@@ -2779,7 +8183,7 @@ return {
 					["index"] = 1, 
 					["max"] = 3, 
 					["min"] = 2, 
-					["statOrder"] = 1357, 
+					["statOrder"] = 1473, 
 				}, 
 			}, 
 		}, 
@@ -2818,7 +8222,7 @@ return {
 					["index"] = 1, 
 					["max"] = 3, 
 					["min"] = 2, 
-					["statOrder"] = 1709, 
+					["statOrder"] = 1824, 
 				}, 
 			}, 
 		}, 
@@ -2857,7 +8261,7 @@ return {
 					["index"] = 1, 
 					["max"] = 6, 
 					["min"] = 3, 
-					["statOrder"] = 1935, 
+					["statOrder"] = 2052, 
 				}, 
 			}, 
 		}, 
@@ -2896,7 +8300,7 @@ return {
 					["index"] = 1, 
 					["max"] = 6, 
 					["min"] = 3, 
-					["statOrder"] = 1938, 
+					["statOrder"] = 2055, 
 				}, 
 			}, 
 		}, 
@@ -2935,7 +8339,7 @@ return {
 					["index"] = 1, 
 					["max"] = 6, 
 					["min"] = 3, 
-					["statOrder"] = 1942, 
+					["statOrder"] = 2059, 
 				}, 
 			}, 
 		}, 
@@ -2974,7 +8378,7 @@ return {
 					["index"] = 1, 
 					["max"] = 7, 
 					["min"] = 4, 
-					["statOrder"] = 1806, 
+					["statOrder"] = 1921, 
 				}, 
 			}, 
 		}, 
@@ -3013,7 +8417,7 @@ return {
 					["index"] = 1, 
 					["max"] = 4, 
 					["min"] = 2, 
-					["statOrder"] = 1482, 
+					["statOrder"] = 1596, 
 				}, 
 			}, 
 		}, 
@@ -3052,7 +8456,7 @@ return {
 					["index"] = 1, 
 					["max"] = 6, 
 					["min"] = 4, 
-					["statOrder"] = 1491, 
+					["statOrder"] = 1606, 
 				}, 
 			}, 
 		}, 
@@ -3091,7 +8495,7 @@ return {
 					["index"] = 1, 
 					["max"] = 17, 
 					["min"] = 12, 
-					["statOrder"] = 1495, 
+					["statOrder"] = 1610, 
 				}, 
 			}, 
 		}, 
@@ -3130,7 +8534,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1452, 
+					["statOrder"] = 1566, 
 				}, 
 			}, 
 		}, 
@@ -3169,7 +8573,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 7, 
-					["statOrder"] = 1460, 
+					["statOrder"] = 1574, 
 				}, 
 			}, 
 		}, 
@@ -3208,7 +8612,7 @@ return {
 					["index"] = 1, 
 					["max"] = 5, 
 					["min"] = 3, 
-					["statOrder"] = 1472, 
+					["statOrder"] = 1586, 
 				}, 
 			}, 
 		}, 
@@ -3247,7 +8651,7 @@ return {
 					["index"] = 1, 
 					["max"] = 2, 
 					["min"] = 2, 
-					["statOrder"] = 2367, 
+					["statOrder"] = 2486, 
 				}, 
 			}, 
 		}, 
@@ -3286,7 +8690,7 @@ return {
 					["index"] = 1, 
 					["max"] = 2, 
 					["min"] = 2, 
-					["statOrder"] = 1072, 
+					["statOrder"] = 1186, 
 				}, 
 			}, 
 		}, 
@@ -3325,7 +8729,7 @@ return {
 					["index"] = 1, 
 					["max"] = 3, 
 					["min"] = 3, 
-					["statOrder"] = 1754, 
+					["statOrder"] = 1869, 
 				}, 
 			}, 
 		}, 
@@ -3364,7 +8768,7 @@ return {
 					["index"] = 1, 
 					["max"] = 4, 
 					["min"] = 4, 
-					["statOrder"] = 1056, 
+					["statOrder"] = 1170, 
 				}, 
 			}, 
 		}, 
@@ -3403,7 +8807,7 @@ return {
 					["index"] = 1, 
 					["max"] = 4, 
 					["min"] = 2, 
-					["statOrder"] = 3474, 
+					["statOrder"] = 3605, 
 				}, 
 			}, 
 		}, 
@@ -3442,7 +8846,7 @@ return {
 					["index"] = 1, 
 					["max"] = 2, 
 					["min"] = 2, 
-					["statOrder"] = 2505, 
+					["statOrder"] = 2625, 
 				}, 
 			}, 
 		}, 
@@ -3481,7 +8885,7 @@ return {
 					["index"] = 1, 
 					["max"] = 14, 
 					["min"] = 9, 
-					["statOrder"] = 1536, 
+					["statOrder"] = 1651, 
 				}, 
 			}, 
 		}, 
@@ -3520,7 +8924,7 @@ return {
 					["index"] = 1, 
 					["max"] = 14, 
 					["min"] = 9, 
-					["statOrder"] = 1542, 
+					["statOrder"] = 1657, 
 				}, 
 			}, 
 		}, 
@@ -3559,7 +8963,7 @@ return {
 					["index"] = 1, 
 					["max"] = 14, 
 					["min"] = 9, 
-					["statOrder"] = 1547, 
+					["statOrder"] = 1662, 
 				}, 
 			}, 
 		}, 
@@ -3598,7 +9002,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 6, 
-					["statOrder"] = 1552, 
+					["statOrder"] = 1667, 
 				}, 
 			}, 
 		}, 
@@ -3639,14 +9043,14 @@ return {
 					["index"] = 2, 
 					["max"] = 4, 
 					["min"] = 2, 
-					["statOrder"] = 2890, 
+					["statOrder"] = 3018, 
 				}, 
 				["fire_damage_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 35, 
 					["min"] = 25, 
-					["statOrder"] = 1268, 
+					["statOrder"] = 1384, 
 				}, 
 			}, 
 		}, 
@@ -3687,14 +9091,14 @@ return {
 					["index"] = 2, 
 					["max"] = 0.2, 
 					["min"] = 0.2, 
-					["statOrder"] = 1581, 
+					["statOrder"] = 1696, 
 				}, 
 				["fire_damage_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 35, 
 					["min"] = 25, 
-					["statOrder"] = 1268, 
+					["statOrder"] = 1384, 
 				}, 
 			}, 
 		}, 
@@ -3735,14 +9139,14 @@ return {
 					["index"] = 2, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 1864, 
+					["statOrder"] = 1981, 
 				}, 
 				["fire_damage_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 35, 
 					["min"] = 25, 
-					["statOrder"] = 1268, 
+					["statOrder"] = 1384, 
 				}, 
 			}, 
 		}, 
@@ -3783,14 +9187,14 @@ return {
 					["index"] = 2, 
 					["max"] = 4, 
 					["min"] = 2, 
-					["statOrder"] = 2892, 
+					["statOrder"] = 3020, 
 				}, 
 				["cold_damage_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 35, 
 					["min"] = 25, 
-					["statOrder"] = 1277, 
+					["statOrder"] = 1393, 
 				}, 
 			}, 
 		}, 
@@ -3831,14 +9235,14 @@ return {
 					["index"] = 2, 
 					["max"] = 0.2, 
 					["min"] = 0.2, 
-					["statOrder"] = 1586, 
+					["statOrder"] = 1701, 
 				}, 
 				["cold_damage_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 35, 
 					["min"] = 25, 
-					["statOrder"] = 1277, 
+					["statOrder"] = 1393, 
 				}, 
 			}, 
 		}, 
@@ -3879,14 +9283,14 @@ return {
 					["index"] = 2, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 1866, 
+					["statOrder"] = 1983, 
 				}, 
 				["cold_damage_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 35, 
 					["min"] = 25, 
-					["statOrder"] = 1277, 
+					["statOrder"] = 1393, 
 				}, 
 			}, 
 		}, 
@@ -3927,14 +9331,14 @@ return {
 					["index"] = 2, 
 					["max"] = 4, 
 					["min"] = 2, 
-					["statOrder"] = 2893, 
+					["statOrder"] = 3021, 
 				}, 
 				["lightning_damage_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 35, 
 					["min"] = 25, 
-					["statOrder"] = 1288, 
+					["statOrder"] = 1404, 
 				}, 
 			}, 
 		}, 
@@ -3975,14 +9379,14 @@ return {
 					["index"] = 2, 
 					["max"] = 0.2, 
 					["min"] = 0.2, 
-					["statOrder"] = 1590, 
+					["statOrder"] = 1705, 
 				}, 
 				["lightning_damage_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 35, 
 					["min"] = 25, 
-					["statOrder"] = 1288, 
+					["statOrder"] = 1404, 
 				}, 
 			}, 
 		}, 
@@ -4023,14 +9427,14 @@ return {
 					["index"] = 2, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 1868, 
+					["statOrder"] = 1985, 
 				}, 
 				["lightning_damage_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 35, 
 					["min"] = 25, 
-					["statOrder"] = 1288, 
+					["statOrder"] = 1404, 
 				}, 
 			}, 
 		}, 
@@ -4071,14 +9475,14 @@ return {
 					["index"] = 2, 
 					["max"] = 4, 
 					["min"] = 2, 
-					["statOrder"] = 5557, 
+					["statOrder"] = 5742, 
 				}, 
 				["physical_damage_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 35, 
 					["min"] = 25, 
-					["statOrder"] = 10693, 
+					["statOrder"] = 11105, 
 				}, 
 			}, 
 		}, 
@@ -4119,14 +9523,14 @@ return {
 					["index"] = 2, 
 					["max"] = 0.2, 
 					["min"] = 0.2, 
-					["statOrder"] = 1577, 
+					["statOrder"] = 1692, 
 				}, 
 				["physical_damage_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 35, 
 					["min"] = 25, 
-					["statOrder"] = 10693, 
+					["statOrder"] = 11105, 
 				}, 
 			}, 
 		}, 
@@ -4167,14 +9571,14 @@ return {
 					["index"] = 2, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 6430, 
+					["statOrder"] = 6643, 
 				}, 
 				["physical_damage_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 35, 
 					["min"] = 25, 
-					["statOrder"] = 10693, 
+					["statOrder"] = 11105, 
 				}, 
 			}, 
 		}, 
@@ -4215,14 +9619,14 @@ return {
 					["index"] = 1, 
 					["max"] = 35, 
 					["min"] = 25, 
-					["statOrder"] = 1296, 
+					["statOrder"] = 1412, 
 				}, 
 				["withered_on_hit_for_2_seconds_%_chance"] = {
 					["fmt"] = "d", 
 					["index"] = 2, 
 					["max"] = 25, 
 					["min"] = 25, 
-					["statOrder"] = 4304, 
+					["statOrder"] = 4438, 
 				}, 
 			}, 
 		}, 
@@ -4263,14 +9667,14 @@ return {
 					["index"] = 2, 
 					["max"] = 0.2, 
 					["min"] = 0.2, 
-					["statOrder"] = 1593, 
+					["statOrder"] = 1708, 
 				}, 
 				["chaos_damage_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 35, 
 					["min"] = 25, 
-					["statOrder"] = 1296, 
+					["statOrder"] = 1412, 
 				}, 
 			}, 
 		}, 
@@ -4311,14 +9715,14 @@ return {
 					["index"] = 2, 
 					["max"] = 50, 
 					["min"] = 35, 
-					["statOrder"] = 1369, 
+					["statOrder"] = 1484, 
 				}, 
 				["spell_damage_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 35, 
 					["min"] = 25, 
-					["statOrder"] = 1135, 
+					["statOrder"] = 1249, 
 				}, 
 			}, 
 		}, 
@@ -4359,14 +9763,14 @@ return {
 					["index"] = 1, 
 					["max"] = 35, 
 					["min"] = 25, 
-					["statOrder"] = 1882, 
+					["statOrder"] = 1999, 
 				}, 
 				["minion_maximum_life_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 2, 
 					["max"] = 20, 
 					["min"] = 15, 
-					["statOrder"] = 1677, 
+					["statOrder"] = 1792, 
 				}, 
 			}, 
 		}, 
@@ -4407,14 +9811,14 @@ return {
 					["index"] = 1, 
 					["max"] = 35, 
 					["min"] = 25, 
-					["statOrder"] = 1122, 
+					["statOrder"] = 1236, 
 				}, 
 				["skill_effect_duration_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 2, 
 					["max"] = 11, 
 					["min"] = 7, 
-					["statOrder"] = 1806, 
+					["statOrder"] = 1921, 
 				}, 
 			}, 
 		}, 
@@ -4455,14 +9859,14 @@ return {
 					["index"] = 2, 
 					["max"] = 1.2, 
 					["min"] = 0.7, 
-					["statOrder"] = 1853, 
+					["statOrder"] = 1970, 
 				}, 
 				["maximum_life_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 6, 
-					["statOrder"] = 1482, 
+					["statOrder"] = 1596, 
 				}, 
 			}, 
 		}, 
@@ -4503,14 +9907,14 @@ return {
 					["index"] = 2, 
 					["max"] = 0.4, 
 					["min"] = 0.4, 
-					["statOrder"] = 1575, 
+					["statOrder"] = 1690, 
 				}, 
 				["maximum_life_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 6, 
-					["statOrder"] = 1482, 
+					["statOrder"] = 1596, 
 				}, 
 			}, 
 		}, 
@@ -4551,14 +9955,14 @@ return {
 					["index"] = 2, 
 					["max"] = 25, 
 					["min"] = 15, 
-					["statOrder"] = 1495, 
+					["statOrder"] = 1610, 
 				}, 
 				["maximum_mana_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 23, 
 					["min"] = 17, 
-					["statOrder"] = 1491, 
+					["statOrder"] = 1606, 
 				}, 
 			}, 
 		}, 
@@ -4599,14 +10003,14 @@ return {
 					["index"] = 2, 
 					["max"] = 4, 
 					["min"] = 3, 
-					["statOrder"] = 2182, 
+					["statOrder"] = 2299, 
 				}, 
 				["physical_damage_reduction_rating_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 40, 
 					["min"] = 30, 
-					["statOrder"] = 1452, 
+					["statOrder"] = 1566, 
 				}, 
 			}, 
 		}, 
@@ -4647,14 +10051,14 @@ return {
 					["index"] = 1, 
 					["max"] = 40, 
 					["min"] = 30, 
-					["statOrder"] = 1460, 
+					["statOrder"] = 1574, 
 				}, 
 				["global_chance_to_blind_on_hit_%"] = {
 					["fmt"] = "d", 
 					["index"] = 2, 
 					["max"] = 7, 
 					["min"] = 5, 
-					["statOrder"] = 10676, 
+					["statOrder"] = 11085, 
 				}, 
 			}, 
 		}, 
@@ -4695,14 +10099,14 @@ return {
 					["index"] = 2, 
 					["max"] = 15, 
 					["min"] = 10, 
-					["statOrder"] = 1476, 
+					["statOrder"] = 1590, 
 				}, 
 				["maximum_energy_shield_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 8, 
-					["statOrder"] = 1472, 
+					["statOrder"] = 1586, 
 				}, 
 			}, 
 		}, 
@@ -4743,14 +10147,14 @@ return {
 					["index"] = 2, 
 					["max"] = 0.3, 
 					["min"] = 0.3, 
-					["statOrder"] = 1633, 
+					["statOrder"] = 1748, 
 				}, 
 				["maximum_energy_shield_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 8, 
-					["statOrder"] = 1472, 
+					["statOrder"] = 1586, 
 				}, 
 			}, 
 		}, 
@@ -4791,14 +10195,14 @@ return {
 					["index"] = 1, 
 					["max"] = 8, 
 					["min"] = 8, 
-					["statOrder"] = 2367, 
+					["statOrder"] = 2486, 
 				}, 
 				["life_gained_on_block"] = {
 					["fmt"] = "d", 
 					["index"] = 2, 
 					["max"] = 10, 
 					["min"] = 6, 
-					["statOrder"] = 1668, 
+					["statOrder"] = 1783, 
 				}, 
 			}, 
 		}, 
@@ -4839,14 +10243,14 @@ return {
 					["index"] = 1, 
 					["max"] = 8, 
 					["min"] = 8, 
-					["statOrder"] = 1072, 
+					["statOrder"] = 1186, 
 				}, 
 				["shield_armour_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 2, 
 					["max"] = 30, 
 					["min"] = 20, 
-					["statOrder"] = 1903, 
+					["statOrder"] = 2020, 
 				}, 
 			}, 
 		}, 
@@ -4887,14 +10291,14 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 8, 
-					["statOrder"] = 1754, 
+					["statOrder"] = 1869, 
 				}, 
 				["base_avoid_stun_%"] = {
 					["fmt"] = "d", 
 					["index"] = 2, 
 					["max"] = 10, 
 					["min"] = 8, 
-					["statOrder"] = 1762, 
+					["statOrder"] = 1877, 
 				}, 
 			}, 
 		}, 
@@ -4935,14 +10339,14 @@ return {
 					["index"] = 2, 
 					["max"] = 10, 
 					["min"] = 8, 
-					["statOrder"] = 1530, 
+					["statOrder"] = 1645, 
 				}, 
 				["base_spell_suppression_chance_%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 6, 
 					["min"] = 6, 
-					["statOrder"] = 1056, 
+					["statOrder"] = 1170, 
 				}, 
 			}, 
 		}, 
@@ -4983,14 +10387,14 @@ return {
 					["index"] = 2, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 2133, 
+					["statOrder"] = 2250, 
 				}, 
 				["non_curse_aura_effect_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 7, 
-					["statOrder"] = 3474, 
+					["statOrder"] = 3605, 
 				}, 
 			}, 
 		}, 
@@ -5031,14 +10435,14 @@ return {
 					["index"] = 1, 
 					["max"] = 6, 
 					["min"] = 4, 
-					["statOrder"] = 2505, 
+					["statOrder"] = 2625, 
 				}, 
 				["curse_skill_effect_duration_+%"] = {
 					["fmt"] = "d", 
 					["index"] = 2, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 5897, 
+					["statOrder"] = 6089, 
 				}, 
 			}, 
 		}, 
@@ -5079,14 +10483,14 @@ return {
 					["index"] = 1, 
 					["max"] = 30, 
 					["min"] = 20, 
-					["statOrder"] = 1536, 
+					["statOrder"] = 1651, 
 				}, 
 				["base_maximum_fire_damage_resistance_%"] = {
 					["fmt"] = "d", 
 					["index"] = 2, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 1534, 
+					["statOrder"] = 1649, 
 				}, 
 			}, 
 		}, 
@@ -5127,14 +10531,14 @@ return {
 					["index"] = 1, 
 					["max"] = 30, 
 					["min"] = 20, 
-					["statOrder"] = 1542, 
+					["statOrder"] = 1657, 
 				}, 
 				["base_maximum_cold_damage_resistance_%"] = {
 					["fmt"] = "d", 
 					["index"] = 2, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 1540, 
+					["statOrder"] = 1655, 
 				}, 
 			}, 
 		}, 
@@ -5175,14 +10579,14 @@ return {
 					["index"] = 1, 
 					["max"] = 30, 
 					["min"] = 20, 
-					["statOrder"] = 1547, 
+					["statOrder"] = 1662, 
 				}, 
 				["base_maximum_lightning_damage_resistance_%"] = {
 					["fmt"] = "d", 
 					["index"] = 2, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 1545, 
+					["statOrder"] = 1660, 
 				}, 
 			}, 
 		}, 
@@ -5223,14 +10627,14 @@ return {
 					["index"] = 1, 
 					["max"] = 19, 
 					["min"] = 13, 
-					["statOrder"] = 1552, 
+					["statOrder"] = 1667, 
 				}, 
 				["base_maximum_chaos_damage_resistance_%"] = {
 					["fmt"] = "d", 
 					["index"] = 2, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 1551, 
+					["statOrder"] = 1666, 
 				}, 
 			}, 
 		}, 
@@ -5330,7 +10734,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10735, 
+					["statOrder"] = 11157, 
 				}, 
 			}, 
 		}, 
@@ -5371,7 +10775,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10738, 
+					["statOrder"] = 11160, 
 				}, 
 			}, 
 		}, 
@@ -5412,7 +10816,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10712, 
+					["statOrder"] = 11131, 
 				}, 
 			}, 
 		}, 
@@ -5454,7 +10858,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10709, 
+					["statOrder"] = 11128, 
 				}, 
 			}, 
 		}, 
@@ -5495,7 +10899,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10744, 
+					["statOrder"] = 11168, 
 				}, 
 			}, 
 		}, 
@@ -5534,7 +10938,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10722, 
+					["statOrder"] = 11143, 
 				}, 
 			}, 
 		}, 
@@ -5576,7 +10980,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10732, 
+					["statOrder"] = 11154, 
 				}, 
 			}, 
 		}, 
@@ -5617,7 +11021,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10700, 
+					["statOrder"] = 11117, 
 				}, 
 			}, 
 		}, 
@@ -5657,7 +11061,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10720, 
+					["statOrder"] = 11141, 
 				}, 
 			}, 
 		}, 
@@ -5697,7 +11101,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10725, 
+					["statOrder"] = 11146, 
 				}, 
 			}, 
 		}, 
@@ -5737,7 +11141,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10726, 
+					["statOrder"] = 11148, 
 				}, 
 			}, 
 		}, 
@@ -5776,7 +11180,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10719, 
+					["statOrder"] = 11140, 
 				}, 
 			}, 
 		}, 
@@ -5815,7 +11219,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 10630, 
+					["statOrder"] = 11039, 
 				}, 
 			}, 
 		}, 
@@ -5854,7 +11258,7 @@ return {
 					["index"] = 1, 
 					["max"] = 15, 
 					["min"] = 15, 
-					["statOrder"] = 9426, 
+					["statOrder"] = 9791, 
 				}, 
 			}, 
 		}, 
@@ -5893,7 +11297,7 @@ return {
 					["index"] = 1, 
 					["max"] = 15, 
 					["min"] = 15, 
-					["statOrder"] = 9425, 
+					["statOrder"] = 9790, 
 				}, 
 			}, 
 		}, 
@@ -5932,7 +11336,7 @@ return {
 					["index"] = 1, 
 					["max"] = 15, 
 					["min"] = 15, 
-					["statOrder"] = 9427, 
+					["statOrder"] = 9792, 
 				}, 
 			}, 
 		}, 
@@ -5971,7 +11375,7 @@ return {
 					["index"] = 1, 
 					["max"] = 5, 
 					["min"] = 5, 
-					["statOrder"] = 8020, 
+					["statOrder"] = 8312, 
 				}, 
 			}, 
 		}, 
@@ -6010,7 +11414,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 6611, 
+					["statOrder"] = 6828, 
 				}, 
 			}, 
 		}, 
@@ -6049,7 +11453,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 9065, 
+					["statOrder"] = 9396, 
 				}, 
 			}, 
 		}, 
@@ -6088,7 +11492,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 9070, 
+					["statOrder"] = 9401, 
 				}, 
 			}, 
 		}, 
@@ -6127,7 +11531,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 9067, 
+					["statOrder"] = 9398, 
 				}, 
 			}, 
 		}, 
@@ -6166,7 +11570,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 7090, 
+					["statOrder"] = 7337, 
 				}, 
 			}, 
 		}, 
@@ -6205,7 +11609,7 @@ return {
 					["index"] = 1, 
 					["max"] = 5, 
 					["min"] = 5, 
-					["statOrder"] = 9434, 
+					["statOrder"] = 9799, 
 				}, 
 			}, 
 		}, 
@@ -6244,7 +11648,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 4470, 
+					["statOrder"] = 4613, 
 				}, 
 			}, 
 		}, 
@@ -6283,7 +11687,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 7141, 
+					["statOrder"] = 7388, 
 				}, 
 			}, 
 		}, 
@@ -6322,7 +11726,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 7138, 
+					["statOrder"] = 7385, 
 				}, 
 			}, 
 		}, 
@@ -6361,7 +11765,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 7143, 
+					["statOrder"] = 7392, 
 				}, 
 			}, 
 		}, 
@@ -6401,7 +11805,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10707, 
+					["statOrder"] = 11125, 
 				}, 
 			}, 
 		}, 
@@ -6442,7 +11846,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10718, 
+					["statOrder"] = 11138, 
 				}, 
 			}, 
 		}, 
@@ -6483,7 +11887,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10736, 
+					["statOrder"] = 11158, 
 				}, 
 			}, 
 		}, 
@@ -6523,7 +11927,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 10737, 
+					["statOrder"] = 11159, 
 				}, 
 			}, 
 		}, 
@@ -6592,7 +11996,7 @@ return {
 					["index"] = 1, 
 					["max"] = 80, 
 					["min"] = 80, 
-					["statOrder"] = 10665, 
+					["statOrder"] = 11074, 
 				}, 
 			}, 
 		}, 
@@ -6631,7 +12035,7 @@ return {
 					["index"] = 1, 
 					["max"] = 40, 
 					["min"] = 40, 
-					["statOrder"] = 10666, 
+					["statOrder"] = 11075, 
 				}, 
 			}, 
 		}, 
@@ -6670,7 +12074,7 @@ return {
 					["index"] = 1, 
 					["max"] = 1, 
 					["min"] = 1, 
-					["statOrder"] = 6631, 
+					["statOrder"] = 6849, 
 				}, 
 			}, 
 		}, 
@@ -6709,7 +12113,7 @@ return {
 					["index"] = 1, 
 					["max"] = 8, 
 					["min"] = 8, 
-					["statOrder"] = 9443, 
+					["statOrder"] = 9808, 
 				}, 
 			}, 
 		}, 
@@ -6748,7 +12152,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 3107, 
+					["statOrder"] = 3238, 
 				}, 
 			}, 
 		}, 
@@ -6787,7 +12191,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 1744, 
+					["statOrder"] = 1859, 
 				}, 
 			}, 
 		}, 
@@ -6826,7 +12230,7 @@ return {
 					["index"] = 1, 
 					["max"] = 8, 
 					["min"] = 8, 
-					["statOrder"] = 1467, 
+					["statOrder"] = 1581, 
 				}, 
 			}, 
 		}, 
@@ -6865,7 +12269,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 3194, 
+					["statOrder"] = 3325, 
 				}, 
 			}, 
 		}, 
@@ -6904,7 +12308,7 @@ return {
 					["index"] = 1, 
 					["max"] = 15, 
 					["min"] = 15, 
-					["statOrder"] = 1741, 
+					["statOrder"] = 1856, 
 				}, 
 			}, 
 		}, 
@@ -6943,7 +12347,7 @@ return {
 					["index"] = 1, 
 					["max"] = 4, 
 					["min"] = 4, 
-					["statOrder"] = 6330, 
+					["statOrder"] = 6542, 
 				}, 
 			}, 
 		}, 
@@ -6982,7 +12386,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 5961, 
+					["statOrder"] = 6157, 
 				}, 
 			}, 
 		}, 
@@ -7021,7 +12425,7 @@ return {
 					["index"] = 1, 
 					["max"] = 30, 
 					["min"] = 30, 
-					["statOrder"] = 10686, 
+					["statOrder"] = 11098, 
 				}, 
 			}, 
 		}, 
@@ -7060,7 +12464,7 @@ return {
 					["index"] = 1, 
 					["max"] = 80, 
 					["min"] = 80, 
-					["statOrder"] = 1755, 
+					["statOrder"] = 1870, 
 				}, 
 			}, 
 		}, 
@@ -7099,7 +12503,7 @@ return {
 					["index"] = 1, 
 					["max"] = 30, 
 					["min"] = 30, 
-					["statOrder"] = 10694, 
+					["statOrder"] = 11106, 
 				}, 
 			}, 
 		}, 
@@ -7138,7 +12542,7 @@ return {
 					["index"] = 1, 
 					["max"] = 80, 
 					["min"] = 80, 
-					["statOrder"] = 1759, 
+					["statOrder"] = 1874, 
 				}, 
 			}, 
 		}, 
@@ -7177,7 +12581,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 12, 
-					["statOrder"] = 2367, 
+					["statOrder"] = 2486, 
 				}, 
 			}, 
 		}, 
@@ -7216,7 +12620,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 12, 
-					["statOrder"] = 1072, 
+					["statOrder"] = 1186, 
 				}, 
 			}, 
 		}, 
@@ -7255,7 +12659,7 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 1754, 
+					["statOrder"] = 1869, 
 				}, 
 			}, 
 		}, 
@@ -7294,7 +12698,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 12, 
-					["statOrder"] = 1056, 
+					["statOrder"] = 1170, 
 				}, 
 			}, 
 		}, 
@@ -7333,7 +12737,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 12, 
-					["statOrder"] = 3474, 
+					["statOrder"] = 3605, 
 				}, 
 			}, 
 		}, 
@@ -7372,7 +12776,7 @@ return {
 					["index"] = 1, 
 					["max"] = 80, 
 					["min"] = 80, 
-					["statOrder"] = 1882, 
+					["statOrder"] = 1999, 
 				}, 
 			}, 
 		}, 
@@ -7411,7 +12815,7 @@ return {
 					["index"] = 1, 
 					["max"] = 80, 
 					["min"] = 80, 
-					["statOrder"] = 1677, 
+					["statOrder"] = 1792, 
 				}, 
 			}, 
 		}, 
@@ -7450,7 +12854,7 @@ return {
 					["index"] = 1, 
 					["max"] = 80, 
 					["min"] = 80, 
-					["statOrder"] = 1135, 
+					["statOrder"] = 1249, 
 				}, 
 			}, 
 		}, 
@@ -7489,7 +12893,7 @@ return {
 					["index"] = 1, 
 					["max"] = 80, 
 					["min"] = 80, 
-					["statOrder"] = 1369, 
+					["statOrder"] = 1484, 
 				}, 
 			}, 
 		}, 
@@ -7528,7 +12932,7 @@ return {
 					["index"] = 1, 
 					["max"] = 80, 
 					["min"] = 80, 
-					["statOrder"] = 6462, 
+					["statOrder"] = 6675, 
 				}, 
 			}, 
 		}, 
@@ -7567,7 +12971,7 @@ return {
 					["index"] = 1, 
 					["max"] = 80, 
 					["min"] = 80, 
-					["statOrder"] = 5718, 
+					["statOrder"] = 5908, 
 				}, 
 			}, 
 		}, 
@@ -7606,7 +13010,7 @@ return {
 					["index"] = 1, 
 					["max"] = 80, 
 					["min"] = 80, 
-					["statOrder"] = 7313, 
+					["statOrder"] = 7566, 
 				}, 
 			}, 
 		}, 
@@ -7645,7 +13049,7 @@ return {
 					["index"] = 1, 
 					["max"] = 80, 
 					["min"] = 80, 
-					["statOrder"] = 10693, 
+					["statOrder"] = 11105, 
 				}, 
 			}, 
 		}, 
@@ -7684,7 +13088,7 @@ return {
 					["index"] = 1, 
 					["max"] = 80, 
 					["min"] = 80, 
-					["statOrder"] = 1890, 
+					["statOrder"] = 2007, 
 				}, 
 			}, 
 		}, 
@@ -7725,14 +13129,14 @@ return {
 					["index"] = 1, 
 					["max"] = 50, 
 					["min"] = 50, 
-					["statOrder"] = 3077, 
+					["statOrder"] = 3207, 
 				}, 
 				["faster_bleed_%"] = {
 					["fmt"] = "d", 
 					["index"] = 2, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 6430, 
+					["statOrder"] = 6643, 
 				}, 
 			}, 
 		}, 
@@ -7771,7 +13175,7 @@ return {
 					["index"] = 1, 
 					["max"] = 80, 
 					["min"] = 80, 
-					["statOrder"] = 1906, 
+					["statOrder"] = 2023, 
 				}, 
 			}, 
 		}, 
@@ -7810,7 +13214,7 @@ return {
 					["index"] = 1, 
 					["max"] = 15, 
 					["min"] = 15, 
-					["statOrder"] = 1321, 
+					["statOrder"] = 1437, 
 				}, 
 			}, 
 		}, 
@@ -7849,7 +13253,7 @@ return {
 					["index"] = 1, 
 					["max"] = 15, 
 					["min"] = 15, 
-					["statOrder"] = 1357, 
+					["statOrder"] = 1473, 
 				}, 
 			}, 
 		}, 
@@ -7888,7 +13292,7 @@ return {
 					["index"] = 1, 
 					["max"] = 12, 
 					["min"] = 12, 
-					["statOrder"] = 2137, 
+					["statOrder"] = 2254, 
 				}, 
 			}, 
 		}, 
@@ -7927,7 +13331,7 @@ return {
 					["index"] = 1, 
 					["max"] = 80, 
 					["min"] = 80, 
-					["statOrder"] = 1452, 
+					["statOrder"] = 1566, 
 				}, 
 			}, 
 		}, 
@@ -7966,7 +13370,7 @@ return {
 					["index"] = 1, 
 					["max"] = 80, 
 					["min"] = 80, 
-					["statOrder"] = 1460, 
+					["statOrder"] = 1574, 
 				}, 
 			}, 
 		}, 
@@ -8005,7 +13409,7 @@ return {
 					["index"] = 1, 
 					["max"] = 50, 
 					["min"] = 50, 
-					["statOrder"] = 1536, 
+					["statOrder"] = 1651, 
 				}, 
 			}, 
 		}, 
@@ -8044,7 +13448,7 @@ return {
 					["index"] = 1, 
 					["max"] = 50, 
 					["min"] = 50, 
-					["statOrder"] = 1542, 
+					["statOrder"] = 1657, 
 				}, 
 			}, 
 		}, 
@@ -8083,7 +13487,7 @@ return {
 					["index"] = 1, 
 					["max"] = 50, 
 					["min"] = 50, 
-					["statOrder"] = 1547, 
+					["statOrder"] = 1662, 
 				}, 
 			}, 
 		}, 
@@ -8122,7 +13526,7 @@ return {
 					["index"] = 1, 
 					["max"] = 37, 
 					["min"] = 37, 
-					["statOrder"] = 1552, 
+					["statOrder"] = 1667, 
 				}, 
 			}, 
 		}, 
@@ -8161,7 +13565,7 @@ return {
 					["index"] = 1, 
 					["max"] = 10, 
 					["min"] = 10, 
-					["statOrder"] = 1482, 
+					["statOrder"] = 1596, 
 				}, 
 			}, 
 		}, 
@@ -8200,7 +13604,7 @@ return {
 					["index"] = 1, 
 					["max"] = 30, 
 					["min"] = 30, 
-					["statOrder"] = 1491, 
+					["statOrder"] = 1606, 
 				}, 
 			}, 
 		}, 
@@ -8239,7 +13643,7 @@ return {
 					["index"] = 1, 
 					["max"] = 50, 
 					["min"] = 50, 
-					["statOrder"] = 1495, 
+					["statOrder"] = 1610, 
 				}, 
 			}, 
 		}, 
@@ -8265,7 +13669,7 @@ return {
 			["passivePointsGranted"] = 0, 
 			["sa"] = 0, 
 			["sd"] = {
-				[1] = "25% increased Global Accuracy Rating", 
+				[1] = "25% increased Accuracy Rating", 
 			}, 
 			["sortedStats"] = {
 				[1] = "accuracy_rating_+%", 
@@ -8278,7 +13682,7 @@ return {
 					["index"] = 1, 
 					["max"] = 25, 
 					["min"] = 25, 
-					["statOrder"] = 1345, 
+					["statOrder"] = 11090, 
 				}, 
 			}, 
 		}, 
@@ -8317,7 +13721,9028 @@ return {
 					["index"] = 1, 
 					["max"] = 20, 
 					["min"] = 20, 
-					["statOrder"] = 2096, 
+					["statOrder"] = 2213, 
+				}, 
+			}, 
+		}, 
+		[156] = {
+			["da"] = 0, 
+			["dn"] = "Warding Flasks", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranDexNotable.dds", 
+			["id"] = "kalguur_notable_1", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 79440, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "10% increased Flask Effect Duration", 
+				[2] = "20% increased Ward during any Flask Effect", 
+			}, 
+			["sortedStats"] = {
+				[1] = "flask_duration_+%", 
+				[2] = "ward_+%_during_any_flask_effect", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["flask_duration_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 10, 
+					["min"] = 10, 
+					["statOrder"] = 2213, 
+				}, 
+				["ward_+%_during_any_flask_effect"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 20, 
+					["statOrder"] = 10745, 
+				}, 
+			}, 
+		}, 
+		[157] = {
+			["da"] = 0, 
+			["dn"] = "Starlight Swig", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranDexNotable.dds", 
+			["id"] = "kalguur_notable_2", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 97049, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "10% increased Flask Charges gained", 
+				[2] = "15% chance for Ward to be Restored when you Use a Flask", 
+			}, 
+			["sortedStats"] = {
+				[1] = "charges_gained_+%", 
+				[2] = "ward_%_chance_to_restore_on_flask_use", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["charges_gained_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 10, 
+					["min"] = 10, 
+					["statOrder"] = 2209, 
+				}, 
+				["ward_%_chance_to_restore_on_flask_use"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 15, 
+					["min"] = 15, 
+					["statOrder"] = 10744, 
+				}, 
+			}, 
+		}, 
+		[158] = {
+			["da"] = 0, 
+			["dn"] = "Enduring Sigil", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranStrNotable.dds", 
+			["id"] = "kalguur_notable_3", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 33869, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "20% increased Endurance Charge Duration", 
+				[2] = "Gain 1 Endurance Charge when Ward Breaks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "endurance_charge_duration_+%", 
+				[2] = "gain_x_endurance_charge_when_ward_breaks", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["endurance_charge_duration_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 20, 
+					["min"] = 20, 
+					["statOrder"] = 2151, 
+				}, 
+				["gain_x_endurance_charge_when_ward_breaks"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 1, 
+					["statOrder"] = 6937, 
+				}, 
+			}, 
+		}, 
+		[159] = {
+			["da"] = 0, 
+			["dn"] = "Powering Sigil", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranIntNotable.dds", 
+			["id"] = "kalguur_notable_4", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 20074, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "20% increased Power Charge Duration", 
+				[2] = "Gain 1 Power Charge when Ward Breaks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "power_charge_duration_+%", 
+				[2] = "gain_x_power_charge_when_ward_breaks", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["gain_x_power_charge_when_ward_breaks"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 1, 
+					["statOrder"] = 6941, 
+				}, 
+				["power_charge_duration_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 20, 
+					["min"] = 20, 
+					["statOrder"] = 2168, 
+				}, 
+			}, 
+		}, 
+		[160] = {
+			["da"] = 0, 
+			["dn"] = "Frenzying Sigil", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranDexNotable.dds", 
+			["id"] = "kalguur_notable_5", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 29349, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "20% increased Frenzy Charge Duration", 
+				[2] = "Gain 1 Frenzy Charge when Ward Breaks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_frenzy_charge_duration_+%", 
+				[2] = "gain_x_frenzy_charge_when_ward_breaks", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_frenzy_charge_duration_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 20, 
+					["min"] = 20, 
+					["statOrder"] = 2153, 
+				}, 
+				["gain_x_frenzy_charge_when_ward_breaks"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 1, 
+					["statOrder"] = 6940, 
+				}, 
+			}, 
+		}, 
+		[161] = {
+			["da"] = 0, 
+			["dn"] = "Fortified Ward", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranStrNotable.dds", 
+			["id"] = "kalguur_notable_6", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 39254, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "15% faster Restoration of Ward", 
+				[2] = "30% increased Armour while you have Unbroken Ward", 
+			}, 
+			["sortedStats"] = {
+				[1] = "ward_delay_recovery_+%", 
+				[2] = "armour_+%_while_you_have_unbroken_ward", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["armour_+%_while_you_have_unbroken_ward"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 30, 
+					["min"] = 30, 
+					["statOrder"] = 4804, 
+				}, 
+				["ward_delay_recovery_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 15, 
+					["min"] = 15, 
+					["statOrder"] = 1556, 
+				}, 
+			}, 
+		}, 
+		[162] = {
+			["da"] = 0, 
+			["dn"] = "Elusive Ward", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranDexNotable.dds", 
+			["id"] = "kalguur_notable_7", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 74833, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "15% faster Restoration of Ward", 
+				[2] = "30% increased Evasion Rating while you have Unbroken Ward", 
+			}, 
+			["sortedStats"] = {
+				[1] = "ward_delay_recovery_+%", 
+				[2] = "evasion_rating_+%_while_you_have_unbroken_ward", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["evasion_rating_+%_while_you_have_unbroken_ward"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 30, 
+					["min"] = 30, 
+					["statOrder"] = 6581, 
+				}, 
+				["ward_delay_recovery_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 15, 
+					["min"] = 15, 
+					["statOrder"] = 1556, 
+				}, 
+			}, 
+		}, 
+		[163] = {
+			["da"] = 0, 
+			["dn"] = "Crown of Kalguur", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranStrNotable.dds", 
+			["id"] = "kalguur_notable_9", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 56253, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+2 to Ward per 10 Armour on Equipped Helmet", 
+			}, 
+			["sortedStats"] = {
+				[1] = "gain_x_ward_per_10_armour_on_helmet", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["gain_x_ward_per_10_armour_on_helmet"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 2, 
+					["min"] = 2, 
+					["statOrder"] = 6953, 
+				}, 
+			}, 
+		}, 
+		[164] = {
+			["da"] = 0, 
+			["dn"] = "Grip of Kalguur", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranDexNotable.dds", 
+			["id"] = "kalguur_notable_10", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 82715, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+4 to Ward per 10 Evasion Rating on Equipped Gloves", 
+			}, 
+			["sortedStats"] = {
+				[1] = "gain_x_ward_per_10_evasion_on_gloves", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["gain_x_ward_per_10_evasion_on_gloves"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 4, 
+					["statOrder"] = 6955, 
+				}, 
+			}, 
+		}, 
+		[165] = {
+			["da"] = 0, 
+			["dn"] = "Stride of Kalguur", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranIntNotable.dds", 
+			["id"] = "kalguur_notable_11", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 52436, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+8 to Ward per 10 Energy Shield on Equipped Boots", 
+			}, 
+			["sortedStats"] = {
+				[1] = "gain_x_ward_per_10_energy_shield_on_boots", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["gain_x_ward_per_10_energy_shield_on_boots"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 8, 
+					["statOrder"] = 6954, 
+				}, 
+			}, 
+		}, 
+		[166] = {
+			["da"] = 0, 
+			["dn"] = "Persisting Drive", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranStrNotable.dds", 
+			["id"] = "kalguur_notable_12", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 2468, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "15% faster Restoration of Ward", 
+				[2] = "30% increased Damage while you have Unbroken Ward", 
+			}, 
+			["sortedStats"] = {
+				[1] = "ward_delay_recovery_+%", 
+				[2] = "damage_+%_while_you_have_unbroken_ward", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["damage_+%_while_you_have_unbroken_ward"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 30, 
+					["min"] = 30, 
+					["statOrder"] = 6110, 
+				}, 
+				["ward_delay_recovery_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 15, 
+					["min"] = 15, 
+					["statOrder"] = 1556, 
+				}, 
+			}, 
+		}, 
+		[167] = {
+			["da"] = 0, 
+			["dn"] = "Shattered Piercing ", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranIntNotable.dds", 
+			["id"] = "kalguur_notable_13", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 30208, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "15% increased Elemental Damage", 
+				[2] = "Damage Penetrates 8% Elemental Resistances while your Ward is Broken", 
+			}, 
+			["sortedStats"] = {
+				[1] = "elemental_damage_+%", 
+				[2] = "damage_penetrates_%_elemental_resistance_while_you_have_broken_ward", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["damage_penetrates_%_elemental_resistance_while_you_have_broken_ward"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 8, 
+					["statOrder"] = 6121, 
+				}, 
+				["elemental_damage_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 15, 
+					["min"] = 15, 
+					["statOrder"] = 2006, 
+				}, 
+			}, 
+		}, 
+		[168] = {
+			["da"] = 0, 
+			["dn"] = "Vengeful Runes", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranIntNotable.dds", 
+			["id"] = "kalguur_notable_14", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 29546, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "8% increased Area of Effect of Aura Skills", 
+				[2] = "12% increased effect of Non-Curse Auras from your skills while your Ward is Broken", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_aura_area_of_effect_+%", 
+				[2] = "non_curse_aura_effect_+%_while_you_have_broken_ward", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_aura_area_of_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 8, 
+					["min"] = 8, 
+					["statOrder"] = 2250, 
+				}, 
+				["non_curse_aura_effect_+%_while_you_have_broken_ward"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 12, 
+					["statOrder"] = 9637, 
+				}, 
+			}, 
+		}, 
+		[169] = {
+			["da"] = 0, 
+			["dn"] = "Mage's Ward", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranIntNotable.dds", 
+			["id"] = "kalguur_notable_15", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 20764, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "5% Chance to Block Spell Damage", 
+				[2] = "10% chance to Restore Ward when you Block", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_spell_block_%", 
+				[2] = "restore_ward_on_block_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_spell_block_%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 5, 
+					["min"] = 5, 
+					["statOrder"] = 1186, 
+				}, 
+				["restore_ward_on_block_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 10, 
+					["statOrder"] = 10080, 
+				}, 
+			}, 
+		}, 
+		[170] = {
+			["da"] = 0, 
+			["dn"] = "Warrior's Ward", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranStrNotable.dds", 
+			["id"] = "kalguur_notable_16", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 7170, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "5% Chance to Block Attack Damage", 
+				[2] = "10% chance to Restore Ward when you Block", 
+			}, 
+			["sortedStats"] = {
+				[1] = "monster_base_block_%", 
+				[2] = "restore_ward_on_block_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["monster_base_block_%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 5, 
+					["min"] = 5, 
+					["statOrder"] = 1165, 
+				}, 
+				["restore_ward_on_block_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 10, 
+					["statOrder"] = 10080, 
+				}, 
+			}, 
+		}, 
+		[171] = {
+			["da"] = 0, 
+			["dn"] = "Starborn Birth", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranIntNotable.dds", 
+			["id"] = "kalguur_notable_17", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 95734, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "25% increased Ward", 
+			}, 
+			["sortedStats"] = {
+				[1] = "ward_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["ward_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 25, 
+					["min"] = 25, 
+					["statOrder"] = 1554, 
+				}, 
+			}, 
+		}, 
+		[172] = {
+			["da"] = 0, 
+			["dn"] = "Pure Faith", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranIntNotable.dds", 
+			["id"] = "kalguur_notable_18", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 81354, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "12% increased Ward", 
+				[2] = "+8% to Chaos Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "ward_+%", 
+				[2] = "base_chaos_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_chaos_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 8, 
+					["min"] = 8, 
+					["statOrder"] = 1667, 
+				}, 
+				["ward_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 12, 
+					["statOrder"] = 1554, 
+				}, 
+			}, 
+		}, 
+		[173] = {
+			["da"] = 0, 
+			["dn"] = "Magic Faith", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranIntNotable.dds", 
+			["id"] = "kalguur_notable_19", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 78304, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "12% increased Ward", 
+				[2] = "8% increased maximum Energy Shield", 
+			}, 
+			["sortedStats"] = {
+				[1] = "ward_+%", 
+				[2] = "maximum_energy_shield_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["maximum_energy_shield_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 8, 
+					["min"] = 8, 
+					["statOrder"] = 1586, 
+				}, 
+				["ward_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 12, 
+					["statOrder"] = 1554, 
+				}, 
+			}, 
+		}, 
+		[174] = {
+			["da"] = 0, 
+			["dn"] = "Guile Faith", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranDexNotable.dds", 
+			["id"] = "kalguur_notable_20", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 15373, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "12% increased Ward", 
+				[2] = "16% increased Evasion Rating", 
+			}, 
+			["sortedStats"] = {
+				[1] = "ward_+%", 
+				[2] = "evasion_rating_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["evasion_rating_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 16, 
+					["min"] = 16, 
+					["statOrder"] = 1574, 
+				}, 
+				["ward_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 12, 
+					["statOrder"] = 1554, 
+				}, 
+			}, 
+		}, 
+		[175] = {
+			["da"] = 0, 
+			["dn"] = "Resolute Faith", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranStrNotable.dds", 
+			["id"] = "kalguur_notable_21", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 27792, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "12% increased Ward", 
+				[2] = "16% increased Armour", 
+			}, 
+			["sortedStats"] = {
+				[1] = "ward_+%", 
+				[2] = "physical_damage_reduction_rating_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["physical_damage_reduction_rating_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 16, 
+					["min"] = 16, 
+					["statOrder"] = 1566, 
+				}, 
+				["ward_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 12, 
+					["statOrder"] = 1554, 
+				}, 
+			}, 
+		}, 
+		[176] = {
+			["da"] = 0, 
+			["dn"] = "Starsoaked Time", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranIntNotable.dds", 
+			["id"] = "kalguur_notable_22", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 27192, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "20% faster Restoration of Ward", 
+				[2] = "20% faster start of Energy Shield Recharge", 
+			}, 
+			["sortedStats"] = {
+				[1] = "ward_delay_recovery_+%", 
+				[2] = "energy_shield_delay_-%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["energy_shield_delay_-%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 20, 
+					["min"] = 20, 
+					["statOrder"] = 1587, 
+				}, 
+				["ward_delay_recovery_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 20, 
+					["statOrder"] = 1556, 
+				}, 
+			}, 
+		}, 
+		[177] = {
+			["da"] = 0, 
+			["dn"] = "Etched Runes", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranStrNotable.dds", 
+			["id"] = "kalguur_notable_23", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 45680, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "12% increased Ward", 
+				[2] = "20% increased Ward from Equipped Armour Items", 
+			}, 
+			["sortedStats"] = {
+				[1] = "ward_+%", 
+				[2] = "ward_from_armour_item_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["ward_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 12, 
+					["statOrder"] = 1554, 
+				}, 
+				["ward_from_armour_item_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 20, 
+					["min"] = 20, 
+					["statOrder"] = 10747, 
+				}, 
+			}, 
+		}, 
+		[178] = {
+			["da"] = 0, 
+			["dn"] = "Cleansing Runes", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranStrNotable.dds", 
+			["id"] = "kalguur_notable_24", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 79160, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Remove a random Damaging Ailment when Ward is Restored", 
+			}, 
+			["sortedStats"] = {
+				[1] = "remove_random_damaging_ailment_when_ward_restores", 
+				[2] = "self_damaging_ailment_duration_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["remove_random_damaging_ailment_when_ward_restores"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 1, 
+					["statOrder"] = 10069, 
+				}, 
+				["self_damaging_ailment_duration_+%"] = {
+					["index"] = 2, 
+					["max"] = -25, 
+					["min"] = -25, 
+				}, 
+			}, 
+		}, 
+		[179] = {
+			["da"] = 0, 
+			["dn"] = "Regenerative Runes", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranDexNotable.dds", 
+			["id"] = "kalguur_notable_25", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = true, 
+			["o"] = 3, 
+			["oidx"] = 64617, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "10% increased Flask Effect Duration", 
+				[2] = "Iron Flasks gain 2 charges when your Ward Breaks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "flask_duration_+%", 
+				[2] = "iron_flasks_gain_x_charge_when_ward_breaks", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["flask_duration_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 10, 
+					["min"] = 10, 
+					["statOrder"] = 2213, 
+				}, 
+				["iron_flasks_gain_x_charge_when_ward_breaks"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 2, 
+					["min"] = 2, 
+					["statOrder"] = 7413, 
+				}, 
+			}, 
+		}, 
+		[180] = {
+			["da"] = 0, 
+			["dn"] = "Black Scythe Training", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranDexKeystone.dds", 
+			["id"] = "kalguur_keystone_1", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = true, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 4, 
+			["oidx"] = 60, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Removes all Energy Shield", 
+				[2] = "Chance to Evade Hits is based off of 200% of your Ward instead of your Evasion Rating", 
+				[3] = "Physical Damage Reduction from Hits is based off of 200% of your Ward instead of your Armour", 
+			}, 
+			["sortedStats"] = {
+				[1] = "keystone_voranas_adaption", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["keystone_voranas_adaption"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 1, 
+					["statOrder"] = 11166, 
+				}, 
+			}, 
+		}, 
+		[181] = {
+			["da"] = 0, 
+			["dn"] = "Celestial Mathematics", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranIntKeystone.dds", 
+			["id"] = "kalguur_keystone_2", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = true, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 4, 
+			["oidx"] = 63, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "While you have Unbroken Ward, your next non-channelling Attack you Use yourself breaks your Ward to gain Added Cold Damage equal to 25% of Ward", 
+			}, 
+			["sortedStats"] = {
+				[1] = "keystone_uhtreds_fury", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["keystone_uhtreds_fury"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 1, 
+					["statOrder"] = 11163, 
+				}, 
+			}, 
+		}, 
+		[182] = {
+			["da"] = 0, 
+			["dn"] = "The Unbreaking Circle", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/KalguuranStrKeystone.dds", 
+			["id"] = "kalguur_keystone_3", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = true, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 4, 
+			["oidx"] = 66, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "40% less Ward", 
+				[2] = "Ward has a 60% chance to not Break", 
+			}, 
+			["sortedStats"] = {
+				[1] = "keystone_medveds_exchange", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["keystone_medveds_exchange"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 1, 
+					["statOrder"] = 11139, 
+				}, 
+			}, 
+		}, 
+		[183] = {
+			["da"] = 0, 
+			["dn"] = "Overwhelming Hate", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/GlintingDespairMurderous1.dds", 
+			["id"] = "abyss_murderous_keystone", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = true, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 4, 
+			["oidx"] = 69, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "20% less maximum Life", 
+				[2] = "Increases and reductions to Maximum Life also apply to Maximum Rage at 20% Value", 
+			}, 
+			["sortedStats"] = {
+				[1] = "keystone_abyss_murderous", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["keystone_abyss_murderous"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 1, 
+					["statOrder"] = 11113, 
+				}, 
+			}, 
+		}, 
+		[184] = {
+			["da"] = 0, 
+			["dn"] = "Weighted Exchange", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/GlintingDespairSearching1.dds", 
+			["id"] = "abyss_searching_keystone", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = true, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 4, 
+			["oidx"] = 72, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Take 15% more damage from Non-Critical Strikes", 
+				[2] = "Take 30% less damage from Critical Strikes", 
+			}, 
+			["sortedStats"] = {
+				[1] = "keystone_abyss_searching", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["keystone_abyss_searching"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 1, 
+					["statOrder"] = 11114, 
+				}, 
+			}, 
+		}, 
+		[185] = {
+			["da"] = 0, 
+			["dn"] = "Reconstructed Essence", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/GlintingDespairHypnotic1.dds", 
+			["id"] = "abyss_hypnotic_keystone", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = true, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 4, 
+			["oidx"] = 75, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Life Recoup also recovers Mana", 
+				[2] = "50% less recovery from Recoup", 
+			}, 
+			["sortedStats"] = {
+				[1] = "keystone_abyss_hypnotic", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["keystone_abyss_hypnotic"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 1, 
+					["statOrder"] = 11112, 
+				}, 
+			}, 
+		}, 
+		[186] = {
+			["da"] = 0, 
+			["dn"] = "The Loyal Few", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/GlintingDespairGhastly1.dds", 
+			["id"] = "abyss_ghastly_keystone", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = true, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 4, 
+			["oidx"] = 78, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Minions take 10% less Damage while you have a Zombie", 
+				[2] = "Minions deal 10% more Damage while you have a Skeleton", 
+				[3] = "Minions gain 10% of Non-Chaos Damage as extra Chaos Damage while you have a Spectre", 
+				[4] = "Maximum number of raised Spectres, Skeletons and Zombies is 1", 
+			}, 
+			["sortedStats"] = {
+				[1] = "keystone_abyss_ghastly", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["keystone_abyss_ghastly"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 1, 
+					["statOrder"] = 11111, 
+				}, 
+			}, 
+		}, 
+		[187] = {
+			["da"] = 0, 
+			["dn"] = "Sanguine Bargain", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/GlintingDespairMurderous2.dds", 
+			["id"] = "abyss_special_ascendancy_notable_1", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 27124, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Attacks gain 1% more damage for each 2% of your Maximum Life they cost if Life Cost is not higher than the maximum you could spend", 
+				[2] = "Attack Skills cost Life instead of Mana", 
+			}, 
+			["sortedStats"] = {
+				[1] = "reclaimed_malevolence_notable_abyss_murderous", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["reclaimed_malevolence_notable_abyss_murderous"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 1, 
+					["statOrder"] = 11171, 
+				}, 
+			}, 
+		}, 
+		[188] = {
+			["da"] = 0, 
+			["dn"] = "Ephemeral Bolts", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/GlintingDespairSearching2.dds", 
+			["id"] = "abyss_special_ascendancy_notable_2", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 82620, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Projectiles have 5 metres maximum Direct Flight", 
+				[2] = "40% more Projectile Speed", 
+			}, 
+			["sortedStats"] = {
+				[1] = "reclaimed_malevolence_notable_abyss_searching", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["reclaimed_malevolence_notable_abyss_searching"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 1, 
+					["statOrder"] = 11172, 
+				}, 
+			}, 
+		}, 
+		[189] = {
+			["da"] = 0, 
+			["dn"] = "From Below", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/GlintingDespairHypnotic2.dds", 
+			["id"] = "abyss_special_ascendancy_notable_3", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 84022, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Insufficient Mana doesn't prevent your Spells", 
+				[2] = "Cannot recover Mana", 
+			}, 
+			["sortedStats"] = {
+				[1] = "reclaimed_malevolence_notable_abyss_hypnotic", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["reclaimed_malevolence_notable_abyss_hypnotic"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 1, 
+					["statOrder"] = 11170, 
+				}, 
+			}, 
+		}, 
+		[190] = {
+			["da"] = 0, 
+			["dn"] = "Spiteful Allies", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/GlintingDespairGhastly2.dds", 
+			["id"] = "abyss_special_ascendancy_notable_4", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 37694, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Minions Impale on Hit", 
+			}, 
+			["sortedStats"] = {
+				[1] = "reclaimed_malevolence_notable_abyss_ghastly", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["reclaimed_malevolence_notable_abyss_ghastly"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 1, 
+					["statOrder"] = 11169, 
+				}, 
+			}, 
+		}, 
+		[191] = {
+			["da"] = 0, 
+			["dn"] = "Life", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute1", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 88895, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(9-12) to maximum Life", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_life", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_maximum_life"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 1594, 
+				}, 
+			}, 
+		}, 
+		[192] = {
+			["da"] = 0, 
+			["dn"] = "Mana ", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute2", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 78681, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-11) to maximum Mana", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_mana", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_maximum_mana"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 8, 
+					["statOrder"] = 1605, 
+				}, 
+			}, 
+		}, 
+		[193] = {
+			["da"] = 0, 
+			["dn"] = "Energy Shield Regeneration", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute3", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 55867, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Regenerate (9-12) Energy Shield per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "energy_shield_regeneration_rate_per_second", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["energy_shield_regeneration_rate_per_second"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 6560, 
+				}, 
+			}, 
+		}, 
+		[194] = {
+			["da"] = 0, 
+			["dn"] = "Life Regeneration", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute4", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 79194, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Regenerate (4.5-6) Life per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_life_regeneration_rate_per_minute", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_life_regeneration_rate_per_minute"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4.5, 
+					["statOrder"] = 1599, 
+				}, 
+			}, 
+		}, 
+		[195] = {
+			["da"] = 0, 
+			["dn"] = "Mana Regeneration", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute5", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 1855, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Regenerate (0.6-1) Mana per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_mana_regeneration_rate_per_minute", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_mana_regeneration_rate_per_minute"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 0.6, 
+					["statOrder"] = 1608, 
+				}, 
+			}, 
+		}, 
+		[196] = {
+			["da"] = 0, 
+			["dn"] = "Armour", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute6", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 55548, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(36-60) to Armour", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_physical_damage_reduction_rating", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_physical_damage_reduction_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 60, 
+					["min"] = 36, 
+					["statOrder"] = 1564, 
+				}, 
+			}, 
+		}, 
+		[197] = {
+			["da"] = 0, 
+			["dn"] = "Evasion Rating", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute7", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 87796, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(36-60) to Evasion Rating", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_evasion_rating", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_evasion_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 60, 
+					["min"] = 36, 
+					["statOrder"] = 1569, 
+				}, 
+			}, 
+		}, 
+		[198] = {
+			["da"] = 0, 
+			["dn"] = "Energy Shield", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute8", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 29714, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(9-12) to maximum Energy Shield", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_energy_shield", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_maximum_energy_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 1583, 
+				}, 
+			}, 
+		}, 
+		[199] = {
+			["da"] = 0, 
+			["dn"] = "Impale Effect", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute9", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 51555, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-4)% increased Impale Effect", 
+			}, 
+			["sortedStats"] = {
+				[1] = "impale_debuff_effect_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["impale_debuff_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 2, 
+					["statOrder"] = 7354, 
+				}, 
+			}, 
+		}, 
+		[200] = {
+			["da"] = 0, 
+			["dn"] = "Mana Recoup", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute10", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 60518, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% of Damage taken Recouped as Mana", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_taken_goes_to_mana_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["damage_taken_goes_to_mana_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 2483, 
+				}, 
+			}, 
+		}, 
+		[201] = {
+			["da"] = 0, 
+			["dn"] = "Cold Ailment Effect", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute11", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 32845, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(10-20)% increased Effect of Cold Ailments", 
+			}, 
+			["sortedStats"] = {
+				[1] = "cold_ailment_effect_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["cold_ailment_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 10, 
+					["statOrder"] = 5885, 
+				}, 
+			}, 
+		}, 
+		[202] = {
+			["da"] = 0, 
+			["dn"] = "Lightning Ailment Effect", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute12", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 40214, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(10-20)% increased Effect of Lightning Ailments", 
+			}, 
+			["sortedStats"] = {
+				[1] = "lightning_ailment_effect_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["lightning_ailment_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 10, 
+					["statOrder"] = 7546, 
+				}, 
+			}, 
+		}, 
+		[203] = {
+			["da"] = 0, 
+			["dn"] = "Strength", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute13", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 87392, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-10) to Strength", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_strength", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_strength"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 1203, 
+				}, 
+			}, 
+		}, 
+		[204] = {
+			["da"] = 0, 
+			["dn"] = "Dexterity", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute14", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 88901, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-10) to Dexterity", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_dexterity", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_dexterity"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 1204, 
+				}, 
+			}, 
+		}, 
+		[205] = {
+			["da"] = 0, 
+			["dn"] = "Intelligence", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute15", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 1088, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-10) to Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_intelligence", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 1205, 
+				}, 
+			}, 
+		}, 
+		[206] = {
+			["da"] = 0, 
+			["dn"] = "Strength and Dexterity", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute16", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 25300, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8) to Strength and Dexterity", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_strength_and_dexterity", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_strength_and_dexterity"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1206, 
+				}, 
+			}, 
+		}, 
+		[207] = {
+			["da"] = 0, 
+			["dn"] = "Strength and Intelligence", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute17", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 5536, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8) to Strength and Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_strength_and_intelligence", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_strength_and_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1207, 
+				}, 
+			}, 
+		}, 
+		[208] = {
+			["da"] = 0, 
+			["dn"] = "Dexterity and Intelligence", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute18", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 40288, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8) to Dexterity and Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_dexterity_and_intelligence", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_dexterity_and_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1208, 
+				}, 
+			}, 
+		}, 
+		[209] = {
+			["da"] = 0, 
+			["dn"] = "Attributes", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute19", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 50505, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6) to all Attributes", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_all_attributes", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_all_attributes"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 1202, 
+				}, 
+			}, 
+		}, 
+		[210] = {
+			["da"] = 0, 
+			["dn"] = "Fire Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute20", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 94233, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8)% to Fire Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_fire_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_fire_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1651, 
+				}, 
+			}, 
+		}, 
+		[211] = {
+			["da"] = 0, 
+			["dn"] = "Cold Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute21", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 33401, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8)% to Cold Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cold_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_cold_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1657, 
+				}, 
+			}, 
+		}, 
+		[212] = {
+			["da"] = 0, 
+			["dn"] = "Lightning Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute22", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 93327, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8)% to Lightning Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_lightning_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_lightning_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1662, 
+				}, 
+			}, 
+		}, 
+		[213] = {
+			["da"] = 0, 
+			["dn"] = "Fire and Cold Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute23", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 14140, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Fire and Cold Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "fire_and_cold_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["fire_and_cold_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 2835, 
+				}, 
+			}, 
+		}, 
+		[214] = {
+			["da"] = 0, 
+			["dn"] = "Fire and Lightning Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute24", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 55075, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Fire and Lightning Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "fire_and_lightning_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["fire_and_lightning_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 2836, 
+				}, 
+			}, 
+		}, 
+		[215] = {
+			["da"] = 0, 
+			["dn"] = "Cold and Lightning Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute25", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 5174, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Cold and Lightning Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "cold_and_lightning_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["cold_and_lightning_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 2837, 
+				}, 
+			}, 
+		}, 
+		[216] = {
+			["da"] = 0, 
+			["dn"] = "Elemental Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute26", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 29868, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(3-5)% to all Elemental Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_resist_all_elements_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_resist_all_elements_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 3, 
+					["statOrder"] = 1645, 
+				}, 
+			}, 
+		}, 
+		[217] = {
+			["da"] = 0, 
+			["dn"] = "Chaos Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute27", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 64578, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Chaos Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_chaos_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_chaos_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 1667, 
+				}, 
+			}, 
+		}, 
+		[218] = {
+			["da"] = 0, 
+			["dn"] = "Attack Speed", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute28", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 81826, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% increased Attack Speed", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_speed_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["attack_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 1437, 
+				}, 
+			}, 
+		}, 
+		[219] = {
+			["da"] = 0, 
+			["dn"] = "Critical Strike Chance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute29", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 90899, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(6-8)% increased Critical Strike Chance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "critical_strike_chance_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["critical_strike_chance_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 11074, 
+				}, 
+			}, 
+		}, 
+		[220] = {
+			["da"] = 0, 
+			["dn"] = "Critical Strike Multiplier", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute30", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 57536, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(7-9)% to Critical Strike Multiplier", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_critical_strike_multiplier_+", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_critical_strike_multiplier_+"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 9, 
+					["min"] = 7, 
+					["statOrder"] = 11075, 
+				}, 
+			}, 
+		}, 
+		[221] = {
+			["da"] = 0, 
+			["dn"] = "Blind Chance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute31", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 55389, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% chance to Blind Enemies on Hit with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attacks_chance_to_blind_on_hit_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["attacks_chance_to_blind_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 4970, 
+				}, 
+			}, 
+		}, 
+		[222] = {
+			["da"] = 0, 
+			["dn"] = "Taunt Chance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute32", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 93616, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% chance to Taunt Enemies on Hit with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attacks_chance_to_taunt_on_hit_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["attacks_chance_to_taunt_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 4971, 
+				}, 
+			}, 
+		}, 
+		[223] = {
+			["da"] = 0, 
+			["dn"] = "Ignite Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute33", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 99322, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Ignited", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_ignite_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_ignite_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1872, 
+				}, 
+			}, 
+		}, 
+		[224] = {
+			["da"] = 0, 
+			["dn"] = "Freeze Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute34", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 79942, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Frozen", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_freeze_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_freeze_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1871, 
+				}, 
+			}, 
+		}, 
+		[225] = {
+			["da"] = 0, 
+			["dn"] = "Shock Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute35", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 23145, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Shocked", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_shock_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_shock_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1874, 
+				}, 
+			}, 
+		}, 
+		[226] = {
+			["da"] = 0, 
+			["dn"] = "Poison Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute36", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 33128, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Poisoned", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_poison_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_poison_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1875, 
+				}, 
+			}, 
+		}, 
+		[227] = {
+			["da"] = 0, 
+			["dn"] = "Bleed Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute37", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 39249, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid Bleeding", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_bleed_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_bleed_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 4255, 
+				}, 
+			}, 
+		}, 
+		[228] = {
+			["da"] = 0, 
+			["dn"] = "Stun Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute38", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 35273, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Stunned", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_stun_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_stun_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1877, 
+				}, 
+			}, 
+		}, 
+		[229] = {
+			["da"] = 0, 
+			["dn"] = "Accuracy", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode2.dds", 
+			["id"] = "abyss_murderous_small_attribute39", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 28021, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(31-60) to Accuracy Rating", 
+			}, 
+			["sortedStats"] = {
+				[1] = "accuracy_rating", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["accuracy_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 60, 
+					["min"] = 31, 
+					["statOrder"] = 1460, 
+				}, 
+			}, 
+		}, 
+		[230] = {
+			["da"] = 0, 
+			["dn"] = "Life", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute1", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 19644, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(9-12) to maximum Life", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_life", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_maximum_life"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 1594, 
+				}, 
+			}, 
+		}, 
+		[231] = {
+			["da"] = 0, 
+			["dn"] = "Mana ", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute2", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 21331, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-11) to maximum Mana", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_mana", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_maximum_mana"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 8, 
+					["statOrder"] = 1605, 
+				}, 
+			}, 
+		}, 
+		[232] = {
+			["da"] = 0, 
+			["dn"] = "Energy Shield Regeneration", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute3", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 99442, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Regenerate (9-12) Energy Shield per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "energy_shield_regeneration_rate_per_second", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["energy_shield_regeneration_rate_per_second"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 6560, 
+				}, 
+			}, 
+		}, 
+		[233] = {
+			["da"] = 0, 
+			["dn"] = "Life Regeneration", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute4", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 2420, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Regenerate (4.5-6) Life per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_life_regeneration_rate_per_minute", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_life_regeneration_rate_per_minute"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4.5, 
+					["statOrder"] = 1599, 
+				}, 
+			}, 
+		}, 
+		[234] = {
+			["da"] = 0, 
+			["dn"] = "Mana Regeneration", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute5", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 20860, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Regenerate (0.6-1) Mana per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_mana_regeneration_rate_per_minute", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_mana_regeneration_rate_per_minute"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 0.6, 
+					["statOrder"] = 1608, 
+				}, 
+			}, 
+		}, 
+		[235] = {
+			["da"] = 0, 
+			["dn"] = "Armour", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute6", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 48261, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(36-60) to Armour", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_physical_damage_reduction_rating", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_physical_damage_reduction_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 60, 
+					["min"] = 36, 
+					["statOrder"] = 1564, 
+				}, 
+			}, 
+		}, 
+		[236] = {
+			["da"] = 0, 
+			["dn"] = "Evasion Rating", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute7", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 6017, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(36-60) to Evasion Rating", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_evasion_rating", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_evasion_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 60, 
+					["min"] = 36, 
+					["statOrder"] = 1569, 
+				}, 
+			}, 
+		}, 
+		[237] = {
+			["da"] = 0, 
+			["dn"] = "Energy Shield", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute8", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 50410, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(9-12) to maximum Energy Shield", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_energy_shield", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_maximum_energy_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 1583, 
+				}, 
+			}, 
+		}, 
+		[238] = {
+			["da"] = 0, 
+			["dn"] = "Impale Effect", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute9", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 44196, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-4)% increased Impale Effect", 
+			}, 
+			["sortedStats"] = {
+				[1] = "impale_debuff_effect_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["impale_debuff_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 2, 
+					["statOrder"] = 7354, 
+				}, 
+			}, 
+		}, 
+		[239] = {
+			["da"] = 0, 
+			["dn"] = "Mana Recoup", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute10", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 20341, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% of Damage taken Recouped as Mana", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_taken_goes_to_mana_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["damage_taken_goes_to_mana_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 2483, 
+				}, 
+			}, 
+		}, 
+		[240] = {
+			["da"] = 0, 
+			["dn"] = "Cold Ailment Effect", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute11", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 54200, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(10-20)% increased Effect of Cold Ailments", 
+			}, 
+			["sortedStats"] = {
+				[1] = "cold_ailment_effect_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["cold_ailment_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 10, 
+					["statOrder"] = 5885, 
+				}, 
+			}, 
+		}, 
+		[241] = {
+			["da"] = 0, 
+			["dn"] = "Lightning Ailment Effect", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute12", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 2450, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(10-20)% increased Effect of Lightning Ailments", 
+			}, 
+			["sortedStats"] = {
+				[1] = "lightning_ailment_effect_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["lightning_ailment_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 10, 
+					["statOrder"] = 7546, 
+				}, 
+			}, 
+		}, 
+		[242] = {
+			["da"] = 0, 
+			["dn"] = "Strength", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute13", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 91756, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-10) to Strength", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_strength", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_strength"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 1203, 
+				}, 
+			}, 
+		}, 
+		[243] = {
+			["da"] = 0, 
+			["dn"] = "Dexterity", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute14", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 1205, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-10) to Dexterity", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_dexterity", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_dexterity"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 1204, 
+				}, 
+			}, 
+		}, 
+		[244] = {
+			["da"] = 0, 
+			["dn"] = "Intelligence", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute15", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 69797, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-10) to Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_intelligence", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 1205, 
+				}, 
+			}, 
+		}, 
+		[245] = {
+			["da"] = 0, 
+			["dn"] = "Strength and Dexterity", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute16", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 50579, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8) to Strength and Dexterity", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_strength_and_dexterity", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_strength_and_dexterity"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1206, 
+				}, 
+			}, 
+		}, 
+		[246] = {
+			["da"] = 0, 
+			["dn"] = "Strength and Intelligence", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute17", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 93563, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8) to Strength and Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_strength_and_intelligence", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_strength_and_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1207, 
+				}, 
+			}, 
+		}, 
+		[247] = {
+			["da"] = 0, 
+			["dn"] = "Dexterity and Intelligence", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute18", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 18807, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8) to Dexterity and Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_dexterity_and_intelligence", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_dexterity_and_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1208, 
+				}, 
+			}, 
+		}, 
+		[248] = {
+			["da"] = 0, 
+			["dn"] = "Attributes", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute19", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 81217, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6) to all Attributes", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_all_attributes", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_all_attributes"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 1202, 
+				}, 
+			}, 
+		}, 
+		[249] = {
+			["da"] = 0, 
+			["dn"] = "Fire Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute20", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 91332, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8)% to Fire Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_fire_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_fire_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1651, 
+				}, 
+			}, 
+		}, 
+		[250] = {
+			["da"] = 0, 
+			["dn"] = "Cold Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute21", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 65329, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8)% to Cold Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cold_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_cold_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1657, 
+				}, 
+			}, 
+		}, 
+		[251] = {
+			["da"] = 0, 
+			["dn"] = "Lightning Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute22", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 31284, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8)% to Lightning Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_lightning_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_lightning_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1662, 
+				}, 
+			}, 
+		}, 
+		[252] = {
+			["da"] = 0, 
+			["dn"] = "Fire and Cold Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute23", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 10883, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Fire and Cold Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "fire_and_cold_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["fire_and_cold_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 2835, 
+				}, 
+			}, 
+		}, 
+		[253] = {
+			["da"] = 0, 
+			["dn"] = "Fire and Lightning Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute24", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 17069, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Fire and Lightning Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "fire_and_lightning_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["fire_and_lightning_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 2836, 
+				}, 
+			}, 
+		}, 
+		[254] = {
+			["da"] = 0, 
+			["dn"] = "Cold and Lightning Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute25", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 823, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Cold and Lightning Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "cold_and_lightning_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["cold_and_lightning_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 2837, 
+				}, 
+			}, 
+		}, 
+		[255] = {
+			["da"] = 0, 
+			["dn"] = "Elemental Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute26", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 84913, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(3-5)% to all Elemental Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_resist_all_elements_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_resist_all_elements_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 3, 
+					["statOrder"] = 1645, 
+				}, 
+			}, 
+		}, 
+		[256] = {
+			["da"] = 0, 
+			["dn"] = "Chaos Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute27", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 21216, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Chaos Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_chaos_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_chaos_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 1667, 
+				}, 
+			}, 
+		}, 
+		[257] = {
+			["da"] = 0, 
+			["dn"] = "Attack Speed", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute28", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 27467, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% increased Attack Speed", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_speed_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["attack_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 1437, 
+				}, 
+			}, 
+		}, 
+		[258] = {
+			["da"] = 0, 
+			["dn"] = "Critical Strike Chance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute29", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 4261, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(6-8)% increased Critical Strike Chance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "critical_strike_chance_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["critical_strike_chance_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 11074, 
+				}, 
+			}, 
+		}, 
+		[259] = {
+			["da"] = 0, 
+			["dn"] = "Critical Strike Multiplier", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute30", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 72550, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(7-9)% to Critical Strike Multiplier", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_critical_strike_multiplier_+", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_critical_strike_multiplier_+"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 9, 
+					["min"] = 7, 
+					["statOrder"] = 11075, 
+				}, 
+			}, 
+		}, 
+		[260] = {
+			["da"] = 0, 
+			["dn"] = "Blind Chance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute31", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 37140, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% chance to Blind Enemies on Hit with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attacks_chance_to_blind_on_hit_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["attacks_chance_to_blind_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 4970, 
+				}, 
+			}, 
+		}, 
+		[261] = {
+			["da"] = 0, 
+			["dn"] = "Ignite Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute32", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 66288, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Ignited", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_ignite_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_ignite_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1872, 
+				}, 
+			}, 
+		}, 
+		[262] = {
+			["da"] = 0, 
+			["dn"] = "Freeze Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute33", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 64997, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Frozen", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_freeze_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_freeze_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1871, 
+				}, 
+			}, 
+		}, 
+		[263] = {
+			["da"] = 0, 
+			["dn"] = "Shock Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute34", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 41353, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Shocked", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_shock_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_shock_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1874, 
+				}, 
+			}, 
+		}, 
+		[264] = {
+			["da"] = 0, 
+			["dn"] = "Poison Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute35", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 67352, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Poisoned", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_poison_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_poison_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1875, 
+				}, 
+			}, 
+		}, 
+		[265] = {
+			["da"] = 0, 
+			["dn"] = "Bleed Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute36", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 57033, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid Bleeding", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_bleed_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_bleed_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 4255, 
+				}, 
+			}, 
+		}, 
+		[266] = {
+			["da"] = 0, 
+			["dn"] = "Stun Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute37", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 4248, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Stunned", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_stun_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_stun_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1877, 
+				}, 
+			}, 
+		}, 
+		[267] = {
+			["da"] = 0, 
+			["dn"] = "Accuracy", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode3.dds", 
+			["id"] = "abyss_searching_small_attribute38", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 67444, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(31-60) to Accuracy Rating", 
+			}, 
+			["sortedStats"] = {
+				[1] = "accuracy_rating", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["accuracy_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 60, 
+					["min"] = 31, 
+					["statOrder"] = 1460, 
+				}, 
+			}, 
+		}, 
+		[268] = {
+			["da"] = 0, 
+			["dn"] = "Life", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute1", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 7065, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(9-12) to maximum Life", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_life", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_maximum_life"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 1594, 
+				}, 
+			}, 
+		}, 
+		[269] = {
+			["da"] = 0, 
+			["dn"] = "Mana ", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute2", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 69156, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-11) to maximum Mana", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_mana", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_maximum_mana"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 8, 
+					["statOrder"] = 1605, 
+				}, 
+			}, 
+		}, 
+		[270] = {
+			["da"] = 0, 
+			["dn"] = "Energy Shield Regeneration", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute3", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 95243, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Regenerate (9-12) Energy Shield per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "energy_shield_regeneration_rate_per_second", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["energy_shield_regeneration_rate_per_second"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 6560, 
+				}, 
+			}, 
+		}, 
+		[271] = {
+			["da"] = 0, 
+			["dn"] = "Life Regeneration", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute4", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 11898, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Regenerate (4.5-6) Life per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_life_regeneration_rate_per_minute", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_life_regeneration_rate_per_minute"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4.5, 
+					["statOrder"] = 1599, 
+				}, 
+			}, 
+		}, 
+		[272] = {
+			["da"] = 0, 
+			["dn"] = "Mana Regeneration", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute5", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 56195, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Regenerate (0.6-1) Mana per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_mana_regeneration_rate_per_minute", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_mana_regeneration_rate_per_minute"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 0.6, 
+					["statOrder"] = 1608, 
+				}, 
+			}, 
+		}, 
+		[273] = {
+			["da"] = 0, 
+			["dn"] = "Armour", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute6", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 21068, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(36-60) to Armour", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_physical_damage_reduction_rating", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_physical_damage_reduction_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 60, 
+					["min"] = 36, 
+					["statOrder"] = 1564, 
+				}, 
+			}, 
+		}, 
+		[274] = {
+			["da"] = 0, 
+			["dn"] = "Evasion Rating", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute7", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 59069, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(36-60) to Evasion Rating", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_evasion_rating", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_evasion_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 60, 
+					["min"] = 36, 
+					["statOrder"] = 1569, 
+				}, 
+			}, 
+		}, 
+		[275] = {
+			["da"] = 0, 
+			["dn"] = "Energy Shield", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute8", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 78292, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(9-12) to maximum Energy Shield", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_energy_shield", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_maximum_energy_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 1583, 
+				}, 
+			}, 
+		}, 
+		[276] = {
+			["da"] = 0, 
+			["dn"] = "Mana Recoup", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute9", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 28934, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% of Damage taken Recouped as Mana", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_taken_goes_to_mana_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["damage_taken_goes_to_mana_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 2483, 
+				}, 
+			}, 
+		}, 
+		[277] = {
+			["da"] = 0, 
+			["dn"] = "Cold Ailment Effect", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute10", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 11897, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(10-20)% increased Effect of Cold Ailments", 
+			}, 
+			["sortedStats"] = {
+				[1] = "cold_ailment_effect_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["cold_ailment_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 10, 
+					["statOrder"] = 5885, 
+				}, 
+			}, 
+		}, 
+		[278] = {
+			["da"] = 0, 
+			["dn"] = "Lightning Ailment Effect", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute11", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 31734, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(10-20)% increased Effect of Lightning Ailments", 
+			}, 
+			["sortedStats"] = {
+				[1] = "lightning_ailment_effect_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["lightning_ailment_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 10, 
+					["statOrder"] = 7546, 
+				}, 
+			}, 
+		}, 
+		[279] = {
+			["da"] = 0, 
+			["dn"] = "Strength", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute12", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 65592, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-10) to Strength", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_strength", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_strength"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 1203, 
+				}, 
+			}, 
+		}, 
+		[280] = {
+			["da"] = 0, 
+			["dn"] = "Dexterity", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute13", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 67482, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-10) to Dexterity", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_dexterity", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_dexterity"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 1204, 
+				}, 
+			}, 
+		}, 
+		[281] = {
+			["da"] = 0, 
+			["dn"] = "Intelligence", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute14", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 9669, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-10) to Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_intelligence", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 1205, 
+				}, 
+			}, 
+		}, 
+		[282] = {
+			["da"] = 0, 
+			["dn"] = "Strength and Dexterity", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute15", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 47823, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8) to Strength and Dexterity", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_strength_and_dexterity", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_strength_and_dexterity"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1206, 
+				}, 
+			}, 
+		}, 
+		[283] = {
+			["da"] = 0, 
+			["dn"] = "Strength and Intelligence", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute16", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 74980, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8) to Strength and Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_strength_and_intelligence", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_strength_and_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1207, 
+				}, 
+			}, 
+		}, 
+		[284] = {
+			["da"] = 0, 
+			["dn"] = "Dexterity and Intelligence", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute17", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 10189, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8) to Dexterity and Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_dexterity_and_intelligence", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_dexterity_and_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1208, 
+				}, 
+			}, 
+		}, 
+		[285] = {
+			["da"] = 0, 
+			["dn"] = "Attributes", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute18", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 27945, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6) to all Attributes", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_all_attributes", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_all_attributes"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 1202, 
+				}, 
+			}, 
+		}, 
+		[286] = {
+			["da"] = 0, 
+			["dn"] = "Fire Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute19", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 47171, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8)% to Fire Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_fire_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_fire_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1651, 
+				}, 
+			}, 
+		}, 
+		[287] = {
+			["da"] = 0, 
+			["dn"] = "Cold Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute20", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 1000, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8)% to Cold Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cold_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_cold_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1657, 
+				}, 
+			}, 
+		}, 
+		[288] = {
+			["da"] = 0, 
+			["dn"] = "Lightning Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute21", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 29863, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8)% to Lightning Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_lightning_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_lightning_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1662, 
+				}, 
+			}, 
+		}, 
+		[289] = {
+			["da"] = 0, 
+			["dn"] = "Fire and Cold Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute22", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 38723, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Fire and Cold Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "fire_and_cold_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["fire_and_cold_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 2835, 
+				}, 
+			}, 
+		}, 
+		[290] = {
+			["da"] = 0, 
+			["dn"] = "Fire and Lightning Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute23", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 56838, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Fire and Lightning Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "fire_and_lightning_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["fire_and_lightning_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 2836, 
+				}, 
+			}, 
+		}, 
+		[291] = {
+			["da"] = 0, 
+			["dn"] = "Cold and Lightning Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute24", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 60021, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Cold and Lightning Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "cold_and_lightning_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["cold_and_lightning_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 2837, 
+				}, 
+			}, 
+		}, 
+		[292] = {
+			["da"] = 0, 
+			["dn"] = "Elemental Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute25", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 55198, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(3-5)% to all Elemental Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_resist_all_elements_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_resist_all_elements_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 3, 
+					["statOrder"] = 1645, 
+				}, 
+			}, 
+		}, 
+		[293] = {
+			["da"] = 0, 
+			["dn"] = "Chaos Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute26", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 32616, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Chaos Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_chaos_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_chaos_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 1667, 
+				}, 
+			}, 
+		}, 
+		[294] = {
+			["da"] = 0, 
+			["dn"] = "Cast Speed", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute27", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 49588, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% increased Cast Speed", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cast_speed_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_cast_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 1473, 
+				}, 
+			}, 
+		}, 
+		[295] = {
+			["da"] = 0, 
+			["dn"] = "Critical Strike Chance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute28", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 41934, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(6-8)% increased Critical Strike Chance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "critical_strike_chance_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["critical_strike_chance_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 11074, 
+				}, 
+			}, 
+		}, 
+		[296] = {
+			["da"] = 0, 
+			["dn"] = "Critical Strike Multiplier", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute29", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 22560, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(7-9)% to Critical Strike Multiplier", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_critical_strike_multiplier_+", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_critical_strike_multiplier_+"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 9, 
+					["min"] = 7, 
+					["statOrder"] = 11075, 
+				}, 
+			}, 
+		}, 
+		[297] = {
+			["da"] = 0, 
+			["dn"] = "Hinder Chance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute30", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 45308, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% chance to Hinder Enemies on Hit with Spells", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spells_chance_to_hinder_on_hit_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["spells_chance_to_hinder_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 10346, 
+				}, 
+			}, 
+		}, 
+		[298] = {
+			["da"] = 0, 
+			["dn"] = "Ignite Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute31", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 98220, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Ignited", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_ignite_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_ignite_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1872, 
+				}, 
+			}, 
+		}, 
+		[299] = {
+			["da"] = 0, 
+			["dn"] = "Freeze Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute32", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 7137, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Frozen", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_freeze_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_freeze_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1871, 
+				}, 
+			}, 
+		}, 
+		[300] = {
+			["da"] = 0, 
+			["dn"] = "Shock Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute33", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 13428, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Shocked", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_shock_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_shock_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1874, 
+				}, 
+			}, 
+		}, 
+		[301] = {
+			["da"] = 0, 
+			["dn"] = "Poison Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute34", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 67816, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Poisoned", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_poison_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_poison_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1875, 
+				}, 
+			}, 
+		}, 
+		[302] = {
+			["da"] = 0, 
+			["dn"] = "Bleed Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute35", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 62260, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid Bleeding", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_bleed_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_bleed_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 4255, 
+				}, 
+			}, 
+		}, 
+		[303] = {
+			["da"] = 0, 
+			["dn"] = "Stun Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode4.dds", 
+			["id"] = "abyss_hypnotic_small_attribute36", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 17537, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Stunned", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_stun_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_stun_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1877, 
+				}, 
+			}, 
+		}, 
+		[304] = {
+			["da"] = 0, 
+			["dn"] = "Life", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute1", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 95064, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(9-12) to maximum Life", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_life", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_maximum_life"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 1594, 
+				}, 
+			}, 
+		}, 
+		[305] = {
+			["da"] = 0, 
+			["dn"] = "Mana ", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute2", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 95448, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-11) to maximum Mana", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_mana", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_maximum_mana"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 8, 
+					["statOrder"] = 1605, 
+				}, 
+			}, 
+		}, 
+		[306] = {
+			["da"] = 0, 
+			["dn"] = "Energy Shield Regeneration", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute3", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 8122, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Regenerate (9-12) Energy Shield per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "energy_shield_regeneration_rate_per_second", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["energy_shield_regeneration_rate_per_second"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 6560, 
+				}, 
+			}, 
+		}, 
+		[307] = {
+			["da"] = 0, 
+			["dn"] = "Life Regeneration", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute4", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 43980, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Regenerate (4.5-6) Life per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_life_regeneration_rate_per_minute", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_life_regeneration_rate_per_minute"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4.5, 
+					["statOrder"] = 1599, 
+				}, 
+			}, 
+		}, 
+		[308] = {
+			["da"] = 0, 
+			["dn"] = "Mana Regeneration", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute5", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 46039, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Regenerate (0.6-1) Mana per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_mana_regeneration_rate_per_minute", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_mana_regeneration_rate_per_minute"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 0.6, 
+					["statOrder"] = 1608, 
+				}, 
+			}, 
+		}, 
+		[309] = {
+			["da"] = 0, 
+			["dn"] = "Armour", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute6", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 34853, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(36-60) to Armour", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_physical_damage_reduction_rating", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_physical_damage_reduction_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 60, 
+					["min"] = 36, 
+					["statOrder"] = 1564, 
+				}, 
+			}, 
+		}, 
+		[310] = {
+			["da"] = 0, 
+			["dn"] = "Evasion Rating", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute7", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 66640, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(36-60) to Evasion Rating", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_evasion_rating", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_evasion_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 60, 
+					["min"] = 36, 
+					["statOrder"] = 1569, 
+				}, 
+			}, 
+		}, 
+		[311] = {
+			["da"] = 0, 
+			["dn"] = "Energy Shield", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute8", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 94069, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(9-12) to maximum Energy Shield", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_energy_shield", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_maximum_energy_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 1583, 
+				}, 
+			}, 
+		}, 
+		[312] = {
+			["da"] = 0, 
+			["dn"] = "Mana Recoup", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute9", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 6640, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% of Damage taken Recouped as Mana", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_taken_goes_to_mana_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["damage_taken_goes_to_mana_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 2483, 
+				}, 
+			}, 
+		}, 
+		[313] = {
+			["da"] = 0, 
+			["dn"] = "Strength", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute10", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 93998, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-10) to Strength", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_strength", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_strength"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 1203, 
+				}, 
+			}, 
+		}, 
+		[314] = {
+			["da"] = 0, 
+			["dn"] = "Dexterity", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute11", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 57475, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-10) to Dexterity", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_dexterity", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_dexterity"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 1204, 
+				}, 
+			}, 
+		}, 
+		[315] = {
+			["da"] = 0, 
+			["dn"] = "Intelligence", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute12", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 40883, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-10) to Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_intelligence", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 1205, 
+				}, 
+			}, 
+		}, 
+		[316] = {
+			["da"] = 0, 
+			["dn"] = "Strength and Dexterity", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute13", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 18380, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8) to Strength and Dexterity", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_strength_and_dexterity", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_strength_and_dexterity"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1206, 
+				}, 
+			}, 
+		}, 
+		[317] = {
+			["da"] = 0, 
+			["dn"] = "Strength and Intelligence", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute14", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 47407, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8) to Strength and Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_strength_and_intelligence", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_strength_and_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1207, 
+				}, 
+			}, 
+		}, 
+		[318] = {
+			["da"] = 0, 
+			["dn"] = "Dexterity and Intelligence", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute15", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 81366, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8) to Dexterity and Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_dexterity_and_intelligence", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_dexterity_and_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1208, 
+				}, 
+			}, 
+		}, 
+		[319] = {
+			["da"] = 0, 
+			["dn"] = "Attributes", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute16", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 68237, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6) to all Attributes", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_all_attributes", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_all_attributes"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 1202, 
+				}, 
+			}, 
+		}, 
+		[320] = {
+			["da"] = 0, 
+			["dn"] = "Fire Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute17", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 20276, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8)% to Fire Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_fire_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_fire_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1651, 
+				}, 
+			}, 
+		}, 
+		[321] = {
+			["da"] = 0, 
+			["dn"] = "Cold Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute18", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 43388, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8)% to Cold Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cold_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_cold_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1657, 
+				}, 
+			}, 
+		}, 
+		[322] = {
+			["da"] = 0, 
+			["dn"] = "Lightning Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute19", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 35894, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8)% to Lightning Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_lightning_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_lightning_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1662, 
+				}, 
+			}, 
+		}, 
+		[323] = {
+			["da"] = 0, 
+			["dn"] = "Fire and Cold Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute20", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 34185, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Fire and Cold Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "fire_and_cold_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["fire_and_cold_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 2835, 
+				}, 
+			}, 
+		}, 
+		[324] = {
+			["da"] = 0, 
+			["dn"] = "Fire and Lightning Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute21", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 19799, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Fire and Lightning Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "fire_and_lightning_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["fire_and_lightning_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 2836, 
+				}, 
+			}, 
+		}, 
+		[325] = {
+			["da"] = 0, 
+			["dn"] = "Cold and Lightning Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute22", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 16330, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Cold and Lightning Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "cold_and_lightning_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["cold_and_lightning_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 2837, 
+				}, 
+			}, 
+		}, 
+		[326] = {
+			["da"] = 0, 
+			["dn"] = "Elemental Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute23", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 33633, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(3-5)% to all Elemental Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_resist_all_elements_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_resist_all_elements_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 3, 
+					["statOrder"] = 1645, 
+				}, 
+			}, 
+		}, 
+		[327] = {
+			["da"] = 0, 
+			["dn"] = "Chaos Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute24", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 35417, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Chaos Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_chaos_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_chaos_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 1667, 
+				}, 
+			}, 
+		}, 
+		[328] = {
+			["da"] = 0, 
+			["dn"] = "Cast Speed", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute25", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 94569, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% increased Cast Speed", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cast_speed_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_cast_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 1473, 
+				}, 
+			}, 
+		}, 
+		[329] = {
+			["da"] = 0, 
+			["dn"] = "Minion Blind Chance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute26", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 39288, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Minions have (2-3)% chance to Blind on Hit with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_attacks_chance_to_blind_on_hit_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["minion_attacks_chance_to_blind_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 9418, 
+				}, 
+			}, 
+		}, 
+		[330] = {
+			["da"] = 0, 
+			["dn"] = "Minion Taunt Chance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute27", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 45885, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Minions have (2-3)% chance to Taunt on Hit with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_attacks_chance_to_taunt_on_hit_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["minion_attacks_chance_to_taunt_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 3470, 
+				}, 
+			}, 
+		}, 
+		[331] = {
+			["da"] = 0, 
+			["dn"] = "Minion Hinder Chance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute28", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 95501, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Minions have (2-3)% chance to Hinder Enemies on Hit with Spells", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_spells_chance_to_hinder_on_hit_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["minion_spells_chance_to_hinder_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 9477, 
+				}, 
+			}, 
+		}, 
+		[332] = {
+			["da"] = 0, 
+			["dn"] = "Ignite Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute29", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 87649, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Ignited", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_ignite_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_ignite_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1872, 
+				}, 
+			}, 
+		}, 
+		[333] = {
+			["da"] = 0, 
+			["dn"] = "Freeze Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute30", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 70570, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Frozen", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_freeze_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_freeze_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1871, 
+				}, 
+			}, 
+		}, 
+		[334] = {
+			["da"] = 0, 
+			["dn"] = "Shock Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute31", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 17559, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Shocked", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_shock_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_shock_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1874, 
+				}, 
+			}, 
+		}, 
+		[335] = {
+			["da"] = 0, 
+			["dn"] = "Poison Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute32", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 99956, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Poisoned", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_poison_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_poison_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1875, 
+				}, 
+			}, 
+		}, 
+		[336] = {
+			["da"] = 0, 
+			["dn"] = "Bleed Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute33", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 52933, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid Bleeding", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_bleed_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_bleed_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 4255, 
+				}, 
+			}, 
+		}, 
+		[337] = {
+			["da"] = 0, 
+			["dn"] = "Stun Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute34", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 71887, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Stunned", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_stun_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_stun_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1877, 
+				}, 
+			}, 
+		}, 
+		[338] = {
+			["da"] = 0, 
+			["dn"] = "Minion Attack and Cast Speed", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLichNode1.dds", 
+			["id"] = "abyss_ghastly_small_attribute35", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 29046, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Minions have (2-3)% increased Attack Speed", 
+				[2] = "Minions have (2-3)% increased Cast Speed", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_attack_speed_+%", 
+				[2] = "minion_cast_speed_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["minion_attack_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 2944, 
+				}, 
+				["minion_cast_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 2945, 
+				}, 
+			}, 
+		}, 
+		[339] = {
+			["da"] = 0, 
+			["dn"] = "Life", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute1", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 15916, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(9-12) to maximum Life", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_life", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_maximum_life"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 1594, 
+				}, 
+			}, 
+		}, 
+		[340] = {
+			["da"] = 0, 
+			["dn"] = "Mana ", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute2", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 97164, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-11) to maximum Mana", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_mana", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_maximum_mana"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 11, 
+					["min"] = 8, 
+					["statOrder"] = 1605, 
+				}, 
+			}, 
+		}, 
+		[341] = {
+			["da"] = 0, 
+			["dn"] = "Energy Shield Regeneration", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute3", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 81535, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Regenerate (9-12) Energy Shield per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "energy_shield_regeneration_rate_per_second", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["energy_shield_regeneration_rate_per_second"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 6560, 
+				}, 
+			}, 
+		}, 
+		[342] = {
+			["da"] = 0, 
+			["dn"] = "Life Regeneration", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute4", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 60524, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Regenerate (4.5-6) Life per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_life_regeneration_rate_per_minute", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_life_regeneration_rate_per_minute"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4.5, 
+					["statOrder"] = 1599, 
+				}, 
+			}, 
+		}, 
+		[343] = {
+			["da"] = 0, 
+			["dn"] = "Mana Regeneration", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute5", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 75296, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Regenerate (0.6-1) Mana per second", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_mana_regeneration_rate_per_minute", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_mana_regeneration_rate_per_minute"] = {
+					["fmt"] = "g", 
+					["index"] = 1, 
+					["max"] = 1, 
+					["min"] = 0.6, 
+					["statOrder"] = 1608, 
+				}, 
+			}, 
+		}, 
+		[344] = {
+			["da"] = 0, 
+			["dn"] = "Armour", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute6", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 25942, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(36-60) to Armour", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_physical_damage_reduction_rating", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_physical_damage_reduction_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 60, 
+					["min"] = 36, 
+					["statOrder"] = 1564, 
+				}, 
+			}, 
+		}, 
+		[345] = {
+			["da"] = 0, 
+			["dn"] = "Evasion Rating", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute7", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 10040, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(36-60) to Evasion Rating", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_evasion_rating", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_evasion_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 60, 
+					["min"] = 36, 
+					["statOrder"] = 1569, 
+				}, 
+			}, 
+		}, 
+		[346] = {
+			["da"] = 0, 
+			["dn"] = "Energy Shield", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute8", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 30013, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(9-12) to maximum Energy Shield", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_maximum_energy_shield", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_maximum_energy_shield"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 12, 
+					["min"] = 9, 
+					["statOrder"] = 1583, 
+				}, 
+			}, 
+		}, 
+		[347] = {
+			["da"] = 0, 
+			["dn"] = "Mana Recoup", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute9", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 69758, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% of Damage taken Recouped as Mana", 
+			}, 
+			["sortedStats"] = {
+				[1] = "damage_taken_goes_to_mana_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["damage_taken_goes_to_mana_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 2483, 
+				}, 
+			}, 
+		}, 
+		[348] = {
+			["da"] = 0, 
+			["dn"] = "Strength", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute10", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 6256, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-10) to Strength", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_strength", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_strength"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 1203, 
+				}, 
+			}, 
+		}, 
+		[349] = {
+			["da"] = 0, 
+			["dn"] = "Dexterity", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute11", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 70619, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-10) to Dexterity", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_dexterity", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_dexterity"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 1204, 
+				}, 
+			}, 
+		}, 
+		[350] = {
+			["da"] = 0, 
+			["dn"] = "Intelligence", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute12", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 89997, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(8-10) to Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_intelligence", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 10, 
+					["min"] = 8, 
+					["statOrder"] = 1205, 
+				}, 
+			}, 
+		}, 
+		[351] = {
+			["da"] = 0, 
+			["dn"] = "Strength and Dexterity", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute13", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 50380, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8) to Strength and Dexterity", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_strength_and_dexterity", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_strength_and_dexterity"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1206, 
+				}, 
+			}, 
+		}, 
+		[352] = {
+			["da"] = 0, 
+			["dn"] = "Strength and Intelligence", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute14", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 2326, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8) to Strength and Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_strength_and_intelligence", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_strength_and_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1207, 
+				}, 
+			}, 
+		}, 
+		[353] = {
+			["da"] = 0, 
+			["dn"] = "Dexterity and Intelligence", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute15", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 47657, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8) to Dexterity and Intelligence", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_dexterity_and_intelligence", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_dexterity_and_intelligence"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1208, 
+				}, 
+			}, 
+		}, 
+		[354] = {
+			["da"] = 0, 
+			["dn"] = "Attributes", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute16", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 41430, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6) to all Attributes", 
+			}, 
+			["sortedStats"] = {
+				[1] = "additional_all_attributes", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["additional_all_attributes"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 1202, 
+				}, 
+			}, 
+		}, 
+		[355] = {
+			["da"] = 0, 
+			["dn"] = "Fire Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute17", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 12334, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8)% to Fire Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_fire_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_fire_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1651, 
+				}, 
+			}, 
+		}, 
+		[356] = {
+			["da"] = 0, 
+			["dn"] = "Cold Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute18", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 66231, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8)% to Cold Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cold_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_cold_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1657, 
+				}, 
+			}, 
+		}, 
+		[357] = {
+			["da"] = 0, 
+			["dn"] = "Lightning Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute19", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 99316, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(6-8)% to Lightning Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_lightning_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_lightning_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 8, 
+					["min"] = 6, 
+					["statOrder"] = 1662, 
+				}, 
+			}, 
+		}, 
+		[358] = {
+			["da"] = 0, 
+			["dn"] = "Fire and Cold Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute20", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 86754, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Fire and Cold Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "fire_and_cold_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["fire_and_cold_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 2835, 
+				}, 
+			}, 
+		}, 
+		[359] = {
+			["da"] = 0, 
+			["dn"] = "Fire and Lightning Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute21", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 62680, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Fire and Lightning Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "fire_and_lightning_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["fire_and_lightning_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 2836, 
+				}, 
+			}, 
+		}, 
+		[360] = {
+			["da"] = 0, 
+			["dn"] = "Cold and Lightning Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute22", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 52197, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Cold and Lightning Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "cold_and_lightning_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["cold_and_lightning_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 2837, 
+				}, 
+			}, 
+		}, 
+		[361] = {
+			["da"] = 0, 
+			["dn"] = "Elemental Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute23", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 56626, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(3-5)% to all Elemental Resistances", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_resist_all_elements_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_resist_all_elements_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 5, 
+					["min"] = 3, 
+					["statOrder"] = 1645, 
+				}, 
+			}, 
+		}, 
+		[362] = {
+			["da"] = 0, 
+			["dn"] = "Chaos Resistance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute24", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 76804, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(4-6)% to Chaos Resistance", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_chaos_damage_resistance_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_chaos_damage_resistance_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 6, 
+					["min"] = 4, 
+					["statOrder"] = 1667, 
+				}, 
+			}, 
+		}, 
+		[363] = {
+			["da"] = 0, 
+			["dn"] = "Cast Speed", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute25", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 68568, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% increased Cast Speed", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_cast_speed_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_cast_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 1473, 
+				}, 
+			}, 
+		}, 
+		[364] = {
+			["da"] = 0, 
+			["dn"] = "Minion Blind Chance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute26", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 71976, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Minions have (2-3)% chance to Blind on Hit with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_attacks_chance_to_blind_on_hit_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["minion_attacks_chance_to_blind_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 9418, 
+				}, 
+			}, 
+		}, 
+		[365] = {
+			["da"] = 0, 
+			["dn"] = "Minion Taunt Chance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute27", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 47786, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Minions have (2-3)% chance to Taunt on Hit with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_attacks_chance_to_taunt_on_hit_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["minion_attacks_chance_to_taunt_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 3470, 
+				}, 
+			}, 
+		}, 
+		[366] = {
+			["da"] = 0, 
+			["dn"] = "Minion Hinder Chance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute28", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 13733, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Minions have (2-3)% chance to Hinder Enemies on Hit with Spells", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_spells_chance_to_hinder_on_hit_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["minion_spells_chance_to_hinder_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 9477, 
+				}, 
+			}, 
+		}, 
+		[367] = {
+			["da"] = 0, 
+			["dn"] = "Ignite Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute29", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 43355, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Ignited", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_ignite_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_ignite_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1872, 
+				}, 
+			}, 
+		}, 
+		[368] = {
+			["da"] = 0, 
+			["dn"] = "Freeze Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute30", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 22479, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Frozen", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_freeze_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_freeze_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1871, 
+				}, 
+			}, 
+		}, 
+		[369] = {
+			["da"] = 0, 
+			["dn"] = "Shock Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute31", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 87047, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Shocked", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_shock_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_shock_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1874, 
+				}, 
+			}, 
+		}, 
+		[370] = {
+			["da"] = 0, 
+			["dn"] = "Poison Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute32", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 84753, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Poisoned", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_poison_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_poison_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1875, 
+				}, 
+			}, 
+		}, 
+		[371] = {
+			["da"] = 0, 
+			["dn"] = "Bleed Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute33", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 44440, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid Bleeding", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_bleed_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_bleed_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 4255, 
+				}, 
+			}, 
+		}, 
+		[372] = {
+			["da"] = 0, 
+			["dn"] = "Stun Avoidance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute34", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 63801, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(15-20)% chance to Avoid being Stunned", 
+			}, 
+			["sortedStats"] = {
+				[1] = "base_avoid_stun_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["base_avoid_stun_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 15, 
+					["statOrder"] = 1877, 
+				}, 
+			}, 
+		}, 
+		[373] = {
+			["da"] = 0, 
+			["dn"] = "Minion Attack and Cast Speed", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute35", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 83058, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "Minions have (2-3)% increased Attack Speed", 
+				[2] = "Minions have (2-3)% increased Cast Speed", 
+			}, 
+			["sortedStats"] = {
+				[1] = "minion_attack_speed_+%", 
+				[2] = "minion_cast_speed_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["minion_attack_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 2944, 
+				}, 
+				["minion_cast_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 2, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 2945, 
+				}, 
+			}, 
+		}, 
+		[374] = {
+			["da"] = 0, 
+			["dn"] = "Hinder Chance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute36", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 20011, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% chance to Hinder Enemies on Hit with Spells", 
+			}, 
+			["sortedStats"] = {
+				[1] = "spells_chance_to_hinder_on_hit_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["spells_chance_to_hinder_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 10346, 
+				}, 
+			}, 
+		}, 
+		[375] = {
+			["da"] = 0, 
+			["dn"] = "Cold Ailment Effect", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute37", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 22356, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(10-20)% increased Effect of Cold Ailments", 
+			}, 
+			["sortedStats"] = {
+				[1] = "cold_ailment_effect_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["cold_ailment_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 10, 
+					["statOrder"] = 5885, 
+				}, 
+			}, 
+		}, 
+		[376] = {
+			["da"] = 0, 
+			["dn"] = "Lightning Ailment Effect", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute38", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 82022, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(10-20)% increased Effect of Lightning Ailments", 
+			}, 
+			["sortedStats"] = {
+				[1] = "lightning_ailment_effect_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["lightning_ailment_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 20, 
+					["min"] = 10, 
+					["statOrder"] = 7546, 
+				}, 
+			}, 
+		}, 
+		[377] = {
+			["da"] = 0, 
+			["dn"] = "Blind Chance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute39", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 29871, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% chance to Blind Enemies on Hit with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attacks_chance_to_blind_on_hit_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["attacks_chance_to_blind_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 4970, 
+				}, 
+			}, 
+		}, 
+		[378] = {
+			["da"] = 0, 
+			["dn"] = "Accuracy", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute40", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 66167, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "+(31-60) to Accuracy Rating", 
+			}, 
+			["sortedStats"] = {
+				[1] = "accuracy_rating", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["accuracy_rating"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 60, 
+					["min"] = 31, 
+					["statOrder"] = 1460, 
+				}, 
+			}, 
+		}, 
+		[379] = {
+			["da"] = 0, 
+			["dn"] = "Attack Speed", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute41", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 99369, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% increased Attack Speed", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attack_speed_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["attack_speed_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 1437, 
+				}, 
+			}, 
+		}, 
+		[380] = {
+			["da"] = 0, 
+			["dn"] = "Impale Effect", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute42", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 50523, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-4)% increased Impale Effect", 
+			}, 
+			["sortedStats"] = {
+				[1] = "impale_debuff_effect_+%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["impale_debuff_effect_+%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 4, 
+					["min"] = 2, 
+					["statOrder"] = 7354, 
+				}, 
+			}, 
+		}, 
+		[381] = {
+			["da"] = 0, 
+			["dn"] = "Taunt Chance", 
+			["g"] = 1000000000, 
+			["ia"] = 0, 
+			["icon"] = "Art/2DArt/SkillIcons/passives/AbyssRevampGazeoftheLich.dds", 
+			["id"] = "abyss_special_small_attribute43", 
+			["in"] = {
+			}, 
+			["isJewelSocket"] = false, 
+			["isMultipleChoice"] = false, 
+			["isMultipleChoiceOption"] = false, 
+			["ks"] = false, 
+			["m"] = false, 
+			["not"] = false, 
+			["o"] = 3, 
+			["oidx"] = 98702, 
+			["out"] = {
+			}, 
+			["passivePointsGranted"] = 0, 
+			["sa"] = 0, 
+			["sd"] = {
+				[1] = "(2-3)% chance to Taunt Enemies on Hit with Attacks", 
+			}, 
+			["sortedStats"] = {
+				[1] = "attacks_chance_to_taunt_on_hit_%", 
+			}, 
+			["spc"] = {
+			}, 
+			["stats"] = {
+				["attacks_chance_to_taunt_on_hit_%"] = {
+					["fmt"] = "d", 
+					["index"] = 1, 
+					["max"] = 3, 
+					["min"] = 2, 
+					["statOrder"] = 4971, 
 				}, 
 			}, 
 		}, 

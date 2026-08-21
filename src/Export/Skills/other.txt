@@ -3,8 +3,7 @@
 -- Other active skills
 -- Skill data (c) Grinding Gear Games
 --
-local skills, mod, flag, skill = ...
-
+return function(skills, mod, flag, skill)
 #skill RepeatingShockwave
 #flags spell area
 	fromItem = true,
@@ -143,6 +142,22 @@ local skills, mod, flag, skill = ...
 #baseMod skill("stackCount", 1, { type = "Multiplier", var = "SpiderWebApplyStack", limitVar = "SpiderWebApplyStackMax" })
 #mods
 
+#skill BarnacleSnap
+#flags attack area shieldAttack
+	fromItem = true,
+	statMap = {
+		["barnacle_snap_base_activate_rate_ms"] = {
+			skill("hitTimeOverride", nil),
+			div = 1000,
+		},
+	},
+#mods
+
+#skill SolartwineBlindingNova
+#flags spell area
+	fromItem = true,
+#mods
+
 #skill SupportBloodMagicUniquePrismGuardian Blood Magic
 	fromItem = true,
 #mods
@@ -228,6 +243,30 @@ local skills, mod, flag, skill = ...
 	fromItem = true,
 #mods
 
+#skill BitingBraidNova
+#flags spell area
+	fromItem = true,
+#mods
+
+#skill CeaselessFleshUnique
+#flags spell minion duration
+	fromItem = true,
+	minionList = {
+		"ShamblingUndead",
+	},
+#mods
+
+#skill ResentmentUniqueSkill
+#flags spell duration
+	fromItem = true,
+	statMap = {
+		["base_fire_damage_to_deal_per_minute"] = {
+			skill("FireDot", nil, { type = "Multiplier", var = "CinderflameStacks", limit = 10 }),
+			div = 60,
+		},
+	},
+#mods
+
 #skill ColdAegis
 #flags spell
 	fromItem = true,
@@ -272,6 +311,21 @@ local skills, mod, flag, skill = ...
 
 #skill SupportUniqueCosprisMaliceColdSpellsCastOnMeleeCriticalStrike Cospri's Malice
 	fromItem = true,
+#mods
+
+#skill SupportCrabTotem Crab Totem
+	fromItem = true,
+	addFlags = {
+		totem = true,
+	},
+	statMap = {
+		["support_crab_totem_damage_+%_final"] = {
+			mod("Damage", "MORE", nil),
+		},
+		["support_crab_totem_cast_speed_+%_final"] = {
+			mod("Speed", "MORE", nil, ModFlag.Cast),
+		},
+	},
 #mods
 
 #skill TriggeredSummonLesserShrine
@@ -361,6 +415,7 @@ local skills, mod, flag, skill = ...
 
 #skill SupportDivineBlessing
 	fromItem = true,
+	hideFromGemList = true,
 	statMap = {
 		["support_aura_duration_base_buff_duration"] = {
 			skill("auraDuration", nil),
@@ -387,6 +442,7 @@ local skills, mod, flag, skill = ...
 
 #skill SupportEarthbreaker
 	fromItem = true,
+	hideFromGemList = true,
 	addFlags = {
 		totem = true,
 	},
@@ -403,8 +459,10 @@ local skills, mod, flag, skill = ...
 	},
 #mods
 
+#skill SupportEclipse
+#mods
+
 #skill SupportElementalPenetration Elemental Penetration
-	fromItem = true,
 #mods
 
 #skill ElementalWarding
@@ -452,6 +510,11 @@ local skills, mod, flag, skill = ...
 #baseMod skill("radius", 40)
 #mods
 
+#skill BloodShrineUniqueTriggeredExplodingToad
+#flags hit area
+	fromItem = true,
+#mods
+
 #skill FireAegis
 #flags spell
 	fromItem = true,
@@ -469,13 +532,14 @@ local skills, mod, flag, skill = ...
 #mods
 
 #skill FieryImpactHeistMaceImplicit
-#flags attack area melee
+#flags attack area melee forceSourceWeapon
 	fromItem = true,
 #mods
 
 #skill AtziriUniqueStaffFlameblast
 #flags spell area
 	fromItem = true,
+#baseMod skill("radius", 25)
 #baseMod skill("triggerSource", "Queen's Demand")
 #mods
 
@@ -509,17 +573,32 @@ local skills, mod, flag, skill = ...
 	fromItem = true,
 #mods
 
-#skill SupportGreaterSpellEcho Greater Spell Echo
+#skill HeraldOfTheBreach
+#flags cast duration hit area
 	fromItem = true,
+	preDamageFunc = function(activeSkill, output)
+		activeSkill.skillData.hitTimeOverride = activeSkill.skillData.repeatFrequency / (1 + activeSkill.skillModList:Sum("INC", activeSkill.skillCfg, "PulseFrequencyPerPressure") / 100)
+	end,
 	statMap = {
-		["support_greater_spell_echo_spell_damage_+%_final_per_repeat"] = {
-			mod("RepeatPerRepeatDamage", "MORE", nil, 0, 0, { type = "Condition", var = "HaveBladeVortex", neg = true }, { type = "Condition", var = "CastOnFrostbolt", neg = true }, { type = "Condition", varList = {"averageRepeat", "alwaysFinalRepeat"} }),
+		["herald_of_the_breach_add_stack_on_inflicting_ailment"] = {
+			mod("OtherworldlyPressure", "BASE", 1, 0, 0, { type = "Condition", var = "InflictedAilmentRecently" }),
 		},
-		["support_greater_spell_echo_area_of_effect_+%_per_repeat"] = {
-			mod("RepeatPerRepeatAreaOfEffect", "INC", nil, 0, 0, { type = "Condition", var = "CastOnFrostbolt", neg = true }),
+		["maximum_otherwordly_pressure_stacks"] = {
+			mod("Multiplier:OtherworldlyPressureMax", "BASE", nil),
+		},
+		["herald_of_the_breach_pulse_frequency_+%_per_otherworldly_pressure"] = {
+			mod("PulseFrequencyPerPressure", "INC", nil, 0, 0, { type = "Multiplier", var = "OtherworldlyPressure", limitVar = "OtherworldlyPressureMax" }),
+		},
+		["base_herald_of_the_breach_pulse_delay_ms"] = {
+			skill("repeatFrequency", nil),
+			div = 1000,
+		},
+		["skill_buff_grants_damage_+%_final_per_herald_skill_affecting_you"] = {
+			mod("Damage", "MORE", nil, 0, 0, { type = "Multiplier", var = "Herald" }, { type = "GlobalEffect", effectType = "Buff" }),
+		},
+		["base_skill_show_average_damage_instead_of_dps"] = {
 		},
 	},
-#baseMod flag("Condition:HaveGreaterSpellEcho")
 #mods
 
 #skill Icestorm
@@ -562,6 +641,10 @@ local skills, mod, flag, skill = ...
 #mods
 
 #skill SupportCastOnManaSpent Kitava's Thirst
+	fromItem = true,
+#mods
+
+#skill SupportCastOnLifeSpent Foulborn Kitava's Thirst
 	fromItem = true,
 #mods
 
@@ -609,6 +692,14 @@ local skills, mod, flag, skill = ...
 #baseMod skill("minionLevel", 65)
 #mods
 
+#skill MistyReflection
+#flags spell duration
+	fromTree = true,
+#baseMod mod("DamageTaken", "INC", 30, 0, 0, { type = "Condition", var = "MistyReflection"}, { type = "GlobalEffect", effectType = "Debuff" })
+#baseMod mod("Damage", "MORE", -30, 0, 0, { type = "Condition", var = "MistyReflection"}, { type = "GlobalEffect", effectType = "Debuff" })
+#baseMod skill("debuff", true)
+#mods
+
 #skill SupportUniqueMjolnerLightningSpellsCastOnHit Mjolner
 	fromItem = true,
 #mods
@@ -621,8 +712,17 @@ local skills, mod, flag, skill = ...
 
 #skill PenanceMark
 #flags spell curse duration mark
-	fromTree = true,
+	fromItem = true,
+	minionList = {
+		"PenanceMarkPhantasm",
+	},
+	statMap = {
+		["penance_mark_summon_phantasms_when_hit"] = {
+			mod("SummonPhantasmWhenHit", "BASE", nil, 0, 0, { type = "GlobalEffect", effectType = "Curse" }),
+		},
+	},
 #baseMod skill("debuff", true)
+#baseMod skill("minionLevelIsEnemyLevel", true)
 #mods
 
 #skill PhysicalAegis
@@ -637,6 +737,77 @@ local skills, mod, flag, skill = ...
 
 #skill SupportTriggerSpellOnAttack Poet's Pen
 	fromItem = true,
+#mods
+
+#skill PactOfBeidat
+#flags spell pact
+	statMap = {
+		["skill_empowers_next_x_spells_cast"] = {
+			mod("BeidatEmpoweredSpells", "BASE", nil),
+		},
+		["pact_skill_additional_beam_only_chains"] = {
+			mod("BeidatAdditionalBeamChains", "BASE", nil),
+		},
+		["pact_skill_grant_x_additional_projectiles_fired_in_nova"] = {
+			mod("BeidatAdditionalProjectiles", "BASE", nil),
+		},
+		["pact_skill_grant_x_cascades_to_do_in_spiral"] = {
+			mod("BeidatAdditionalCascades", "BASE", nil),
+		},
+		["pact_skill_damage_+%_final_with_hits_and_ailments_to_grant"] = {
+			mod("BeidatPactDamage", "LIST", { mod = mod("Damage", "MORE", nil, ModFlag.Spell, bit.bor(KeywordFlag.Hit, KeywordFlag.Ailment)) }),
+		},
+	},
+#mods
+
+#skill PactOfGhorr
+#flags spell pact duration
+	statMap = {
+		["skill_empowers_next_x_spells_cast"] = {
+			mod("GhorrEmpoweredSpells", "BASE", nil),
+		},
+		["pact_skill_grant_damage_over_time_+%_final_to_spells"] = {
+			mod("GhorrPactDamage", "LIST", { mod = mod("Damage", "MORE", nil, ModFlag.Dot) }),
+		},
+	},
+#mods
+
+#skill TriggeredBloodrend
+#flags spell pact projectile
+#mods
+
+#skill PactOfKtash
+#flags spell pact
+	statMap = {
+		["skill_empowers_next_x_spells_cast"] = {
+			mod("KtashEmpoweredSpells", "BASE", nil),
+		},
+		["pact_skill_grant_damage_+%_final_to_exerted_skills"] = {
+			mod("KtashPactDamage", "LIST", { mod = mod("Damage", "MORE", nil) }),
+		},
+		["active_skill_osm_vaal_skill_soul_gain_prevention_+%_final_to_grant"] = {
+			mod("KtashPactSoulGainPrevention", "BASE", nil),
+		},
+		["active_skill_osm_vaal_skill_soul_refund_chance_%_to_grant"] = {
+			mod("KtashPactSoulRefundChance", "BASE", nil),
+		},
+	},
+#mods
+
+#skill PactOfLycia
+#flags spell pact
+	statMap = {
+		["skill_empowers_next_x_spells_cast"] = {
+			mod("LyciaEmpoweredSpells", "BASE", nil),
+		},
+		["pact_skill_grant_damage_+%_final_to_exerted_skills"] = {
+			mod("LyciaPactDamage", "LIST", { mod = mod("Damage", "MORE", nil) }),
+		},
+	},
+#mods
+
+#skill TriggeredHeavensScourge
+#flags spell pact area
 #mods
 
 #skill Portal
@@ -805,7 +976,17 @@ local skills, mod, flag, skill = ...
 #skill AtziriUniqueStaffStormCall
 #flags spell area
 	fromItem = true,
+#baseMod skill("radius", 20)
 #baseMod skill("triggerSource", "Queen's Demand")
+#mods
+
+#skill SummonAbyssalConstructs
+#flags minion
+	fromTree = true,
+	minionList = {
+		"AbyssCurseBot",
+		"AbyssDebuffBot"
+	},
 #mods
 
 #skill SummonArbalists
@@ -967,8 +1148,11 @@ local skills, mod, flag, skill = ...
 		"SummonedPhantasm",
 	},
 	statMap = {
-		["base_number_of_support_ghosts_allowed"] = {
-			mod("ActivePhantasmLimit", "BASE", nil),
+		["phantasm_minimum_added_physical_damage_to_grant"] = {
+			mod("PhysicalMin", "BASE", nil, ModFlag.Spell, 0, { type = "PerStat", stat = "ActivePhantasmLimit" }, { type = "GlobalEffect", effectType = "Buff", effectName = "Phantasmal Might", effectCond = "PhantasmalMight", allowTotemBuff = true })
+		},
+		["phantasm_maximum_added_physical_damage_to_grant"] = {
+			mod("PhysicalMax", "BASE", nil, ModFlag.Spell, 0, { type = "PerStat", stat = "ActivePhantasmLimit" }, { type = "GlobalEffect", effectType = "Buff", effectName = "Phantasmal Might", effectCond = "PhantasmalMight", allowTotemBuff = true  })
 		},
 	},
 #mods
@@ -987,6 +1171,28 @@ local skills, mod, flag, skill = ...
 		},
 		["radiant_sentinel_minion_burning_effect_radius"] = {
 			mod("MinionModifier", "LIST", { mod = mod("Multiplier:GuardianSentinelFireAuraRadius", "BASE", nil) }),
+		},
+	},
+#mods
+
+#skill SummonSpectralTiger
+#flags spell minion duration
+	fromTree = true,
+	minionList = {
+		"SummonedSpectralTiger",
+	},
+	statMap = {
+		["spectral_tiger_grants_critical_strike_chance_+%"] = {
+			mod("CritChance", "INC", nil, 0, 0, { type = "Multiplier", var = "SpectralTigerCount" }, { type = "GlobalEffect", effectType = "Buff", effectName = "Spectral Tiger" }),
+		},
+		["spectral_tiger_grants_attack_and_cast_speed_+%"] = {
+			mod("Speed", "INC", nil, 0, 0, { type = "Multiplier", var = "SpectralTigerCount" }, { type = "GlobalEffect", effectType = "Buff", effectName = "Spectral Tiger" }),
+		},
+		["modifiers_to_claw_critical_strike_chance_apply_minion_critical_strike_chance"] = {
+			flag("ClawCritChanceAppliesToMinions"),
+		},
+		["modifiers_to_claw_critical_strike_multiplier_apply_minion_critical_strike_multiplier"] = {
+			flag("ClawCritMultiplierAppliesToMinions"),
 		},
 	},
 #mods
@@ -1073,12 +1279,35 @@ local skills, mod, flag, skill = ...
 	fromItem = true,
 #mods
 
-#skill SupportTriggerElementalSpellOnBlock
+#skill SupportTriggerElementalSpellOnBlock Svalinn Cast on Block
+	fromItem = true,
+#mods
+
+#skill SupportUniqueVirulenceSpellsCastOnBlock Festering Resentment Cast on Block
+	fromItem = true,
+#mods
+
+#skill SupportTriggerSpellOnBowAttackFreezeHit Wing of the Wyvern
+	fromItem = true,
+#mods
+
+#skill SupportCurseOnTrapTriggered Hex on Trap
 	fromItem = true,
 #mods
 
 #skill SupportTriggerSpellOnKill Squirming Terror
 	fromItem = true,
+#mods
+
+#skill AnimosityUniqueSkill
+#flags spell duration
+	fromItem = true,
+	statMap = {
+		["base_physical_damage_to_deal_per_minute"] = {
+			skill("PhysicalDot", nil, { type = "Multiplier", var = "WeepingBlackStacks", limit = 5 }),
+			div = 60,
+		},
+	},
 #mods
 
 #skill Twister
@@ -1114,6 +1343,42 @@ local skills, mod, flag, skill = ...
 #skill VoidShot
 #flags attack projectile area
 	fromItem = true,
+#mods
+
+#skill WardShatter
+#flags spell
+	fromTree = true,
+	statMap = {
+		["from_code_active_skill_ailment_damage_+%_final"] = {
+			mod("Damage", "MORE", nil, ModFlag.Ailment),
+		},
+		["active_skill_damage_+%_final_if_ward_has_not_broken_in_the_past_2_seconds"] = {
+			mod("Damage", "MORE", nil, 0, 0, { type = "Condition", var = "WardBrokenPast2Seconds", neg = true }),
+		},
+	},
+#baseMod skill("showAverage", true)
+#mods
+
+#skill BreachHandTrap
+#flags spell trap area duration
+	fromItem = true,
+	statMap = {
+		["active_skill_hit_damage_+%_final_per_curse_on_target"] = {
+			mod("Damage", "MORE", nil, ModFlag.Hit, 0, { type = "Multiplier", var = "CurseOnEnemy" }),
+		},
+		["gain_%_of_phys_as_extra_lightning_per_blue_socket_on_gloves"] = {
+			mod("PhysicalDamageGainAsLightning", "BASE", nil, 0, 0, { type = "Multiplier", var = "BlueSocketInGloves" }),
+		},
+		["gain_%_of_phys_as_extra_cold_per_green_socket_on_gloves"] = {
+			mod("PhysicalDamageGainAsCold", "BASE", nil, 0, 0, { type = "Multiplier", var = "GreenSocketInGloves" }),
+		},
+		["gain_%_of_phys_as_extra_fire_per_red_socket_on_gloves"] = {
+			mod("PhysicalDamageGainAsFire", "BASE", nil, 0, 0, { type = "Multiplier", var = "RedSocketInGloves" }),
+		},
+		["gain_%_of_phys_as_extra_chaos_per_white_socket_on_gloves"] = {
+			mod("PhysicalDamageGainAsChaos", "BASE", nil, 0, 0, { type = "Multiplier", var = "WhiteSocketInGloves" }),
+		},
+	},
 #mods
 
 #skill TriggerSummonedAncestorAhuana
@@ -1297,6 +1562,11 @@ local skills, mod, flag, skill = ...
 	},
 #mods
 
+#skill GhostCannons Ghostly Artillery
+#flags attack projectile area forceSourceWeapon
+	fromItem = true,
+#mods
+
 #skill SupportUniqueCastCurseOnCurse Vixen's Entrapment
 #flags spell curse
 	fromItem = true,
@@ -1399,3 +1669,5 @@ skills["EnemyExplode"] = {
 		[1] = { damageEffectiveness = 1, baseMultiplier = 1, levelRequirement = 1, }
 	}
 }
+
+end

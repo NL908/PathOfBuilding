@@ -11,19 +11,19 @@ return {
 					[1] = { line = "You cannot be Stunned if you've been Stunned or Blocked a Stunning Hit in the past 2 seconds", value = { 1 }, },
 				},
 			},
-			[2] = { name = "Puruna, the Challenger",
+			[2] = { name = "Nassar, Lion of the Seas",
 				mods = {
 					-- base_stun_recovery_+%
 					[1] = { line = "30% increased Stun and Block Recovery", value = { 30 }, },
 				},
 			},
-			[3] = { name = "Merveil, the Returned",
+			[3] = { name = "Captain Tanner Lightfoot",
 				mods = {
 					-- base_avoid_freeze_%
 					[1] = { line = "100% chance to Avoid being Frozen", value = { 100 }, },
 				},
 			},
-			[4] = { name = "Glace",
+			[4] = { name = "Shock and Horror",
 				mods = {
 					-- chill_effectiveness_on_self_+%
 					[1] = { line = "50% reduced Effect of Chill on you", value = { -50 }, },
@@ -46,13 +46,13 @@ return {
 					[1] = { line = "20% increased Recovery rate of Life and Energy Shield if you've stopped taking Damage Over Time Recently", value = { 20 }, },
 				},
 			},
-			[3] = { name = "Enticer of Rot",
+			[3] = { name = "Armala, the Widow",
 				mods = {
 					-- debuff_time_passed_+%
 					[1] = { line = "Debuffs on you expire 20% faster", value = { 20 }, },
 				},
 			},
-			[4] = { name = "Hybrid Widow",
+			[4] = { name = "Drought-Maddened Rhoa",
 				mods = {
 					-- additional_chaos_resistance_against_damage_over_time_%
 					[1] = { line = "+40% Chaos Resistance against Damage Over Time", value = { 40 }, },
@@ -71,7 +71,7 @@ return {
 					[2] = { line = "20% chance to take 50% less Area Damage from Hits", value = { 20 }, },
 				},
 			},
-			[2] = { name = "Fire and Fury",
+			[2] = { name = "Oak the Mighty",
 				mods = {
 					-- elemental_damage_taken_+%_if_not_hit_recently
 					[1] = { line = "8% reduced Elemental Damage taken if you haven't been Hit Recently", value = { -8 }, },
@@ -83,7 +83,7 @@ return {
 					[1] = { line = "Take no Extra Damage from Critical Strikes if you have taken a Critical Strike Recently", value = { 1 }, },
 				},
 			},
-			[4] = { name = "Jorus, Sky's Edge",
+			[4] = { name = "Forest of Flames",
 				mods = {
 					-- avoid_ailments_%_from_crit
 					[1] = { line = "50% chance to avoid Ailments from Critical Strikes", value = { 50 }, },
@@ -102,19 +102,19 @@ return {
 					[2] = { line = "1% increased Movement Speed for each nearby Enemy, up to 8%", value = { 1 }, },
 				},
 			},
-			[2] = { name = "Sebbert, Crescent's Point",
+			[2] = { name = "Captain Clayborne, The Accursed",
 				mods = {
 					-- base_avoid_projectiles_%_chance
 					[1] = { line = "10% chance to avoid Projectiles", value = { 10 }, },
 				},
 			},
-			[3] = { name = "The Winged Death",
+			[3] = { name = "Fragment of Winter",
 				mods = {
 					-- elemental_damage_taken_+%_if_been_hit_recently
 					[1] = { line = "6% reduced Elemental Damage taken if you have been Hit Recently", value = { -6 }, },
 				},
 			},
-			[4] = { name = "Ormud, Fiend of the Flood",
+			[4] = { name = "Glace",
 				mods = {
 					-- avoid_chained_projectile_%_chance
 					[1] = { line = "Avoid Projectiles that have Chained", value = { 100 }, },
@@ -163,13 +163,13 @@ return {
 		souls = {
 			[1] = { name = "Soul of Yugul",
 				mods = {
-					-- reflect_damage_taken_and_minion_reflect_damage_taken_+%
-					[1] = { line = "You and your Minions take 50% reduced Reflected Damage", value = { -50 }, },
+					-- %_of_your_and_your_minions_damage_cannot_be_reflected
+					[1] = { line = "You and your Minions prevent +50% of Reflected Damage", value = { 50 }, },
 					-- reflect_hexes_chance_%
 					[2] = { line = "50% chance to Reflect Hexes", value = { 50 }, },
 				},
 			},
-			[2] = { name = "Oriath's Vigil",
+			[2] = { name = "Varhesh, Shimmering Aberration",
 				mods = {
 					-- curse_effect_on_self_+%
 					[1] = { line = "30% reduced Effect of Curses on you", value = { -30 }, },
@@ -207,7 +207,7 @@ return {
 					[1] = { line = "3% additional Physical Damage Reduction per second you've been stationary, up to a maximum of 9%", value = { 3 }, },
 				},
 			},
-			[2] = { name = "Sumter the Twisted",
+			[2] = { name = "Tahsin, Warmaker",
 				mods = {
 					-- life_regeneration_rate_per_minute_%_while_stationary
 					[1] = { line = "Regenerate 2% of Life per second while stationary", value = { 120 }, },
@@ -226,7 +226,7 @@ return {
 					[2] = { line = "Moving while Bleeding doesn't cause you to take extra Damage", value = { 1 }, },
 				},
 			},
-			[2] = { name = "Leif, the Swift-Handed",
+			[2] = { name = "Drek, Apex Hunter",
 				mods = {
 					-- cannot_gain_corrupted_blood_while_you_have_at_least_5_stacks
 					[1] = { line = "Corrupted Blood cannot be inflicted on you if you have at least 5 Corrupted Blood Debuffs on you", value = { 1 }, },
@@ -243,7 +243,7 @@ return {
 					[1] = { line = "60% reduced Effect of Shock on you", value = { -60 }, },
 				},
 			},
-			[2] = { name = "Preethi, Eye-Pecker",
+			[2] = { name = "The Blacksmith",
 				mods = {
 					-- cannot_be_blinded
 					[1] = { line = "Cannot be Blinded", value = { 1 }, },

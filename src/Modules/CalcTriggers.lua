@@ -4,8 +4,9 @@
 -- Performs trigger rate calculations
 --
 
-local calcs = ...
-local pairs = pairs
+---@class Calcs
+local calcs = require("Modules.CalcBase")
+
 local ipairs = ipairs
 local t_insert = table.insert
 local t_remove = table.remove
@@ -219,18 +220,19 @@ end
 local function CWCHandler(env)
 	if not env.player.mainSkill.skillFlags.minion and not env.player.mainSkill.skillFlags.disable then
 		local triggeredSkills = {}
-		local trigRate = 0
 		local source = nil
 		local triggerName = "Cast While Channeling"
 		local output = env.player.output
 		local breakdown = env.player.breakdown
 		for _, skill in ipairs(env.player.activeSkillList) do
-			local match1 = env.player.mainSkill.activeEffect.grantedEffect.fromItem and skill.socketGroup and skill.socketGroup.slot == env.player.mainSkill.socketGroup.slot
-			local match2 = (not env.player.mainSkill.activeEffect.grantedEffect.fromItem) and skill.socketGroup == env.player.mainSkill.socketGroup
-			if env.player.mainSkill.triggeredBy.gemData and calcLib.canGrantedEffectSupportActiveSkill(env.player.mainSkill.triggeredBy.gemData.grantedEffect, skill) and skill ~= env.player.mainSkill and (match1 or match2) and not isTriggered(skill) then
-				source, trigRate = findTriggerSkill(env, skill, source, trigRate)
+			local slotMatch = slotMatch(env, skill)
+			if not source then
+				local canSupport = env.player.mainSkill.triggeredBy.gemData and calcLib.canGrantedEffectSupportActiveSkill(env.player.mainSkill.triggeredBy.gemData.grantedEffect, skill)
+				if skill.skillData.triggerTime and canSupport and skill ~= env.player.mainSkill and slotMatch and not isTriggered(skill) then
+					source = skill
+				end
 			end
-			if skill.skillData.triggeredWhileChannelling and (match1 or match2) then
+			if skill.skillData.triggeredWhileChannelling and slotMatch then
 				t_insert(triggeredSkills, packageSkillDataForSimulation(skill, env))
 			end
 		end
@@ -245,8 +247,8 @@ local function CWCHandler(env)
 			output.addsCastTime = processAddedCastTime(env.player.mainSkill, breakdown)
 
 			local icdr = calcLib.mod(env.player.mainSkill.skillModList, env.player.mainSkill.skillCfg, "CooldownRecovery") or 1
-			local adjTriggerInterval = m_ceil(source.skillData.triggerTime * data.misc.ServerTickRate) / data.misc.ServerTickRate
-			local triggerRateOfTrigger = 1/adjTriggerInterval
+			local triggerInterval = source.skillData.triggerTime
+			local triggerRateOfTrigger = 1 / triggerInterval
 			local triggeredCD = env.player.mainSkill.skillData.cooldown
 			local cooldownOverride = env.player.mainSkill.skillModList:Override(env.player.mainSkill.skillCfg, "CooldownRecovery")
 
@@ -269,8 +271,7 @@ local function CWCHandler(env)
 			if breakdown then
 				if triggeredCD or cooldownOverride then
 					breakdown.TriggerRateCap = {
-						s_format("Cast While Channeling triggers %s every %.2fs while channeling %s ", triggeredName, source.skillData.triggerTime, source.activeEffect.grantedEffect.name),
-						s_format("%.3f ^8(adjusted for server tick rate)", adjTriggerInterval),
+						s_format("Cast While Channeling triggers %s every %.2fs while channeling %s ", triggeredName, triggerInterval, source.activeEffect.grantedEffect.name),
 						"",
 						s_format("%.2f ^8(base cooldown of triggered skill)", triggeredCD),
 						s_format("/ %.2f ^8(increased/reduced cooldown recovery)", icdr),
@@ -284,8 +285,7 @@ local function CWCHandler(env)
 					end
 				else
 					breakdown.TriggerRateCap = {
-						s_format("Cast While Channeling triggers %s every %.2fs while channeling %s ", triggeredName, source.skillData.triggerTime, source.activeEffect.grantedEffect.name),
-						s_format("%.3f ^8(adjusted for server tick rate)", adjTriggerInterval),
+						s_format("Cast While Channeling triggers %s every %.2fs while channeling %s ", triggeredName, triggerInterval, source.activeEffect.grantedEffect.name),
 						"",
 						triggeredName .. " has no base cooldown or cooldown override",
 						"",
@@ -294,7 +294,7 @@ local function CWCHandler(env)
 
 				local function extraIncreaseNeeded(affectedCD)
 					if not cooldownOverride then
-						local nextBreakpoint = effCDTriggeredSkill - adjTriggerInterval
+						local nextBreakpoint = effCDTriggeredSkill - triggerInterval
 						local timeOverBreakpoint = triggeredTotalCooldown - nextBreakpoint
 						local alreadyReducedTime = triggeredTotalCooldown * icdr - triggeredTotalCooldown
 						if timeOverBreakpoint < affectedCD then
@@ -377,7 +377,7 @@ local function CWCHandler(env)
 
 			-- Account for Trigger-related INC/MORE modifiers
 			addTriggerIncMoreMods(env.player.mainSkill, env.player.mainSkill)
-			env.player.output.ChannelTimeToTrigger = source.skillData.triggerTime
+			env.player.output.ChannelTimeToTrigger = triggerInterval
 			env.player.mainSkill.skillData.triggered = true
 			env.player.mainSkill.skillFlags.globalTrigger = true
 			env.player.mainSkill.skillData.triggerRate = output.SkillTriggerRate
@@ -396,11 +396,14 @@ local function defaultTriggerHandler(env, config)
 	local triggeredSkills = config.triggeredSkills or {}
 	local trigRate = config.trigRate
 	local uuid
+	local sourceWeapon = config.sourceWeapon
+	-- Only attacks using the granting weapon can activate source-weapon triggers
+	local sourceWeaponFlag = sourceWeapon and actor.mainSkill.socketGroup.slot and (actor.mainSkill.socketGroup.slot:match("^Weapon 2") and "weapon2Attack" or "weapon1Attack")
 
 	-- Find trigger skill and triggered skills
 	if config.triggeredSkillCond or config.triggerSkillCond then
 		for _, skill in ipairs(env.player.activeSkillList) do
-			if config.triggerSkillCond and config.triggerSkillCond(env, skill) and (not isTriggered(skill) or actor.mainSkill.skillFlags.globalTrigger or config.allowTriggered) and skill ~= actor.mainSkill then
+			if config.triggerSkillCond and config.triggerSkillCond(env, skill) and (not sourceWeaponFlag or skill.skillFlags[sourceWeaponFlag]) and (not isTriggered(skill) or actor.mainSkill.skillFlags.globalTrigger or config.allowTriggered) and skill ~= actor.mainSkill then
 				source, trigRate, uuid = findTriggerSkill(env, skill, source, trigRate, config.comparer)
 			end
 			if config.triggeredSkillCond and config.triggeredSkillCond(env,skill) then
@@ -423,6 +426,7 @@ local function defaultTriggerHandler(env, config)
 					s_format("%.2f ^8(base activation cooldown of %s)", actor.mainSkill.triggeredBy.mainSkill.skillData.repeatFrequency, config.triggerName),
 					s_format("* %.2f ^8(more activation frequency)", actor.mainSkill.triggeredBy.activationFreqMore),
 					s_format("* %.2f ^8(increased activation frequency)", actor.mainSkill.triggeredBy.activationFreqInc),
+					s_format("* %d ^8(attached Brands)", actor.mainSkill.triggeredBy.attachedBrandCount),
 					s_format("= %.2f ^8(activation rate of %s)", trigRate, actor.mainSkill.triggeredBy.mainSkill.activeEffect.grantedEffect.name)
 				}
 			elseif breakdown then
@@ -436,7 +440,9 @@ local function defaultTriggerHandler(env, config)
 			end
 
 			-- Dual wield triggers
-			if trigRate and source and env.player.weaponData1.type and env.player.weaponData2.type and not source.skillData.doubleHitsWhenDualWielding and (source.skillTypes[SkillType.Melee] or source.skillTypes[SkillType.Attack]) and actor.mainSkill.triggeredBy and actor.mainSkill.triggeredBy.grantedEffect.support and actor.mainSkill.triggeredBy.grantedEffect.fromItem then
+			local sourceWeaponTrigger = sourceWeapon and source and source.skillFlags.bothWeaponAttack
+			local itemSupportTrigger = actor.mainSkill.triggeredBy and actor.mainSkill.triggeredBy.grantedEffect.support and actor.mainSkill.triggeredBy.grantedEffect.fromItem
+			if trigRate and source and env.player.weaponData1.type and env.player.weaponData2.type and not source.skillData.doubleHitsWhenDualWielding and (source.skillTypes[SkillType.Melee] or source.skillTypes[SkillType.Attack]) and (sourceWeaponTrigger or itemSupportTrigger) then
 				trigRate = trigRate / 2
 				if breakdown then
 					t_insert(breakdown.EffectiveSourceRate, 2, s_format("/ 2 ^8(due to dual wielding)"))
@@ -693,7 +699,7 @@ local function defaultTriggerHandler(env, config)
 			end
 
 			if env.player.mainSkill.activeEffect.grantedEffect.name == "Doom Blast" and env.build.configTab.input["doomBlastSource"] == "vixen" then
-				if not env.player.itemList["Gloves"] or env.player.itemList["Gloves"].title ~= "Vixen's Entrapment" then
+				if not env.player.itemList["Gloves"] or not (env.player.itemList["Gloves"].title and env.player.itemList["Gloves"].title:match("Vixen's Entrapment")) then
 					output.VixenModeNoVixenGlovesWarn = true
 				end
 
@@ -879,6 +885,10 @@ local function defaultTriggerHandler(env, config)
 			else
 				actor.mainSkill.infoMessage = actor.mainSkill.triggeredBy and actor.mainSkill.triggeredBy.grantedEffect.name or config.triggerName .. " Trigger"
 			end
+			if actor.mainSkill.skillData.triggeredByBrand then
+				local attachedBrandCount = actor.mainSkill.triggeredBy.attachedBrandCount
+				actor.mainSkill.infoMessage = actor.mainSkill.infoMessage .. ":" .. s_format("%d attached Brand%s", attachedBrandCount, attachedBrandCount == 1 and "" or "s")
+			end
 
 			actor.mainSkill.infoTrigger = config.triggerName
 		end
@@ -905,6 +915,7 @@ local configTable = {
 	["the surging thoughts"] = function(env)
 		if env.player.mainSkill.activeEffect.grantedEffect.name == "Storm Cascade" then
 			return {
+				triggerOnUse = true,
 				triggerSkillCond = function(env, skill)
 					return (skill.skillTypes[SkillType.Melee] or skill.skillTypes[SkillType.Attack])
 				end
@@ -1075,7 +1086,21 @@ local configTable = {
 				comparer = function(env, uuid, source, triggerRate)
 					local cachedSpeed = GlobalCache.cachedData[env.mode][uuid].HitSpeed or GlobalCache.cachedData[env.mode][uuid].Speed
 					local cachedManaCost = GlobalCache.cachedData[env.mode][uuid].ManaCost
-					return ( (not source and cachedSpeed) or (cachedSpeed and cachedSpeed > (triggerRate or 0)) ) and ( (cachedManaCost or 0) > requiredManaCost )
+					return ( (not source and cachedSpeed) or (cachedSpeed and cachedSpeed > (triggerRate or 0)) ) and ( (cachedManaCost or 0) >= requiredManaCost )
+				end,
+				triggerSkillCond = function(env, skill)
+					return true
+					-- Filtering done by skill() in SkillStatMap, comparer and default excludes
+				end}
+	end,
+	["foulborn kitava's thirst"] = function(env)
+		local requiredLifeCost = env.player.modDB:Sum("BASE", nil, "FoulbornKitavaRequiredLifeCost")
+		return {triggerChance = env.player.modDB:Sum("BASE", nil, "FoulbornKitavaTriggerChance"),
+				triggerName = "Foulborn Kitava's Thirst",
+				comparer = function(env, uuid, source, triggerRate)
+					local cachedSpeed = GlobalCache.cachedData[env.mode][uuid].HitSpeed or GlobalCache.cachedData[env.mode][uuid].Speed
+					local cachedLifeCost = GlobalCache.cachedData[env.mode][uuid].LifeCost
+					return ( (not source and cachedSpeed) or (cachedSpeed and cachedSpeed > (triggerRate or 0)) ) and ( (cachedLifeCost or 0) >= requiredLifeCost )
 				end,
 				triggerSkillCond = function(env, skill)
 					return true
@@ -1088,6 +1113,14 @@ local configTable = {
 				end,
 				triggeredSkillCond = function(env, skill)
 					return skill.skillData.triggeredByMjolner and slotMatch(env, skill)
+				end}
+	end,
+	["wing of the wyvern"] = function()
+		return {triggerSkillCond = function(env, skill)
+					return (skill.skillTypes[SkillType.Damage] or skill.skillTypes[SkillType.Attack]) and band(skill.skillCfg.flags, ModFlag.Bow) > 0 and not slotMatch(env, skill)
+				end,
+				triggeredSkillCond = function(env, skill)
+					return skill.skillData.triggeredByUnique and slotMatch(env, skill)
 				end}
 	end,
 	["cospri's malice"] = function()
@@ -1111,6 +1144,10 @@ local configTable = {
 			env.player.mainSkill.infoMessage2 = "DPS reported assuming Self-Cast"
 			env.player.mainSkill.infoMessage = "Squirming Terror requires recent kills"
 		end
+	end,
+	["kinetic flux"] = function()
+		return {triggerSkillCond = function(env, skill) return skill.skillTypes[SkillType.Attack] and slotMatch(env, skill) end,
+				triggeredSkillCond = function(env, skill) return skill.skillData.triggeredByKineticFlux and slotMatch(env, skill) end}
 	end,
 	["cast on critical strike"] = function()
 		return {triggerSkillCond = function(env, skill) return skill.skillTypes[SkillType.Attack] and slotMatch(env, skill) end,
@@ -1156,6 +1193,11 @@ local configTable = {
 		return {triggerChance =  env.player.mainSkill.skillData.chanceToTriggerOnStun,
 				source = env.player.mainSkill}
 	end,
+	["cast on ward break"] = function(env)
+        env.player.mainSkill.skillFlags.globalTrigger = true
+		return {triggerChance =  env.player.mainSkill.skillData.chanceToTriggerOnWardBreak,
+				source = env.player.mainSkill}
+	end,
 	["spellslinger"] = function(env)
 		if env.player.mainSkill.activeEffect.grantedEffect.name == "Spellslinger" then
 			env.player.mainSkill.skillFlags.skipEffectiveRate = true
@@ -1165,8 +1207,8 @@ local configTable = {
 		return {triggerName = "Spellslinger",
 				triggerOnUse = true,
 				triggerSkillCond = function(env, skill)
-					local isWandAttack = (not skill.weaponTypes or (skill.weaponTypes and skill.weaponTypes["Wand"])) and skill.skillTypes[SkillType.Attack]
-					return isWandAttack and not skill.skillData.triggeredBySpellSlinger
+					local isWandProjectileAttack = skill.skillTypes[SkillType.Attack] and skill.skillTypes[SkillType.Projectile] and band(skill.skillCfg.flags, ModFlag.Wand) > 0
+					return isWandProjectileAttack and not skill.skillData.triggeredBySpellSlinger
 				end}
 	end,
 	["call to arms"] = function(env) -- This is for backwards compatibility only
@@ -1207,10 +1249,10 @@ local configTable = {
 		if env.player.mainSkill.activeEffect.grantedEffect.name == "Autoexertion" then
 			env.player.mainSkill.skillFlags.globalTrigger = true
 			env.player.mainSkill.skillFlags.skipEffectiveRate = true
-		else -- Needed to get the cooldown form the active part
+		else -- Needed to get the cooldown from the active part
 			-- Autoexertion has cooldown as part of its support part
 			-- Not really sure which one should apply here
-			-- Applying the one form the active part to be consistent
+			-- Applying the one from the active part to be consistent
 			-- with skills like Automation and Spellslinger
 			for _, skill in ipairs(env.player.activeSkillList) do
 				if skill.activeEffect.grantedEffect.name == "Autoexertion" then
@@ -1224,6 +1266,12 @@ local configTable = {
 		return {triggerOnUse = true,
 				useCastRate = true,
 				source = env.player.mainSkill}
+	end,
+	["seize the flesh"] = function(env)
+		return {triggerSkillCond = function(env, skill)	return skill.skillTypes[SkillType.Warcry] and slotMatch(env, skill) end}
+	end,
+	["fissure"] = function(env)
+		return {triggerOnUse = true, triggerSkillCond = function(env, skill)	return skill.skillTypes[SkillType.Slam] and slotMatch(env, skill) end}
 	end,
 	["mark on hit"] = function()
 		return {triggerSkillCond = function(env, skill) return skill.skillTypes[SkillType.Attack] end}
@@ -1285,8 +1333,9 @@ local configTable = {
 			local activationFreqMore = env.player.mainSkill.triggeredBy.mainSkill.skillModList:More(env.player.mainSkill.triggeredBy.mainSkill.skillCfg, "BrandActivationFrequency")
 			env.player.mainSkill.triggeredBy.activationFreqInc = activationFreqInc
 			env.player.mainSkill.triggeredBy.activationFreqMore = activationFreqMore
+			env.player.mainSkill.triggeredBy.attachedBrandCount = env.player.mainSkill.triggeredBy.mainSkill.skillData.attachedBrandCount
 			env.player.mainSkill.triggeredBy.ignoresTickRate = true
-			return {trigRate = env.player.mainSkill.triggeredBy.mainSkill.skillData.repeatFrequency * activationFreqInc * activationFreqMore,
+			return {trigRate = env.player.mainSkill.triggeredBy.mainSkill.skillData.repeatFrequency * activationFreqInc * activationFreqMore * env.player.mainSkill.triggeredBy.attachedBrandCount,
 					source = env.player.mainSkill.triggeredBy.mainSkill,
 					triggeredSkillCond = function(env, skill) return skill.skillData.triggeredByBrand and slotMatch(env, skill) end}
 		end
@@ -1307,8 +1356,25 @@ local configTable = {
 	["prismatic burst"] = function(env)
 		return {triggerSkillCond = function(env, skill)	return skill.skillTypes[SkillType.Attack] and slotMatch(env, skill) end}
 	end,
+	["voidstorm"] = function(env)
+		return {triggerOnUse = true, triggerSkillCond = function(env, skill)	return skill.skillTypes[SkillType.Attack] and skill.skillTypes[SkillType.Rain] and slotMatch(env, skill) end}
+	end,
 	["shockwave"] = function(env)
 		return {triggerSkillCond = function(env, skill)	return skill.skillTypes[SkillType.Melee] and slotMatch(env, skill) end}
+	end,
+	["void shockwave"] = function(env)
+		return {triggerSkillCond = function(env, skill)	return skill.skillTypes[SkillType.Melee] and slotMatch(env, skill) end}
+	end,
+	["falling crystal"] = function(env)
+		return {triggerSkillCond = function(env, skill)	return skill.skillTypes[SkillType.Melee] and slotMatch(env, skill) end}
+	end,
+	["call the pyre"] = function(env)
+		if env.enemy.modDB:Flag(nil, "Condition:Ignited") then
+			return {triggerChance =  50, -- too much of a pain to pull this from the triggering skill
+				triggerSkillCond = function(env, skill)	return skill.skillTypes[SkillType.Melee] and slotMatch(env, skill) end}
+		else
+			env.player.mainSkill.infoMessage = "Call the Pyre requires Ignited enemies"
+		end
 	end,
 	["manaforged arrows"] = function(env)
 		return {triggerOnUse = true,
@@ -1430,11 +1496,27 @@ local configTable = {
 					useCastRate = true}
 		end
 	end,
-	["supporttriggerelementalspellonblock"] = function(env) -- Svalinn Girded Tower Shield
+	["svalinn cast on block"] = function(env) -- Svalinn Girded Tower Shield
 		env.player.mainSkill.skillFlags.globalTrigger = true
 		return {source = env.player.mainSkill,
 				triggeredSkillCond = function(env, skill)
 					return slotMatch(env, skill) and skill.triggeredBy and calcLib.canGrantedEffectSupportActiveSkill(skill.triggeredBy.grantedEffect, skill)
+				end}
+	end,
+	["festering resentment cast on block"] = function(env) -- Festering Resentment Demon Dagger
+		env.player.mainSkill.skillFlags.globalTrigger = true
+		return {source = env.player.mainSkill,
+				triggeredSkillCond = function(env, skill)
+					return slotMatch(env, skill) and skill.triggeredBy and calcLib.canGrantedEffectSupportActiveSkill(skill.triggeredBy.grantedEffect, skill)
+				end}
+	end,
+	["hex on trap"] = function(env) -- Hand of the Lords Carnal Mitts
+		return {triggerSkillCond = function(env, skill)
+					-- Hex is triggered only when a trap is triggered
+					return skill.skillTypes[SkillType.Trapped]
+				end,
+				triggeredSkillCond = function(env, skill)
+					return skill.skillData.triggeredByTrapTrigger and slotMatch(env, skill)
 				end}
 	end,
 	["supporttriggerfirespellonhit"] = function(env)
@@ -1445,6 +1527,48 @@ local configTable = {
 				triggeredSkillCond = function(env, skill)
 					return skill.skillData.triggeredBySettlersEnchantTrigger and slotMatch(env, skill)
 				end}
+	end,
+	["ghostly artillery"] = function(env)
+		return {
+			sourceWeapon = true,
+			triggerOnUse = true,
+			triggerSkillCond = function(env, skill)
+				return skill.skillTypes[SkillType.Attack]
+			end
+		}
+	end,
+	["replica gifts from above"] = function()
+		return {
+			triggerSkillCond = function(env, skill)
+				return not skill.skillTypes[SkillType.SummonsTotem] and skill.skillTypes[SkillType.Attack]
+			end
+		}
+	end,
+	["bursting toad"] = function(env)
+		local triggerInterval = m_huge
+		-- All gems in the socket group should return the same HexToadCooldown even when there are multiple hextoad support gems slotted
+		for _, skill in ipairs(env.player.activeSkillList) do
+			if skill.skillData.hextoadTriggerInterval then
+				triggerInterval = m_min(triggerInterval, skill.skillData.hextoadTriggerInterval)
+			end
+		end
+		if triggerInterval < m_huge then
+			env.player.mainSkill.skillFlags.globalTrigger = true
+			env.player.mainSkill.skillData.triggerRateCapOverride = 1 / triggerInterval
+			if env.player.breakdown then
+				env.player.breakdown.TriggerRateCap = {
+					s_format("1 / %.2f ^8(Hextoad trigger interval)", triggerInterval),
+					s_format("= %.2f", env.player.mainSkill.skillData.triggerRateCapOverride),
+				}
+			end
+			return {source = env.player.mainSkill}
+		end
+	end,
+	["TriggeredMoltenStrike"] = function(env)
+		return {triggerSkillCond = function(env, skill) return (skill.skillTypes[SkillType.Melee] or skill.skillTypes[SkillType.Attack]) end}
+	end,
+	["FieryImpactHeistMaceImplicit"] = function(env)
+		return {sourceWeapon = true, triggerSkillCond = function(env, skill) return (skill.skillTypes[SkillType.Melee] or skill.skillTypes[SkillType.Attack]) end}
 	end,
 }
 
@@ -1475,7 +1599,9 @@ function calcs.triggers(env, actor)
 		local triggerNameLower = triggerName and triggerName:lower()
 		local awakenedTriggerNameLower = triggerNameLower and triggerNameLower:gsub("^awakened ", "")
 		local uniqueNameLower = uniqueName and uniqueName:lower()
-		local config = skillNameLower and configTable[skillNameLower] and configTable[skillNameLower](env)
+		local skillId = actor.mainSkill.activeEffect.grantedEffect.id
+		local config = skillId and configTable[skillId] and configTable[skillId](env)
+		config = config or skillNameLower and configTable[skillNameLower] and configTable[skillNameLower](env)
         config = config or triggerNameLower and configTable[triggerNameLower] and configTable[triggerNameLower](env)
         config = config or awakenedTriggerNameLower and configTable[awakenedTriggerNameLower] and configTable[awakenedTriggerNameLower](env)
         config = config or uniqueNameLower and configTable[uniqueNameLower] and configTable[uniqueNameLower](env)

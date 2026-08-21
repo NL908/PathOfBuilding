@@ -3,7 +3,7 @@
 -- Module: Data
 -- Contains static data used by other modules.
 --
-
+local dkjson = require("dkjson")
 LoadModule("Data/Global")
 
 local m_min = math.min
@@ -103,8 +103,28 @@ end
 -- Remaining Item Data and uniques
 ----------------------------------------
 
+---@diagnostic disable-next-line: lowercase-global
+---@class Data : MiscDataExport
+---@field bosses BossData
 data = { }
 
+-- Misc data tables
+local miscData = LoadModule("Data/Misc")
+for k, v in pairs(miscData) do
+	data[k] = v
+end
+
+---@alias TransformFunc fun(in: number|string): (number|string)?
+---@class StatTable
+---@field stat? string stat ID
+---@field label string A short description of the stat
+---@field transform TransformFunc?: number|string A function to e.g. invert the value, if the stat represents something where lower is better
+---@field combinedOffDef? boolean
+---@field ignoreForNodes? boolean
+---@field ignoreForItems? boolean
+---@field reverseSort? boolean
+
+---@type StatTable[]
 data.powerStatList = {
 	{ stat=nil, label="Offence/Defence", combinedOffDef=true, ignoreForItems=true },
 	{ stat=nil, label="Name", itemField="Name", ignoreForNodes=true, reverseSort=true, transform=function(value) return value:gsub("^The ","") end},
@@ -152,11 +172,66 @@ data.powerStatList = {
 	{ stat="IgniteChance", label="Ignite Chance" },
 	{ stat="ShockChance", label="Shock Chance" },
 	{ stat="EffectiveMovementSpeedMod", label="Move speed" },
+	{ stat="LightRadiusMod", label="Light Radius" },
 	{ stat="BlockChance", label="Block Chance" },
 	{ stat="SpellBlockChance", label="Spell Block Chance" },
 	{ stat="SpellSuppressionChance", label="Spell Suppression Chance" },
 }
 
+---@param output any Calc output
+---@param statTable StatTable Table with stats as in data.powerStatList
+---@param skipTransform? boolean Whether the stat transform should be skipped. This is useful if you want to e.g. divide two less is better stats
+---@return number
+function data.powerStatList.GetFromOutput(output, statTable, skipTransform)
+	local function getEntry()
+		if statTable.stat == "FullDPS" then
+			if output[statTable.stat] ~= nil then
+				return output[statTable.stat] or 0
+			end
+			-- if the user doesn't have full dps, we default to adding the player and minion dps together
+			return (output.CombinedDPS or 0) + (output.Minion and output.Minion.CombinedDPS or 0)
+		end
+		-- minion-only stats
+		local minionStat = statTable.stat:match("^Minion(.+)")
+		if minionStat then
+			return output.Minion and output.Minion[minionStat] or 0
+		end
+		-- damage stats use a combination of player and minion dps
+		local isDamageStat = statTable.stat == "AverageDamage" or statTable.stat == "TotalDot" or
+			statTable.stat:match("DPS")
+		if isDamageStat then
+			return (output[statTable.stat] or 0) + (output.Minion and output.Minion[statTable.stat] or 0)
+		end
+		return output[statTable.stat] or 0
+	end
+	if statTable.transform and not skipTransform then
+		return statTable.transform(getEntry())
+	end
+	return getEntry()
+end
+
+-- these stats don't exist on minions or generally don't exist on both player and minion
+local minionNonApplicableStats = {
+	AverageDamage = true,
+	TotalDot = true,
+	Str = true,
+	Dex = true,
+	Int = true,
+	Spirit = true,
+	EffectiveLootRarityMod = true,
+	LightRadiusMod = true,
+}
+for i = 1, #data.powerStatList do
+	local statEntry = data.powerStatList[i]
+	if (not statEntry.stat) or statEntry.stat:match("DPS") or minionNonApplicableStats[statEntry.stat] then
+		goto statContinue
+	end
+	local minionStat = copyTable(statEntry)
+	minionStat.stat = "Minion" .. minionStat.stat
+	minionStat.label = "Minion " .. minionStat.label
+	t_insert(data.powerStatList, minionStat)
+	::statContinue::
+end
 data.misc = { -- magic numbers
 	ServerTickTime = 0.033,
 	ServerTickRate = 1 / 0.033,
@@ -164,7 +239,8 @@ data.misc = { -- magic numbers
 	LowPoolThreshold = 0.5,
 	TemporalChainsEffectCap = 75,
 	BuffExpirationSlowCap = 0.25,
-	DamageReductionCap = 90,
+	DamageReductionCap = data.characterConstants["maximum_physical_damage_reduction_%"],
+	EnemyPhysicalDamageReductionCap = data.monsterConstants["maximum_physical_damage_reduction_%"],
 	ResistFloor = -200,
 	MaxResistCap = 90,
 	EvadeChanceCap = 95,
@@ -173,11 +249,14 @@ data.misc = { -- magic numbers
 	SuppressionChanceCap = 100,
 	SuppressionEffect = 40,
 	AvoidChanceCap = 75,
+	FortifyBaseDuration = 6,
+	ManaRegenBase = data.characterConstants["mana_regeneration_rate_per_minute_%"] / 60 / 100,
+	EnergyShieldRechargeBase = data.characterConstants["energy_shield_recharge_rate_per_minute_%"] / 60 / 100,
 	EnergyShieldRechargeBase = 0.33,
 	EnergyShieldRechargeDelay = 2,
 	WardRechargeDelay = 2,
 	Transfiguration = 0.3,
-	EnemyMaxResist = 75,
+	EnemyMaxResist = data.monsterConstants["base_maximum_all_resistances_%"],
 	LeechRateBase = 0.02,
 	DotDpsCap = 35791394, -- (2 ^ 31 - 1) / 60 (int max / 60 seconds)
 	BleedPercentBase = 70,
@@ -192,6 +271,7 @@ data.misc = { -- magic numbers
 	MineAuraRadiusBase = 35,
 	BrandAttachmentRangeBase = 30,
 	ProjectileDistanceCap = 150,
+	PlayerMovementSpeed = data.characterConstants["base_speed"],
 	MinStunChanceNeeded = 20,
 	StunBaseMult = 200,
 	StunBaseDuration = 0.35,
@@ -220,6 +300,7 @@ data.misc = { -- magic numbers
 	PvpElemental2 = 150,
 	PvpNonElemental1 = 0.57,
 	PvpNonElemental2 = 90,
+	MatchingSocketQualityBonus = 10,
 }
 
 data.skillColorMap = { colorCodes.STRENGTH, colorCodes.DEXTERITY, colorCodes.INTELLIGENCE, colorCodes.NORMAL }
@@ -273,13 +354,14 @@ data.cursePriority = {
 	["CurseFromAura"] = 20000,
 }
 
----@type string[] @List of all keystones not exclusive to timeless jewels.
+---@type string[] @List of all keystones not exclusive to timeless jewels or cluster jewels.
 data.keystones = {
 	"Acrobatics",
 	"Ancestral Bond",
 	"Arrow Dancing",
 	"Arsenal of Vengeance",
 	"Avatar of Fire",
+	"Bitter Frost",
 	"Blood Magic",
 	"Bloodsoaked Blade",
 	"Call to Arms",
@@ -298,7 +380,6 @@ data.keystones = {
 	"Ghost Reaver",
 	"Glancing Blows",
 	"Hex Master",
-	"Hollow Palm Technique",
 	"Imbalanced Guard",
 	"Immortal Ambition",
 	"Inner Conviction",
@@ -318,16 +399,18 @@ data.keystones = {
 	"Power of Purpose",
 	"Precise Technique",
 	"Resolute Technique",
+	"Roiling Tempest",
 	"Runebinder",
-	"Secrets of Suffering",
 	"Solipsism",
 	"Supreme Decadence",
 	"Supreme Ego",
 	"The Agnostic",
 	"The Impaler",
+	"Transcendence",
 	"Unwavering Stance",
 	"Vaal Pact",
 	"Versatile Combatant",
+	"Voracious Flame",
 	"Wicked Ward",
 	"Wind Dancer",
 	"Zealot's Oath",
@@ -349,6 +432,7 @@ data.nonDamagingAilment = {
 
 -- Used in ModStoreClass:ScaleAddMod(...) to identify high precision modifiers
 data.defaultHighPrecision = 1
+data.modScalability = LoadModule("Data/ModScalability")
 data.highPrecisionMods = {
 	["CritChance"] = {
 		["BASE"] = 2,
@@ -380,7 +464,13 @@ data.highPrecisionMods = {
 	["LifeDegenPercent"] = {
 		["BASE"] = 2,
 	},
+	["LifeDegenPercentTincture"] = {
+		["BASE"] = 2,
+	},
 	["ManaDegenPercent"] = {
+		["BASE"] = 2,
+	},
+	["ManaDegenPercentTincture"] = {
 		["BASE"] = 2,
 	},
 	["EnergyShieldDegenPercent"] = {
@@ -552,15 +642,19 @@ data.enchantmentSource = {
 	{ name = "NORMAL", label = "Normal Labyrinth" },
 }
 
--- Misc data tables
-LoadModule("Data/Misc", data)
-
 -- Stat descriptions
 data.describeStats = LoadModule("Modules/StatDescriber")
 
 -- Load item modifiers
 data.itemMods = {
-	Item = LoadModule("Data/ModItem"),
+	Explicit = LoadModule("Data/ModExplicit"),
+	-- implicit mods and unique explicit mods
+	ItemExclusive = LoadModule("Data/ModItemExclusive"),
+	Corrupted = LoadModule("Data/ModCorrupted"),
+	Delve = LoadModule("Data/ModDelve"),
+	Synthesis = LoadModule("Data/ModSynthesis"),
+	Scourge = LoadModule("Data/ModScourge"),
+	Eldritch = LoadModule("Data/ModEldritch"),
 	Flask = LoadModule("Data/ModFlask"),
 	Tincture = LoadModule("Data/ModTincture"),
 	Graft = LoadModule("Data/ModGraft"),
@@ -568,6 +662,7 @@ data.itemMods = {
 	JewelAbyss = LoadModule("Data/ModJewelAbyss"),
 	JewelCluster = LoadModule("Data/ModJewelCluster"),
 	JewelCharm = LoadModule("Data/ModJewelCharm"),
+	Foulborn = LoadModule("Data/ModFoulborn"),
 }
 data.masterMods = LoadModule("Data/ModMaster")
 data.enchantments = {
@@ -579,6 +674,16 @@ data.enchantments = {
 	["Weapon"] = LoadModule("Data/EnchantmentWeapon"),
 	["UtilityFlask"] = LoadModule("Data/EnchantmentFlask"),
 }
+
+-- combined table of many mod categories
+data.itemMods.Item = {}
+for _, key in ipairs({ "Explicit", "ItemExclusive", "Corrupted", "Delve", "Synthesis", "Scourge", "Eldritch" }) do
+	local itemData = data.itemMods[key]
+	for k, v in pairs(itemData) do
+		data.itemMods.Item[k] = v
+	end
+end
+
 do
 	data.enchantments["Flask"] = data.enchantments["UtilityFlask"]--["HARVEST"]
 	for baseType, _ in pairs(data.weaponTypeInfo) do
@@ -639,6 +744,8 @@ data.itemTagSpecial = {
 			"Cannot Evade",
 		},
 	},
+	["defence"] = {
+	},
 }
 data.itemTagSpecialExclusionPattern = {
 	["life"] = {
@@ -660,17 +767,19 @@ data.itemTagSpecialExclusionPattern = {
 			"Gain Maximum Life instead of Maximum Energy Shield",
 			"^Socketed Gems are Supported by Level",
 			"^Allocates",
+			"Void Spawns' Life", -- Servant of Decay
 		},
 		["boots"] = {
 			"Enemy's Life", -- Legacy of Fury
 			"^Enemies Cannot Leech Life", -- Sin Trek
+			'their Life as Chaos Damage', -- Beacon of Madness
 			"when on Full Life",
 			"when on Low Life",
 			"^Allocates",
 		},
 		["belt"] = {
 			"Life as Extra Maximum Energy Shield", -- Soul Tether
-			"Life Recovery from Flasks", -- The Druggery
+			"Life Recovery from Flasks is applied to nearby Allies", -- The Druggery
 			"Life Flasks gain", -- The Druggery
 			"when on Full Life",
 			"when on Low Life",
@@ -733,6 +842,8 @@ data.itemTagSpecialExclusionPattern = {
 		["ring"] = {
 		},
 	},
+	["defence"] = {
+	},
 }
 
 -- Cluster jewel data
@@ -782,6 +893,12 @@ data.timelessJewelTypes = {
 	[3] = "Brutal Restraint",
 	[4] = "Militant Faith",
 	[5] = "Elegant Hubris",
+	[6] = "Heroic Tragedy",
+	[7] = "Abyss Tecrod",
+	[8] = "Abyss Ulaman",
+	[9] = "Abyss Kurgal",
+	[10] = "Abyss Amanamu",
+	[11] = "Abyss Zorath",
 }
 data.timelessJewelSeedMin = {
 	[1] = 100,
@@ -789,6 +906,12 @@ data.timelessJewelSeedMin = {
 	[3] = 500,
 	[4] = 2000,
 	[5] = 2000 / 20,
+	[6] = 100,
+	[7] = 100,
+	[8] = 100,
+	[9] = 100,
+	[10] = 100,
+	[11] = 100,
 }
 data.timelessJewelSeedMax = {
 	[1] = 8000,
@@ -796,12 +919,22 @@ data.timelessJewelSeedMax = {
 	[3] = 8000,
 	[4] = 10000,
 	[5] = 160000 / 20,
+	[6] = 8000,
+	[7] = 8000,
+	[8] = 8000,
+	[9] = 8000,
+	[10] = 8000,
+	[11] = 8000,
 }
 data.timelessJewelTradeIDs = LoadModule("Data/TimelessJewelData/LegionTradeIds")
-data.timelessJewelAdditions = 94 -- #legionAdditions
+data.timelessJewelAdditions = 337 -- #legionAdditions
 data.nodeIDList = LoadModule("Data/TimelessJewelData/NodeIndexMapping")
+data.abyssNotableNames = LoadModule("Data/TimelessJewelData/AbyssNotableNames")
 data.timelessJewelLUTs = { }
-data.readLUT, data.repairLUTs = LoadModule("Modules/DataLegionLookUpTableHelper")
+local helperMod = LoadModule("Modules/DataLegionLookUpTableHelper")
+data.readLUT = helperMod.readLUT
+data.repairLUTs = helperMod.repairLUTs
+data.readAbyssJewelLUT, data.resolveAbyssJewelComponent, data.getAbyssJewelComponentRoll = LoadModule("Modules/DataAbyssJewelLookUpTableHelper")
 
 -- this runs if the "size" key is missing from nodeIDList and attempts to rebuild all jewel LUTs and the nodeIDList
 -- note this should only run in dev mode
@@ -810,10 +943,9 @@ if not data.nodeIDList.size and launch.devMode then
 end
 
 -- Load bosses
-do 
-	data.bosses = { }
-	LoadModule("Data/Bosses", data.bosses)
-	
+do
+	---@class BossData
+	data.bosses = LoadModule("Data/Bosses")
 	local count, uberCount = 0, 0
 	local armourTotal, evasionTotal = 0, 0
 	local uberArmourTotal, uberEvasionTotal = 0, 0
@@ -836,8 +968,9 @@ do
 		UberEvasionMean = 100 + uberEvasionTotal / uberCount
 	}
 
-	data.bossSkills, data.bossSkillsList = LoadModule("Data/BossSkills")
-
+	local bossSkillData     = LoadModule("Data/BossSkills")
+	data.bossSkills         = bossSkillData.bossSkills
+	data.bossSkillsList     = bossSkillData.bossSkillsList
 	data.enemyIsBossTooltip = [[Bosses' damage is monster damage scaled to an average damage of their attacks
 This is divided by 4.40 to represent 4 damage types + some (40% as much) ^xD02090chaos
 ^7Fill in the exact damage numbers if more precision is needed
@@ -872,7 +1005,7 @@ end
 
 -- Load skills
 data.skills = { }
-data.skillStatMap = LoadModule("Data/SkillStatMap", makeSkillMod, makeFlagMod, makeSkillDataMod)
+data.skillStatMap = LoadModule("Data/SkillStatMap")(makeSkillMod, makeFlagMod, makeSkillDataMod)
 data.skillStatMapMeta = {
 	__index = function(t, key)
 		local map = data.skillStatMap[key]
@@ -887,7 +1020,7 @@ data.skillStatMapMeta = {
 	end
 }
 for _, type in pairs(skillTypes) do
-	LoadModule("Data/Skills/"..type, data.skills, makeSkillMod, makeFlagMod, makeSkillDataMod)
+	LoadModule("Data/Skills/" .. type)(data.skills, makeSkillMod, makeFlagMod, makeSkillDataMod)
 end
 for skillId, grantedEffect in pairs(data.skills) do
 	grantedEffect.name = sanitiseText(grantedEffect.name)
@@ -958,8 +1091,7 @@ local toAddGems = { }
 for gemId, gem in pairs(data.gems) do
     gem.name = sanitiseText(gem.name)
     setupGem(gem, gemId)
-    local loc, _ = gemId:find('Vaal')
-	if loc then
+	if gem.vaalGem then
 		data.gemGrantedEffectIdForVaalGemId[gem.secondaryGrantedEffectId] = gemId
 		for otherGemId, otherGem in pairs(data.gems) do
 			if otherGem.grantedEffectId == gem.secondaryGrantedEffectId then
@@ -969,7 +1101,7 @@ for gemId, gem in pairs(data.gems) do
 		end
 	end
     for _, alt in ipairs{"AltX", "AltY"} do
-        if loc and data.skills[gem.secondaryGrantedEffectId..alt] then
+        if gem.vaalGem and data.skills[gem.secondaryGrantedEffectId..alt] then
 			data.gemGrantedEffectIdForVaalGemId[gem.secondaryGrantedEffectId..alt] = gemId..alt
 			data.gemVaalGemIdForBaseGemId[gemId..alt] = data.gemVaalGemIdForBaseGemId[gemId]..alt
             local newGem = { name, gameId, variantId, grantedEffectId, secondaryGrantedEffectId, vaalGem, tags = {}, tagString, reqStr, reqDex, reqInt, naturalMaxLevel }
@@ -996,10 +1128,8 @@ for id, gem in pairs(toAddGems) do
 end
 
 -- Load minions
-data.minions = { }
-LoadModule("Data/Minions", data.minions, makeSkillMod, makeFlagMod)
-data.spectres = { }
-LoadModule("Data/Spectres", data.spectres, makeSkillMod, makeFlagMod)
+data.minions = LoadModule("Data/Minions")(makeSkillMod, makeFlagMod)
+data.spectres = LoadModule("Data/Spectres")(makeSkillMod, makeFlagMod)
 for name, spectre in pairs(data.spectres) do
 	spectre.limit = "ActiveSpectreLimit"
 	data.minions[name] = spectre
@@ -1021,14 +1151,80 @@ data.printMissingMinionSkills = function()
 	end
 end
 
--- Item bases
+---@class ItemBase
+---@field type string # e.g. "Helmet", "Wand", "Body Armour", "Flask", "Jewel"
+---@field subType? string # e.g. "Armour", "Evasion/Energy Shield", "Life", "Utility"
+---@field socketLimit? integer # max sockets (weapons/armour only)
+---@field hidden? boolean # excluded from the base-type selection lists
+---@field cannotBeAnointed? boolean
+---@field tags table<string, true> # e.g. { armour = true, helmet = true, str_armour = true }
+---@field influenceTags? table<string, string> # influence -> mod tag, e.g. { shaper = "helmet_shaper" }
+---@field implicit? string # implicit mod line(s), newline-separated
+---@field implicitModTypes ModTypeList[] # per-implicit list of mod-type tags
+---@field implicitIds? string[] # per-implicit GGG mod id
+---@field enchant? string # enchant mod line(s)
+---@field enchantModTypes? ModTypeList[]
+---@field enchantIds? string[]
+---@field flavourText? string
+---@field req ItemBaseReq
+---@field armour? ItemBaseArmour # present on armour bases
+---@field weapon? ItemBaseWeapon # present on weapon bases
+---@field flask? ItemBaseFlask # present on flask bases
+---@field tincture? ItemBaseTincture # present on tincture bases
+
+---@alias ModTypeList string[] # list of mod-type tags, e.g. { "caster_damage", "damage", "caster" }
+
+---@class ItemBaseReq
+---@field level? integer
+---@field str? integer
+---@field dex? integer
+---@field int? integer
+
+---@class ItemBaseArmour
+---@field ArmourBaseMin? number
+---@field ArmourBaseMax? number
+---@field EvasionBaseMin? number
+---@field EvasionBaseMax? number
+---@field EnergyShieldBaseMin? number
+---@field EnergyShieldBaseMax? number
+---@field WardBaseMin? number
+---@field WardBaseMax? number
+---@field BlockChance? number # shields
+---@field MovementPenalty? number
+
+---@class ItemBaseWeapon
+---@field PhysicalMin? number
+---@field PhysicalMax? number
+---@field CritChanceBase? number
+---@field AttackRateBase? number
+---@field Range? number
+
+---@class ItemBaseFlask
+---@field life? number
+---@field mana? number
+---@field duration? number
+---@field chargesUsed? integer
+---@field chargesMax? integer
+---@field buff? string[] # utility-flask granted buff line(s)
+
+---@class ItemBaseTincture
+---@field manaBurn? number
+---@field cooldown? number
+
+---@type table<string, ItemBase>
 data.itemBases = { }
 for _, type in pairs(itemTypes) do
-	LoadModule("Data/Bases/"..type, data.itemBases)
+	LoadModule("Data/Bases/" .. type)(data.itemBases)
 end
 
+---@class ItemBaseEntry
+---@field label string
+---@field name string
+---@field base ItemBase
+
+---@type table<string, ItemBaseEntry[]>
 -- Build lists of item bases, separated by type
-data.itemBaseLists = { }
+data.itemBaseLists = {}
 for name, base in pairs(data.itemBases) do
 	if not base.hidden then
 		local type = base.type
@@ -1107,6 +1303,52 @@ data.minionTagCrucibleUniques = {
 	["United in Dream"] = true,
 }
 
+local crimsonStormMods = {}
+for modId, mod in pairs(data.veiledMods) do
+	if mod.affix == "of the Order" then
+		crimsonStormMods[modId] = mod
+	end
+end
+
+local dreadCaptainBase = { base = copyTable(data.itemBases["Ghostflame Blade"]) }
+dreadCaptainBase.base.tags.deepwater_sword = true
+
+---@class RareLikeUniqueDescription
+---@field affixes table<string, table>
+---@field validBases ItemBaseEntry[]? Bases used to check modifier spawn tags instead of the item's base
+---@field prefixLimit integer
+---@field suffixLimit integer
+---@field ignoreModType boolean?
+---@field allowDuplicateGroups boolean? Whether the same modifier can appear multiple times on the item.
+---@field supportsCustomModifiers table<string, boolean>? A table which describes which mod source IDs are applicable in the custom modifier menu.
+---@type table<string, RareLikeUniqueDescription>
+-- Uniques which use the existing rare item crafting controls.
+data.rareLikeUniques = {
+	["subsume the source"] = {
+		validBases = data.itemBaseLists["Jewel: Abyss"],
+		affixes = data.itemMods.JewelAbyss,
+		prefixLimit = 4,
+		suffixLimit = 0,
+		ignoreModType = true,
+		allowDuplicateGroups = true,
+	},
+	["the crimson storm"] = {
+		affixes = crimsonStormMods,
+		prefixLimit = 0,
+		suffixLimit = 1,
+	},
+	["dread captain's cutlass"] = {
+		validBases = { dreadCaptainBase },
+		affixes = data.itemMods.Explicit,
+		prefixLimit = 3,
+		suffixLimit = 3,
+		supportsCustomModifiers = {
+			ESSENCE = true,
+			VEILED = true,
+			CUSTOM = true,
+		},
+	}
+}
 -- Uniques (loaded after version-specific data because reasons)
 data.uniques = { }
 for _, type in pairs(itemTypes) do
@@ -1127,7 +1369,11 @@ for _, modId in ipairs(sortedMods) do
 		mod = unsortedMods[modId],
 	})
 end
+data.itemMods.WatchersEye = unsortedMods
 LoadModule("Data/Uniques/Special/Generated")
 LoadModule("Data/Uniques/Special/New")
 
+local mapFile = io.open("Data/ModFoulbornMap.jsonc", "r")
+data.foulbornMap = dkjson.decode(mapFile:read("*a"))
+mapFile:close()
 data.flavourText = LoadModule("Data/FlavourText")
