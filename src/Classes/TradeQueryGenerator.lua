@@ -910,6 +910,9 @@ end
 function TradeQueryGeneratorClass:ExecuteQuery()
 	if self.calcContext.synthUnique then
 		self:GenerateModWeights(self.modData.Synthesis)
+		if self.calcContext.options.includeCorrupted then
+			self:GenerateModWeights(self.modData["Corrupted"])
+		end
 		return
 	end
 	if self.calcContext.special.calcNodesInsteadOfMods then
@@ -1208,7 +1211,9 @@ function TradeQueryGeneratorClass:FinishQuery()
 		end
 		if self.calcContext.synthUnique then
 			queryTable.query.filters.misc_filters.filters.synthesised_item = { option = "true" }
-			queryTable.query.filters.misc_filters.filters.corrupted = { option = "false" }
+			if not options.includeCorrupted then
+				queryTable.query.filters.misc_filters.filters.corrupted = { option = "false" }
+			end
 		end
 	end
 
@@ -1285,7 +1290,7 @@ function TradeQueryGeneratorClass:FinishQuery()
 			end
 		end
 		self.calcContext.synthUnique.warning = s_format(
-			"Omitted %d synthesis implicit%s that could not be parsed or mapped.",
+			"Omitted %d implicit modifier%s that could not be parsed or mapped.",
 			#details, #details == 1 and "" or "s")
 		self.calcContext.synthUnique.warningDetails = details
 	end
@@ -1336,9 +1341,19 @@ function TradeQueryGeneratorClass:RequestSynthUniqueQuery(slot, context, statWei
 		return controls.useImplicitCount.state
 	end
 	controls.corruptionNotice = new("LabelControl"):LabelControl({ "LEFT", controls.useImplicitCount, "RIGHT" },
-		{ 110, 0, 400, 16 }, "^xF0C674Corrupted results are excluded to preserve synthesis implicits.")
+		{ 100, 0, 400, 16 })
+	controls.corruptionNotice.label = function()
+		return controls.includeCorrupted and controls.includeCorrupted.state
+			and "^xF0C674Corrupted implicits included; unique roll assumptions are disabled."
+			or "^xF0C674Corrupted results are excluded to preserve synthesis implicits."
+	end
 	controls.modifierHeader = new("LabelControl"):LabelControl({ "TOPLEFT", nil, "TOPLEFT" },
-		{ 20, 88, 620, 16 }, "^7Unique modifier assumptions (calculation only; not trade filters):")
+		{ 20, 88, 620, 16 })
+	controls.modifierHeader.label = function()
+		return controls.includeCorrupted and controls.includeCorrupted.state
+			and "^xF0C674Unique modifier assumptions disabled for corrupted results:"
+			or "^7Unique modifier assumptions (calculation only; not trade filters):"
+	end
 
 	local function resetModifierRows()
 		selectedRows = { }
@@ -1391,6 +1406,9 @@ function TradeQueryGeneratorClass:RequestSynthUniqueQuery(slot, context, statWei
 		selector.shown = function()
 			return row == 1 or selectedRows[row - 1] ~= nil
 		end
+		selector.enabled = function()
+			return not controls.includeCorrupted or not controls.includeCorrupted.state
+		end
 		controls["modifier" .. row] = selector
 		for component = 1, 2 do
 			local valueControl = tradeHelpers.newPlainNumericEdit({ "TOPLEFT", nil, "TOPLEFT" },
@@ -1402,6 +1420,9 @@ function TradeQueryGeneratorClass:RequestSynthUniqueQuery(slot, context, statWei
 				end)
 			valueControl.shown = function()
 				return selectedRows[row] ~= nil and selectedRows[row].modifier.ranges[component] ~= nil
+			end
+			valueControl.enabled = function()
+				return not controls.includeCorrupted or not controls.includeCorrupted.state
 			end
 			controls["modifierValue" .. row .. "_" .. component] = valueControl
 		end
@@ -1432,6 +1453,10 @@ Remove: %s will be removed from the search results.]], term, term, term)
 	controls.includeMirrored = new("CheckBoxControl"):CheckBoxControl({ "TOPLEFT", nil, "TOPLEFT" },
 		{ 145, optionY, 18 }, "Mirrored Items:", function() end)
 	controls.includeMirrored.state = self.lastIncludeMirrored == nil or self.lastIncludeMirrored == true
+	controls.includeCorrupted = new("CheckBoxControl"):CheckBoxControl({ "TOPLEFT", nil, "TOPLEFT" },
+		{ 350, optionY, 18 }, "Corrupted Mods:", function() end,
+		"Includes corrupted implicit modifiers in the weighted search and allows corrupted results. Unique modifier roll assumptions are disabled because corrupted uniques cannot be rerolled.")
+	controls.includeCorrupted.state = self.lastSynthIncludeCorrupted == true
 
 	local currencyDropdownNames = { }
 	for _, currency in ipairs(currencyTable) do
@@ -1474,7 +1499,7 @@ Remove: %s will be removed from the search results.]], term, term, term)
 			local errors = { }
 			for row = 1, maxModifierRows do
 				local selected = selectedRows[row]
-				if selected then
+				if selected and not controls.includeCorrupted.state then
 					if seenModifiers[selected.modifier.key] then
 						t_insert(errors, "The same unique modifier was selected more than once")
 					else
@@ -1495,6 +1520,7 @@ Remove: %s will be removed from the search results.]], term, term, term)
 			local configured, configureErrors = synthUniqueTrade.configureModifiers(modifiers, assumptions)
 			for _, message in ipairs(configureErrors) do t_insert(errors, message) end
 			local baseline, missing = synthUniqueTrade.buildBaseline(selectedUnique, configured)
+			baseline.corrupted = controls.includeCorrupted.state
 			for _, key in ipairs(missing) do
 				t_insert(errors, "Selected unique modifiers cannot coexist: " .. key)
 			end
@@ -1514,7 +1540,7 @@ Remove: %s will be removed from the search results.]], term, term, term)
 			end
 			local options = {
 				includeMirrored = controls.includeMirrored.state,
-				includeCorrupted = false,
+				includeCorrupted = controls.includeCorrupted.state,
 				includeTalisman = false,
 				includeScourge = false,
 				influence1 = 1,
@@ -1531,11 +1557,13 @@ Remove: %s will be removed from the search results.]], term, term, term)
 					baseline = baseline,
 					modifiers = configured,
 					implicitCount = implicitCount,
+					includeCorrupted = controls.includeCorrupted.state,
 					copyEnchantMode = controls.copyEnchantMode and controls.copyEnchantMode:GetSelValue(),
 					omittedImplicits = { },
 				},
 			}
 			self.lastSynthImplicitCount = controls.implicitCount.selIndex
+			self.lastSynthIncludeCorrupted = controls.includeCorrupted.state
 			if controls.copyEnchantMode then
 				self.lastCopyEnchantMode = options.synthUnique.copyEnchantMode
 			end

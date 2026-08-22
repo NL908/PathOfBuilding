@@ -194,6 +194,29 @@ describe("TradeQueryGenerator", function()
 	end)
 
 	describe("Synthesised unique queries", function()
+		it("adds corrupted implicit weights only when enabled", function()
+			local queryGen = new("TradeQueryGenerator"):TradeQueryGenerator({ itemsTab = { } })
+			local synthesisMods = { synthesis = true }
+			local corruptedMods = { corrupted = true }
+			queryGen.modData = { Synthesis = synthesisMods, Corrupted = corruptedMods }
+			queryGen.calcContext = {
+				synthUnique = { },
+				options = { includeCorrupted = false },
+			}
+			local generated = { }
+			queryGen.GenerateModWeights = function(_, mods)
+				generated[mods] = true
+			end
+
+			queryGen:ExecuteQuery()
+			assert.is_true(generated[synthesisMods])
+			assert.is_nil(generated[corruptedMods])
+
+			queryGen.calcContext.options.includeCorrupted = true
+			queryGen:ExecuteQuery()
+			assert.is_true(generated[corruptedMods])
+		end)
+
 		it("emits exact implicit count and synthesised unique restrictions without assumed-roll filters", function()
 			local queryGen = new("TradeQueryGenerator"):TradeQueryGenerator({ itemsTab = { items = { } } })
 			local baseline = new("Item"):Item([[
@@ -259,6 +282,11 @@ Implicits: 0
 					assert.is_falsy(filter.id:find("^explicit%.stat_"))
 				end
 			end
+
+			queryGen.calcContext.options.includeCorrupted = true
+			query = nil
+			queryGen:FinishQuery()
+			assert.is_nil(query.filters.misc_filters.filters.corrupted)
 		end)
 	end)
 end)

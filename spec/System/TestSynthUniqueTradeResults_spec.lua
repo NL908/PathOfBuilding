@@ -85,6 +85,18 @@ Implicits: 1
 		local missingAdjusted = new("Item"):Item(results[2].item_string)
 		assert.is_nil(findExplicitLine(missingAdjusted, "maximum Life"))
 		assert.are.equal("18% increased Attack Speed", findExplicitLine(missingAdjusted, "Attack Speed"))
+
+		local corruptedSelection = makeSelection()
+		corruptedSelection.includeCorrupted = true
+		local corruptedResults = tradeQuery:ApplySynthUniqueAssumptions({
+			{ item_string = original .. "\nCorrupted", listingId = "corrupted" },
+		}, corruptedSelection)
+		assert.are.equal(1, #corruptedResults)
+		assert.are.equal(0, #corruptedResults[1].assumptionOverrides)
+		local corruptedAdjusted = new("Item"):Item(corruptedResults[1].item_string)
+		assert.is_true(corruptedAdjusted.corrupted)
+		assert.are.equal("+60 to maximum Life", findExplicitLine(corruptedAdjusted, "maximum Life"))
+		assert.are.equal("15% increased Attack Speed", findExplicitLine(corruptedAdjusted, "Attack Speed"))
 	end)
 
 	it("describes applied assumptions in result and import tooltips", function()
@@ -112,7 +124,7 @@ Implicits: 1
 			end
 		end
 		local tooltipText = table.concat(text, "\n")
-		assert.is_truthy(tooltipText:find("Omitted synthesis implicits", 1, true))
+		assert.is_truthy(tooltipText:find("Omitted implicit modifiers", 1, true))
 		assert.is_truthy(tooltipText:find("Unsupported synthesis line", 1, true))
 		assert.is_truthy(tooltipText:find("Unique modifier assumptions not applied", 1, true))
 		assert.is_truthy(tooltipText:find("modifier absent", 1, true))
@@ -189,6 +201,7 @@ Implicits: 0
 			assert.are.equal("^7Enchant Behaviour:", popup.controls.copyEnchantModeLabel.label)
 			assert.is_false(popup.controls.useImplicitCount.state)
 			assert.is_false(popup.controls.implicitCount:IsShown())
+			assert.is_false(popup.controls.includeCorrupted.state)
 			assert.is_true(popup.controls.corruptionNotice:IsShown())
 			assert.are.equal(145, popup.controls.includeMirrored.x)
 			assert.are.equal(560, popup.controls.sockets.x)
@@ -226,12 +239,21 @@ Implicits: 0
 			popup.controls.useImplicitCount.state = true
 			assert.is_true(popup.controls.implicitCount:IsShown())
 			popup.controls.implicitCount:SetSel(2)
+			popup.controls.modifier1:SetSel(2)
+			popup.controls.modifierValue1_1.buf = "17"
+			popup.controls.includeCorrupted.state = true
+			assert.is_false(popup.controls.modifier1:GetProperty("enabled"))
+			assert.is_truthy(popup.controls.modifierHeader:GetProperty("label"):find("disabled", 1, true))
 			popup.controls.generateQuery.onClick()
 			assert.are.equal(1, #startedOptions.requiredMods)
 			assert.are.equal("pseudo.pseudo_number_of_implicit_mods", startedOptions.requiredMods[1].tradeId)
 			assert.are.equal(2, startedOptions.requiredMods[1].filterValue.min)
 			assert.are.equal(2, startedOptions.requiredMods[1].filterValue.max)
 			assert.are.equal(2, startedOptions.synthUnique.implicitCount)
+			assert.is_true(startedOptions.includeCorrupted)
+			assert.is_true(startedOptions.synthUnique.includeCorrupted)
+			assert.is_true(startedOptions.synthUnique.baseline.corrupted)
+			assert.is_false(startedOptions.synthUnique.modifiers[1].selected)
 		end)
 		main.uniqueDB = oldUniqueDB
 		main.OpenPopup = oldOpenPopup

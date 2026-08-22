@@ -1022,7 +1022,8 @@ function TradeQueryClass:ApplySynthUniqueAssumptions(itemEntries, synthUnique)
 	for _, entry in ipairs(itemEntries) do
 		local originalItemString = entry.item_string
 		local fetchedItem = new("Item"):Item(originalItemString)
-		local adjustedItem, overrides, missing = synthUniqueTrade.clampFetchedItem(fetchedItem, synthUnique.modifiers)
+		local assumptionModifiers = synthUnique.includeCorrupted and { } or synthUnique.modifiers
+		local adjustedItem, overrides, missing = synthUniqueTrade.clampFetchedItem(fetchedItem, assumptionModifiers)
 		local missingAssumptions = { }
 		if #missing > 0 then
 			local missingKeys = { }
@@ -1073,7 +1074,7 @@ function TradeQueryClass:AddAssumptionOverridesToTooltip(tooltip, result)
 	end
 	if result.synthesisWarnings and #result.synthesisWarnings > 0 then
 		tooltip:AddSeparator(10)
-		tooltip:AddLine(16, colorCodes.WARNING .. "Omitted synthesis implicits:")
+		tooltip:AddLine(16, colorCodes.WARNING .. "Omitted implicit modifiers:")
 		for _, warning in ipairs(result.synthesisWarnings) do
 			tooltip:AddLine(14, "^7" .. warning)
 		end
