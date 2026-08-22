@@ -1009,8 +1009,8 @@ function TradeQueryClass:FilterToSafeItems(itemEntries, slotName)
 end
 
 -- Apply the configured unique-roll assumptions to fetched synth results before
--- exact PoB evaluation. Entries missing a selected modifier are rejected rather
--- than evaluated against a guessed line.
+-- exact PoB evaluation. A missing modifier is left absent; assumptions only
+-- clamp numeric rolls that are actually present on the fetched item.
 ---@param itemEntries table[]
 ---@param synthUnique table?
 ---@return table[]
@@ -1023,16 +1023,25 @@ function TradeQueryClass:ApplySynthUniqueAssumptions(itemEntries, synthUnique)
 		local originalItemString = entry.item_string
 		local fetchedItem = new("Item"):Item(originalItemString)
 		local adjustedItem, overrides, missing = synthUniqueTrade.clampFetchedItem(fetchedItem, synthUnique.modifiers)
-		if #missing == 0 then
-			-- Keep the fetched marker even when no assumption needed clamping.
-			adjustedItem.synthesised = fetchedItem.synthesised
-			local adjustedEntry = copyTable(entry)
-			adjustedEntry.original_item_string = originalItemString
-			adjustedEntry.item_string = adjustedItem:BuildRaw()
-			adjustedEntry.assumptionOverrides = overrides
-			adjustedEntry.synthesisWarnings = synthUnique.warningDetails
-			t_insert(adjustedEntries, adjustedEntry)
+		local missingAssumptions = { }
+		if #missing > 0 then
+			local missingKeys = { }
+			for _, key in ipairs(missing) do missingKeys[key] = true end
+			for _, modifier in ipairs(synthUnique.modifiers or { }) do
+				if missingKeys[modifier.key] then
+					t_insert(missingAssumptions, modifier.line)
+				end
+			end
 		end
+		-- Keep the fetched marker even when no assumption needed clamping.
+		adjustedItem.synthesised = fetchedItem.synthesised
+		local adjustedEntry = copyTable(entry)
+		adjustedEntry.original_item_string = originalItemString
+		adjustedEntry.item_string = adjustedItem:BuildRaw()
+		adjustedEntry.assumptionOverrides = overrides
+		adjustedEntry.missingAssumptions = missingAssumptions
+		adjustedEntry.synthesisWarnings = synthUnique.warningDetails
+		t_insert(adjustedEntries, adjustedEntry)
 	end
 	return adjustedEntries
 end
@@ -1067,6 +1076,13 @@ function TradeQueryClass:AddAssumptionOverridesToTooltip(tooltip, result)
 		tooltip:AddLine(16, colorCodes.WARNING .. "Omitted synthesis implicits:")
 		for _, warning in ipairs(result.synthesisWarnings) do
 			tooltip:AddLine(14, "^7" .. warning)
+		end
+	end
+	if result.missingAssumptions and #result.missingAssumptions > 0 then
+		tooltip:AddSeparator(10)
+		tooltip:AddLine(16, colorCodes.WARNING .. "Unique modifier assumptions not applied:")
+		for _, line in ipairs(result.missingAssumptions) do
+			tooltip:AddLine(14, "^7" .. line .. " ^8(modifier absent)")
 		end
 	end
 	if result.assumptionOverrides and #result.assumptionOverrides > 0 then
@@ -1201,9 +1217,10 @@ you can add them, copy the link here, and press "Price Item" to evaluate the ite
 		return hasSynthUniques and self.pbLeague
 	end
 	controls["synthButton"..row_idx].tooltipText = [[Creates a weighted search for synthesised copies of a Synthete unique valid for this slot.
-Selected unique modifier rolls are enforced by the trade query and used for exact PoB result evaluation.]]
+Selected unique modifier rolls are calculation assumptions only and are not added to the trade query.]]
 	local pbURL
-	controls["uri"..row_idx] = new("EditControl"):EditControl({ "TOPLEFT", controls["synthButton"..row_idx], "TOPRIGHT", true}, {8, 0, hasSynthUniques and 426 or 514, row_height}, nil, nil, "^%C\t\n", nil, function(buf)
+	local queryAnchor = hasSynthUniques and controls["synthButton"..row_idx] or controls["bestButton"..row_idx]
+	controls["uri"..row_idx] = new("EditControl"):EditControl({ "TOPLEFT", queryAnchor, "TOPRIGHT" }, { 8, 0, hasSynthUniques and 426 or 514, row_height }, nil, nil, "^%C\t\n", nil, function(buf)
 		if self.synthUniqueContexts[row_idx] and buf ~= generatedSynthURL then
 			self.synthUniqueContexts[row_idx] = nil
 			generatedSynthURL = nil

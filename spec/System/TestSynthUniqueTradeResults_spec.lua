@@ -37,15 +37,16 @@ Implicits: 1
 		end
 	end
 
-	it("retains listing data, clamps assumptions, and rejects missing selected modifiers", function()
+	it("retains listing data, clamps present assumptions, and keeps results with missing modifiers", function()
 		local tradeQuery = new("TradeQuery"):TradeQuery({ })
 		local original = [[
 Rarity: Unique
 Test Synthesis Unique
 Ruby Ring
 Synthesised Item
-Implicits: 1
-+1 to Maximum Frenzy Charges
+Implicits: 2
+{enchant}Quality does not increase Physical Damage
+{synthesis}+1 to Maximum Frenzy Charges
 +60 to maximum Life
 15% increased Attack Speed
 ]]
@@ -60,10 +61,10 @@ Implicits: 1
 ]]
 		local results = tradeQuery:ApplySynthUniqueAssumptions({
 			{ item_string = original, amount = 2, currency = "divine", listingId = "kept" },
-			{ item_string = missingLife, amount = 1, currency = "divine", listingId = "rejected" },
+			{ item_string = missingLife, amount = 1, currency = "divine", listingId = "missing" },
 		}, makeSelection())
 
-		assert.are.equal(1, #results)
+		assert.are.equal(2, #results)
 		assert.are.equal("kept", results[1].listingId)
 		assert.are.equal(original, results[1].original_item_string)
 		assert.are.equal(2, #results[1].assumptionOverrides)
@@ -71,6 +72,19 @@ Implicits: 1
 		assert.is_true(adjusted.synthesised)
 		assert.are.equal("+75 to maximum Life", findExplicitLine(adjusted, "maximum Life"))
 		assert.are.equal("18% increased Attack Speed", findExplicitLine(adjusted, "Attack Speed"))
+		assert.are.equal("Quality does not increase Physical Damage", adjusted.enchantModLines[1].line)
+
+		tradeQuery:ApplyQueryResultItemOptions(adjusted, "Weapon 1", "Keep", nil)
+		local imported = new("Item"):Item(adjusted:BuildRaw())
+		assert.are.equal("Quality does not increase Physical Damage", imported.enchantModLines[1].line)
+
+		assert.are.equal("missing", results[2].listingId)
+		assert.are.equal(1, #results[2].assumptionOverrides)
+		assert.are.equal(1, #results[2].missingAssumptions)
+		assert.is_truthy(results[2].missingAssumptions[1]:find("maximum Life", 1, true))
+		local missingAdjusted = new("Item"):Item(results[2].item_string)
+		assert.is_nil(findExplicitLine(missingAdjusted, "maximum Life"))
+		assert.are.equal("18% increased Attack Speed", findExplicitLine(missingAdjusted, "Attack Speed"))
 	end)
 
 	it("describes applied assumptions in result and import tooltips", function()
@@ -79,6 +93,9 @@ Implicits: 1
 		tradeQuery:AddAssumptionOverridesToTooltip(tooltip, {
 			synthesisWarnings = {
 				"Unsupported synthesis line (no trade stat mapping)",
+			},
+			missingAssumptions = {
+				"+(50-80) to maximum Life",
 			},
 			assumptionOverrides = {
 				{
@@ -97,6 +114,8 @@ Implicits: 1
 		local tooltipText = table.concat(text, "\n")
 		assert.is_truthy(tooltipText:find("Omitted synthesis implicits", 1, true))
 		assert.is_truthy(tooltipText:find("Unsupported synthesis line", 1, true))
+		assert.is_truthy(tooltipText:find("Unique modifier assumptions not applied", 1, true))
+		assert.is_truthy(tooltipText:find("modifier absent", 1, true))
 		assert.is_truthy(tooltipText:find("Assumed unique modifier rolls applied", 1, true))
 		assert.is_truthy(tooltipText:find("+60 to maximum Life", 1, true))
 		assert.is_truthy(tooltipText:find("+75 to maximum Life", 1, true))
@@ -168,16 +187,51 @@ Implicits: 0
 			assert.is_not_nil(popup.controls.copyEnchantMode)
 			assert.are.equal("Remove", popup.controls.copyEnchantMode:GetSelValue())
 			assert.are.equal("^7Enchant Behaviour:", popup.controls.copyEnchantModeLabel.label)
+			assert.is_false(popup.controls.useImplicitCount.state)
+			assert.is_false(popup.controls.implicitCount:IsShown())
+			assert.is_true(popup.controls.corruptionNotice:IsShown())
+			assert.are.equal(145, popup.controls.includeMirrored.x)
+			assert.are.equal(560, popup.controls.sockets.x)
+			assert.are.equal(560, popup.controls.links.x)
+			local currencyX = popup.controls.maxPriceType:GetPos()
+			local currencyWidth = popup.controls.maxPriceType:GetSize()
+			local socketsLabelX = popup.controls.socketsLabel:GetPos()
+			assert.is_true(currencyX + currencyWidth < socketsLabelX)
 
-			queryGen.StartQuery = function() end
+			local startedOptions
+			queryGen.StartQuery = function(_, _, options)
+				startedOptions = options
+			end
 			queryGen:RequestSynthUniqueQuery({ slotName = "Ring 1" }, {
 				controls = { tradeTypeSelection = { selIndex = 1 } },
 			}, { }, function(_, _, queryErr)
 				assert.is_nil(queryErr)
 			end)
 			assert.is_nil(popup.controls.copyEnchantMode)
+			popup.controls.modifier1:SetSel(2)
+			popup.controls.modifierValue1_1.buf = "17"
 			popup.controls.generateQuery.onClick()
 			assert.are.equal("Remove", queryGen.lastCopyEnchantMode)
+			assert.are.equal(0, #startedOptions.requiredMods)
+			assert.is_nil(startedOptions.synthUnique.implicitCount)
+			assert.is_true(startedOptions.synthUnique.modifiers[1].selected)
+			assert.is_truthy(startedOptions.synthUnique.baseline:BuildRaw():find("17%% increased Damage"))
+
+			startedOptions = nil
+			queryGen:RequestSynthUniqueQuery({ slotName = "Ring 1" }, {
+				controls = { tradeTypeSelection = { selIndex = 1 } },
+			}, { }, function(_, _, queryErr)
+				assert.is_nil(queryErr)
+			end)
+			popup.controls.useImplicitCount.state = true
+			assert.is_true(popup.controls.implicitCount:IsShown())
+			popup.controls.implicitCount:SetSel(2)
+			popup.controls.generateQuery.onClick()
+			assert.are.equal(1, #startedOptions.requiredMods)
+			assert.are.equal("pseudo.pseudo_number_of_implicit_mods", startedOptions.requiredMods[1].tradeId)
+			assert.are.equal(2, startedOptions.requiredMods[1].filterValue.min)
+			assert.are.equal(2, startedOptions.requiredMods[1].filterValue.max)
+			assert.are.equal(2, startedOptions.synthUnique.implicitCount)
 		end)
 		main.uniqueDB = oldUniqueDB
 		main.OpenPopup = oldOpenPopup
@@ -228,11 +282,23 @@ Implicits: 0
 
 		assert.is_true(tradeQuery.controls.synthButton1:GetProperty("shown"))
 		assert.is_truthy(tradeQuery.controls.synthButton1:GetProperty("enabled"))
+		assert.is_true(tradeQuery.controls.uri1:IsShown())
+		assert.are.equal(tradeQuery.controls.synthButton1, tradeQuery.controls.uri1.anchor.other)
+		local bestX, _ = tradeQuery.controls.bestButton1:GetPos()
+		local uriX, _ = tradeQuery.controls.uri1:GetPos()
+		assert.are.equal(bestX + 176, uriX)
+		tradeQuery.controls.name1.shown = false
+		assert.is_false(tradeQuery.controls.uri1:IsShown())
+		tradeQuery.controls.name1.shown = true
 		tradeQuery.controls.synthButton1.onClick()
 		assert.are.equal(tradeQuery.itemsTab.slots["Ring 1"], requested.activeSlot)
 		assert.are.equal(1, requested.context.row_idx)
 		assert.are.equal(tradeQuery.statSortSelectionList, requested.statWeights)
 		assert.are.equal("function", type(requested.callback))
+		tradeQuery.resultTbl[1] = { }
+		assert.is_false(tradeQuery.controls.uri1:IsShown())
+		assert.is_true(tradeQuery.controls.resultDropdown1:IsShown())
+		tradeQuery.resultTbl[1] = nil
 
 		tradeQuery.synthUniqueContexts[1] = { copyEnchantMode = "Remove" }
 		tradeQuery.controls.uri1:SetText("https://www.pathofexile.com/trade/search/Standard/unrelated", true)

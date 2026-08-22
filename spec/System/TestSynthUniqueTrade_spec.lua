@@ -174,7 +174,7 @@ Implicits: 1
 				[life.key] = { selected = true, value = 75 },
 				[attackSpeed.key] = { selected = true, value = 18 },
 				[damage.key] = { selected = true, values = { 23, 32 } },
-				[charges.key] = { selected = true, value = 1, invert = true },
+				[charges.key] = { selected = true, value = 1 },
 			})
 			local fetched = new("Item"):Item([[
 Rarity: Unique
@@ -192,11 +192,11 @@ Life Flasks gain 2 Charges every 3 seconds
 			local adjusted, overrides, missing = synthUniqueTrade.clampFetchedItem(fetched, configured)
 
 			assert.are.equal(0, #missing)
-			assert.are.equal(3, #overrides)
+			assert.are.equal(2, #overrides)
 			assert.are.equal("+75 to maximum Life", findLine(adjusted, "maximum Life"))
 			assert.are.equal("20% increased Attack Speed", findLine(adjusted, "Attack Speed"))
 			assert.are.equal("Adds 23 to 34 Fire Damage", findLine(adjusted, "Adds"))
-			assert.are.equal("Life Flasks gain 1 Charges every 3 seconds", findLine(adjusted, "Charges"))
+			assert.are.equal("Life Flasks gain 2 Charges every 3 seconds", findLine(adjusted, "Charges"))
 			assert.are.same({ 60 }, overrides[1].actualValues)
 			assert.are.same({ 75 }, overrides[1].assumedValues)
 			assert.are.equal("+60 to maximum Life", findLine(fetched, "maximum Life"))
@@ -218,10 +218,40 @@ Implicits: 0
 5% increased Damage
 ]])
 
-			local _, overrides, missing = synthUniqueTrade.clampFetchedItem(fetched, configured)
+			local adjusted, overrides, missing = synthUniqueTrade.clampFetchedItem(fetched, configured)
 
 			assert.are.equal(0, #overrides)
 			assert.are.same({ life.key }, missing)
+			assert.is_nil(findLine(adjusted, "maximum Life"))
+		end)
+
+		it("does not replace an absent selected modifier with its inverse wording", function()
+			local source = new("Item"):Item([[
+Test Synthesis Unique
+Ruby Ring
+Implicits: 0
+(30-40)% increased Mana Reservation Efficiency
+]], "UNIQUE", true)
+			local modifiers = synthUniqueTrade.extractVariableModifiers(source)
+			local reservation = assert(findModifier(modifiers, "Mana Reservation"))
+			local configured = synthUniqueTrade.configureModifiers(modifiers, {
+				[reservation.key] = { selected = true, value = 38 },
+			})
+			local fetched = new("Item"):Item([[
+Rarity: Unique
+Test Synthesis Unique
+Ruby Ring
+Synthesised Item
+Implicits: 0
+60% reduced Mana Reservation Efficiency
+]])
+
+			local adjusted, overrides, missing = synthUniqueTrade.clampFetchedItem(fetched, configured)
+
+			assert.are.equal(0, #overrides)
+			assert.are.same({ reservation.key }, missing)
+			assert.is_nil(findLine(adjusted, "increased Mana Reservation"))
+			assert.are.equal("60% reduced Mana Reservation Efficiency", findLine(adjusted, "reduced Mana Reservation"))
 		end)
 	end)
 end)

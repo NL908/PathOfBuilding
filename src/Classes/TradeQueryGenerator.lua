@@ -762,135 +762,6 @@ local currencyTable = {
 	{ name = "Vaal Orb", id = "vaal" }
 }
 
-local function getTradeStatIdSet(categoryId)
-	local result = { }
-	for _, category in ipairs(tradeHelpers.getTradeStats() or { }) do
-		if category.id == categoryId then
-			for _, entry in ipairs(category.entries or { }) do
-				local tradeId = entry.id:match("^(.-)|") or entry.id
-				result[tradeId] = true
-			end
-			break
-		end
-	end
-	return result
-end
-
-local function findConfiguredModLine(item, modifier)
-	local direct = item.explicitModLines and item.explicitModLines[modifier.lineIndex]
-	if direct and item:CheckModLineVariant(direct)
-		and synthUniqueTrade.modLineTemplate(direct.line) == modifier.template then
-		return direct.line
-	end
-	local occurrence = 0
-	for _, modLine in ipairs(item.explicitModLines or { }) do
-		if item:CheckModLineVariant(modLine)
-			and synthUniqueTrade.modLineTemplate(modLine.line) == modifier.template then
-			occurrence = occurrence + 1
-			if occurrence == modifier.occurrence then
-				return modLine.line
-			end
-		end
-	end
-end
-
-local uniqueModTradeHashMap
-local function getUniqueModTradeIds(modifier, explicitStatIds)
-	if not uniqueModTradeHashMap then
-		uniqueModTradeHashMap = { }
-		for modId, mod in pairs(data.itemMods.ItemExclusive) do
-			for _, line in ipairs(mod) do
-				local key = line:gsub("\n", " "):lower()
-				uniqueModTradeHashMap[key] = uniqueModTradeHashMap[key] or { }
-				for hash, hashLines in pairs(mod.tradeHashes or { }) do
-					for _, hashLine in ipairs(hashLines) do
-						if hashLine:gsub("\n", " "):lower() == key then
-							t_insert(uniqueModTradeHashMap[key], {
-								tradeId = "explicit.stat_" .. tostring(hash),
-								modId = modId,
-								group = mod.group,
-							})
-							break
-						end
-					end
-				end
-			end
-		end
-	end
-	local candidates = uniqueModTradeHashMap[modifier.line:gsub("\n", " "):lower()] or { }
-	local preferReservationEfficiency = modifier.line:find("Mana Reservation Efficiency", 1, true)
-	local result = { }
-	local seen = { }
-	for _, candidate in ipairs(candidates) do
-		local preferred = not preferReservationEfficiency
-			or tostring(candidate.modId):find("ReservationEfficiency", 1, true)
-			or tostring(candidate.group):find("ReservationEfficiency", 1, true)
-		if preferred and explicitStatIds[candidate.tradeId] and not seen[candidate.tradeId] then
-			seen[candidate.tradeId] = true
-			t_insert(result, candidate.tradeId)
-		end
-	end
-	return result
-end
-
--- Resolve enabled unique modifier assumptions to unambiguous explicit trade
--- filters. This also records the beneficial direction used when fetched rolls
--- are compared with their assumptions.
----@param baseline Item
----@param modifiers table[]
----@return table[] requiredMods
----@return string[] errors
-function TradeQueryGeneratorClass:ResolveSynthUniqueRequirements(baseline, modifiers)
-	local requiredMods = { }
-	local errors = { }
-	local explicitStatIds = getTradeStatIdSet("explicit")
-	for _, modifier in ipairs(modifiers or { }) do
-		if modifier.selected then
-			local resolvedLine = findConfiguredModLine(baseline, modifier)
-			if not resolvedLine then
-				t_insert(errors, s_format("Selected modifier is not active on this unique: %s", modifier.line))
-				goto continue
-			end
-			if #modifier.ranges > 1 and not resolvedLine:match("^Adds .+ to .+") then
-				t_insert(errors, s_format("Selected modifier has an ambiguous multi-value trade mapping: %s", modifier.line))
-				goto continue
-			end
-			local optionTradeId = tradeHelpers.findTradeIdOption(resolvedLine, "explicit")
-			if optionTradeId then
-				t_insert(errors, s_format("Selected modifier maps to an option rather than a numeric threshold: %s", modifier.line))
-				goto continue
-			end
-			local hashes, value, invert = tradeHelpers.findTradeHash(resolvedLine)
-			local tradeIds = getUniqueModTradeIds(modifier, explicitStatIds)
-			if #tradeIds == 0 then
-				local seen = { }
-				for _, hash in ipairs(hashes or { }) do
-					local tradeId = "explicit.stat_" .. tostring(hash)
-					if explicitStatIds[tradeId] and not seen[tradeId] then
-						seen[tradeId] = true
-						t_insert(tradeIds, tradeId)
-					end
-				end
-			end
-			value = value or tradeHelpers.modLineValue(resolvedLine)
-			if #tradeIds ~= 1 or value == nil then
-				t_insert(errors, s_format("Selected modifier could not be mapped to one numeric trade stat: %s", modifier.line))
-				goto continue
-			end
-			modifier.tradeId = tradeIds[1]
-			modifier.invert = invert == true
-			modifier.tradeValue = invert and -value or value
-			t_insert(requiredMods, {
-				tradeId = modifier.tradeId,
-				value = modifier.tradeValue,
-				filterValue = { min = modifier.tradeValue },
-			})
-		end
-		::continue::
-	end
-	return requiredMods, errors
-end
-
 function TradeQueryGeneratorClass:StartQuery(slot, options)
 	if self.lastMaxPrice then
 		options.maxPrice = self.lastMaxPrice
@@ -1454,16 +1325,20 @@ function TradeQueryGeneratorClass:RequestSynthUniqueQuery(slot, context, statWei
 		{ 145, 30, 500, 20 }, uniqueList, nil, "Select the mechanically synthesised unique to search for.", true)
 	controls.uniqueLabel = new("LabelControl"):LabelControl({ "RIGHT", controls.unique, "LEFT" },
 		{ -8, 0, 130, 16 }, "^7Unique item:")
-	controls.implicitCount = new("DropDownControl"):DropDownControl({ "TOPLEFT", nil, "TOPLEFT" },
-		{ 145, 58, 80, 20 }, { 1, 2, 3 }, nil,
-		"Requires exactly this many implicits. Corrupted items are excluded so the count is exact.")
+	controls.useImplicitCount = new("CheckBoxControl"):CheckBoxControl({ "TOPLEFT", nil, "TOPLEFT" },
+		{ 145, 59, 18 }, "^7Exact # of Implicits:", function() end,
+		"When enabled, requires exactly the selected number of implicits. The default allows any number.", false)
+	controls.implicitCount = new("DropDownControl"):DropDownControl({ "LEFT", controls.useImplicitCount, "RIGHT" },
+		{ 12, 0, 80, 20 }, { 1, 2, 3 }, nil,
+		"Requires exactly this many implicits.")
 	controls.implicitCount.selIndex = self.lastSynthImplicitCount or 3
-	controls.implicitCountLabel = new("LabelControl"):LabelControl({ "RIGHT", controls.implicitCount, "LEFT" },
-		{ -8, 0, 130, 16 }, "^7Synthesis implicits:")
-	controls.corruptionNotice = new("LabelControl"):LabelControl({ "LEFT", controls.implicitCount, "RIGHT" },
-		{ 12, 0, 400, 16 }, "^xF0C674Corrupted results are excluded to preserve the exact implicit count.")
+	controls.implicitCount.shown = function()
+		return controls.useImplicitCount.state
+	end
+	controls.corruptionNotice = new("LabelControl"):LabelControl({ "LEFT", controls.useImplicitCount, "RIGHT" },
+		{ 110, 0, 400, 16 }, "^xF0C674Corrupted results are excluded to preserve synthesis implicits.")
 	controls.modifierHeader = new("LabelControl"):LabelControl({ "TOPLEFT", nil, "TOPLEFT" },
-		{ 20, 88, 620, 16 }, "^7Unique modifier assumptions (also required trade thresholds):")
+		{ 20, 88, 620, 16 }, "^7Unique modifier assumptions (calculation only; not trade filters):")
 
 	local function resetModifierRows()
 		selectedRows = { }
@@ -1555,7 +1430,7 @@ Remove: %s will be removed from the search results.]], term, term, term)
 		optionY = optionY + 28
 	end
 	controls.includeMirrored = new("CheckBoxControl"):CheckBoxControl({ "TOPLEFT", nil, "TOPLEFT" },
-		{ 20, optionY, 18 }, "Mirrored Items:", function() end)
+		{ 145, optionY, 18 }, "Mirrored Items:", function() end)
 	controls.includeMirrored.state = self.lastIncludeMirrored == nil or self.lastIncludeMirrored == true
 
 	local currencyDropdownNames = { }
@@ -1579,13 +1454,13 @@ Remove: %s will be removed from the search results.]], term, term, term)
 	local supportsSockets = slot and not slot.slotName:find("Jewel") and not slot.slotName:find("Flask")
 	if supportsSockets then
 		controls.sockets = new("EditControl"):EditControl({ "TOPLEFT", nil, "TOPLEFT" },
-			{ 485, optionY + 30, 70, 18 }, nil, nil, "%D")
+			{ 560, optionY + 30, 70, 18 }, nil, nil, "%D")
 		controls.sockets.buf = self.lastSockets and tostring(self.lastSockets) or ""
 		controls.socketsLabel = new("LabelControl"):LabelControl({ "RIGHT", controls.sockets, "LEFT" },
 			{ -8, 0, 150, 16 }, "^7# of Empty Sockets:")
 		if not slot.slotName:find("Belt") and not slot.slotName:find("Ring") and not slot.slotName:find("Amulet") then
 			controls.links = new("EditControl"):EditControl({ "TOPLEFT", nil, "TOPLEFT" },
-				{ 485, optionY + 58, 70, 18 }, nil, nil, "%D")
+				{ 560, optionY + 58, 70, 18 }, nil, nil, "%D")
 			controls.links.buf = self.lastLinks and tostring(self.lastLinks) or ""
 			controls.linksLabel = new("LabelControl"):LabelControl({ "RIGHT", controls.links, "LEFT" },
 				{ -8, 0, 150, 16 }, "^7# of Links:")
@@ -1623,19 +1498,20 @@ Remove: %s will be removed from the search results.]], term, term, term)
 			for _, key in ipairs(missing) do
 				t_insert(errors, "Selected unique modifiers cannot coexist: " .. key)
 			end
-			local requiredMods, mappingErrors = self:ResolveSynthUniqueRequirements(baseline, configured)
-			for _, message in ipairs(mappingErrors) do t_insert(errors, message) end
 			if #errors > 0 then
 				main:ClosePopup()
 				callback(context, nil, table.concat(errors, "\n"))
 				return
 			end
 
-			local implicitCount = controls.implicitCount:GetSelValue()
-			t_insert(requiredMods, 1, {
-				tradeId = "pseudo.pseudo_number_of_implicit_mods",
-				filterValue = { min = implicitCount, max = implicitCount },
-			})
+			local implicitCount = controls.useImplicitCount.state and controls.implicitCount:GetSelValue() or nil
+			local requiredMods = { }
+			if implicitCount then
+				t_insert(requiredMods, {
+					tradeId = "pseudo.pseudo_number_of_implicit_mods",
+					filterValue = { min = implicitCount, max = implicitCount },
+				})
+			end
 			local options = {
 				includeMirrored = controls.includeMirrored.state,
 				includeCorrupted = false,

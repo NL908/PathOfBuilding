@@ -254,6 +254,9 @@ Strict-Transport-Security: max-age=63115200; includeSubDomains; preload]]
 							rarity = "Unique",
 							name = "Test Subject",
 							typeLine = "Iron Ring",
+							enchantMods = {
+								{ description = "Allocates Primal Spirit" },
+							},
 							implicitMods = {
 								{ description = "+1 to Maximum Power Charges" },
 							},
@@ -273,6 +276,7 @@ Strict-Transport-Security: max-age=63115200; includeSubDomains; preload]]
 			local item = new("Item"):Item(fetchedItems[1].item_string)
 			assert.is_true(item.synthesised)
 			assert.is_true(item.implicitModLines[1].synthesis)
+			assert.are.equal("Allocates Primal Spirit", item.enchantModLines[1].line)
 		end)
 	end)
 

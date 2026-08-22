@@ -194,68 +194,7 @@ describe("TradeQueryGenerator", function()
 	end)
 
 	describe("Synthesised unique queries", function()
-		it("maps a selected unique roll to a required minimum trade filter", function()
-			local queryGen = new("TradeQueryGenerator"):TradeQueryGenerator({ itemsTab = { } })
-			local source = new("Item"):Item([[
-Test Synthesis Unique
-Ruby Ring
-Implicits: 1
-+(20-30)% to Fire Resistance
-+(50-80) to maximum Life
-]], "UNIQUE", true)
-			local synthUniqueTrade = LoadModule("Classes/SynthUniqueTrade")
-			local modifiers = synthUniqueTrade.extractVariableModifiers(source)
-			local life
-			for _, modifier in ipairs(modifiers) do
-				if modifier.line:find("maximum Life", 1, true) then
-					life = modifier
-				end
-			end
-			local configured, configureErrors = synthUniqueTrade.configureModifiers(modifiers, {
-				[life.key] = { selected = true, value = 75 },
-			})
-			assert.are.equal(0, #configureErrors)
-			local baseline = synthUniqueTrade.buildBaseline(source, configured)
-
-			local required, errors = queryGen:ResolveSynthUniqueRequirements(baseline, configured)
-
-			assert.are.equal(0, #errors)
-			assert.are.equal(1, #required)
-			assert.is_truthy(required[1].tradeId:find("^explicit%.stat_"))
-			assert.are.equal(75, required[1].filterValue.min)
-		end)
-
-		it("disambiguates unique-only flat damage and current Herald reservation stats", function()
-			local queryGen = new("TradeQueryGenerator"):TradeQueryGenerator({ itemsTab = { } })
-			local source = new("Item"):Item([[
-Circle of Anguish
-Ruby Ring
-Variant: Skill Reservation (Current)
-Selected Variant: 1
-Implicits: 0
-Adds (20-25) to (26-35) Fire Damage
-{variant:1}Herald of Ash has (30-40)% increased Mana Reservation Efficiency
-]], "UNIQUE", true)
-			local synthUniqueTrade = LoadModule("Classes/SynthUniqueTrade")
-			local modifiers = synthUniqueTrade.extractVariableModifiers(source)
-			local assumptions = { }
-			for _, modifier in ipairs(modifiers) do
-				assumptions[modifier.key] = { selected = true, values = modifier.values }
-			end
-			local configured = synthUniqueTrade.configureModifiers(modifiers, assumptions)
-			local baseline = synthUniqueTrade.buildBaseline(source, configured)
-
-			local required, errors = queryGen:ResolveSynthUniqueRequirements(baseline, configured)
-			local ids = { }
-			for _, entry in ipairs(required) do ids[entry.tradeId] = true end
-
-			assert.are.equal(0, #errors)
-			assert.are.equal(2, #required)
-			assert.is_true(ids["explicit.stat_321077055"])
-			assert.is_true(ids["explicit.stat_2500442851"])
-		end)
-
-		it("emits exact implicit count and synthesised unique restrictions", function()
+		it("emits exact implicit count and synthesised unique restrictions without assumed-roll filters", function()
 			local queryGen = new("TradeQueryGenerator"):TradeQueryGenerator({ itemsTab = { items = { } } })
 			local baseline = new("Item"):Item([[
 Rarity: Unique
@@ -292,7 +231,6 @@ Implicits: 0
 				},
 				requiredMods = {
 					{ tradeId = "pseudo.pseudo_number_of_implicit_mods", filterValue = { min = 3, max = 3 } },
-					{ tradeId = "explicit.stat_2", filterValue = { min = 75 } },
 				},
 				synthUnique = {
 					item = baseline,
@@ -313,9 +251,14 @@ Implicits: 0
 			assert.are.equal("unique", query.filters.type_filters.filters.rarity.option)
 			assert.are.equal("true", query.filters.misc_filters.filters.synthesised_item.option)
 			assert.are.equal("false", query.filters.misc_filters.filters.corrupted.option)
+			assert.are.equal(1, #query.stats[2].filters)
 			assert.are.equal(3, query.stats[2].filters[1].value.min)
 			assert.are.equal(3, query.stats[2].filters[1].value.max)
-			assert.are.equal(75, query.stats[2].filters[2].value.min)
+			for _, statGroup in ipairs(query.stats) do
+				for _, filter in ipairs(statGroup.filters) do
+					assert.is_falsy(filter.id:find("^explicit%.stat_"))
+				end
+			end
 		end)
 	end)
 end)

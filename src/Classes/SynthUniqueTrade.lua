@@ -73,24 +73,6 @@ local function modLineTemplate(line)
 		:match("^%s*(.-)%s*$")
 end
 
-local function inverseTemplate(template)
-	local antonym = {
-		increased = "reduced",
-		reduced = "increased",
-		more = "less",
-		less = "more",
-	}
-	local changed
-	local result = template:gsub("(%a+)", function(word)
-		if not changed and antonym[word] then
-			changed = true
-			return antonym[word]
-		end
-		return word
-	end)
-	return changed and result or nil
-end
-
 -- Find the ordinal occupied by each ranged component among the values in the
 -- rolled form of the line. This lets a line such as "(10-20)% ... for 4 seconds"
 -- change the first value without changing the fixed 4.
@@ -345,7 +327,6 @@ function M.extractVariableModifiers(item)
 					line = modLine.line,
 					lineIndex = lineIndex,
 					template = template,
-					inverseTemplate = inverseTemplate(template),
 					occurrence = occurrence,
 					ranges = ranges,
 					values = values,
@@ -361,9 +342,9 @@ function M.extractVariableModifiers(item)
 end
 
 --- Apply user settings to extracted modifiers. Unconfigured modifiers retain their
---- minimum numeric roll and do not become trade constraints.
---- Settings are keyed by modifier key and may contain selected, value/values, and
---- invert (boolean or one boolean per component).
+--- minimum numeric roll. Selected values are calculation assumptions only and do
+--- not become trade constraints.
+--- Settings are keyed by modifier key and may contain selected and value/values.
 --- @param modifiers table[]
 --- @param assumptions? table<string, table>
 --- @return table[] configured
@@ -376,7 +357,6 @@ function M.configureModifiers(modifiers, assumptions)
 		local copy = copyTable(modifier)
 		local setting = assumptions[modifier.key]
 		copy.selected = setting and setting.selected == true or false
-		copy.invert = setting and setting.invert or false
 		if setting then
 			local values = setting.values or (setting.value ~= nil and { setting.value }) or copy.values
 			if #values ~= #copy.ranges then
@@ -430,15 +410,8 @@ function M.buildBaseline(item, modifiers)
 	return baseline, dedupeValues(missing)
 end
 
-local function componentIsInverted(modifier, index)
-	if type(modifier.invert) == "table" then
-		return modifier.invert[index] == true
-	end
-	return modifier.invert == true
-end
-
---- Clone a fetched item and clamp selected modifier rolls that are worse than the
---- configured assumptions. The original item is never mutated.
+--- Clone a fetched item and clamp selected modifier rolls that are numerically
+--- lower than the configured assumptions. The original item is never mutated.
 --- @param item Item
 --- @param modifiers table[] configured output from configureModifiers
 --- @return Item adjusted
@@ -453,12 +426,6 @@ function M.clampFetchedItem(item, modifiers)
 	for _, modifier in ipairs(modifiers or { }) do
 		if modifier.selected then
 			local modLine = activeMods[modifier.template] and activeMods[modifier.template][modifier.occurrence]
-			local matchedInverse
-			if not modLine and modifier.inverseTemplate then
-				modLine = activeMods[modifier.inverseTemplate]
-					and activeMods[modifier.inverseTemplate][modifier.occurrence]
-				matchedInverse = modLine ~= nil
-			end
 			if not modLine then
 				t_insert(missing, modifier.key)
 			else
@@ -469,9 +436,6 @@ function M.clampFetchedItem(item, modifiers)
 				local overridden = false
 				for index, range in ipairs(modifier.ranges) do
 					local actual = lineValues[range.valueIndex]
-					if actual and matchedInverse then
-						actual = -actual
-					end
 					local assumed = modifier.values[index]
 					actualValues[index] = actual
 					adjustedValues[index] = actual
@@ -479,13 +443,7 @@ function M.clampFetchedItem(item, modifiers)
 						overridden = false
 						break
 					end
-					local worse
-					if componentIsInverted(modifier, index) then
-						worse = actual > assumed
-					else
-						worse = actual < assumed
-					end
-					if worse then
+					if actual < assumed then
 						adjustedValues[index] = assumed
 						overridden = true
 					end
