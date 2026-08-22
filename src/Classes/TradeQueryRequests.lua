@@ -328,6 +328,9 @@ function TradeQueryRequestsClass:FetchResultBlock(url, callback)
 					socketString = table.concat(colours, "-")
 					t_insert(rawLines, "Sockets: " .. socketString)
 				end
+				if item.synthesised then
+					t_insert(rawLines, "Synthesised Item")
+				end
 
 
 				-- TODO: crucible mods
@@ -354,7 +357,13 @@ function TradeQueryRequestsClass:FetchResultBlock(url, callback)
 					t_insert(rawLines, "{scourge}" .. processLine(modLine))
 				end
 				for _, modLine in ipairs(item.implicitMods) do
-					t_insert(rawLines, processLine(modLine))
+					local line = processLine(modLine)
+					-- The trade fetch response marks the item as synthesised but does
+					-- not consistently tag individual synthesis implicit lines.
+					if item.synthesised and not item.corrupted and not (modLine.flags and modLine.flags.synthesis) then
+						line = "{synthesis}" .. line
+					end
+					t_insert(rawLines, line)
 				end
 				for _, modLine in ipairs(item.explicitMods) do
 					t_insert(rawLines, processLine(modLine))

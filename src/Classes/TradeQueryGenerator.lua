@@ -10,6 +10,7 @@ local m_max = math.max
 local s_format = string.format
 local t_insert = table.insert
 local tradeHelpers = LoadModule("Classes/TradeHelpers")
+local synthUniqueTrade = LoadModule("Classes/SynthUniqueTrade")
 local utils = LoadModule("Modules/Utils")
 
 -- a table which tells us what subtypes each category we can search for
@@ -55,7 +56,42 @@ local tradeCategoryNames = {
 	["ManaFlask"] = { "Flask: Mana" },
 	["Flask"] = { "Flask: Utility" },
 }
+
+local synthesisItemClassCategories = {
+	["Amulet"] = { "Amulet" },
+	["Ring"] = { "Ring" },
+	["Belt"] = { "Belt" },
+	["Body Armour"] = { "Chest" },
+	["Helmet"] = { "Helmet" },
+	["Gloves"] = { "Gloves" },
+	["Boots"] = { "Boots" },
+	["Quiver"] = { "Quiver" },
+	["Shield"] = { "Shield" },
+	["Claw"] = { "1HWeapon", "Claw" },
+	["Dagger"] = { "1HWeapon", "Dagger" },
+	["Rune Dagger"] = { "1HWeapon", "Dagger" },
+	["Wand"] = { "1HWeapon", "Wand" },
+	["One Hand Sword"] = { "1HWeapon", "1HSword" },
+	["Thrusting One Hand Sword"] = { "1HWeapon", "1HSword" },
+	["One Hand Axe"] = { "1HWeapon", "1HAxe" },
+	["One Hand Mace"] = { "1HWeapon", "1HMace" },
+	["Sceptre"] = { "1HWeapon", "1HMace", "Sceptre" },
+	["Staff"] = { "2HWeapon", "Staff" },
+	["Warstaff"] = { "2HWeapon", "Staff" },
+	["Bow"] = { "2HWeapon", "Bow" },
+	["Two Hand Sword"] = { "2HWeapon", "2HSword" },
+	["Two Hand Axe"] = { "2HWeapon", "2HAxe" },
+	["Two Hand Mace"] = { "2HWeapon", "2HMace" },
+	["Fishing Rod"] = { "FishingRod" },
+	["Jewel"] = { "BaseJewel", "AnyJewel" },
+	["AbyssJewel"] = { "AbyssJewel", "AnyJewel" },
+	["LifeFlask"] = { "LifeFlask" },
+	["ManaFlask"] = { "ManaFlask" },
+	["UtilityFlask"] = { "Flask" },
+	["UtilityFlaskCritical"] = { "Flask" },
+}
 local basesForType
+local synthesisCatalogDiagnosticsCache
 
 local function canModSpawnForItemCategory(mod, category)
 	-- lazy load type list as it's only required when generating QueryMods.lua
@@ -113,6 +149,7 @@ local function getStatEntries(modType)
 		["WatchersEye"] = "explicit",
 		["PassiveNode"] = "explicit",
 		["Implicit"] = "implicit",
+		["Synthesis"] = "implicit",
 		["Corrupted"] = "implicit",
 		["Eater"] = "implicit",
 		["Exarch"] = "implicit",
@@ -204,7 +241,17 @@ function TradeQueryGeneratorClass.WeightedRatioOutputs(baseOutput, newOutput, st
 	return meanStatDiff
 end
 
-function TradeQueryGeneratorClass:ProcessMod(modId, mod, tradeQueryStatsParsed, itemCategoriesMask, itemCategoriesOverride)
+function TradeQueryGeneratorClass:ProcessMod(modId, mod, tradeQueryStatsParsed, itemCategoriesMask, itemCategoriesOverride, diagnostics)
+	local function recordDiagnostic(line, reason)
+		if diagnostics then
+			diagnostics[tostring(modId) .. "\0" .. tostring(line)] = {
+				modId = modId,
+				line = line,
+				reason = reason,
+				categories = copyTable(itemCategoriesOverride or itemCategoriesMask or { }),
+			}
+		end
+	end
 	if type(modId) == "string" and modId:find("HellscapeDownside") ~= nil then -- skip scourge downsides, they often don't follow standard parsing rules, and should basically never be beneficial anyways
 		goto continue
 	end
@@ -246,6 +293,7 @@ function TradeQueryGeneratorClass:ProcessMod(modId, mod, tradeQueryStatsParsed, 
 		-- If this is the first tier for this mod, find matching trade mod and init the entry
 		if not self.modData[modType] then
 			logToFile("Unhandled Mod Type: %s %s", modType, modLine)
+			recordDiagnostic(modLine, "unsupported modifier type")
 			goto continue
 		end
 
@@ -278,6 +326,7 @@ function TradeQueryGeneratorClass:ProcessMod(modId, mod, tradeQueryStatsParsed, 
 			if tradeMod == nil then
 				if inverse then
 					logToFile("Unable to match %s mod: %s", modType, modLine)
+					recordDiagnostic(modLine, "no trade stat mapping")
 					goto nextModLine
 				else -- try swapping increased / decreased and signed and other similar mods.
 					modLine, inverseKey = tradeHelpers.swapInverse(modLine)
@@ -286,6 +335,7 @@ function TradeQueryGeneratorClass:ProcessMod(modId, mod, tradeQueryStatsParsed, 
 						goto reparseMod
 					else
 						logToFile("Unable to match %s mod: %s", modType, modLine)
+						recordDiagnostic(modLine, "no trade stat mapping")
 						goto nextModLine
 					end
 				end
@@ -310,6 +360,7 @@ function TradeQueryGeneratorClass:ProcessMod(modId, mod, tradeQueryStatsParsed, 
 
 			if endPos == nil then
 				logToFile("[GMD] Error extracting tokens from '%s' for tradeMod '%s'", modLine, self.modData[modType][uniqueIndex].tradeMod.text)
+				recordDiagnostic(modLine, "could not parse numeric values")
 				goto nextModLine
 			end
 
@@ -336,7 +387,8 @@ function TradeQueryGeneratorClass:ProcessMod(modId, mod, tradeQueryStatsParsed, 
 		end
 
 		if #tokens ~= 0 and #tokens ~= 2 and #tokens ~= 4 then
-			logToFile("Unexpected # of tokens found for mod: %s", mod[i])
+			logToFile("Unexpected # of tokens found for mod: %s", mod[index])
+			recordDiagnostic(modLine, "unsupported number of numeric values")
 			goto nextModLine
 		end
 
@@ -371,6 +423,31 @@ function TradeQueryGeneratorClass:GenerateModData(mods, tradeQueryStatsParsed, i
 	end
 end
 
+function TradeQueryGeneratorClass:GenerateSynthesisModData(tradeQueryStatsParsed)
+	self.modData.Synthesis = self.modData.Synthesis or { }
+	self.synthesisCatalogDiagnostics = { }
+	synthesisCatalogDiagnosticsCache = self.synthesisCatalogDiagnostics
+	for modId, mod in pairsSortByKey(data.itemMods.Synthesis) do
+		local categoryMask = { }
+		for itemClassId in pairs(data.synthesisModItemClasses[modId] or { }) do
+			for _, category in ipairs(synthesisItemClassCategories[itemClassId] or { }) do
+				categoryMask[category] = true
+			end
+		end
+		if next(categoryMask) then
+			self:ProcessMod(modId, mod, tradeQueryStatsParsed, nil, categoryMask, self.synthesisCatalogDiagnostics)
+		else
+			logToFile("Unable to determine Synthesis item categories for mod: %s", modId)
+			self.synthesisCatalogDiagnostics[modId] = {
+				modId = modId,
+				line = table.concat(mod, " / "),
+				reason = "unknown item category",
+				categories = { },
+			}
+		end
+	end
+end
+
 function TradeQueryGeneratorClass:InitMods()
 	local queryModFilePath = "Data/QueryMods.lua"
 
@@ -379,6 +456,11 @@ function TradeQueryGeneratorClass:InitMods()
 		file:close()
 		---@module "src.Data.QueryMods"
 		self.modData = LoadModule(queryModFilePath)
+		if not self.modData.Synthesis then
+			self:GenerateSynthesisModData()
+		else
+			self.synthesisCatalogDiagnostics = synthesisCatalogDiagnosticsCache or { }
+		end
 		return
 	end
 
@@ -421,6 +503,7 @@ function TradeQueryGeneratorClass:InitMods()
 	self.modData = {
 		["Explicit"] = { },
 		["Implicit"] = { },
+		["Synthesis"] = { },
 		["Enchant"] = {},
 		["Corrupted"] = { },
 		["Scourge"] = { },
@@ -457,6 +540,10 @@ function TradeQueryGeneratorClass:InitMods()
 	self:GenerateModData(data.itemMods.JewelAbyss, tradeQueryStatsParsed, { ["AbyssJewel"] = true, ["AnyJewel"] = true },
 		{ ["AbyssJewel"] = true })
 	self:GenerateModData(data.itemMods.Flask, tradeQueryStatsParsed, { ["Flask"] = true })
+
+	-- Synthesis implicits no longer have spawn weights in Mods.dat. Their item
+	-- class restrictions are exported from ItemSynthesisMods.dat instead.
+	self:GenerateSynthesisModData(tradeQueryStatsParsed)
 
 	-- Special handling for essences
 	for _, essenceItem in pairs(data.essences) do
@@ -563,11 +650,32 @@ function TradeQueryGeneratorClass:GenerateModWeights(modsToTest)
 			end
 			modLine = modLine:gsub("#",modValueStr)
 
-			self.calcContext.testItem.explicitModLines[1] = { line = modLine, custom = true }
+			if self.calcContext.synthUnique then
+				self.calcContext.testItem.implicitModLines[1] = {
+					line = modLine,
+					custom = true,
+					implicit = true,
+					synthesis = true,
+				}
+			else
+				self.calcContext.testItem.explicitModLines[1] = { line = modLine, custom = true }
+			end
 			self.calcContext.testItem:BuildAndParseRaw()
 
-			if (self.calcContext.testItem.modList ~= nil and #self.calcContext.testItem.modList == 0) or (self.calcContext.testItem.slotModList ~= nil and #self.calcContext.testItem.slotModList[1] == 0 and #self.calcContext.testItem.slotModList[2] == 0) then
+			local testedImplicit = self.calcContext.synthUnique and self.calcContext.testItem.implicitModLines[1]
+			local failedToParse = self.calcContext.synthUnique and (not testedImplicit or testedImplicit.extra
+				or not testedImplicit.modList or #testedImplicit.modList == 0)
+				or not self.calcContext.synthUnique and ((self.calcContext.testItem.modList ~= nil and #self.calcContext.testItem.modList == 0)
+					or (self.calcContext.testItem.slotModList ~= nil and #self.calcContext.testItem.slotModList[1] == 0 and #self.calcContext.testItem.slotModList[2] == 0))
+			if failedToParse then
 				logToFile("Failed to test %s mod: %s", self.calcContext.itemCategory, modLine)
+				if self.calcContext.synthUnique then
+					t_insert(self.calcContext.synthUnique.omittedImplicits, {
+						line = modLine,
+						reason = "could not be parsed for calculation",
+					})
+					goto continue
+				end
 			end
 
 			local output = self.calcContext.calcFunc({ repSlotName = self.calcContext.slot.slotName, repItem = self.calcContext.testItem })
@@ -654,6 +762,135 @@ local currencyTable = {
 	{ name = "Vaal Orb", id = "vaal" }
 }
 
+local function getTradeStatIdSet(categoryId)
+	local result = { }
+	for _, category in ipairs(tradeHelpers.getTradeStats() or { }) do
+		if category.id == categoryId then
+			for _, entry in ipairs(category.entries or { }) do
+				local tradeId = entry.id:match("^(.-)|") or entry.id
+				result[tradeId] = true
+			end
+			break
+		end
+	end
+	return result
+end
+
+local function findConfiguredModLine(item, modifier)
+	local direct = item.explicitModLines and item.explicitModLines[modifier.lineIndex]
+	if direct and item:CheckModLineVariant(direct)
+		and synthUniqueTrade.modLineTemplate(direct.line) == modifier.template then
+		return direct.line
+	end
+	local occurrence = 0
+	for _, modLine in ipairs(item.explicitModLines or { }) do
+		if item:CheckModLineVariant(modLine)
+			and synthUniqueTrade.modLineTemplate(modLine.line) == modifier.template then
+			occurrence = occurrence + 1
+			if occurrence == modifier.occurrence then
+				return modLine.line
+			end
+		end
+	end
+end
+
+local uniqueModTradeHashMap
+local function getUniqueModTradeIds(modifier, explicitStatIds)
+	if not uniqueModTradeHashMap then
+		uniqueModTradeHashMap = { }
+		for modId, mod in pairs(data.itemMods.ItemExclusive) do
+			for _, line in ipairs(mod) do
+				local key = line:gsub("\n", " "):lower()
+				uniqueModTradeHashMap[key] = uniqueModTradeHashMap[key] or { }
+				for hash, hashLines in pairs(mod.tradeHashes or { }) do
+					for _, hashLine in ipairs(hashLines) do
+						if hashLine:gsub("\n", " "):lower() == key then
+							t_insert(uniqueModTradeHashMap[key], {
+								tradeId = "explicit.stat_" .. tostring(hash),
+								modId = modId,
+								group = mod.group,
+							})
+							break
+						end
+					end
+				end
+			end
+		end
+	end
+	local candidates = uniqueModTradeHashMap[modifier.line:gsub("\n", " "):lower()] or { }
+	local preferReservationEfficiency = modifier.line:find("Mana Reservation Efficiency", 1, true)
+	local result = { }
+	local seen = { }
+	for _, candidate in ipairs(candidates) do
+		local preferred = not preferReservationEfficiency
+			or tostring(candidate.modId):find("ReservationEfficiency", 1, true)
+			or tostring(candidate.group):find("ReservationEfficiency", 1, true)
+		if preferred and explicitStatIds[candidate.tradeId] and not seen[candidate.tradeId] then
+			seen[candidate.tradeId] = true
+			t_insert(result, candidate.tradeId)
+		end
+	end
+	return result
+end
+
+-- Resolve enabled unique modifier assumptions to unambiguous explicit trade
+-- filters. This also records the beneficial direction used when fetched rolls
+-- are compared with their assumptions.
+---@param baseline Item
+---@param modifiers table[]
+---@return table[] requiredMods
+---@return string[] errors
+function TradeQueryGeneratorClass:ResolveSynthUniqueRequirements(baseline, modifiers)
+	local requiredMods = { }
+	local errors = { }
+	local explicitStatIds = getTradeStatIdSet("explicit")
+	for _, modifier in ipairs(modifiers or { }) do
+		if modifier.selected then
+			local resolvedLine = findConfiguredModLine(baseline, modifier)
+			if not resolvedLine then
+				t_insert(errors, s_format("Selected modifier is not active on this unique: %s", modifier.line))
+				goto continue
+			end
+			if #modifier.ranges > 1 and not resolvedLine:match("^Adds .+ to .+") then
+				t_insert(errors, s_format("Selected modifier has an ambiguous multi-value trade mapping: %s", modifier.line))
+				goto continue
+			end
+			local optionTradeId = tradeHelpers.findTradeIdOption(resolvedLine, "explicit")
+			if optionTradeId then
+				t_insert(errors, s_format("Selected modifier maps to an option rather than a numeric threshold: %s", modifier.line))
+				goto continue
+			end
+			local hashes, value, invert = tradeHelpers.findTradeHash(resolvedLine)
+			local tradeIds = getUniqueModTradeIds(modifier, explicitStatIds)
+			if #tradeIds == 0 then
+				local seen = { }
+				for _, hash in ipairs(hashes or { }) do
+					local tradeId = "explicit.stat_" .. tostring(hash)
+					if explicitStatIds[tradeId] and not seen[tradeId] then
+						seen[tradeId] = true
+						t_insert(tradeIds, tradeId)
+					end
+				end
+			end
+			value = value or tradeHelpers.modLineValue(resolvedLine)
+			if #tradeIds ~= 1 or value == nil then
+				t_insert(errors, s_format("Selected modifier could not be mapped to one numeric trade stat: %s", modifier.line))
+				goto continue
+			end
+			modifier.tradeId = tradeIds[1]
+			modifier.invert = invert == true
+			modifier.tradeValue = invert and -value or value
+			t_insert(requiredMods, {
+				tradeId = modifier.tradeId,
+				value = modifier.tradeValue,
+				filterValue = { min = modifier.tradeValue },
+			})
+		end
+		::continue::
+	end
+	return requiredMods, errors
+end
+
 function TradeQueryGeneratorClass:StartQuery(slot, options)
 	if self.lastMaxPrice then
 		options.maxPrice = self.lastMaxPrice
@@ -666,12 +903,41 @@ function TradeQueryGeneratorClass:StartQuery(slot, options)
 	end
 
 	-- Figure out what type of item we're searching for
-	local existingItem = slot and self.itemsTab.items[slot.selItemId]
+	local synthUnique = options.synthUnique
+	local existingItem = synthUnique and synthUnique.baseline or slot and self.itemsTab.items[slot.selItemId]
 	local testItemType = existingItem and existingItem.baseName or "Unset Amulet"
 	local itemCategoryQueryStr
 	local itemCategory
 	local special = { }
-	if options.special then
+	if synthUnique then
+		synthUnique.omittedImplicits = synthUnique.omittedImplicits or { }
+		itemCategoryQueryStr, itemCategory = tradeHelpers.getTradeCategory(slot.slotName, existingItem)
+		if existingItem.type == "Jewel" then
+			itemCategory = existingItem.base and existingItem.base.subType == "Abyss" and "AbyssJewel" or "BaseJewel"
+			itemCategoryQueryStr = existingItem.base and existingItem.base.subType == "Abyss" and "jewel.abyss" or "jewel.base"
+		end
+		local seenDiagnostics = { }
+		for _, diagnostic in pairs(self.synthesisCatalogDiagnostics or { }) do
+			if diagnostic.categories[itemCategory] and not seenDiagnostics[diagnostic.line] then
+				seenDiagnostics[diagnostic.line] = true
+				t_insert(synthUnique.omittedImplicits, copyTable(diagnostic))
+			end
+		end
+		special = {
+			queryExtra = {
+				name = synthUnique.item.title or synthUnique.item.name,
+				type = synthUnique.item.baseName,
+			},
+			queryFilters = {
+				type_filters = {
+					filters = {
+						category = { option = itemCategoryQueryStr },
+						rarity = { option = "unique" },
+					}
+				}
+			},
+		}
+	elseif options.special then
 		if options.special.itemName == "Megalomaniac" then
 			special = {
 				queryFilters = {},
@@ -727,13 +993,13 @@ function TradeQueryGeneratorClass:StartQuery(slot, options)
 
 	-- Create a temp item for the slot with no mods
 	local itemRawStr = "Rarity: RARE\nStat Tester\n" .. testItemType
-	local testItem = new("Item"):Item(itemRawStr)
+	local testItem = synthUnique and new("Item"):Item(synthUnique.baseline:BuildRaw()) or new("Item"):Item(itemRawStr)
 
 	-- Apply any requests influences
-	if options.influence1 > 1 then
+	if not synthUnique and options.influence1 > 1 then
 		testItem[itemLib.influenceInfo.default[options.influence1 - 1].key] = true
 	end
-	if options.influence2 > 1 then
+	if not synthUnique and options.influence2 > 1 then
 		testItem[itemLib.influenceInfo.default[options.influence2 - 1].key] = true
 	end
 
@@ -758,6 +1024,7 @@ function TradeQueryGeneratorClass:StartQuery(slot, options)
 		options = options,
 		slot = slot,
 		requiredMods = options.requiredMods,
+		synthUnique = synthUnique,
 	}
 
 	-- OnFrame will pick this up and begin the work
@@ -770,6 +1037,10 @@ function TradeQueryGeneratorClass:StartQuery(slot, options)
 end
 
 function TradeQueryGeneratorClass:ExecuteQuery()
+	if self.calcContext.synthUnique then
+		self:GenerateModWeights(self.modData.Synthesis)
+		return
+	end
 	if self.calcContext.special.calcNodesInsteadOfMods then
 		self:GeneratePassiveNodeWeights(self.modData.PassiveNode)
 		return
@@ -855,8 +1126,12 @@ end
 function TradeQueryGeneratorClass:FinishQuery()
 	-- Calc original item Stats without anoint or enchant, and use that diff as a basis for default min sum.
 	local originalItem = self.calcContext.slot and self.itemsTab.items[self.calcContext.slot.selItemId]
-	self.calcContext.testItem.explicitModLines = { }
-	if originalItem then
+	if self.calcContext.synthUnique then
+		self.calcContext.testItem = new("Item"):Item(self.calcContext.synthUnique.baseline:BuildRaw())
+	else
+		self.calcContext.testItem.explicitModLines = { }
+	end
+	if originalItem and not self.calcContext.synthUnique then
 		for _, modLine in ipairs(originalItem.explicitModLines) do
 			t_insert(self.calcContext.testItem.explicitModLines, modLine)
 		end
@@ -872,8 +1147,8 @@ function TradeQueryGeneratorClass:FinishQuery()
 	end
 	self.calcContext.testItem:BuildAndParseRaw()
 
-	local originalOutput = originalItem and self.calcContext.calcFunc({ repSlotName = self.calcContext.slot.slotName, repItem = self.calcContext.testItem }) or self.calcContext.baseOutput
-	local currentStatDiff = TradeQueryGeneratorClass.WeightedRatioOutputs(self.calcContext.baseOutput, originalOutput, self.calcContext.options.statWeights) * 1000 - (self.calcContext.baseStatValue or 0)
+	local originalOutput = (originalItem or self.calcContext.synthUnique) and self.calcContext.calcFunc({ repSlotName = self.calcContext.slot.slotName, repItem = self.calcContext.testItem }) or self.calcContext.baseOutput
+	local currentStatDiff = self.calcContext.synthUnique and 0 or TradeQueryGeneratorClass.WeightedRatioOutputs(self.calcContext.baseOutput, originalOutput, self.calcContext.options.statWeights) * 1000 - (self.calcContext.baseStatValue or 0)
 	
 	if self.calcContext.options.includeAllWEMods then
 		self:addMoreWEMods()
@@ -955,7 +1230,13 @@ function TradeQueryGeneratorClass:FinishQuery()
 		num_extra = num_extra + 1
 	end
 
-	local effective_max = MAX_FILTERS - num_extra
+	local effective_max = MAX_FILTERS - num_extra - #requiredMods
+	if effective_max < 1 then
+		local errMsg = "Could not generate search: required filters exceed the trade site's filter limit"
+		self.requesterCallback(self.requesterContext, nil, errMsg)
+		main:ClosePopup()
+		return
+	end
 
 	local pseudoMap = {
 		["3372524247"] = "pseudo.pseudo_total_fire_resistance",
@@ -1044,15 +1325,20 @@ function TradeQueryGeneratorClass:FinishQuery()
 		end
 	end
 	for _, entry in ipairs(requiredMods) do
-		t_insert(requiredModFilters.filters, { id = entry.tradeId, value = { min = entry.value } })
+		t_insert(requiredModFilters.filters, { id = entry.tradeId, value = entry.filterValue or { min = entry.value } })
 	end
-	if not options.includeMirrored then
-		queryTable.query.filters.misc_filters = {
+	if not options.includeMirrored or self.calcContext.synthUnique then
+		queryTable.query.filters.misc_filters = queryTable.query.filters.misc_filters or {
 			disabled = false,
-			filters = {
-				mirrored = false,
-			}
+			filters = { },
 		}
+		if not options.includeMirrored then
+			queryTable.query.filters.misc_filters.filters.mirrored = false
+		end
+		if self.calcContext.synthUnique then
+			queryTable.query.filters.misc_filters.filters.synthesised_item = { option = "true" }
+			queryTable.query.filters.misc_filters.filters.corrupted = { option = "false" }
+		end
 	end
 
 	if options.maxPrice and options.maxPrice > 0 then
@@ -1117,12 +1403,280 @@ function TradeQueryGeneratorClass:FinishQuery()
 		-- No mods to filter
 		errMsg = "Could not generate search, found no mods to search for"
 	end
+	if self.calcContext.synthUnique and #self.calcContext.synthUnique.omittedImplicits > 0 then
+		local uniqueOmissions = { }
+		local details = { }
+		for _, omission in ipairs(self.calcContext.synthUnique.omittedImplicits) do
+			local key = tostring(omission.line) .. "\0" .. tostring(omission.reason)
+			if not uniqueOmissions[key] then
+				uniqueOmissions[key] = true
+				t_insert(details, s_format("%s (%s)", omission.line, omission.reason))
+			end
+		end
+		self.calcContext.synthUnique.warning = s_format(
+			"Omitted %d synthesis implicit%s that could not be parsed or mapped.",
+			#details, #details == 1 and "" or "s")
+		self.calcContext.synthUnique.warningDetails = details
+	end
 
 	local queryJson = dkjson.encode(queryTable)
 	self.requesterCallback(self.requesterContext, queryJson, errMsg)
 
 	-- Close blocker popup
 	main:ClosePopup()
+end
+
+function TradeQueryGeneratorClass:RequestSynthUniqueQuery(slot, context, statWeights, callback)
+	local uniqueItems = synthUniqueTrade.listSynthesisUniques(main.uniqueDB, function(item)
+		return slot and self.itemsTab:IsItemValidForSlot(item, slot.slotName)
+	end)
+	if #uniqueItems == 0 then
+		callback(context, nil, "No synthesised uniques are available for this slot")
+		return
+	end
+
+	self.requesterCallback = callback
+	self.requesterContext = context
+	local controls = { }
+	local popupWidth = 680
+	local maxModifierRows = 8
+	local selectedRows = { }
+	local modifierList = { }
+	local uniqueList = { }
+	for _, item in ipairs(uniqueItems) do
+		t_insert(uniqueList, {
+			label = colorCodes.UNIQUE .. (item.title or item.name),
+			item = item,
+		})
+	end
+
+	controls.unique = new("DropDownControl"):DropDownControl({ "TOPLEFT", nil, "TOPLEFT" },
+		{ 145, 30, 500, 20 }, uniqueList, nil, "Select the mechanically synthesised unique to search for.", true)
+	controls.uniqueLabel = new("LabelControl"):LabelControl({ "RIGHT", controls.unique, "LEFT" },
+		{ -8, 0, 130, 16 }, "^7Unique item:")
+	controls.implicitCount = new("DropDownControl"):DropDownControl({ "TOPLEFT", nil, "TOPLEFT" },
+		{ 145, 58, 80, 20 }, { 1, 2, 3 }, nil,
+		"Requires exactly this many implicits. Corrupted items are excluded so the count is exact.")
+	controls.implicitCount.selIndex = self.lastSynthImplicitCount or 3
+	controls.implicitCountLabel = new("LabelControl"):LabelControl({ "RIGHT", controls.implicitCount, "LEFT" },
+		{ -8, 0, 130, 16 }, "^7Synthesis implicits:")
+	controls.corruptionNotice = new("LabelControl"):LabelControl({ "LEFT", controls.implicitCount, "RIGHT" },
+		{ 12, 0, 400, 16 }, "^xF0C674Corrupted results are excluded to preserve the exact implicit count.")
+	controls.modifierHeader = new("LabelControl"):LabelControl({ "TOPLEFT", nil, "TOPLEFT" },
+		{ 20, 88, 620, 16 }, "^7Unique modifier assumptions (also required trade thresholds):")
+
+	local function resetModifierRows()
+		selectedRows = { }
+		modifierList = { { label = "^7+ Add unique modifier" } }
+		local selectedUnique = controls.unique:GetSelValue()
+		for _, modifier in ipairs(selectedUnique and synthUniqueTrade.extractVariableModifiers(selectedUnique.item) or { }) do
+			t_insert(modifierList, {
+				label = "^7" .. modifier.line,
+				modifier = modifier,
+			})
+		end
+		for row = 1, maxModifierRows do
+			local selector = controls["modifier" .. row]
+			if selector then
+				selector:SetList(modifierList)
+				selector:SetSel(1, true)
+				for component = 1, 2 do
+					controls["modifierValue" .. row .. "_" .. component].buf = ""
+				end
+			end
+		end
+	end
+
+	for row = 1, maxModifierRows do
+		local y = 110 + (row - 1) * 25
+		local selector = new("DropDownControl"):DropDownControl({ "TOPLEFT", nil, "TOPLEFT" },
+			{ 20, y, 500, 20 }, modifierList, function(index, value)
+				if index == 1 then
+					for clearRow = row, maxModifierRows do
+						selectedRows[clearRow] = nil
+						local laterSelector = controls["modifier" .. clearRow]
+						if laterSelector and clearRow ~= row then
+							laterSelector:SetSel(1, true)
+						end
+						for component = 1, 2 do
+							local laterValue = controls["modifierValue" .. clearRow .. "_" .. component]
+							if laterValue then laterValue.buf = "" end
+						end
+					end
+				else
+					selectedRows[row] = {
+						modifier = value.modifier,
+						values = copyTable(value.modifier.values),
+					}
+					for component, componentValue in ipairs(value.modifier.values) do
+						controls["modifierValue" .. row .. "_" .. component].buf = tostring(componentValue)
+					end
+				end
+			end, nil, true)
+		selector.shown = function()
+			return row == 1 or selectedRows[row - 1] ~= nil
+		end
+		controls["modifier" .. row] = selector
+		for component = 1, 2 do
+			local valueControl = tradeHelpers.newPlainNumericEdit({ "TOPLEFT", nil, "TOPLEFT" },
+				{ 525 + (component - 1) * 67, y, 62, 20 }, "", component == 1 and "Roll" or "Roll 2", 8, false,
+				function(value)
+					if selectedRows[row] then
+						selectedRows[row].values[component] = tonumber(value)
+					end
+				end)
+			valueControl.shown = function()
+				return selectedRows[row] ~= nil and selectedRows[row].modifier.ranges[component] ~= nil
+			end
+			controls["modifierValue" .. row .. "_" .. component] = valueControl
+		end
+	end
+	controls.unique.selFunc = function()
+		resetModifierRows()
+	end
+	resetModifierRows()
+
+	local isAmuletSlot = slot and slot.slotName == "Amulet"
+	local isBeltSlot = slot and slot.slotName == "Belt"
+	local isWeaponSlot = slot and (slot.slotName == "Weapon 1" or slot.slotName == "Weapon 2"
+		or slot.slotName == "Weapon 1 Swap" or slot.slotName == "Weapon 2 Swap")
+	local optionY = 318
+	if isAmuletSlot or isBeltSlot or isWeaponSlot then
+		local term = isWeaponSlot and "enchants" or "anoints"
+		local enchantTooltip = s_format([[Keep: %s will be unchanged on the search results.
+Copy Current: current %s will be applied to the search result items.
+Remove: %s will be removed from the search results.]], term, term, term)
+		controls.copyEnchantMode = new("DropDownControl"):DropDownControl({ "TOPLEFT", nil, "TOPLEFT" },
+			{ 145, optionY, 120, 18 }, { "Keep", "Copy Current", "Remove" }, function() end, enchantTooltip)
+		controls.copyEnchantMode:SelByValue(self.lastCopyEnchantMode or "Keep")
+		local labelText = isWeaponSlot and "^7Enchant Behaviour:" or "^7Anoint Behaviour:"
+		controls.copyEnchantModeLabel = new("LabelControl"):LabelControl({ "RIGHT", controls.copyEnchantMode, "LEFT" },
+			{ -8, 0, 120, 16 }, labelText)
+		optionY = optionY + 28
+	end
+	controls.includeMirrored = new("CheckBoxControl"):CheckBoxControl({ "TOPLEFT", nil, "TOPLEFT" },
+		{ 20, optionY, 18 }, "Mirrored Items:", function() end)
+	controls.includeMirrored.state = self.lastIncludeMirrored == nil or self.lastIncludeMirrored == true
+
+	local currencyDropdownNames = { }
+	for _, currency in ipairs(currencyTable) do
+		t_insert(currencyDropdownNames, currency.name)
+	end
+	controls.maxPrice = new("EditControl"):EditControl({ "TOPLEFT", nil, "TOPLEFT" },
+		{ 145, optionY + 30, 70, 18 }, nil, nil, "%D")
+	controls.maxPrice.buf = self.lastMaxPrice and tostring(self.lastMaxPrice) or ""
+	controls.maxPriceType = new("DropDownControl"):DropDownControl({ "LEFT", controls.maxPrice, "RIGHT" },
+		{ 5, 0, 170, 18 }, currencyDropdownNames, nil)
+	controls.maxPriceType.selIndex = self.lastMaxPriceTypeIndex or 1
+	controls.maxPriceLabel = new("LabelControl"):LabelControl({ "RIGHT", controls.maxPrice, "LEFT" },
+		{ -8, 0, 120, 16 }, "^7Max Price:")
+	controls.maxLevel = new("EditControl"):EditControl({ "TOPLEFT", nil, "TOPLEFT" },
+		{ 145, optionY + 58, 70, 18 }, nil, nil, "%D")
+	controls.maxLevel.buf = self.lastMaxLevel and tostring(self.lastMaxLevel) or ""
+	controls.maxLevelLabel = new("LabelControl"):LabelControl({ "RIGHT", controls.maxLevel, "LEFT" },
+		{ -8, 0, 120, 16 }, "^7Max Level:")
+
+	local supportsSockets = slot and not slot.slotName:find("Jewel") and not slot.slotName:find("Flask")
+	if supportsSockets then
+		controls.sockets = new("EditControl"):EditControl({ "TOPLEFT", nil, "TOPLEFT" },
+			{ 485, optionY + 30, 70, 18 }, nil, nil, "%D")
+		controls.sockets.buf = self.lastSockets and tostring(self.lastSockets) or ""
+		controls.socketsLabel = new("LabelControl"):LabelControl({ "RIGHT", controls.sockets, "LEFT" },
+			{ -8, 0, 150, 16 }, "^7# of Empty Sockets:")
+		if not slot.slotName:find("Belt") and not slot.slotName:find("Ring") and not slot.slotName:find("Amulet") then
+			controls.links = new("EditControl"):EditControl({ "TOPLEFT", nil, "TOPLEFT" },
+				{ 485, optionY + 58, 70, 18 }, nil, nil, "%D")
+			controls.links.buf = self.lastLinks and tostring(self.lastLinks) or ""
+			controls.linksLabel = new("LabelControl"):LabelControl({ "RIGHT", controls.links, "LEFT" },
+				{ -8, 0, 150, 16 }, "^7# of Links:")
+		end
+	end
+
+	controls.generateQuery = new("ButtonControl"):ButtonControl({ "BOTTOM", nil, "BOTTOM" },
+		{ -45, -10, 80, 20 }, "Execute", function()
+			local assumptions = { }
+			local seenModifiers = { }
+			local errors = { }
+			for row = 1, maxModifierRows do
+				local selected = selectedRows[row]
+				if selected then
+					if seenModifiers[selected.modifier.key] then
+						t_insert(errors, "The same unique modifier was selected more than once")
+					else
+						seenModifiers[selected.modifier.key] = true
+						local values = { }
+						for component = 1, #selected.modifier.ranges do
+							values[component] = tonumber(controls["modifierValue" .. row .. "_" .. component].buf)
+							if values[component] == nil then
+								t_insert(errors, s_format("Enter every roll for %s", selected.modifier.line))
+							end
+						end
+						assumptions[selected.modifier.key] = { selected = true, values = values }
+					end
+				end
+			end
+			local selectedUnique = controls.unique:GetSelValue().item
+			local modifiers = synthUniqueTrade.extractVariableModifiers(selectedUnique)
+			local configured, configureErrors = synthUniqueTrade.configureModifiers(modifiers, assumptions)
+			for _, message in ipairs(configureErrors) do t_insert(errors, message) end
+			local baseline, missing = synthUniqueTrade.buildBaseline(selectedUnique, configured)
+			for _, key in ipairs(missing) do
+				t_insert(errors, "Selected unique modifiers cannot coexist: " .. key)
+			end
+			local requiredMods, mappingErrors = self:ResolveSynthUniqueRequirements(baseline, configured)
+			for _, message in ipairs(mappingErrors) do t_insert(errors, message) end
+			if #errors > 0 then
+				main:ClosePopup()
+				callback(context, nil, table.concat(errors, "\n"))
+				return
+			end
+
+			local implicitCount = controls.implicitCount:GetSelValue()
+			t_insert(requiredMods, 1, {
+				tradeId = "pseudo.pseudo_number_of_implicit_mods",
+				filterValue = { min = implicitCount, max = implicitCount },
+			})
+			local options = {
+				includeMirrored = controls.includeMirrored.state,
+				includeCorrupted = false,
+				includeTalisman = false,
+				includeScourge = false,
+				influence1 = 1,
+				influence2 = 1,
+				maxPrice = tonumber(controls.maxPrice.buf),
+				maxPriceType = currencyTable[controls.maxPriceType.selIndex].id,
+				maxLevel = tonumber(controls.maxLevel.buf),
+				sockets = controls.sockets and tonumber(controls.sockets.buf),
+				links = controls.links and tonumber(controls.links.buf),
+				requiredMods = requiredMods,
+				statWeights = statWeights,
+				synthUnique = {
+					item = selectedUnique,
+					baseline = baseline,
+					modifiers = configured,
+					implicitCount = implicitCount,
+					copyEnchantMode = controls.copyEnchantMode and controls.copyEnchantMode:GetSelValue(),
+					omittedImplicits = { },
+				},
+			}
+			self.lastSynthImplicitCount = controls.implicitCount.selIndex
+			if controls.copyEnchantMode then
+				self.lastCopyEnchantMode = options.synthUnique.copyEnchantMode
+			end
+			self.lastIncludeMirrored = options.includeMirrored
+			self.lastMaxPrice = options.maxPrice
+			self.lastMaxPriceTypeIndex = controls.maxPriceType.selIndex
+			self.lastMaxLevel = options.maxLevel
+			self.lastSockets = options.sockets
+			self.lastLinks = options.links
+			self.tradeTypeIndex = context.controls.tradeTypeSelection.selIndex
+			context.synthUnique = options.synthUnique
+			main:ClosePopup()
+			self:StartQuery(slot, options)
+		end)
+	controls.cancel = new("ButtonControl"):ButtonControl({ "BOTTOM", nil, "BOTTOM" },
+		{ 45, -10, 80, 20 }, "Cancel", function() main:ClosePopup() end)
+	main:OpenPopup(popupWidth, 455 + (controls.copyEnchantMode and 28 or 0), "Synthesised Unique Query Options", controls)
 end
 
 function TradeQueryGeneratorClass:RequestQuery(slot, context, statWeights, callback)
@@ -1138,7 +1692,8 @@ function TradeQueryGeneratorClass:RequestQuery(slot, context, statWeights, callb
 	local isAbyssalJewelSlot = slot and slot.slotName:find("Abyssal") ~= nil
 	local isAmuletSlot = slot and slot.slotName == "Amulet"
 	local isBeltSlot = slot and slot.slotName == "Belt"
-	local isWeaponSlot = slot and (slot.slotName == "Weapon 1" or slot.slotName == "Weapon 2")
+	local isWeaponSlot = slot and (slot.slotName == "Weapon 1" or slot.slotName == "Weapon 2"
+		or slot.slotName == "Weapon 1 Swap" or slot.slotName == "Weapon 2 Swap")
 	local isEldritchModSlot = slot and eldritchModSlots[slot.slotName] == true
 
 	local lastItemAnchor
@@ -1228,7 +1783,7 @@ Remove: %s will be removed from the search results.]], term, term, term)
 		controls.copyEnchantMode = new("DropDownControl"):DropDownControl({ "TOPLEFT", lastItemAnchor, "BOTTOMLEFT" },
 			{ 0, 5, 120, 18 },
 			copyEnchantList, function(state) end, enchantTooltip)
-		controls.copyEnchantMode.state = self.lastCopyEnchantMode or false
+		controls.copyEnchantMode:SelByValue(self.lastCopyEnchantMode or "Keep")
 		local labelText = isWeaponSlot and "^7Enchant Behaviour:" or "^7Anoint Behaviour:"
 		controls.copyEnchantModeLabel = new("LabelControl"):LabelControl({ "RIGHT", controls.copyEnchantMode, "LEFT" },
 			{ -4, 0, 80, 16 }, labelText)
@@ -1343,7 +1898,9 @@ Remove: %s will be removed from the search results.]], term, term, term)
 
 		self.tradeTypeIndex = context.controls.tradeTypeSelection.selIndex
 
-		self.lastCopyEnchantMode = controls.copyEnchantMode and controls.copyEnchantMode:GetSelValue()
+		if controls.copyEnchantMode then
+			self.lastCopyEnchantMode = controls.copyEnchantMode:GetSelValue()
+		end
 
 		if controls.includeMirrored then
 			self.lastIncludeMirrored, options.includeMirrored = controls.includeMirrored.state, controls.includeMirrored.state

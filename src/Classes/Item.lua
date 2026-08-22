@@ -1770,6 +1770,9 @@ function ItemClass:BuildRaw()
 			t_insert(rawLines, curInfluenceInfo.display .. " Item")
 		end
 	end
+	if self.synthesised then
+		t_insert(rawLines, "Synthesised Item")
+	end
 	if self.crafted then
 		t_insert(rawLines, "Crafted: true")
 		for _, affix in ipairs(self.prefixes or { }) do

@@ -7,6 +7,7 @@
 
 local dkjson = require "dkjson"
 local itemSlotHelper = LoadModule("Modules/ItemSlotHelper")
+local synthUniqueTrade = LoadModule("Classes/SynthUniqueTrade")
 
 local get_time = os.time
 local t_insert = table.insert
@@ -58,6 +59,8 @@ function TradeQueryClass:TradeQuery(itemsTab)
 	self.backoffFinish = nil
 	-- last query for each row
 	self.lastQueries = {}
+	-- Synth unique assumptions associated with generated/pasted searches by row.
+	self.synthUniqueContexts = {}
 
 	self.tradeQueryRequests = new("TradeQueryRequests"):TradeQueryRequests()
 	if not main.api then
@@ -1004,6 +1007,79 @@ function TradeQueryClass:FilterToSafeItems(itemEntries, slotName)
 	end
 	return itemsSafe
 end
+
+-- Apply the configured unique-roll assumptions to fetched synth results before
+-- exact PoB evaluation. Entries missing a selected modifier are rejected rather
+-- than evaluated against a guessed line.
+---@param itemEntries table[]
+---@param synthUnique table?
+---@return table[]
+function TradeQueryClass:ApplySynthUniqueAssumptions(itemEntries, synthUnique)
+	if not synthUnique then
+		return itemEntries
+	end
+	local adjustedEntries = { }
+	for _, entry in ipairs(itemEntries) do
+		local originalItemString = entry.item_string
+		local fetchedItem = new("Item"):Item(originalItemString)
+		local adjustedItem, overrides, missing = synthUniqueTrade.clampFetchedItem(fetchedItem, synthUnique.modifiers)
+		if #missing == 0 then
+			-- Keep the fetched marker even when no assumption needed clamping.
+			adjustedItem.synthesised = fetchedItem.synthesised
+			local adjustedEntry = copyTable(entry)
+			adjustedEntry.original_item_string = originalItemString
+			adjustedEntry.item_string = adjustedItem:BuildRaw()
+			adjustedEntry.assumptionOverrides = overrides
+			adjustedEntry.synthesisWarnings = synthUnique.warningDetails
+			t_insert(adjustedEntries, adjustedEntry)
+		end
+	end
+	return adjustedEntries
+end
+
+-- Apply the result-item behavior selected in the query options. Enchant/anoint
+-- handling is independent of eldritch implicit handling, even when both controls
+-- are available to a query.
+---@param item Item
+---@param slotName string
+---@param copyEnchantMode string?
+---@param includeEldritch string?
+function TradeQueryClass:ApplyQueryResultItemOptions(item, slotName, copyEnchantMode, includeEldritch)
+	if copyEnchantMode == "Copy Current" or includeEldritch == "Copy Current" then
+		self.itemsTab:CopyAnointsAndEldritchImplicits(item, includeEldritch == "Copy Current", true, slotName)
+	end
+	if includeEldritch == "Remove" and (item.tangle or item.cleansing) then
+		item.implicitModLines = { }
+	end
+	if copyEnchantMode == "Remove" then
+		item.enchantModLines = { }
+	end
+end
+
+---@param tooltip Tooltip
+---@param result table?
+function TradeQueryClass:AddAssumptionOverridesToTooltip(tooltip, result)
+	if not result then
+		return
+	end
+	if result.synthesisWarnings and #result.synthesisWarnings > 0 then
+		tooltip:AddSeparator(10)
+		tooltip:AddLine(16, colorCodes.WARNING .. "Omitted synthesis implicits:")
+		for _, warning in ipairs(result.synthesisWarnings) do
+			tooltip:AddLine(14, "^7" .. warning)
+		end
+	end
+	if result.assumptionOverrides and #result.assumptionOverrides > 0 then
+		tooltip:AddSeparator(10)
+		tooltip:AddLine(16, colorCodes.WARNING .. "Assumed unique modifier rolls applied:")
+		for _, override in ipairs(result.assumptionOverrides) do
+			local actual = override.actualLine or override.line or "Unknown modifier"
+			local adjusted = override.adjustedLine or override.line or "Unknown modifier"
+			tooltip:AddLine(14, s_format("^7%s ^8-> ^7%s", actual, adjusted))
+		end
+	end
+end
+
 -- Method to generate pane elements for each item slot
 function TradeQueryClass:PriceItemRowDisplay(row_idx, top_pane_alignment_ref, row_vertical_padding, row_height)
 	local controls = self.controls
@@ -1020,65 +1096,80 @@ function TradeQueryClass:PriceItemRowDisplay(row_idx, top_pane_alignment_ref, ro
 	end
 	local nameColor = slotTbl.unique and colorCodes.UNIQUE or "^7"
 	controls["name" .. row_idx] = new("LabelControl"):LabelControl(top_pane_alignment_ref, { 0, row_idx * (row_height + row_vertical_padding), 135, row_height - 4 }, nameColor .. slotTbl.slotName)
-	controls["bestButton" .. row_idx] = new("ButtonControl"):ButtonControl({ "LEFT", controls["name" .. row_idx], "LEFT" }, { 135 + 8, 0, 80, row_height }, "Find best", function()
-		self.tradeQueryGenerator:RequestQuery(activeSlot, { slotTbl = slotTbl, controls = controls, row_idx = row_idx }, self.statSortSelectionList, function(context, query, errMsg)
-			if errMsg then
-				self:SetNotice(context.controls.pbNotice, colorCodes.NEGATIVE .. errMsg)
-				return
-			else
-				self:SetNotice(context.controls.pbNotice, "")
-			end
-			if main.api.authToken == nil then
-				local url = self.tradeQueryRequests:buildUrl(self.hostName .. "trade/search", self.pbRealm, self.pbLeague)
-				url = url .. "?q=" .. urlEncode(query)
-				controls["uri"..context.row_idx]:SetText(url, true)
-				return
-			end
-			context.controls["priceButton"..context.row_idx].label = "Searching..."
-			self.lastQueries[row_idx] = query
-			self.tradeQueryRequests:SearchWithQueryWeightAdjusted(self.pbRealm, self.pbLeague, query,
-				function(items, errMsg)
-					if errMsg then
-						self:SetNotice(context.controls.pbNotice, colorCodes.NEGATIVE .. errMsg)
-						context.controls["priceButton"..context.row_idx].label =  "Price Item"
-						return
-					else
-						self:SetNotice(context.controls.pbNotice, "")
-					end
-
-					local selectedSlot = getSelectedSlot()
-					local itemsSafe = self:FilterToSafeItems(items, selectedSlot and selectedSlot.slotName)
-					-- replace eldritch mods or enchants if the user requested
-					-- so in TradeQueryGenerator
-					for i, _ in ipairs(itemsSafe) do
-						local item = new("Item"):Item(itemsSafe[i].item_string)
-						-- assume the user will add quality if they buy the item
-						item:NormaliseQuality()
-						if self.tradeQueryGenerator.lastIncludeEldritch == "Copy Current" or
-							self.tradeQueryGenerator.lastCopyEnchantMode == "Copy Current" then
-							self.itemsTab:CopyAnointsAndEldritchImplicits(item, true, true, context.slotTbl.slotName)
-						elseif self.tradeQueryGenerator.lastIncludeEldritch == "Remove" then
-							if item.tangle or item.cleansing then
-								item.implicitModLines = {}
-							end
-						elseif self.tradeQueryGenerator.lastCopyEnchantMode == "Remove" then
-							item.enchantModLines = {}
-						end
-						itemsSafe[i].item_string = item:BuildRaw()
-					end
-
-					self.resultTbl[context.row_idx] = itemsSafe
-					self:UpdateControlsWithItems(context.row_idx)
+	local selectedSlot = getSelectedSlot()
+	local synthUniqueList = not slotTbl.unique and selectedSlot and synthUniqueTrade.listSynthesisUniques(main.uniqueDB, function(item)
+		return self.itemsTab:IsItemValidForSlot(item, selectedSlot.slotName)
+	end) or { }
+	local hasSynthUniques = #synthUniqueList > 0
+	local generatedSynthURL
+	local function handleGeneratedQuery(context, query, errMsg)
+		if errMsg then
+			self.synthUniqueContexts[context.row_idx] = nil
+			generatedSynthURL = nil
+			self:SetNotice(context.controls.pbNotice, colorCodes.NEGATIVE .. errMsg)
+			return
+		else
+			self:SetNotice(context.controls.pbNotice, context.synthUnique and context.synthUnique.warning
+				and colorCodes.WARNING .. context.synthUnique.warning or "")
+		end
+		self.synthUniqueContexts[context.row_idx] = context.synthUnique
+		if main.api.authToken == nil then
+			local url = self.tradeQueryRequests:buildUrl(self.hostName .. "trade/search", self.pbRealm, self.pbLeague)
+			url = url .. "?q=" .. urlEncode(query)
+			generatedSynthURL = context.synthUnique and url or nil
+			controls["uri"..context.row_idx]:SetText(url, true)
+			return
+		end
+		context.controls["priceButton"..context.row_idx].label = "Searching..."
+		self.lastQueries[context.row_idx] = query
+		self.tradeQueryRequests:SearchWithQueryWeightAdjusted(self.pbRealm, self.pbLeague, query,
+			function(items, searchErrMsg)
+				if searchErrMsg then
+					self:SetNotice(context.controls.pbNotice, colorCodes.NEGATIVE .. searchErrMsg)
 					context.controls["priceButton"..context.row_idx].label =  "Price Item"
-				end,
-				{
-					callbackQueryId = function(queryId)
-						local url = self.tradeQueryRequests:buildUrl(self.hostName .. "trade/search", self.pbRealm, self.pbLeague, queryId)
-						controls["uri"..context.row_idx]:SetText(url, true)
-					end
-				}
-			)
-		end)
+					return
+				else
+					self:SetNotice(context.controls.pbNotice, context.synthUnique and context.synthUnique.warning
+						and colorCodes.WARNING .. context.synthUnique.warning or "")
+				end
+
+				local currentSlot = getSelectedSlot()
+				local itemsSafe = self:FilterToSafeItems(items, currentSlot and currentSlot.slotName)
+				itemsSafe = self:ApplySynthUniqueAssumptions(itemsSafe, context.synthUnique)
+				local copyEnchantMode
+				local includeEldritch
+				if context.synthUnique then
+					copyEnchantMode = context.synthUnique.copyEnchantMode
+				else
+					copyEnchantMode = self.tradeQueryGenerator.lastCopyEnchantMode
+					includeEldritch = self.tradeQueryGenerator.lastIncludeEldritch
+				end
+				-- Apply the eldritch and enchant/anoint behavior chosen in TradeQueryGenerator.
+				for i, _ in ipairs(itemsSafe) do
+					local item = new("Item"):Item(itemsSafe[i].item_string)
+					-- Assume the user will add quality if they buy the item.
+					item:NormaliseQuality()
+					self:ApplyQueryResultItemOptions(item, context.slotTbl.slotName, copyEnchantMode, includeEldritch)
+					itemsSafe[i].item_string = item:BuildRaw()
+				end
+
+				self.resultTbl[context.row_idx] = itemsSafe
+				self:UpdateControlsWithItems(context.row_idx)
+				context.controls["priceButton"..context.row_idx].label =  "Price Item"
+			end,
+			{
+				callbackQueryId = function(queryId)
+					local url = self.tradeQueryRequests:buildUrl(self.hostName .. "trade/search", self.pbRealm, self.pbLeague, queryId)
+					generatedSynthURL = context.synthUnique and url or nil
+					controls["uri"..context.row_idx]:SetText(url, true)
+				end
+			}
+		)
+	end
+	controls["bestButton" .. row_idx] = new("ButtonControl"):ButtonControl({ "LEFT", controls["name" .. row_idx], "LEFT" }, { 135 + 8, 0, 80, row_height }, "Find best", function()
+		self.tradeQueryGenerator:RequestQuery(activeSlot,
+			{ slotTbl = slotTbl, controls = controls, row_idx = row_idx },
+			self.statSortSelectionList, handleGeneratedQuery)
 	end)
 	controls["bestButton"..row_idx].shown = function() return not self.resultTbl[row_idx] end
 	controls["bestButton"..row_idx].enabled = function() return self.pbLeague end
@@ -1098,8 +1189,25 @@ you can add them, copy the link here, and press "Price Item" to evaluate the ite
 		local viewerX = x - boxSize / 2 + buttonWidth / 2
 		itemSlotHelper.DrawViewer(self.itemsTab, nodeId, viewerX, viewerY, boxSize, boxSize)
 	end
+	controls["synthButton" .. row_idx] = new("ButtonControl"):ButtonControl({ "LEFT", controls["bestButton" .. row_idx], "RIGHT" }, { 8, 0, 80, row_height }, "Find synth", function()
+		self.tradeQueryGenerator:RequestSynthUniqueQuery(activeSlot,
+			{ slotTbl = slotTbl, controls = controls, row_idx = row_idx },
+			self.statSortSelectionList, handleGeneratedQuery)
+	end)
+	controls["synthButton"..row_idx].shown = function()
+		return hasSynthUniques and not self.resultTbl[row_idx]
+	end
+	controls["synthButton"..row_idx].enabled = function()
+		return hasSynthUniques and self.pbLeague
+	end
+	controls["synthButton"..row_idx].tooltipText = [[Creates a weighted search for synthesised copies of a Synthete unique valid for this slot.
+Selected unique modifier rolls are enforced by the trade query and used for exact PoB result evaluation.]]
 	local pbURL
-	controls["uri"..row_idx] = new("EditControl"):EditControl({ "TOPLEFT", controls["bestButton"..row_idx], "TOPRIGHT"}, {8, 0, 514, row_height}, nil, nil, "^%C\t\n", nil, function(buf)
+	controls["uri"..row_idx] = new("EditControl"):EditControl({ "TOPLEFT", controls["synthButton"..row_idx], "TOPRIGHT", true}, {8, 0, hasSynthUniques and 426 or 514, row_height}, nil, nil, "^%C\t\n", nil, function(buf)
+		if self.synthUniqueContexts[row_idx] and buf ~= generatedSynthURL then
+			self.synthUniqueContexts[row_idx] = nil
+			generatedSynthURL = nil
+		end
 		local subpath = buf:match(self.hostNamePattern .. "trade/search/(.+)$") or ""
 		local paths = {}
 		for path in subpath:gmatch("[^/]+") do
@@ -1141,6 +1249,22 @@ you can add them, copy the link here, and press "Price Item" to evaluate the ite
 					self.lastQueries[row_idx] = query
 					local selectedSlot = getSelectedSlot()
 					local itemsSafe = self:FilterToSafeItems(items, selectedSlot and selectedSlot.slotName)
+					local synthUnique = self.synthUniqueContexts[row_idx]
+					itemsSafe = self:ApplySynthUniqueAssumptions(itemsSafe, synthUnique)
+					local copyEnchantMode
+					local includeEldritch
+					if synthUnique then
+						copyEnchantMode = synthUnique.copyEnchantMode
+					else
+						copyEnchantMode = self.tradeQueryGenerator.lastCopyEnchantMode
+						includeEldritch = self.tradeQueryGenerator.lastIncludeEldritch
+					end
+					for _, entry in ipairs(itemsSafe) do
+						local item = new("Item"):Item(entry.item_string)
+						item:NormaliseQuality()
+						self:ApplyQueryResultItemOptions(item, slotTbl.slotName, copyEnchantMode, includeEldritch)
+						entry.item_string = item:BuildRaw()
+					end
 					self.resultTbl[row_idx] = itemsSafe
 					self:UpdateControlsWithItems(row_idx)
 				end
@@ -1170,6 +1294,7 @@ you can add them, copy the link here, and press "Price Item" to evaluate the ite
 	end
 	controls["changeButton" .. row_idx] = new("ButtonControl"):ButtonControl({ "LEFT", controls["name" .. row_idx], "LEFT" }, { 135 + 8, 0, 80, row_height }, "<< Search", function()
 		self:ResetResultRow(row_idx)
+		self.synthUniqueContexts[row_idx] = nil
 	end)
 	controls["changeButton"..row_idx].shown = function() return self.resultTbl[row_idx] end
 	controls["resultDropdown" .. row_idx] = new("DropDownControl"):DropDownControl({ "TOPLEFT", controls["changeButton" .. row_idx], "TOPRIGHT" }, { 8, 0, 351, row_height }, {}, function(index)
@@ -1205,6 +1330,7 @@ you can add them, copy the link here, and press "Price Item" to evaluate the ite
 		tooltip:Clear()
 		local tooltipSlot = slotTbl.selectedJewelNodeId and self.itemsTab.sockets[slotTbl.selectedJewelNodeId] or activeSlot
 		self.itemsTab:AddItemTooltip(tooltip, item, tooltipSlot)
+		self:AddAssumptionOverridesToTooltip(tooltip, result)
 		addMegalomaniacCompareToTooltipIfApplicable(tooltip, pb_index)
 		tooltip:AddSeparator(10)
 		tooltip:AddLine(16, string.format("^7Price: %s %s", result.amount, result.currency))
@@ -1227,11 +1353,13 @@ you can add them, copy the link here, and press "Price Item" to evaluate the ite
 	controls["importButton"..row_idx].tooltipFunc = function(tooltip)
 		tooltip:Clear()
 		local selected_result_index = self.itemIndexTbl[row_idx]
-		local item_string = self.resultTbl[row_idx][selected_result_index].item_string
-		if selected_result_index and item_string then
-			local item = new("Item"):Item(item_string)
+		local result = selected_result_index and self.resultTbl[row_idx]
+			and self.resultTbl[row_idx][selected_result_index]
+		if result and result.item_string then
+			local item = new("Item"):Item(result.item_string)
 			local tooltipSlot = slotTbl.selectedJewelNodeId and self.itemsTab.sockets[slotTbl.selectedJewelNodeId] or activeSlot
 			self.itemsTab:AddItemTooltip(tooltip, item, tooltipSlot, true)
+			self:AddAssumptionOverridesToTooltip(tooltip, result)
 			addMegalomaniacCompareToTooltipIfApplicable(tooltip, selected_result_index)
 		end
 	end

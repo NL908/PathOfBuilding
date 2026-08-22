@@ -646,6 +646,7 @@ data.enchantmentSource = {
 data.describeStats = LoadModule("Modules/StatDescriber")
 
 -- Load item modifiers
+data.synthesisModItemClasses = LoadModule("Data/SynthesisModItemClasses")
 data.itemMods = {
 	Explicit = LoadModule("Data/ModExplicit"),
 	-- implicit mods and unique explicit mods

@@ -238,6 +238,42 @@ Strict-Transport-Security: max-age=63115200; includeSubDomains; preload]]
 			assert.are.equal("42", itemsById.legacy.weight)
 			assert.are.equal("0", itemsById.empty.weight)
 		end)
+
+		it("preserves synthesised item and implicit markers", function()
+			local response = dkjson.encode({
+				result = {
+					{
+						id = "synthesized",
+						listing = {
+							price = { amount = 1, currency = "chaos", type = "~price" },
+							whisper = "hi",
+							account = { name = "seller" },
+						},
+						item = {
+							synthesised = true,
+							rarity = "Unique",
+							name = "Test Subject",
+							typeLine = "Iron Ring",
+							implicitMods = {
+								{ description = "+1 to Maximum Power Charges" },
+							},
+						},
+					},
+				},
+			})
+			local fetchedItems
+			requests.requestQueue.fetch = { }
+			requests:FetchResultBlock("test", function(items)
+				fetchedItems = items
+			end)
+
+			local request = table.remove(requests.requestQueue.fetch, 1)
+			request.callback(response)
+
+			local item = new("Item"):Item(fetchedItems[1].item_string)
+			assert.is_true(item.synthesised)
+			assert.is_true(item.implicitModLines[1].synthesis)
+		end)
 	end)
 
 	describe("FetchResults", function()
